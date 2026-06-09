@@ -9,6 +9,44 @@ import {
 } from '@/data/photographer';
 import { SEOHead } from '@/components/seo/SEOHead';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
+import anthropicLogo from '@/assets/logos/anthropic.png.asset.json';
+import bartleLogo from '@/assets/logos/bartle.jpeg.asset.json';
+import fInitiativesLogo from '@/assets/logos/f-initiatives.webp.asset.json';
+import hecLogo from '@/assets/logos/hec.png.asset.json';
+import microsoftLogo from '@/assets/logos/microsoft.png.asset.json';
+import noeLogo from '@/assets/logos/noe.png.asset.json';
+import renaultLogo from '@/assets/logos/renault.svg.asset.json';
+import scrumLogo from '@/assets/logos/scrum.svg.asset.json';
+import supmecaLogo from '@/assets/logos/supmeca.png.asset.json';
+
+const matchLogo = (text: string): string | null => {
+  const t = text.toLowerCase();
+  if (t.includes('bartle')) return bartleLogo.url;
+  if (t.includes('renault')) return renaultLogo.url;
+  if (t.includes('blablacar')) return noeLogo.url; // formation via Noé
+  if (t.includes('f-initiatives') || t.includes('f initiatives')) return fInitiativesLogo.url;
+  if (t.includes('noé') || t.includes('noe')) return noeLogo.url;
+  if (t.includes('hec')) return hecLogo.url;
+  if (t.includes('supmeca') || t.includes('isae')) return supmecaLogo.url;
+  if (t.includes('microsoft')) return microsoftLogo.url;
+  if (t.includes('scrum')) return scrumLogo.url;
+  if (t.includes('anthropic') || t.includes('claude')) return anthropicLogo.url;
+  return null;
+};
+
+const LogoBadge = ({ text, fallback, size = 11 }: { text: string; fallback: React.ReactNode; size?: 10 | 11 }) => {
+  const logo = matchLogo(text);
+  const sizeClass = size === 10 ? 'size-10' : 'size-11';
+  return (
+    <div className={`shrink-0 ${sizeClass} rounded-xl border border-border bg-white flex items-center justify-center overflow-hidden text-muted-foreground`}>
+      {logo ? (
+        <img src={logo} alt="" className="w-full h-full object-contain p-1.5" />
+      ) : (
+        fallback
+      )}
+    </div>
+  );
+};
 
 export default function About() {
   return (
