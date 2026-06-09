@@ -204,16 +204,29 @@ export default function Home() {
                     className="group block rounded-2xl overflow-hidden border border-border bg-card hover:shadow-xl transition-all"
                   >
                     <div
-                      className={`relative aspect-[16/10] bg-gradient-to-br ${project.coverGradient} p-8 flex flex-col justify-between text-white`}
+                      className={`relative aspect-[16/10] overflow-hidden ${
+                        project.coverImage ? 'bg-muted' : `bg-gradient-to-br ${project.coverGradient}`
+                      } p-8 flex flex-col justify-between text-white`}
                     >
-                      <div className="flex items-center justify-between">
-                        <span className="text-xs font-medium tracking-wider uppercase opacity-80">
+                      {project.coverImage && (
+                        <>
+                          <img
+                            src={project.coverImage}
+                            alt={`${project.company} — ${project.title}`}
+                            loading="lazy"
+                            className="absolute inset-0 w-full h-full object-cover"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-black/10" />
+                        </>
+                      )}
+                      <div className="relative flex items-center justify-between">
+                        <span className="text-xs font-medium tracking-wider uppercase opacity-90">
                           {project.company}
                         </span>
-                        <ArrowUpRight className="size-5 opacity-80 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                        <ArrowUpRight className="size-5 opacity-90 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                       </div>
-                      <div>
-                        <p className="text-xs opacity-70 mb-2">{project.period}</p>
+                      <div className="relative">
+                        <p className="text-xs opacity-80 mb-2">{project.period}</p>
                         <h3 className="text-2xl md:text-3xl font-semibold leading-tight">
                           {project.title}
                         </h3>
