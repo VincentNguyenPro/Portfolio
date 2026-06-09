@@ -1,6 +1,7 @@
 import type { Project } from '@/types';
 import blablacarCover from '@/assets/blablacar-cover.jpg';
 import bartleCover from '@/assets/bartle-cover.jpg';
+import renaultSupplyCover from '@/assets/renault-supply-cover.jpg';
 
 export const projects: Project[] = [
   {
