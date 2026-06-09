@@ -95,21 +95,26 @@ export default function About() {
                       </p>
                       <p className="text-xs text-muted-foreground mt-1">{exp.location}</p>
                     </div>
-                    <div>
-                      <h3 className="text-xl md:text-2xl font-semibold tracking-tight">
-                        {exp.role}
-                      </h3>
-                      <p className="text-base text-muted-foreground mt-1 mb-4">{exp.company}</p>
-                      <ul className="space-y-2">
-                        {exp.highlights.map((h) => (
-                          <li
-                            key={h}
-                            className="text-sm md:text-base font-light leading-relaxed text-foreground/80 pl-5 relative before:content-['—'] before:absolute before:left-0 before:text-muted-foreground"
-                          >
-                            {h}
-                          </li>
-                        ))}
-                      </ul>
+                    <div className="flex gap-4">
+                      <div className="shrink-0 size-11 rounded-xl border border-border bg-card flex items-center justify-center text-muted-foreground">
+                        <Building2 className="size-5" />
+                      </div>
+                      <div className="flex-1">
+                        <h3 className="text-xl md:text-2xl font-semibold tracking-tight">
+                          {exp.role}
+                        </h3>
+                        <p className="text-base text-muted-foreground mt-1 mb-4">{exp.company}</p>
+                        <ul className="space-y-2">
+                          {exp.highlights.map((h) => (
+                            <li
+                              key={h}
+                              className="text-sm md:text-base font-light leading-relaxed text-foreground/80 pl-5 relative before:content-['—'] before:absolute before:left-0 before:text-muted-foreground"
+                            >
+                              {h}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
                     </div>
                   </div>
                 </ScrollReveal>
