@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Briefcase, GraduationCap, Award, Languages as LanguagesIcon } from 'lucide-react';
+import { Briefcase, GraduationCap, Award, Languages as LanguagesIcon, Building2, School, BadgeCheck } from 'lucide-react';
 import {
   photographerInfo,
   experiences,
@@ -95,21 +95,26 @@ export default function About() {
                       </p>
                       <p className="text-xs text-muted-foreground mt-1">{exp.location}</p>
                     </div>
-                    <div>
-                      <h3 className="text-xl md:text-2xl font-semibold tracking-tight">
-                        {exp.role}
-                      </h3>
-                      <p className="text-base text-muted-foreground mt-1 mb-4">{exp.company}</p>
-                      <ul className="space-y-2">
-                        {exp.highlights.map((h) => (
-                          <li
-                            key={h}
-                            className="text-sm md:text-base font-light leading-relaxed text-foreground/80 pl-5 relative before:content-['—'] before:absolute before:left-0 before:text-muted-foreground"
-                          >
-                            {h}
-                          </li>
-                        ))}
-                      </ul>
+                    <div className="flex gap-4">
+                      <div className="shrink-0 size-11 rounded-xl border border-border bg-card flex items-center justify-center text-muted-foreground">
+                        <Building2 className="size-5" />
+                      </div>
+                      <div className="flex-1">
+                        <h3 className="text-xl md:text-2xl font-semibold tracking-tight">
+                          {exp.role}
+                        </h3>
+                        <p className="text-base text-muted-foreground mt-1 mb-4">{exp.company}</p>
+                        <ul className="space-y-2">
+                          {exp.highlights.map((h) => (
+                            <li
+                              key={h}
+                              className="text-sm md:text-base font-light leading-relaxed text-foreground/80 pl-5 relative before:content-['—'] before:absolute before:left-0 before:text-muted-foreground"
+                            >
+                              {h}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
                     </div>
                   </div>
                 </ScrollReveal>
@@ -128,12 +133,17 @@ export default function About() {
               </div>
               <div className="space-y-6">
                 {educationItems.map((e) => (
-                  <div key={e.title}>
-                    <p className="text-xs text-muted-foreground font-medium tracking-wide">
-                      {e.period}
-                    </p>
-                    <h3 className="text-lg font-semibold mt-1">{e.title}</h3>
-                    <p className="text-sm text-muted-foreground font-light mt-1">{e.school}</p>
+                  <div key={e.title} className="flex gap-4">
+                    <div className="shrink-0 size-10 rounded-xl border border-border bg-card flex items-center justify-center text-muted-foreground">
+                      <School className="size-5" />
+                    </div>
+                    <div>
+                      <p className="text-xs text-muted-foreground font-medium tracking-wide">
+                        {e.period}
+                      </p>
+                      <h3 className="text-lg font-semibold mt-1">{e.title}</h3>
+                      <p className="text-sm text-muted-foreground font-light mt-1">{e.school}</p>
+                    </div>
                   </div>
                 ))}
               </div>
@@ -146,9 +156,14 @@ export default function About() {
               </div>
               <ul className="space-y-4">
                 {certifications.map((c) => (
-                  <li key={c.label} className="border-l-2 border-border pl-4">
-                    <p className="text-base font-semibold">{c.label}</p>
-                    <p className="text-sm text-muted-foreground font-light">{c.issuer}</p>
+                  <li key={c.label} className="flex gap-4">
+                    <div className="shrink-0 size-10 rounded-xl border border-border bg-card flex items-center justify-center text-muted-foreground">
+                      <BadgeCheck className="size-5" />
+                    </div>
+                    <div>
+                      <p className="text-base font-semibold">{c.label}</p>
+                      <p className="text-sm text-muted-foreground font-light">{c.issuer}</p>
+                    </div>
                   </li>
                 ))}
               </ul>
