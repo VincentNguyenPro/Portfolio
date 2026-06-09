@@ -1,160 +1,217 @@
-import { useState } from 'react';
-import { useParams, Navigate } from 'react-router-dom';
+import { useParams, Link, Navigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Calendar, MapPin, Camera, User } from 'lucide-react';
-import { Separator } from '@/components/ui/separator';
+import { ArrowLeft, ArrowRight, CheckCircle2 } from 'lucide-react';
+import { getProjectBySlug, getProjectNavigation } from '@/data/projects';
 import { SEOHead } from '@/components/seo/SEOHead';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
-import { getProjectBySlug } from '@/data/projects';
-import { ImageWithLightbox } from '@/components/portfolio/ImageWithLightbox';
-import { Lightbox } from '@/components/portfolio/Lightbox';
 
-/**
- * Project detail page with hero image, gallery, and full-screen lightbox
- * Features smooth animations and immersive image viewing experience
- */
 export default function ProjectDetail() {
   const { slug } = useParams<{ slug: string }>();
   const project = slug ? getProjectBySlug(slug) : undefined;
 
-  const [lightboxOpen, setLightboxOpen] = useState(false);
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-
-  // 404 if project not found
   if (!project) {
-    return <Navigate to="/404" replace />;
+    return <Navigate to="/portfolio" replace />;
   }
 
-  const openLightbox = (index: number) => {
-    setCurrentImageIndex(index);
-    setLightboxOpen(true);
-  };
-
-  const closeLightbox = () => {
-    setLightboxOpen(false);
-  };
+  const { previous, next } = getProjectNavigation(project.slug);
 
   return (
     <>
-      <SEOHead
-        title={project.title}
-        description={project.description}
-        image={project.coverImage}
-        type="article"
-      />
-      
-      <div className="min-h-screen">
-        {/* Hero Image - 70vh */}
-      <motion.div
-        className="relative w-full h-[70vh] overflow-hidden bg-muted"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.8 }}
-      >
-        <img
-          src={project.coverImage}
-          alt={project.title}
-          className="w-full h-full object-cover"
-          loading="eager"
-          fetchPriority="high"
-        />
-        {/* Gradient overlay for depth */}
-        <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
-      </motion.div>
+      <SEOHead title={project.title} description={project.summary} type="article" />
 
-      {/* Project Info Section */}
-      <section className="max-w-4xl mx-auto px-6 lg:px-8 py-12 md:py-16">
-        <motion.div
-          className="space-y-8"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+      <article className="min-h-screen">
+        {/* Hero */}
+        <section
+          className={`relative bg-gradient-to-br ${project.coverGradient} text-white px-6 lg:px-8 pt-24 md:pt-32 pb-20 md:pb-28 overflow-hidden`}
         >
-          {/* Title and Category */}
-          <div className="space-y-4">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-light tracking-wide">
-              {project.title}
-            </h1>
-            <div className="flex flex-wrap gap-6 text-sm text-muted-foreground font-light">
-              <div className="flex items-center gap-2">
-                <Calendar className="size-4" />
-                <span>{project.year}</span>
+          <div
+            className="absolute inset-0 opacity-10"
+            style={{
+              backgroundImage:
+                'linear-gradient(rgba(255,255,255,.6) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.6) 1px, transparent 1px)',
+              backgroundSize: '64px 64px',
+            }}
+          />
+          <div className="relative max-w-5xl mx-auto">
+            <Link
+              to="/portfolio"
+              className="inline-flex items-center gap-2 text-sm text-white/80 hover:text-white mb-10 transition-colors"
+            >
+              <ArrowLeft className="size-4" />
+              Tous les projets
+            </Link>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7 }}
+              className="space-y-6"
+            >
+              <div className="flex flex-wrap items-center gap-3 text-xs font-medium tracking-wider uppercase text-white/80">
+                <span>{project.company}</span>
+                <span className="opacity-50">·</span>
+                <span>{project.period}</span>
+                <span className="opacity-50">·</span>
+                <span>{project.role}</span>
               </div>
-              <div className="flex items-center gap-2 capitalize">
-                <span>•</span>
-                <span>{project.category}</span>
-              </div>
-              {project.location && (
-                <>
-                  <span>•</span>
-                  <div className="flex items-center gap-2">
-                    <MapPin className="size-4" />
-                    <span>{project.location}</span>
-                  </div>
-                </>
-              )}
+
+              <h1 className="text-4xl md:text-6xl font-semibold tracking-tight leading-[1.1] max-w-4xl">
+                {project.title}
+              </h1>
+
+              <p className="text-lg md:text-xl text-white/85 font-light leading-relaxed max-w-3xl">
+                {project.summary}
+              </p>
+            </motion.div>
+
+            {/* Metrics */}
+            <div className="grid grid-cols-3 gap-6 mt-12 pt-8 border-t border-white/15">
+              {project.metrics.map((m) => (
+                <div key={m.label}>
+                  <div className="text-2xl md:text-4xl font-semibold tracking-tight">{m.value}</div>
+                  <div className="text-xs md:text-sm text-white/70 mt-1">{m.label}</div>
+                </div>
+              ))}
             </div>
-          </div>
-
-          <Separator />
-
-          {/* Description */}
-          <div className="space-y-4">
-            <p className="text-lg md:text-xl font-light leading-relaxed text-foreground">
-              {project.description}
-            </p>
-          </div>
-
-          {/* Technical Details */}
-          <div className="grid md:grid-cols-2 gap-6 pt-4">
-            {project.camera && (
-              <div className="space-y-2">
-                <div className="flex items-center gap-2 text-sm font-light tracking-wide uppercase text-muted-foreground">
-                  <Camera className="size-4" />
-                  <span>Camera</span>
-                </div>
-                <p className="font-light text-foreground">{project.camera}</p>
-              </div>
-            )}
-            {project.client && (
-              <div className="space-y-2">
-                <div className="flex items-center gap-2 text-sm font-light tracking-wide uppercase text-muted-foreground">
-                  <User className="size-4" />
-                  <span>Client</span>
-                </div>
-                <p className="font-light text-foreground">{project.client}</p>
-              </div>
-            )}
-          </div>
-        </motion.div>
-      </section>
-
-        {/* Image Gallery - Edge to edge */}
-        <section className="py-12 md:py-16">
-          <div className="space-y-8 md:space-y-12">
-            {project.images.map((image, index) => (
-              <ScrollReveal key={image.id} delay={index * 0.1}>
-                <ImageWithLightbox
-                  image={image}
-                  onClick={() => openLightbox(index)}
-                  priority={index === 0}
-                  index={0}
-                  className="w-full"
-                />
-              </ScrollReveal>
-            ))}
           </div>
         </section>
 
-        {/* Lightbox */}
-        <Lightbox
-          images={project.images}
-          currentIndex={currentImageIndex}
-          isOpen={lightboxOpen}
-          onClose={closeLightbox}
-          onNavigate={setCurrentImageIndex}
-        />
-      </div>
+        {/* Body */}
+        <div className="px-6 lg:px-8 py-20 md:py-28">
+          <div className="max-w-3xl mx-auto space-y-16">
+            {project.scope && (
+              <ScrollReveal>
+                <div className="rounded-2xl border border-border bg-muted/30 p-6">
+                  <p className="text-xs font-semibold tracking-[0.2em] uppercase text-muted-foreground mb-2">
+                    Périmètre
+                  </p>
+                  <p className="text-base font-light">{project.scope}</p>
+                </div>
+              </ScrollReveal>
+            )}
+
+            <ScrollReveal>
+              <section className="space-y-4">
+                <h2 className="text-sm font-semibold tracking-[0.2em] uppercase text-muted-foreground">
+                  Contexte
+                </h2>
+                <p className="text-lg leading-relaxed text-foreground/85 font-light">
+                  {project.context}
+                </p>
+              </section>
+            </ScrollReveal>
+
+            <ScrollReveal>
+              <section className="space-y-4">
+                <h2 className="text-sm font-semibold tracking-[0.2em] uppercase text-muted-foreground">
+                  Problématique
+                </h2>
+                <p className="text-2xl md:text-3xl font-light leading-snug text-foreground">
+                  {project.problem}
+                </p>
+              </section>
+            </ScrollReveal>
+
+            <ScrollReveal>
+              <section className="space-y-8">
+                <h2 className="text-sm font-semibold tracking-[0.2em] uppercase text-muted-foreground">
+                  Démarche
+                </h2>
+                <ol className="space-y-6">
+                  {project.approach.map((step, i) => (
+                    <li key={step.heading} className="grid grid-cols-[auto_1fr] gap-5">
+                      <div className="flex flex-col items-center">
+                        <div className="size-9 rounded-full border border-border bg-card flex items-center justify-center text-sm font-semibold">
+                          {String(i + 1).padStart(2, '0')}
+                        </div>
+                        {i < project.approach.length - 1 && (
+                          <div className="w-px flex-1 bg-border mt-2" />
+                        )}
+                      </div>
+                      <div className="pb-2">
+                        <h3 className="text-lg font-semibold tracking-tight mb-2">
+                          {step.heading}
+                        </h3>
+                        <p className="text-base text-foreground/75 font-light leading-relaxed">
+                          {step.body}
+                        </p>
+                      </div>
+                    </li>
+                  ))}
+                </ol>
+              </section>
+            </ScrollReveal>
+
+            <ScrollReveal>
+              <section className="space-y-4 rounded-2xl bg-foreground text-background p-8 md:p-10">
+                <h2 className="text-sm font-semibold tracking-[0.2em] uppercase opacity-70">
+                  Résultats
+                </h2>
+                <ul className="space-y-3">
+                  {project.results.map((r) => (
+                    <li key={r} className="flex items-start gap-3 text-lg font-light">
+                      <CheckCircle2 className="size-5 mt-1 shrink-0 opacity-80" />
+                      <span>{r}</span>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            </ScrollReveal>
+
+            <ScrollReveal>
+              <section className="space-y-4">
+                <h2 className="text-sm font-semibold tracking-[0.2em] uppercase text-muted-foreground">
+                  Stack & méthodes
+                </h2>
+                <ul className="flex flex-wrap gap-2">
+                  {project.stack.map((s) => (
+                    <li
+                      key={s}
+                      className="text-sm font-medium px-3 py-1.5 rounded-full bg-muted text-foreground"
+                    >
+                      {s}
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            </ScrollReveal>
+          </div>
+        </div>
+
+        {/* Navigation */}
+        <nav className="border-t border-border px-6 lg:px-8 py-10">
+          <div className="max-w-5xl mx-auto grid sm:grid-cols-2 gap-4">
+            {previous ? (
+              <Link
+                to={`/project/${previous.slug}`}
+                className="group rounded-2xl border border-border p-5 hover:bg-muted/40 transition-colors"
+              >
+                <div className="flex items-center gap-2 text-xs text-muted-foreground mb-2">
+                  <ArrowLeft className="size-3" />
+                  Projet précédent
+                </div>
+                <div className="font-semibold tracking-tight">{previous.title}</div>
+              </Link>
+            ) : (
+              <div />
+            )}
+            {next ? (
+              <Link
+                to={`/project/${next.slug}`}
+                className="group rounded-2xl border border-border p-5 hover:bg-muted/40 transition-colors sm:text-right"
+              >
+                <div className="flex items-center gap-2 text-xs text-muted-foreground mb-2 sm:justify-end">
+                  Projet suivant
+                  <ArrowRight className="size-3" />
+                </div>
+                <div className="font-semibold tracking-tight">{next.title}</div>
+              </Link>
+            ) : (
+              <div />
+            )}
+          </div>
+        </nav>
+      </article>
     </>
   );
 }
