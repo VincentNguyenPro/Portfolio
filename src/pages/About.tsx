@@ -134,9 +134,8 @@ export default function About() {
                       <p className="text-xs text-muted-foreground mt-1">{exp.location}</p>
                     </div>
                     <div className="flex gap-4">
-                      <div className="shrink-0 size-11 rounded-xl border border-border bg-card flex items-center justify-center text-muted-foreground">
-                        <Building2 className="size-5" />
-                      </div>
+                      <LogoBadge text={exp.company} fallback={<Building2 className="size-5" />} />
+
                       <div className="flex-1">
                         <h3 className="text-xl md:text-2xl font-semibold tracking-tight">
                           {exp.role}
