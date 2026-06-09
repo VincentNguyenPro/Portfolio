@@ -30,7 +30,8 @@ export interface Project {
   metrics: ProjectMetric[];
   stack: string[];
   scope?: string;
-  coverGradient: string; // tailwind gradient classes for cover
+  coverGradient: string; // tailwind gradient classes for cover (fallback)
+  coverImage?: string; // optional cover image URL — overrides gradient on cards
 }
 
 export interface ExperienceItem {
