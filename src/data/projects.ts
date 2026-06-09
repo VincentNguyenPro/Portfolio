@@ -2,6 +2,7 @@ import type { Project } from '@/types';
 import blablacarCover from '@/assets/blablacar-cover.jpg';
 import bartleCover from '@/assets/bartle-cover.jpg';
 import renaultSupplyCover from '@/assets/renault-supply-cover.jpg';
+import renaultCostingCover from '@/assets/renault-costing-cover.jpg';
 
 export const projects: Project[] = [
   {
@@ -179,6 +180,7 @@ export const projects: Project[] = [
     stack: ['SAP', 'Excel', 'SQL', 'Cycle en V'],
     scope: 'Budget 10 M€ · 1 Tech Lead + 3 développeurs · +250 ETP dans 12 pays',
     coverGradient: 'from-slate-700 via-slate-900 to-zinc-900',
+    coverImage: renaultCostingCover,
   },
 ];
 
