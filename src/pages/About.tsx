@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Briefcase, GraduationCap, Award, Languages as LanguagesIcon } from 'lucide-react';
+import { Briefcase, GraduationCap, Award, Languages as LanguagesIcon, Building2, School, BadgeCheck } from 'lucide-react';
 import {
   photographerInfo,
   experiences,
