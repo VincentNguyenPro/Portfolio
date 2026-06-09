@@ -136,6 +136,7 @@ export const projects: Project[] = [
     stack: ['SAP', 'Lumira', 'Power BI', 'Jira', 'Scrum'],
     scope: 'Budget 8 M€ · 1 Tech Lead + 3 développeurs · +25 ETP utilisateurs monde',
     coverGradient: 'from-rose-500 via-orange-500 to-amber-500',
+    coverImage: renaultSupplyCover,
   },
   {
     id: '4',
