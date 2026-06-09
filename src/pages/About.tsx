@@ -193,9 +193,8 @@ export default function About() {
               <ul className="space-y-4">
                 {certifications.map((c) => (
                   <li key={c.label} className="flex gap-4">
-                    <div className="shrink-0 size-10 rounded-xl border border-border bg-card flex items-center justify-center text-muted-foreground">
-                      <BadgeCheck className="size-5" />
-                    </div>
+                    <LogoBadge text={`${c.label} ${c.issuer}`} fallback={<BadgeCheck className="size-5" />} size={10} />
+
                     <div>
                       <p className="text-base font-semibold">{c.label}</p>
                       <p className="text-sm text-muted-foreground font-light">{c.issuer}</p>
