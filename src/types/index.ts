@@ -1,32 +1,54 @@
 /**
- * Core TypeScript interfaces for Frame Portfolio
- * Based on SPECIFICATION.md data model requirements
+ * Core TypeScript interfaces for Vincent Nguyen's Product Manager portfolio
  */
 
-export type ProjectCategory = 'portraits' | 'landscapes' | 'editorial' | 'architecture' | 'documentary';
+export type ProjectCategory = 'product' | 'transformation' | 'finance' | 'mobile';
 
-export type AspectRatio = 'portrait' | 'landscape' | 'square';
+export interface ProjectMetric {
+  value: string;
+  label: string;
+}
 
-export interface ProjectImage {
-  id: string;
-  src: string;
-  alt: string;
-  aspectRatio: AspectRatio;
-  caption?: string;
+export interface CaseStudySection {
+  heading: string;
+  body: string;
 }
 
 export interface Project {
   id: string;
-  title: string;
-  category: ProjectCategory;
-  year: string;
-  coverImage: string;
-  images: ProjectImage[];
-  description: string;
-  client?: string;
-  camera?: string;
-  location?: string;
   slug: string;
+  title: string;
+  company: string;
+  role: string;
+  period: string;
+  category: ProjectCategory;
+  summary: string;
+  context: string;
+  problem: string;
+  approach: CaseStudySection[];
+  results: string[];
+  metrics: ProjectMetric[];
+  stack: string[];
+  scope?: string;
+  coverGradient: string; // tailwind gradient classes for cover
+}
+
+export interface ExperienceItem {
+  company: string;
+  role: string;
+  period: string;
+  location: string;
+  highlights: string[];
+}
+
+export interface SkillGroup {
+  title: string;
+  items: string[];
+}
+
+export interface Certification {
+  label: string;
+  issuer: string;
 }
 
 export interface PhotographerInfo {
@@ -35,7 +57,7 @@ export interface PhotographerInfo {
   heroIntroduction: string;
   biography: string;
   approach: string;
-  awards: string[];
+  awards: string[]; // used for certifications
   clients: string[];
   education: string;
   location: string;
@@ -43,8 +65,8 @@ export interface PhotographerInfo {
   phone: string;
   availability: string;
   socialLinks: {
-    instagram?: string;
     linkedin?: string;
+    instagram?: string;
     behance?: string;
   };
   portraitImage: string;
