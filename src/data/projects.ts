@@ -1,4 +1,5 @@
 import type { Project } from '@/types';
+import blablacarCover from '@/assets/blablacar-cover.jpg';
 
 export const projects: Project[] = [
   {
@@ -44,6 +45,7 @@ export const projects: Project[] = [
     ],
     stack: ['Figma', 'Notion', 'User testing', 'SQL'],
     coverGradient: 'from-sky-500 via-indigo-500 to-violet-600',
+    coverImage: blablacarCover,
   },
   {
     id: '2',
