@@ -9,6 +9,44 @@ import {
 } from '@/data/photographer';
 import { SEOHead } from '@/components/seo/SEOHead';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
+import anthropicLogo from '@/assets/logos/anthropic.png.asset.json';
+import bartleLogo from '@/assets/logos/bartle.jpeg.asset.json';
+import fInitiativesLogo from '@/assets/logos/f-initiatives.webp.asset.json';
+import hecLogo from '@/assets/logos/hec.png.asset.json';
+import microsoftLogo from '@/assets/logos/microsoft.png.asset.json';
+import noeLogo from '@/assets/logos/noe.png.asset.json';
+import renaultLogo from '@/assets/logos/renault.svg.asset.json';
+import scrumLogo from '@/assets/logos/scrum.svg.asset.json';
+import supmecaLogo from '@/assets/logos/supmeca.png.asset.json';
+
+const matchLogo = (text: string): string | null => {
+  const t = text.toLowerCase();
+  if (t.includes('bartle')) return bartleLogo.url;
+  if (t.includes('renault')) return renaultLogo.url;
+  if (t.includes('blablacar')) return noeLogo.url; // formation via Noé
+  if (t.includes('f-initiatives') || t.includes('f initiatives')) return fInitiativesLogo.url;
+  if (t.includes('noé') || t.includes('noe')) return noeLogo.url;
+  if (t.includes('hec')) return hecLogo.url;
+  if (t.includes('supmeca') || t.includes('isae')) return supmecaLogo.url;
+  if (t.includes('microsoft')) return microsoftLogo.url;
+  if (t.includes('scrum')) return scrumLogo.url;
+  if (t.includes('anthropic') || t.includes('claude')) return anthropicLogo.url;
+  return null;
+};
+
+const LogoBadge = ({ text, fallback, size = 11 }: { text: string; fallback: React.ReactNode; size?: 10 | 11 }) => {
+  const logo = matchLogo(text);
+  const sizeClass = size === 10 ? 'size-10' : 'size-11';
+  return (
+    <div className={`shrink-0 ${sizeClass} rounded-xl border border-border bg-white flex items-center justify-center overflow-hidden text-muted-foreground`}>
+      {logo ? (
+        <img src={logo} alt="" className="w-full h-full object-contain p-1.5" />
+      ) : (
+        fallback
+      )}
+    </div>
+  );
+};
 
 export default function About() {
   return (
@@ -96,9 +134,8 @@ export default function About() {
                       <p className="text-xs text-muted-foreground mt-1">{exp.location}</p>
                     </div>
                     <div className="flex gap-4">
-                      <div className="shrink-0 size-11 rounded-xl border border-border bg-card flex items-center justify-center text-muted-foreground">
-                        <Building2 className="size-5" />
-                      </div>
+                      <LogoBadge text={exp.company} fallback={<Building2 className="size-5" />} />
+
                       <div className="flex-1">
                         <h3 className="text-xl md:text-2xl font-semibold tracking-tight">
                           {exp.role}
@@ -134,9 +171,8 @@ export default function About() {
               <div className="space-y-6">
                 {educationItems.map((e) => (
                   <div key={e.title} className="flex gap-4">
-                    <div className="shrink-0 size-10 rounded-xl border border-border bg-card flex items-center justify-center text-muted-foreground">
-                      <School className="size-5" />
-                    </div>
+                    <LogoBadge text={e.school} fallback={<School className="size-5" />} size={10} />
+
                     <div>
                       <p className="text-xs text-muted-foreground font-medium tracking-wide">
                         {e.period}
@@ -157,9 +193,8 @@ export default function About() {
               <ul className="space-y-4">
                 {certifications.map((c) => (
                   <li key={c.label} className="flex gap-4">
-                    <div className="shrink-0 size-10 rounded-xl border border-border bg-card flex items-center justify-center text-muted-foreground">
-                      <BadgeCheck className="size-5" />
-                    </div>
+                    <LogoBadge text={`${c.label} ${c.issuer}`} fallback={<BadgeCheck className="size-5" />} size={10} />
+
                     <div>
                       <p className="text-base font-semibold">{c.label}</p>
                       <p className="text-sm text-muted-foreground font-light">{c.issuer}</p>
