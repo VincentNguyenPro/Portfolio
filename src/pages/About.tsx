@@ -171,9 +171,8 @@ export default function About() {
               <div className="space-y-6">
                 {educationItems.map((e) => (
                   <div key={e.title} className="flex gap-4">
-                    <div className="shrink-0 size-10 rounded-xl border border-border bg-card flex items-center justify-center text-muted-foreground">
-                      <School className="size-5" />
-                    </div>
+                    <LogoBadge text={e.school} fallback={<School className="size-5" />} size={10} />
+
                     <div>
                       <p className="text-xs text-muted-foreground font-medium tracking-wide">
                         {e.period}
