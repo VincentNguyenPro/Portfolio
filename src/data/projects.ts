@@ -1,5 +1,6 @@
 import type { Project } from '@/types';
 import blablacarCover from '@/assets/blablacar-cover.jpg';
+import bartleCover from '@/assets/bartle-cover.jpg';
 
 export const projects: Project[] = [
   {
@@ -91,6 +92,7 @@ export const projects: Project[] = [
     ],
     stack: ['Power BI', 'Excel', 'SharePoint', 'Notion', 'Miro'],
     coverGradient: 'from-emerald-500 via-teal-500 to-cyan-600',
+    coverImage: bartleCover,
   },
   {
     id: '3',
