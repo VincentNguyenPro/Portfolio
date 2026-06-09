@@ -92,6 +92,7 @@ export const projects: Project[] = [
     ],
     stack: ['Power BI', 'Excel', 'SharePoint', 'Notion', 'Miro'],
     coverGradient: 'from-emerald-500 via-teal-500 to-cyan-600',
+    coverImage: bartleCover,
   },
   {
     id: '3',
