@@ -45,16 +45,29 @@ export default function Portfolio() {
                 >
                   <div className="grid md:grid-cols-[1fr_1.2fr]">
                     <div
-                      className={`relative aspect-[4/3] md:aspect-auto bg-gradient-to-br ${project.coverGradient} p-8 flex flex-col justify-between text-white`}
+                      className={`relative aspect-[4/3] md:aspect-auto overflow-hidden ${
+                        project.coverImage ? 'bg-muted' : `bg-gradient-to-br ${project.coverGradient}`
+                      } p-8 flex flex-col justify-between text-white`}
                     >
-                      <div className="flex items-center gap-3">
+                      {project.coverImage && (
+                        <>
+                          <img
+                            src={project.coverImage}
+                            alt={`${project.company} — ${project.title}`}
+                            loading="lazy"
+                            className="absolute inset-0 w-full h-full object-cover"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-black/20" />
+                        </>
+                      )}
+                      <div className="relative flex items-center gap-3">
                         <span className="text-xs font-medium tracking-wider uppercase opacity-90">
                           {project.company}
                         </span>
                         <span className="text-xs opacity-60">·</span>
                         <span className="text-xs opacity-80">{project.period}</span>
                       </div>
-                      <div>
+                      <div className="relative">
                         <h2 className="text-3xl md:text-4xl font-semibold leading-tight mb-3">
                           {project.title}
                         </h2>
