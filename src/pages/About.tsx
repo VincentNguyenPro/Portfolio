@@ -168,7 +168,7 @@ export default function About() {
               <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-6">
                 Un fil rouge cohérent
               </h2>
-              <p className="text-base md:text-lg font-light leading-relaxed text-foreground/85 mb-10 max-w-3xl">
+              <p className="text-base md:text-lg font-light leading-relaxed text-foreground/85 mb-10">
                 De l'ingénierie au Product Management, un fil rouge cohérent : <strong className="font-semibold text-foreground">créer de la valeur à travers des produits digitaux utiles</strong>.
               </p>
             </ScrollReveal>
