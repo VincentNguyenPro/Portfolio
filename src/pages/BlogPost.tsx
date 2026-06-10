@@ -105,12 +105,27 @@ export default function BlogPost() {
                 )}
                 {section.image && (
                   <figure className="my-4">
-                    <img
-                      src={section.image.url}
-                      alt={section.image.alt}
-                      className="w-full rounded-xl border border-border"
-                      loading="lazy"
-                    />
+                    {section.image.aspectRatio ? (
+                      <div
+                        className="w-full overflow-hidden rounded-xl border border-border bg-muted"
+                        style={{ aspectRatio: section.image.aspectRatio }}
+                      >
+                        <img
+                          src={section.image.url}
+                          alt={section.image.alt}
+                          className="w-full h-full object-cover"
+                          style={{ objectPosition: section.image.objectPosition ?? 'center' }}
+                          loading="lazy"
+                        />
+                      </div>
+                    ) : (
+                      <img
+                        src={section.image.url}
+                        alt={section.image.alt}
+                        className="w-full rounded-xl border border-border"
+                        loading="lazy"
+                      />
+                    )}
                     {section.image.caption && (
                       <figcaption className="mt-2 text-sm text-muted-foreground text-center">
                         {section.image.caption}
