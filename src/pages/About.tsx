@@ -187,7 +187,7 @@ export default function About() {
                 De l'ingénierie au Product Management, un fil rouge cohérent : <strong className="font-semibold text-foreground">créer de la valeur à travers des produits digitaux utiles</strong>.
               </p>
             </ScrollReveal>
-            <div className="grid md:grid-cols-[1.4fr_1fr] gap-10 lg:gap-16 items-start">
+            <div className="grid md:grid-cols-[1.4fr_1fr] gap-10 lg:gap-16 items-center">
               <ScrollReveal>
                 <ul className="divide-y divide-border">
                   {experiences.map((exp, i) => (
