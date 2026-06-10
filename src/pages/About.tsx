@@ -60,7 +60,7 @@ export default function About() {
       <div className="min-h-screen">
         {/* Header */}
         <section className="px-6 lg:px-8 pt-16 pb-12 md:pt-24 md:pb-16 border-b border-border">
-          <div className="max-w-6xl mx-auto grid md:grid-cols-[1.5fr_1fr] gap-10 lg:gap-16 items-end">
+          <div className="max-w-6xl mx-auto grid md:grid-cols-[1.5fr_1fr] gap-10 lg:gap-16 items-start">
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
@@ -83,7 +83,7 @@ export default function About() {
               initial={{ opacity: 0, scale: 0.96 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.7, delay: 0.1 }}
-              className="relative"
+              className="relative md:mt-36"
             >
               <div className="absolute -inset-3 rounded-3xl bg-gradient-to-br from-indigo-500/20 via-violet-500/15 to-emerald-500/15 blur-2xl" />
               <div className="relative aspect-[4/5] rounded-3xl overflow-hidden border border-border bg-muted">
