@@ -60,7 +60,7 @@ export default function About() {
       <div className="min-h-screen">
         {/* Header */}
         <section className="px-6 lg:px-8 pt-16 pb-12 md:pt-24 md:pb-16 border-b border-border">
-          <div className="max-w-6xl mx-auto grid md:grid-cols-[1.5fr_1fr] gap-10 lg:gap-16 items-start">
+          <div className="max-w-6xl mx-auto grid md:grid-cols-[1.5fr_1fr] gap-10 lg:gap-16 items-stretch">
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
@@ -71,7 +71,7 @@ export default function About() {
                 À propos
               </p>
               <h1 className="text-5xl md:text-6xl font-semibold tracking-tight">
-                Parcours
+                Vincent Nguyen
               </h1>
               <div className="space-y-4 text-lg text-muted-foreground font-light leading-relaxed">
                 {photographerInfo.biography.split('\n\n').map((p, i) => (
@@ -83,15 +83,17 @@ export default function About() {
               initial={{ opacity: 0, scale: 0.96 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.7, delay: 0.1 }}
-              className="relative md:mt-36"
+              className="relative h-full flex justify-center md:justify-end"
             >
-              <div className="absolute -inset-3 rounded-3xl bg-gradient-to-br from-indigo-500/20 via-violet-500/15 to-emerald-500/15 blur-2xl" />
-              <div className="relative aspect-[4/5] rounded-3xl overflow-hidden border border-border bg-muted">
-                <img
-                  src={photographerInfo.portraitImage}
-                  alt={photographerInfo.name}
-                  className="w-full h-full object-cover object-top grayscale"
-                />
+              <div className="relative h-full aspect-[4/5]">
+                <div className="absolute -inset-3 rounded-3xl bg-gradient-to-br from-indigo-500/20 via-violet-500/15 to-emerald-500/15 blur-2xl" />
+                <div className="relative h-full w-full rounded-3xl overflow-hidden border border-border bg-muted">
+                  <img
+                    src={photographerInfo.portraitImage}
+                    alt={photographerInfo.name}
+                    className="w-full h-full object-cover object-top grayscale"
+                  />
+                </div>
               </div>
             </motion.div>
           </div>
