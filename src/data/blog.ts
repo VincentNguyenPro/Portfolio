@@ -8,6 +8,10 @@ import iaDemainCover from '@/assets/blog/ia-demain-cover.webp.asset.json';
 import iaDemainRoom from '@/assets/blog/ia-demain-room.jpeg.asset.json';
 import lovableCover from '@/assets/blog/lovable-cover.avif.asset.json';
 import lovableRoom from '@/assets/blog/lovable-room.jpeg.asset.json';
+import lovableTalk from '@/assets/blog/lovable-talk.jpeg.asset.json';
+import lovableGroups from '@/assets/blog/lovable-groups.jpeg.asset.json';
+import claudeCodeCover from '@/assets/blog/claude-code-cover.webp.asset.json';
+import noePmPromo from '@/assets/blog/noe-pm-promo.jpeg.asset.json';
 
 export interface BlogSection {
   heading?: string;
@@ -22,9 +26,10 @@ export interface BlogPost {
   title: string;
   description: string;
   date: string;
-  order: number; // for sorting
+  eventDate?: string; // exact date JJ/MM/AAAA
+  order: number;
   category: 'Product' | 'IA' | 'Data' | 'Formation' | 'Événement';
-  url?: string; // external reference
+  url?: string;
   cover: { url: string; alt: string };
   sections: BlogSection[];
 }
@@ -33,18 +38,25 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'webshop-mollie-codex',
     order: 1,
-    title: 'Build Your Webshop with Mollie & Codex',
+    title: 'Construire son webshop avec Mollie & Codex',
     description:
-      "Atelier Le Wagon : construire une boutique en ligne fonctionnelle en s'appuyant sur Codex et Mollie pour les paiements — démo end-to-end et lessons learned.",
+      "Atelier Le Wagon : passer d'une idée e-commerce à une boutique en ligne fonctionnelle, encaissant de vrais paiements, en quelques heures et sans équipe tech.",
     date: 'Juin 2026',
+    eventDate: '12/06/2026',
     category: 'Product',
     url: 'https://luma.com/0ivqgaik?tk=hNsezQ',
-    cover: { url: webshopCover.url, alt: 'Build Your Webshop with Mollie & Codex' },
+    cover: { url: webshopCover.url, alt: 'Atelier Webshop avec Mollie & Codex' },
     sections: [
       {
         paragraphs: [
-          "Atelier organisé par Le Wagon autour d'un cas concret : construire un webshop fonctionnel de bout en bout, en combinant Codex pour générer le code et Mollie pour gérer les paiements.",
-          "L'objectif : montrer qu'on peut passer d'une idée e-commerce à un MVP encaissant de vrais paiements en quelques heures, sans monter une équipe tech complète.",
+          "Je suis arrivé au Wagon avec une question simple en tête : est-ce qu'on peut vraiment lancer un webshop en une soirée, sans monter une équipe tech ? Spoiler : oui, et c'est même devenu assez troublant de voir à quelle vitesse une idée prend forme.",
+          "On a commencé par poser le concept de boutique, choisir un catalogue, puis confier la construction du site à Codex. Pendant qu'il assemblait les pages produit et le tunnel d'achat, j'ai branché Mollie pour gérer les paiements : carte, virement, Apple Pay, le tout en quelques clics.",
+          "En fin d'atelier, j'avais une boutique en ligne capable d'encaisser un vrai paiement de test, avec un design soigné et un back-office propre. La leçon que je retiens : aujourd'hui, ce qui sépare une idée e-commerce d'un MVP qui vend, ce ne sont plus les compétences techniques, c'est la clarté du besoin et la rigueur du parcours utilisateur.",
+        ],
+      },
+      {
+        paragraphs: [
+          "📅 Date de l'événement : 12/06/2026",
         ],
       },
     ],
@@ -54,39 +66,42 @@ export const blogPosts: BlogPost[] = [
     order: 2,
     title: 'Hackathon Lovable chez Join Lion',
     description:
-      "48h pour prototyper une application from scratch avec Lovable : ce que j'ai appris du build IA-first, du time-to-MVP et du nouveau rôle du PM dans la delivery.",
+      "Une soirée à la Jungle IA pour transformer une idée en application en 3h avec Lovable, entourée de 70 personnes qui se lancent en même temps.",
     date: 'Juin 2026',
+    eventDate: '05/06/2026',
     category: 'Événement',
     url: 'https://luma.com/jybxjxu4?locale=fr&tk=Aimmjv',
-    cover: { url: lovableCover.url, alt: 'De l’idée à l’app en 3h avec Lovable — Meetup IA Lion x Paatch' },
+    cover: { url: lovableCover.url, alt: 'Meetup Lovable x Paatch — Jungle IA' },
     sections: [
       {
         paragraphs: [
-          "On n'avance pas en théorisant une idée pendant des mois. On avance en se lançant.",
-          "Concrètement : si tu rêves de lancer une app ou un site sans savoir coder, ça passe par ouvrir un outil IA, commencer à prompter, à converser avec, à bricoler ta vraie idée. C'est souvent le moment que beaucoup repoussent encore.",
-          "Avec la Jungle IA 🌴, on offre à chacun un endroit pour franchir ce pas : un cadre, un outil, des facilitateurs experts à côté de soi pour accompagner. Et 70 autres personnes qui se lancent en même temps.",
+          "Quand je suis arrivé à la Jungle IA pour l'édition spéciale Lovable, j'avais cette sensation que je connais bien : celle d'être à deux doigts de me lancer sur une idée, mais de toujours trouver une bonne raison de la repousser. La promesse de la soirée était simple — ouvrir Lovable, prompter, bricoler une vraie idée, et voir où ça mène en quelques heures.",
+        ],
+      },
+      {
+        image: { url: lovableTalk.url, alt: 'Présentation d’un projet Lovable pendant le meetup' },
+      },
+      {
+        paragraphs: [
+          "Très vite, la salle s'est remplie. Une soixantaine de personnes, chacune avec son idée, et autour de nous des facilitateurs prêts à débloquer le moindre bug ou la moindre hésitation sur un prompt. L'énergie était dingue : on entendait les claviers cliqueter, des éclats de rire à chaque feature qui fonctionnait, des « ah mais en fait c'est possible ?! » toutes les dix minutes.",
+          "Ce qui m'a marqué, c'est de voir des profils non-techs sortir, en trois heures, un prototype publié, cliquable, presque crédible. Le rôle du PM change complètement dans ce contexte : on n'écrit plus une spec pour quelqu'un d'autre, on dialogue avec un agent qui construit en direct et on apprend en regardant ce qui sort de l'écran.",
         ],
       },
       {
         image: { url: lovableRoom.url, alt: 'Salle pleine pendant le meetup Lovable x Paatch' },
       },
       {
-        heading: 'Une édition spéciale Lovable, énergie au rendez-vous',
         paragraphs: [
-          "Hier soir, c'était l'édition spéciale Lovable. Quelques retours à chaud des participants :",
-        ],
-        bullets: [
-          "🩷 « J'adore les hackathons ! L'ambiance, les projets, l'endroit… »",
-          "🩷 « Le format, la compétence des formateurs, la gestion des temps, la qualité de l'accompagnement… Tout était génial ! »",
-          "🩷 « Un atelier interactif et très instructif. Ça m'a permis d'avoir des leviers actionnables derrière, j'en suis très content. »",
-          "🩷 « J'ai beaucoup appris et même découvert un outil que je ne connaissais pas. »",
+          "En fin de soirée, chaque groupe est venu présenter son projet. Six équipes, six univers complètement différents, et le même fil rouge : on était parti d'une page blanche, et on terminait avec quelque chose à montrer.",
         ],
       },
       {
+        image: { url: lovableGroups.url, alt: 'Restitution finale des projets — 6 groupes au meetup Lovable' },
+      },
+      {
         paragraphs: [
-          "Voir que ces meetups apportent de la vraie valeur à chaque fois est un vrai plaisir.",
-          "Merci à Lovable, à Paatch et à tous les facilitateurs. Bravo aux participants venus se challenger — peut-être qu'on en verra certains naître bientôt 😉",
-          "Rendez-vous en septembre pour la prochaine édition. 🦁",
+          "Ce que je retiens : on n'avance pas en théorisant une idée pendant des mois, on avance en l'ouvrant, en la testant, en acceptant que la première version soit imparfaite. Merci à Lovable, à Paatch et à toute l'équipe d'avoir créé cet espace. J'y retournerai.",
+          "📅 Date de l'événement : 05/06/2026",
         ],
       },
     ],
@@ -96,35 +111,33 @@ export const blogPosts: BlogPost[] = [
     order: 3,
     title: "Construire l'IA de demain : défis et opportunités",
     description:
-      "Table ronde Le Wagon x Women in Tech France : pourquoi l'IA est avant tout une révolution de société et comment construire une IA inclusive, représentative et équitable.",
+      "Table ronde Le Wagon x Women in Tech France sur l'IA comme révolution de société : comment construire une IA inclusive, représentative et équitable.",
     date: 'Juin 2026',
+    eventDate: '03/06/2026',
     category: 'IA',
     url: 'https://www.lewagon.com/fr/events/construire-l-ia-de-demain-defis-et-opportunites-SsjIsz',
     cover: { url: iaDemainCover.url, alt: "Construire l'IA de demain — Défis et Opportunités" },
     sections: [
       {
         paragraphs: [
-          "Ravi d'avoir participé à la table ronde organisée par Le Wagon autour d'un sujet qui façonne déjà notre avenir : l'IA ✨",
-          "Un immense merci à Jasky Sor pour l'organisation, ainsi qu'à mes brillant·e·s co-intervenant·e·s Zena El Kurdi, Jaafar Elalamy et Héloïse Bertoux, avec qui j'ai eu le plaisir d'échanger sur les défis et les opportunités de cette révolution sans précédent.",
+          "J'ai eu la chance de participer à la table ronde organisée par Le Wagon avec Women in Tech France, sur un sujet qui me tient à cœur : à quoi va ressembler l'IA de demain, et qui sera en train de la construire ? Aux côtés de Zena El Kurdi, Jaafar Elalamy et Héloïse Bertoux, on a passé une soirée à confronter nos expériences — startup, grand groupe, formation, terrain — autour de cette question.",
         ],
       },
       {
         image: { url: iaDemainRoom.url, alt: 'Table ronde Construire l’IA de demain au Wagon Paris' },
       },
       {
-        heading: 'Une conviction est ressortie de nos échanges',
         paragraphs: [
-          "L'IA n'est pas seulement une révolution technologique. C'est une révolution de société. Elle transformera nos métiers, notre accès à la connaissance, notre système éducatif, notre santé, nos services publics, nos économies et même nos relations internationales.",
-          "La question n'est plus de savoir si l'IA va transformer nos sociétés. La vraie question est : comment allons-nous accompagner cette transformation ?",
-          "Car l'IA ne remplacera pas les humains. En revanche, les professionnels qui sauront utiliser l'IA transformeront profondément les organisations de demain.",
+          "Une conviction est revenue plusieurs fois dans nos échanges : l'IA n'est pas seulement une révolution technologique, c'est une révolution de société. Elle va transformer nos métiers, notre accès à la connaissance, l'école, la santé, les services publics, et jusqu'à nos relations internationales. La vraie question n'est plus de savoir si elle va nous transformer, mais comment on choisit d'accompagner cette transformation.",
+          "J'ai aussi partagé une intuition que je porte depuis quelques mois : l'IA ne remplacera pas les humains, mais les professionnels qui sauront s'en servir vont profondément transformer les organisations dans lesquelles ils travaillent. On le voit déjà côté produit, côté finance, côté ops — la barre se déplace.",
         ],
       },
       {
-        heading: 'Une responsabilité collective',
         paragraphs: [
-          "Nous avons donc une responsabilité collective : construire une IA plus inclusive, plus représentative et plus équitable.",
-          "L'IA est aussi devenue un enjeu stratégique pour l'Europe, au même titre que l'énergie ou la défense.",
-          "L'avenir de l'IA ne doit pas être construit par quelques-uns pour tous, mais par tous pour tous. 🙌",
+          "Le débat le plus intense a porté sur notre responsabilité collective. Si on laisse les biais des données d'aujourd'hui dicter les modèles de demain, on va figer dans la machine des inégalités qu'on essaie de corriger depuis vingt ans. Construire une IA inclusive, représentative et équitable, ce n'est pas une option : c'est une condition pour que cette technologie tienne ses promesses.",
+          "On a aussi évoqué l'enjeu européen. L'IA est devenue stratégique au même titre que l'énergie ou la défense, et l'Europe a une carte à jouer si elle assume un modèle qui lui ressemble — exigeant sur les données personnelles, attentif à l'impact social, ambitieux côté recherche.",
+          "Je suis ressorti de cette soirée avec une certitude : l'avenir de l'IA ne doit pas être construit par quelques-uns pour tous, mais par tous pour tous.",
+          "📅 Date de l'événement : 03/06/2026",
         ],
       },
     ],
@@ -134,58 +147,43 @@ export const blogPosts: BlogPost[] = [
     order: 4,
     title: 'Formation Claude Code chez Noé',
     description:
-      "Quatre modules pour transformer la pratique des Product Managers avec Claude Code : MCP, code, prototype publié en ligne, et système de travail personnel et collectif augmenté par l'IA.",
+      "Quatre semaines pour intégrer Claude Code dans ma pratique de PM : du premier prompt maîtrisé au prototype publié en ligne, jusqu'à un vrai système de travail augmenté.",
     date: 'Mai 2026',
+    eventDate: '23/05/2026',
     category: 'IA',
     url: 'https://www.noe.pm/claude-code-pour-pms',
-    cover: { url: dustCover.url, alt: 'Formation Claude Code chez Noé' },
+    cover: { url: claudeCodeCover.url, alt: 'Formation Claude Code chez Noé' },
     sections: [
       {
         paragraphs: [
-          "Une formation centrée sur Claude Code, l'outil qui transforme le travail des équipes produit. Autour de lui, deux outils pour aller jusqu'au bout : publier ses prototypes et contribuer au code.",
-        ],
-        bullets: [
-          "💻 Claude Code : l'agent au cœur de la formation, du prototype au fix.",
-          "🚀 Vercel : vos prototypes en ligne, utilisables par vos stakeholders.",
-          "🐙 GitHub : collaborer avec vos devs et pousser vos PR.",
+          "Quand j'ai commencé cette formation chez Noé, j'utilisais Claude Code comme la plupart des PM autour de moi : un peu au feeling, beaucoup en mode chat, sans vraiment exploiter ce que l'outil pouvait faire. Quatre semaines plus tard, c'est devenu un vrai membre de mon équipe — et c'est sans doute le changement de pratique le plus marquant que j'ai vécu cette année.",
         ],
       },
       {
-        heading: 'Module 1 — Maîtriser Claude Code',
-        bullets: [
-          'Connexion de Claude Code à vos outils via MCP',
-          'Gestion du contexte pour des résultats précis et fiables',
-          'Skills pour standardiser vos livrables récurrents',
-          'Plan mode : un plan validé avant toute exécution',
+        paragraphs: [
+          "Tout a commencé par un travail sur les fondations. On a appris à connecter Claude Code à mes outils via MCP, à lui donner le bon contexte pour qu'il arrête d'inventer, à créer des skills pour standardiser les livrables que je refais sans cesse — specs, comptes-rendus, brouillons d'emails. Le déclic est venu avec le « plan mode » : Claude me propose un plan, je le valide, et seulement après il agit. Fini les exécutions qui partent dans tous les sens.",
         ],
-        paragraphs: ['🎯 Résultat : un environnement Claude Code configuré et sous contrôle.'],
       },
       {
-        heading: "Module 2 — Savoir coder à l'ère de l'IA",
-        bullets: [
-          'GitHub et pull requests via Claude Code',
-          'Bug fix de bout en bout, du diagnostic au correctif',
-          'Améliorations produit poussées en prod',
+        paragraphs: [
+          "La deuxième semaine, on est entrés dans le code. Pour quelqu'un qui n'est pas développeur de métier, c'était le moment de vérité. On a branché GitHub, fait nos premières pull requests, corrigé un vrai bug de bout en bout — du diagnostic au correctif poussé en production. Je n'aurais jamais pensé y arriver en autonomie, et pourtant.",
         ],
-        paragraphs: ['🎯 Résultat : vos premières contributions au code en autonomie.'],
       },
       {
-        heading: 'Module 3 — Du besoin au prototype',
-        bullets: [
-          'Spec-driven development : specs et prototype articulés sur Claude Code',
-          'Prototypage d’une feature testable, sans cycle de dev',
-          'Publication du proto sur Vercel, utilisable par stakeholders et users',
+        paragraphs: [
+          "Puis on est passés du besoin au prototype. J'ai appris à articuler des specs et un prototype directement sur Claude Code, dans une logique de « spec-driven development » : on décrit le comportement attendu, l'agent construit, on itère. Le moment fort de la semaine, ça a été de publier mon proto sur Vercel et de pouvoir l'envoyer à des stakeholders pour qu'ils le testent en vrai, sans attendre un cycle de dev.",
         ],
-        paragraphs: ['🎯 Résultat : un prototype en ligne, prêt à être testé.'],
       },
       {
-        heading: 'Module 4 — Claude Code dans votre organisation',
-        bullets: [
-          'Personal OS : un contexte persistant sur vos projets et votre façon de travailler',
-          "Team OS : contexte et standards partagés à l'échelle de l'équipe",
-          "Évolution de l'organisation des équipes produit et tech",
+        paragraphs: [
+          "La dernière semaine a été la plus structurante. On a construit un « Personal OS » — un contexte persistant qui décrit comment je travaille, mes projets en cours, mes conventions — et un « Team OS » partagé avec l'équipe. C'est ce qui transforme Claude Code d'un outil pratique en un véritable système de travail. Aujourd'hui, je ne réfléchis plus en termes de prompts isolés, mais en termes d'environnement qui apprend avec moi.",
         ],
-        paragraphs: ['🎯 Résultat : un système de travail personnel et collectif augmenté par Claude Code.'],
+      },
+      {
+        paragraphs: [
+          "Ce que je retiens de ces quatre semaines, c'est moins une liste de fonctionnalités qu'un changement de posture. Le PM augmenté par Claude Code, ce n'est pas celui qui sait mieux prompter, c'est celui qui sait quel contexte donner, quelle décision garder pour lui, et quelle partie de la chaîne il peut désormais prendre en charge sans déranger ses devs.",
+          "📅 Date de l'événement : 23/05/2026",
+        ],
       },
     ],
   },
@@ -194,37 +192,36 @@ export const blogPosts: BlogPost[] = [
     order: 5,
     title: "Comment l'IA transforme le Product Management",
     description:
-      "Tech Talk Le Wagon x Welcome to the Jungle : comment le métier de PM a changé en 18 mois, ce qui s'automatise, les compétences qui comptent en 2026 et comment shipper des features IA.",
+      "Tech Talk Le Wagon x Welcome to the Jungle : comment le métier de PM a changé en 18 mois, ce qui s'automatise, et les compétences qui comptent vraiment en 2026.",
     date: 'Mai 2026',
+    eventDate: '27/05/2026',
     category: 'IA',
     url: 'https://www.lewagon.com/fr/events/comment-l-ia-transforme-le-product-management-HPFVtl',
     cover: { url: iaPmCover.url, alt: "Comment l'IA transforme le Product Management" },
     sections: [
       {
         paragraphs: [
-          "The PM job description hasn't changed in 5 years. The PM job itself did completely in 18 months.",
-          "Le 27 mai à Paris, Le Wagon a réuni des profils qui vivent ce shift en temps réel.",
+          "Une phrase, lancée en début de soirée, a donné le ton de toute la table ronde : la fiche de poste d'un PM n'a presque pas bougé en cinq ans, mais le métier lui-même s'est complètement transformé en dix-huit mois. Tout le monde dans la salle a hoché la tête, et on s'est dit qu'on était au bon endroit pour en parler.",
         ],
       },
       {
         image: { url: iaPmRoom.url, alt: 'Tech Talk Comment l’IA transforme le Product Management — Le Wagon Paris' },
       },
       {
-        heading: 'Les intervenants',
-        bullets: [
-          "Louis Comte (STATION F) — voit chaque jour des centaines de startups construire avec l'IA",
-          "Leslie Malem (Welcome to the Jungle) — observe les équipes produit naviguer cette transformation de l'intérieur",
-          "Emmanuel Hosanski (Head of Product, Pennylane) — embarque l'IA dans des produits comptables",
-          "Anne Dumas (Le Wagon) — modératrice, pour porter les questions de la communauté",
+        paragraphs: [
+          "Le Wagon avait réuni des intervenants qui vivent ce shift au quotidien : Louis Comte, qui voit défiler chaque jour des centaines de startups à STATION F en train de construire avec l'IA ; Leslie Malem, qui observe de l'intérieur les équipes produit de Welcome to the Jungle ; Emmanuel Hosanski, Head of Product chez Pennylane, qui embarque l'IA dans un produit comptable où l'erreur n'est pas une option ; et Anne Dumas, qui animait la discussion avec une vraie exigence.",
         ],
       },
       {
-        heading: 'Les questions creusées',
-        bullets: [
-          'Quelles parties du job de PM s’automatisent (et ce que ça veut dire pour les juniors) ?',
-          'Quelles nouvelles compétences comptent vraiment en 2026 ?',
-          'Quels produits peut-on construire aujourd’hui qui étaient impossibles il y a 18 mois ?',
-          'Comment shipper des features IA quand les modèles hallucinent et que les utilisateurs ne font pas confiance ?',
+        paragraphs: [
+          "On a passé une bonne partie de la soirée à essayer de répondre à une question qui taraude beaucoup de PM autour de moi : qu'est-ce qui s'automatise vraiment dans notre métier, et qu'est-ce que ça veut dire pour les juniors qui arrivent ? La synthèse, c'est que la rédaction de specs, les premières analyses de données et la production de mocks bougent énormément, mais que la priorisation, le sens du produit et la capacité à embarquer une équipe restent profondément humains — et deviennent même plus discriminants qu'avant.",
+        ],
+      },
+      {
+        paragraphs: [
+          "L'autre question forte de la soirée : quels produits peut-on construire aujourd'hui qui étaient impossibles il y a dix-huit mois ? Les exemples concrets ont fusé, des assistants métier capables de lire des documents complexes aux copilotes intégrés directement dans les outils de back-office. Et avec ça, un vrai sujet de fond : comment shipper des features IA quand les modèles hallucinent et que la confiance des utilisateurs se gagne lentement ?",
+          "Je suis ressorti avec plein de notes, mais surtout avec la conviction que le PM de 2026 sera celui qui aura accepté que son métier change vite, et qui aura pris le temps d'apprendre à travailler avec ces nouveaux outils plutôt que de regarder ailleurs.",
+          "📅 Date de l'événement : 27/05/2026",
         ],
       },
     ],
@@ -234,27 +231,38 @@ export const blogPosts: BlogPost[] = [
     order: 6,
     title: 'Fin de ma formation Product Management — Noé promo 33',
     description:
-      "Retour d'expérience sur 4 semaines intensives de Product Management chez Noé : strategy, discovery, priorisation, prototypage, delivery et restitution finale au Lead PM de BlaBlaCar.",
+      "Retour sur 4 semaines intensives de Product Management chez Noé, en tant que PM pour BlaBlaCar : strategy, discovery, priorisation, prototypage, delivery et restitution finale au Lead PM.",
     date: 'Mai 2026',
+    eventDate: '16/05/2026',
     category: 'Formation',
     url: 'https://www.noe.pm/formation-product-manager-la-formation-pm-en-4-semaines-noe',
-    cover: { url: iaPmCover.url, alt: 'Diplôme Product Management — Noé' },
+    cover: { url: noePmPromo.url, alt: 'Promo 33 Noé — formation Product Management' },
     sections: [
       {
         paragraphs: [
-          "J'ai le plaisir de vous annoncer que j'ai obtenu mon diplôme de Product Management à Noé ! 🔥",
-          "Pendant 4 semaines, j'ai travaillé en tant que PM pour BlaBlaCar, accompagné par des intervenants senior PM, Head of ou CPO.",
+          "J'ai officiellement obtenu mon diplôme de Product Management chez Noé, avec la promo 33. Quatre semaines intenses, denses, parfois épuisantes, mais qui ont changé ma manière de penser le produit.",
         ],
       },
       {
-        heading: 'Ce que j’ai pu pratiquer',
-        bullets: [
-          "🎯 Product Strategy : explorer la problématique et le positionnement de BlaBlaCar vis-à-vis d'autres acteurs en France",
-          '🔎 Product Discovery : interviews utilisateurs, recherches data (SQL, Excel), tests produit…',
-          '⚡ Priorisation : KPIs impactés — RICE, MoSCoW',
-          '💻 Prototypage et testing itératif avec de vrais users, sur Figma',
-          "👨‍💻 Delivery : rédaction des specs pour l'équipe tech (user stories, workflow, edge cases)",
-          '🎤 Préparation et présentation devant le Lead PM de BlaBlaCar !',
+        image: { url: noePmPromo.url, alt: 'Photo de promo — Noé Product Management 33' },
+      },
+      {
+        paragraphs: [
+          "Le format est simple sur le papier et redoutable dans la pratique : on devient PM pour une vraie entreprise — dans mon cas BlaBlaCar — et on est encadré par des Senior PM, Head of Product et CPO qui ne nous laissent rien passer. La première semaine, on s'attaque à la stratégie : explorer la problématique, comprendre le positionnement de BlaBlaCar face aux autres acteurs en France, identifier où se trouvent les vraies opportunités.",
+          "La deuxième semaine, j'ai plongé dans la discovery. Interviews utilisateurs, requêtes SQL pour creuser la donnée, croisements dans Excel, tests produit. C'est la semaine où j'ai compris à quel point la qualité d'une question d'interview pouvait changer la trajectoire d'un projet entier.",
+        ],
+      },
+      {
+        paragraphs: [
+          "Vient ensuite la priorisation. RICE, MoSCoW, KPIs impactés, arbitrages : on apprend à défendre ses choix devant des gens qui ont vu défiler des centaines de roadmaps. Puis le prototypage sur Figma, en testant chaque itération avec de vrais utilisateurs — pas des collègues complaisants, des vrais users qui te disent quand ça ne va pas.",
+          "La dernière semaine, on bascule en mode delivery : rédaction des specs pour l'équipe tech, user stories, workflows, edge cases. L'objectif est clair — produire quelque chose qu'une équipe pourrait réellement développer derrière.",
+        ],
+      },
+      {
+        paragraphs: [
+          "Et puis il y a eu le grand oral. Présenter notre travail devant le Lead PM de BlaBlaCar, défendre nos choix, encaisser les questions. C'est dans ce moment-là que j'ai mesuré le chemin parcouru en quatre semaines.",
+          "Je sors de cette formation avec une boîte à outils complète, un réseau de PM passionnés, et surtout une confiance nouvelle : je sais que je peux prendre un sujet produit complexe et le mener du flou stratégique jusqu'à des specs livrables.",
+          "📅 Date de l'événement : 16/05/2026",
         ],
       },
     ],
@@ -262,37 +270,37 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'dust-ai-agent',
     order: 7,
-    title: 'Atelier Dust — Build Your First AI Agent',
+    title: 'Atelier Dust — Construire son premier agent IA',
     description:
-      "Soirée Eria x Le Wagon x Dust : théorie + pratique pour repartir avec son propre agent IA opérationnel, connecté à Google Drive et aux emails, sans une seule ligne de code.",
+      "Soirée Eria x Le Wagon x Dust : théorie et pratique pour repartir avec son propre agent IA opérationnel, connecté à Google Drive et aux emails, sans une seule ligne de code.",
     date: 'Avril 2026',
+    eventDate: '17/04/2026',
     category: 'IA',
     url: 'https://www.lewagon.com/fr/events/atelier-dust-build-your-first-ai-agent-5CkQZn',
-    cover: { url: dustCover.url, alt: 'Build Your First AI Agent — Eria x Le Wagon x Dust' },
+    cover: { url: dustCover.url, alt: 'Construire son premier agent IA — Eria x Le Wagon x Dust' },
     sections: [
       {
         paragraphs: [
-          "Hier j'étais à l'événement « Build Your First AI Agent » co-organisé par Eria x Le Wagon x Dust.",
-          'Au programme : théorie + pratique, grâce à trois acteurs complémentaires.',
+          "Ce soir-là au Wagon, j'avais une promesse claire en tête : repartir avec mon propre agent IA, opérationnel, sans écrire une ligne de code. Trois acteurs très complémentaires animaient la soirée : Eria, l'agence cofondée par Tifany Clemenceau et Melvin Duveau, spécialisée dans la création d'agents sur-mesure pour les TPE/PME ; Dust, la plateforme française d'agents IA déjà adoptée par plus de 5 000 organisations comme Doctolib, Qonto ou Alan ; et Le Wagon, qui sait toujours rendre la tech accessible.",
         ],
       },
       {
-        image: { url: dustRoom.url, alt: 'Salle pleine pour l’atelier Build Your First AI Agent au Wagon Paris' },
-      },
-      {
-        bullets: [
-          "Eria — l'agence cofondée par Tifany Clemenceau et Melvin Duveau, spécialisée dans la création d'agents IA sur-mesure pour les TPE/PME",
-          "Dust — la plateforme française d'agents IA, fondée par d'anciens d'OpenAI et de Stripe, déjà adoptée par +5 000 organisations (Doctolib, Qonto, Alan…)",
-          "Le Wagon — l'école tech de référence qui rend la tech accessible à tous",
-        ],
-      },
-      {
-        image: { url: dustFlyer.url, alt: 'Flyer Eria — Build Your First AI Agent' },
+        image: { url: dustRoom.url, alt: 'Salle pleine pour l’atelier Construire son premier agent IA au Wagon Paris' },
       },
       {
         paragraphs: [
-          "Résultat : j'ai quitté la salle avec mon propre agent IA opérationnel, connecté à mon Google Drive et mes emails. Zéro ligne de code. Juste du langage naturel.",
-          "Merci à Tifany Clemenceau, Melvin Duveau et à l'équipe Le Wagon pour cette soirée alliant théorie, cas concrets et mise en pratique immédiate.",
+          "On a démarré par une partie théorique courte mais carrée : ce qu'est vraiment un agent (au-delà du buzzword), la différence entre un assistant et un agent autonome, et surtout les cas d'usage qui marchent en entreprise — ceux qui font gagner du temps réel et pas juste une démo Linkedin.",
+          "Puis on est passés à la pratique. J'ai branché Dust à mon Google Drive et à mes emails, défini quelques règles en langage naturel, et regardé mon agent commencer à trier, résumer, proposer des brouillons. Le moment où il a sorti son premier résumé pertinent à partir d'un document que je lui avais donné, j'ai eu cette petite étincelle qu'on a quand un outil franchit le seuil de l'utile.",
+        ],
+      },
+      {
+        image: { url: dustFlyer.url, alt: 'Flyer Eria — Construire son premier agent IA' },
+      },
+      {
+        paragraphs: [
+          "Je suis reparti avec un agent qui fonctionne vraiment, intégré à mes outils du quotidien, et une certitude : la barrière d'entrée pour utiliser l'IA en entreprise n'a jamais été aussi basse. Le vrai sujet maintenant, c'est la qualité du contexte qu'on lui donne et la rigueur des cas d'usage qu'on choisit.",
+          "Un grand merci à Tifany, Melvin et toute l'équipe Le Wagon pour cette soirée qui mêlait théorie, cas concrets et mise en pratique immédiate.",
+          "📅 Date de l'événement : 17/04/2026",
         ],
       },
     ],
