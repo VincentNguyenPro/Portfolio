@@ -91,7 +91,7 @@ export default function Portfolio() {
                       </div>
 
                       <div className="flex items-center gap-2 text-sm font-medium text-foreground">
-                        Lire l'étude de cas
+                        Voir le projet
                         <ArrowUpRight className="size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                       </div>
                     </div>
