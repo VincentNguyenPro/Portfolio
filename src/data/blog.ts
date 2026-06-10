@@ -11,7 +11,10 @@ import lovableRoom from '@/assets/blog/lovable-room.jpeg.asset.json';
 import lovableTalk from '@/assets/blog/lovable-talk.jpeg.asset.json';
 import lovableGroups from '@/assets/blog/lovable-groups.jpeg.asset.json';
 import claudeCodeCover from '@/assets/blog/claude-code-cover.webp.asset.json';
+import claudeCodeRoom from '@/assets/blog/claude-code-room.jpeg.asset.json';
 import noePmPromo from '@/assets/blog/noe-pm-promo.jpeg.asset.json';
+import data5vCover from '@/assets/blog/data-5v-cover.jpeg.asset.json';
+import vivatechCover from '@/assets/blog/vivatech-cover.png.asset.json';
 
 export interface BlogSection {
   heading?: string;
@@ -21,31 +24,68 @@ export interface BlogSection {
   image?: { url: string; alt: string; caption?: string };
 }
 
+export type BlogCategory =
+  | 'Product Management'
+  | 'IA & Agents'
+  | 'Data'
+  | 'Innovation & Tech'
+  | 'Formation'
+  | 'Communauté';
+
 export interface BlogPost {
   slug: string;
   title: string;
   description: string;
   date: string;
-  eventDate?: string; // exact date JJ/MM/AAAA
+  eventDate?: string;
   order: number;
-  category: 'Product' | 'IA' | 'Data' | 'Formation' | 'Événement';
+  categories: BlogCategory[];
   url?: string;
   cover: { url: string; alt: string };
+  coverFit?: 'cover' | 'contain';
   sections: BlogSection[];
 }
 
 export const blogPosts: BlogPost[] = [
   {
-    slug: 'webshop-mollie-codex',
+    slug: 'vivatech-2026',
     order: 1,
+    title: 'VivaTech 2026 — 10ᵉ édition',
+    description:
+      "Quatre jours porte de Versailles pour la 10ᵉ édition de VivaTech, le grand rendez-vous international de l'innovation et de la tech.",
+    date: 'Juin 2026',
+    eventDate: '17–20/06/2026',
+    categories: ['Innovation & Tech', 'Communauté'],
+    url: 'https://vivatechnology.com/',
+    cover: { url: vivatechCover.url, alt: 'VivaTech 2026 — Paris' },
+    sections: [
+      {
+        paragraphs: [
+          "Du 17 au 20 juin 2026, j'aurai la chance d'arpenter les allées de VivaTech pour sa 10ᵉ édition. Pendant quatre jours, le 15ᵉ arrondissement de Paris se transforme en capitale mondiale de l'innovation : startups, grands groupes, investisseurs et passionnés de tech convergent vers la porte de Versailles pour une édition anniversaire placée sous le signe de l'ambition.",
+          "Avec environ 180 000 visiteurs en moyenne, VivaTech s'est imposé comme le principal point de rencontre entre les acteurs de la transformation numérique — IA, deeptech, climate tech, fintech, mobilité, santé. C'est l'endroit idéal pour prendre la température de ce qui va structurer le produit et la finance dans les prochaines années.",
+          "Je publierai mon compte-rendu personnel après l'événement : pitchs marquants, démos qui ont fait bouger les lignes, et tendances IA à suivre côté Product.",
+        ],
+      },
+      {
+        paragraphs: [
+          "🚧 Article en attente de visite — compte-rendu à venir.",
+          "📅 Date de l'événement : 17–20/06/2026",
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'webshop-mollie-codex',
+    order: 2,
     title: 'Construire son webshop avec Mollie & Codex',
     description:
       "Atelier Le Wagon : passer d'une idée e-commerce à une boutique en ligne fonctionnelle, encaissant de vrais paiements, en quelques heures et sans équipe tech.",
     date: 'Juin 2026',
     eventDate: '12/06/2026',
-    category: 'Product',
+    categories: ['Product Management', 'IA & Agents', 'Innovation & Tech'],
     url: 'https://luma.com/0ivqgaik?tk=hNsezQ',
     cover: { url: webshopCover.url, alt: 'Atelier Webshop avec Mollie & Codex' },
+    coverFit: 'contain',
     sections: [
       {
         paragraphs: [
@@ -63,15 +103,16 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'hackathon-lovable-join-lion',
-    order: 2,
+    order: 3,
     title: 'Hackathon Lovable chez Join Lion',
     description:
       "Une soirée à la Jungle IA pour transformer une idée en application en 3h avec Lovable, entourée de 70 personnes qui se lancent en même temps.",
     date: 'Juin 2026',
     eventDate: '05/06/2026',
-    category: 'Événement',
+    categories: ['IA & Agents', 'Innovation & Tech', 'Communauté'],
     url: 'https://luma.com/jybxjxu4?locale=fr&tk=Aimmjv',
     cover: { url: lovableCover.url, alt: 'Meetup Lovable x Paatch — Jungle IA' },
+    coverFit: 'contain',
     sections: [
       {
         paragraphs: [
@@ -108,13 +149,13 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'construire-ia-demain',
-    order: 3,
+    order: 4,
     title: "Construire l'IA de demain : défis et opportunités",
     description:
       "Table ronde Le Wagon x Women in Tech France sur l'IA comme révolution de société : comment construire une IA inclusive, représentative et équitable.",
     date: 'Juin 2026',
     eventDate: '03/06/2026',
-    category: 'IA',
+    categories: ['IA & Agents', 'Communauté'],
     url: 'https://www.lewagon.com/fr/events/construire-l-ia-de-demain-defis-et-opportunites-SsjIsz',
     cover: { url: iaDemainCover.url, alt: "Construire l'IA de demain — Défis et Opportunités" },
     sections: [
@@ -144,13 +185,13 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'claude-code-pms',
-    order: 4,
+    order: 5,
     title: 'Formation Claude Code chez Noé',
     description:
       "Quatre semaines pour intégrer Claude Code dans ma pratique de PM : du premier prompt maîtrisé au prototype publié en ligne, jusqu'à un vrai système de travail augmenté.",
     date: 'Mai 2026',
     eventDate: '23/05/2026',
-    category: 'IA',
+    categories: ['IA & Agents', 'Formation', 'Product Management'],
     url: 'https://www.noe.pm/claude-code-pour-pms',
     cover: { url: claudeCodeCover.url, alt: 'Formation Claude Code chez Noé' },
     sections: [
@@ -158,6 +199,9 @@ export const blogPosts: BlogPost[] = [
         paragraphs: [
           "Quand j'ai commencé cette formation chez Noé, j'utilisais Claude Code comme la plupart des PM autour de moi : un peu au feeling, beaucoup en mode chat, sans vraiment exploiter ce que l'outil pouvait faire. Quatre semaines plus tard, c'est devenu un vrai membre de mon équipe — et c'est sans doute le changement de pratique le plus marquant que j'ai vécu cette année.",
         ],
+      },
+      {
+        image: { url: claudeCodeRoom.url, alt: 'Salle de formation Claude Code chez Noé' },
       },
       {
         paragraphs: [
@@ -171,7 +215,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         paragraphs: [
-          "Puis on est passés du besoin au prototype. J'ai appris à articuler des specs et un prototype directement sur Claude Code, dans une logique de « spec-driven development » : on décrit le comportement attendu, l'agent construit, on itère. Le moment fort de la semaine, ça a été de publier mon proto sur Vercel et de pouvoir l'envoyer à des stakeholders pour qu'ils le testent en vrai, sans attendre un cycle de dev.",
+          "Puis on est passés du besoin au prototype. J'ai appris à articuler des specs et un prototype directement sur Claude Code, dans une logique de « développement piloté par les specs » : on décrit le comportement attendu, l'agent construit, on itère. Le moment fort de la semaine, ça a été de publier mon proto sur Vercel et de pouvoir l'envoyer à des stakeholders pour qu'ils le testent en vrai, sans attendre un cycle de dev.",
         ],
       },
       {
@@ -188,53 +232,14 @@ export const blogPosts: BlogPost[] = [
     ],
   },
   {
-    slug: 'ia-transforme-pm',
-    order: 5,
-    title: "Comment l'IA transforme le Product Management",
-    description:
-      "Tech Talk Le Wagon x Welcome to the Jungle : comment le métier de PM a changé en 18 mois, ce qui s'automatise, et les compétences qui comptent vraiment en 2026.",
-    date: 'Mai 2026',
-    eventDate: '27/05/2026',
-    category: 'IA',
-    url: 'https://www.lewagon.com/fr/events/comment-l-ia-transforme-le-product-management-HPFVtl',
-    cover: { url: iaPmCover.url, alt: "Comment l'IA transforme le Product Management" },
-    sections: [
-      {
-        paragraphs: [
-          "Une phrase, lancée en début de soirée, a donné le ton de toute la table ronde : la fiche de poste d'un PM n'a presque pas bougé en cinq ans, mais le métier lui-même s'est complètement transformé en dix-huit mois. Tout le monde dans la salle a hoché la tête, et on s'est dit qu'on était au bon endroit pour en parler.",
-        ],
-      },
-      {
-        image: { url: iaPmRoom.url, alt: 'Tech Talk Comment l’IA transforme le Product Management — Le Wagon Paris' },
-      },
-      {
-        paragraphs: [
-          "Le Wagon avait réuni des intervenants qui vivent ce shift au quotidien : Louis Comte, qui voit défiler chaque jour des centaines de startups à STATION F en train de construire avec l'IA ; Leslie Malem, qui observe de l'intérieur les équipes produit de Welcome to the Jungle ; Emmanuel Hosanski, Head of Product chez Pennylane, qui embarque l'IA dans un produit comptable où l'erreur n'est pas une option ; et Anne Dumas, qui animait la discussion avec une vraie exigence.",
-        ],
-      },
-      {
-        paragraphs: [
-          "On a passé une bonne partie de la soirée à essayer de répondre à une question qui taraude beaucoup de PM autour de moi : qu'est-ce qui s'automatise vraiment dans notre métier, et qu'est-ce que ça veut dire pour les juniors qui arrivent ? La synthèse, c'est que la rédaction de specs, les premières analyses de données et la production de mocks bougent énormément, mais que la priorisation, le sens du produit et la capacité à embarquer une équipe restent profondément humains — et deviennent même plus discriminants qu'avant.",
-        ],
-      },
-      {
-        paragraphs: [
-          "L'autre question forte de la soirée : quels produits peut-on construire aujourd'hui qui étaient impossibles il y a dix-huit mois ? Les exemples concrets ont fusé, des assistants métier capables de lire des documents complexes aux copilotes intégrés directement dans les outils de back-office. Et avec ça, un vrai sujet de fond : comment shipper des features IA quand les modèles hallucinent et que la confiance des utilisateurs se gagne lentement ?",
-          "Je suis ressorti avec plein de notes, mais surtout avec la conviction que le PM de 2026 sera celui qui aura accepté que son métier change vite, et qui aura pris le temps d'apprendre à travailler avec ces nouveaux outils plutôt que de regarder ailleurs.",
-          "📅 Date de l'événement : 27/05/2026",
-        ],
-      },
-    ],
-  },
-  {
     slug: 'noe-formation-pm',
     order: 6,
     title: 'Fin de ma formation Product Management — Noé promo 33',
     description:
-      "Retour sur 4 semaines intensives de Product Management chez Noé, en tant que PM pour BlaBlaCar : strategy, discovery, priorisation, prototypage, delivery et restitution finale au Lead PM.",
+      "Retour sur 4 semaines intensives de Product Management chez Noé, en tant que PM pour BlaBlaCar : stratégie, discovery, priorisation, prototypage, delivery et restitution finale au Lead PM.",
     date: 'Mai 2026',
     eventDate: '16/05/2026',
-    category: 'Formation',
+    categories: ['Product Management', 'Formation'],
     url: 'https://www.noe.pm/formation-product-manager-la-formation-pm-en-4-semaines-noe',
     cover: { url: noePmPromo.url, alt: 'Promo 33 Noé — formation Product Management' },
     sections: [
@@ -255,7 +260,7 @@ export const blogPosts: BlogPost[] = [
       {
         paragraphs: [
           "Vient ensuite la priorisation. RICE, MoSCoW, KPIs impactés, arbitrages : on apprend à défendre ses choix devant des gens qui ont vu défiler des centaines de roadmaps. Puis le prototypage sur Figma, en testant chaque itération avec de vrais utilisateurs — pas des collègues complaisants, des vrais users qui te disent quand ça ne va pas.",
-          "La dernière semaine, on bascule en mode delivery : rédaction des specs pour l'équipe tech, user stories, workflows, edge cases. L'objectif est clair — produire quelque chose qu'une équipe pourrait réellement développer derrière.",
+          "La dernière semaine, on bascule en mode delivery : rédaction des specs pour l'équipe tech, user stories, workflows, cas limites. L'objectif est clair — produire quelque chose qu'une équipe pourrait réellement développer derrière.",
         ],
       },
       {
@@ -268,14 +273,92 @@ export const blogPosts: BlogPost[] = [
     ],
   },
   {
-    slug: 'dust-ai-agent',
+    slug: 'big-data-beautiful-data',
     order: 7,
+    title: 'Des 5V du Big Data aux 5E du Beautiful Data — IAE Paris',
+    description:
+      "Conférence IAE Paris – Sorbonne Business School : et si l'immatériel du « Beautiful Data » venait compléter le matériel du Big Data, au service d'une performance plus durable ?",
+    date: 'Mai 2026',
+    eventDate: '18/05/2026',
+    categories: ['Data', 'Communauté'],
+    cover: { url: data5vCover.url, alt: 'Conférence Big Data — 5V du Big Data, IAE Paris Alumni' },
+    sections: [
+      {
+        paragraphs: [
+          "Je suis venu à l'IAE Paris – Sorbonne Business School avec une question presque naïve : à force de courir derrière le « toujours plus » de données, ne sommes-nous pas en train d'oublier l'essentiel ? C'est exactement le débat que cette conférence est venue ouvrir, en confrontant les célèbres 5V du Big Data — Volume, Vélocité, Variété, Véracité, Valeur — à une grille beaucoup plus récente : les 5E du « Beautiful Data ».",
+        ],
+      },
+      {
+        image: { url: data5vCover.url, alt: 'Slide « Les 5V du Big Data » projetée lors de la conférence' },
+      },
+      {
+        paragraphs: [
+          "La table ronde réunissait des regards très complémentaires. Xavier Morel, operating partner et expert de la transformation numérique, a posé le décor côté entreprise. Laurine Teixeira, doctorante en droit des sociétés, a rappelé combien le cadre juridique commence à dicter les bonnes pratiques data. Augustin de la Fouchardière, fondateur de MYPE, a parlé de l'informatique décisionnelle vue du terrain. Et Gilles Trigano, docteur en sciences de gestion et auteur d'une thèse sur les 5E du Beautiful Data, a déroulé la théorie qu'il défend depuis plusieurs années.",
+        ],
+      },
+      {
+        paragraphs: [
+          "Le fil rouge de la soirée a tourné autour de trois questions qui sont restées avec moi : avec l'essor de l'IA générative, va-t-on basculer d'un monde quantitatif vers un monde qualitatif ? Quelle complémentarité réelle entre le Big Data et le Beautiful Data ? Et quel rôle pour l'éthique et l'éducation dans une démarche d'éco-responsabilité numérique ?",
+          "La thèse défendue m'a beaucoup parlé : le Big Data nous donne la matière — volume, vélocité, variété, véracité, valeur — mais c'est le Beautiful Data qui en révèle le sens. Les 5E (esthétique, éthique, éducatif, écologique, équitable) ne s'opposent pas aux 5V, ils les prolongent. Ensemble, ils dessinent un cercle vertueux dans lequel la performance globale d'une entreprise — y compris sociale et environnementale — devient mesurable et améliorable.",
+        ],
+      },
+      {
+        paragraphs: [
+          "En tant que PM Finance et SI, j'ai retrouvé dans cette grille beaucoup de débats internes que je vois passer chez mes clients : faut-il continuer à empiler des tableaux de bord, ou commencer à arbitrer ce que l'on mesure vraiment ? Quelle responsabilité quand on automatise une décision sur la base d'un modèle ? Comment former les équipes métier à lire la donnée sans la subir ?",
+          "Je suis ressorti de cette soirée avec une conviction renforcée : la prochaine vague de valeur en data ne viendra pas d'un V supplémentaire, mais des E que l'on choisira d'incarner.",
+          "📅 Date de l'événement : 18/05/2026",
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'ia-transforme-pm',
+    order: 8,
+    title: "Comment l'IA transforme le Product Management",
+    description:
+      "Tech Talk Le Wagon x Welcome to the Jungle : comment le métier de PM a changé en 18 mois, ce qui s'automatise, et les compétences qui comptent vraiment en 2026.",
+    date: 'Mai 2026',
+    eventDate: '27/05/2026',
+    categories: ['Product Management', 'IA & Agents'],
+    url: 'https://www.lewagon.com/fr/events/comment-l-ia-transforme-le-product-management-HPFVtl',
+    cover: { url: iaPmCover.url, alt: "Comment l'IA transforme le Product Management" },
+    sections: [
+      {
+        paragraphs: [
+          "Une phrase, lancée en début de soirée, a donné le ton de toute la table ronde : la fiche de poste d'un PM n'a presque pas bougé en cinq ans, mais le métier lui-même s'est complètement transformé en dix-huit mois. Tout le monde dans la salle a hoché la tête, et on s'est dit qu'on était au bon endroit pour en parler.",
+        ],
+      },
+      {
+        image: { url: iaPmRoom.url, alt: 'Tech Talk Comment l’IA transforme le Product Management — Le Wagon Paris' },
+      },
+      {
+        paragraphs: [
+          "Le Wagon avait réuni des intervenants qui vivent ce basculement au quotidien : Louis Comte, qui voit défiler chaque jour des centaines de startups à STATION F en train de construire avec l'IA ; Leslie Malem, qui observe de l'intérieur les équipes produit de Welcome to the Jungle ; Emmanuel Hosanski, Head of Product chez Pennylane, qui embarque l'IA dans un produit comptable où l'erreur n'est pas une option ; et Anne Dumas, qui animait la discussion avec une vraie exigence.",
+        ],
+      },
+      {
+        paragraphs: [
+          "On a passé une bonne partie de la soirée à essayer de répondre à une question qui taraude beaucoup de PM autour de moi : qu'est-ce qui s'automatise vraiment dans notre métier, et qu'est-ce que ça veut dire pour les juniors qui arrivent ? La synthèse, c'est que la rédaction de specs, les premières analyses de données et la production de maquettes bougent énormément, mais que la priorisation, le sens du produit et la capacité à embarquer une équipe restent profondément humains — et deviennent même plus discriminants qu'avant.",
+        ],
+      },
+      {
+        paragraphs: [
+          "L'autre question forte de la soirée : quels produits peut-on construire aujourd'hui qui étaient impossibles il y a dix-huit mois ? Les exemples concrets ont fusé, des assistants métier capables de lire des documents complexes aux copilotes intégrés directement dans les outils internes. Et avec ça, un vrai sujet de fond : comment livrer des fonctionnalités IA quand les modèles hallucinent et que la confiance des utilisateurs se gagne lentement ?",
+          "Je suis ressorti avec plein de notes, mais surtout avec la conviction que le PM de 2026 sera celui qui aura accepté que son métier change vite, et qui aura pris le temps d'apprendre à travailler avec ces nouveaux outils plutôt que de regarder ailleurs.",
+          "📅 Date de l'événement : 27/05/2026",
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'dust-ai-agent',
+    order: 9,
     title: 'Atelier Dust — Construire son premier agent IA',
     description:
       "Soirée Eria x Le Wagon x Dust : théorie et pratique pour repartir avec son propre agent IA opérationnel, connecté à Google Drive et aux emails, sans une seule ligne de code.",
     date: 'Avril 2026',
     eventDate: '17/04/2026',
-    category: 'IA',
+    categories: ['IA & Agents', 'Innovation & Tech'],
     url: 'https://www.lewagon.com/fr/events/atelier-dust-build-your-first-ai-agent-5CkQZn',
     cover: { url: dustCover.url, alt: 'Construire son premier agent IA — Eria x Le Wagon x Dust' },
     sections: [
