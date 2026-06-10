@@ -8,7 +8,11 @@ export const photographerInfo: PhotographerInfo = {
     "Je transforme des besoins métier complexes en produits à impact mesurable, dans des contextes à fort enjeu technique et financier.",
   biography: `Product Manager — Product Owner avec 10 ans d'expérience en SI finance et transformation digitale. J'ai piloté des outils critiques (8 M€, 25+ ETP), réduit de 50 % les délais de clôture, et j'utilise l'IA au quotidien pour accélérer la discovery comme la delivery produit.
 
-Diplômé ingénieur (ISAE-SUPMECA) avec une formation en finance d'entreprise (HEC Paris) et en Product Management (Noé), j'évolue à l'intersection du métier, de la donnée et de la tech.`,
+Diplômé ingénieur (ISAE-SUPMECA) avec une formation en finance d'entreprise (HEC Paris) et en Product Management (Noé), j'évolue à l'intersection du métier, de la donnée et de la tech.
+
+Ma méthode repose sur trois convictions : commencer par la donnée et la voix utilisateur, prototyper vite pour apprendre, et déployer avec une conduite du changement qui transforme l'adoption en impact mesurable.
+
+J'aime les sujets exigeants où la rigueur financière croise la créativité produit — et où l'IA devient un véritable copilote.`,
   approach: `Ma méthode repose sur trois convictions : commencer par la donnée et la voix utilisateur, prototyper vite pour apprendre, et déployer avec une conduite du changement qui transforme l'adoption en impact mesurable.
 
 J'aime les sujets exigeants où la rigueur financière croise la créativité produit — et où l'IA devient un véritable copilote.`,
