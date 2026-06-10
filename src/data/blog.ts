@@ -14,6 +14,7 @@ import claudeCodeCover from '@/assets/blog/claude-code-cover.webp.asset.json';
 import claudeCodeRoom from '@/assets/blog/claude-code-room.jpeg.asset.json';
 import noePmPromo from '@/assets/blog/noe-pm-promo.jpeg.asset.json';
 import data5vCover from '@/assets/blog/data-5v-cover.jpeg.asset.json';
+import data5vIaeCover from '@/assets/blog/data-5v-iae-cover.webp.asset.json';
 import vivatechCover from '@/assets/blog/vivatech-cover.png.asset.json';
 
 export interface BlogSection {
@@ -21,7 +22,13 @@ export interface BlogSection {
   paragraphs?: string[];
   bullets?: string[];
   quote?: string;
-  image?: { url: string; alt: string; caption?: string };
+  image?: {
+    url: string;
+    alt: string;
+    caption?: string;
+    aspectRatio?: string;
+    objectPosition?: string;
+  };
 }
 
 export type BlogCategory =
@@ -234,7 +241,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'noe-formation-pm',
     order: 6,
-    title: 'Fin de ma formation Product Management — Noé promo 33',
+    title: 'Formation Product Management — Noé promo 33',
     description:
       "Retour sur 4 semaines intensives de Product Management chez Noé, en tant que PM pour BlaBlaCar : stratégie, discovery, priorisation, prototypage, delivery et restitution finale au Lead PM.",
     date: 'Mai 2026',
@@ -281,7 +288,7 @@ export const blogPosts: BlogPost[] = [
     date: 'Mai 2026',
     eventDate: '18/05/2026',
     categories: ['Data', 'Communauté'],
-    cover: { url: data5vCover.url, alt: 'Conférence Big Data — 5V du Big Data, IAE Paris Alumni' },
+    cover: { url: data5vIaeCover.url, alt: 'Conférence IAE Paris Alumni — Big Data & Beautiful Data' },
     sections: [
       {
         paragraphs: [
@@ -289,7 +296,12 @@ export const blogPosts: BlogPost[] = [
         ],
       },
       {
-        image: { url: data5vCover.url, alt: 'Slide « Les 5V du Big Data » projetée lors de la conférence' },
+        image: {
+          url: data5vCover.url,
+          alt: 'Slide « Les 5V du Big Data » projetée lors de la conférence',
+          aspectRatio: '16 / 7',
+          objectPosition: 'center',
+        },
       },
       {
         paragraphs: [
