@@ -299,8 +299,8 @@ export const blogPosts: BlogPost[] = [
         image: {
           url: data5vCover.url,
           alt: 'Slide « Les 5V du Big Data » projetée lors de la conférence',
-          aspectRatio: '16 / 7',
-          objectPosition: 'center',
+          aspectRatio: '5 / 3',
+          objectPosition: 'center 44%',
         },
       },
       {
