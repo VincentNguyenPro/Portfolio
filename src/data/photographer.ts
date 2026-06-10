@@ -122,11 +122,11 @@ export const skillGroups: SkillGroup[] = [
   },
   {
     title: 'Finance & Data',
-    items: ['SAP', 'Lumira', 'Power BI', 'Excel', 'PowerPoint', 'SharePoint'],
+    items: ['SAP', 'Lumira', 'Power BI', 'Excel', 'SQL', 'Google Sheets', 'PowerPoint'],
   },
   {
     title: 'Intelligence Artificielle',
-    items: ['Claude', 'Dust', 'AI-augmented discovery & delivery'],
+    items: ['Claude', 'Dust'],
   },
   {
     title: 'Soft Skills',
