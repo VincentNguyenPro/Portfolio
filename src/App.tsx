@@ -79,6 +79,14 @@ function AnimatedRoutes() {
           }
         />
         <Route
+          path="/blog/:slug"
+          element={
+            <PageTransition>
+              <BlogPost />
+            </PageTransition>
+          }
+        />
+        <Route
           path="*"
           element={
             <PageTransition>
