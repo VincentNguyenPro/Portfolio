@@ -67,7 +67,7 @@ export default function About() {
               transition={{ duration: 0.6 }}
               className="space-y-6"
             >
-              <p className="text-sm font-semibold tracking-[0.2em] uppercase text-muted-foreground">
+              <p className="text-5xl md:text-6xl font-semibold tracking-tight uppercase text-muted-foreground">
                 À propos
               </p>
               <h1 className="text-5xl md:text-6xl font-semibold tracking-tight">
@@ -102,7 +102,7 @@ export default function About() {
         <section className="px-6 lg:px-8 py-20 md:py-28 border-t border-border">
           <div className="max-w-6xl mx-auto">
             <ScrollReveal>
-              <p className="text-sm font-semibold tracking-[0.2em] uppercase text-muted-foreground mb-6">
+              <p className="text-3xl md:text-4xl font-semibold tracking-tight uppercase text-muted-foreground mb-6">
                 Mon histoire
               </p>
               <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-10">
@@ -162,7 +162,7 @@ export default function About() {
         <section className="px-6 lg:px-8 py-20 md:py-28 border-t border-border">
           <div className="max-w-6xl mx-auto">
             <ScrollReveal>
-              <p className="text-sm font-semibold tracking-[0.2em] uppercase text-muted-foreground mb-6">
+              <p className="text-3xl md:text-4xl font-semibold tracking-tight uppercase text-muted-foreground mb-6">
                 Mon parcours professionnel
               </p>
               <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-6">
