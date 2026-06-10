@@ -1,15 +1,16 @@
 import { motion } from 'framer-motion';
 import { ArrowLeft, ArrowUpRight } from 'lucide-react';
 import { Link, useParams, Navigate } from 'react-router-dom';
-import { blogPosts } from '@/data/blog';
+import { blogPosts, type BlogCategory } from '@/data/blog';
 import { SEOHead } from '@/components/seo/SEOHead';
 
-const categoryColor: Record<string, string> = {
-  Product: 'from-sky-500 via-indigo-500 to-violet-600',
-  IA: 'from-violet-600 via-fuchsia-500 to-rose-500',
+const categoryColor: Record<BlogCategory, string> = {
+  'Product Management': 'from-sky-500 via-indigo-500 to-violet-600',
+  'IA & Agents': 'from-violet-600 via-fuchsia-500 to-rose-500',
   Data: 'from-emerald-500 via-teal-500 to-cyan-600',
-  Formation: 'from-amber-500 via-orange-500 to-rose-500',
-  Événement: 'from-slate-700 via-slate-900 to-zinc-900',
+  'Innovation & Tech': 'from-amber-500 via-orange-500 to-rose-500',
+  Formation: 'from-yellow-500 via-amber-500 to-orange-500',
+  Communauté: 'from-slate-700 via-slate-900 to-zinc-900',
 };
 
 export default function BlogPost() {
@@ -47,14 +48,15 @@ export default function BlogPost() {
                 Tous les articles
               </Link>
 
-              <div className="flex items-center gap-3 text-sm">
-                <span
-                  className={`text-[10px] font-semibold tracking-wider uppercase px-2 py-1 rounded-full text-white bg-gradient-to-br ${
-                    categoryColor[post.category] ?? 'from-slate-700 to-slate-900'
-                  }`}
-                >
-                  {post.category}
-                </span>
+              <div className="flex items-center gap-2 text-sm flex-wrap">
+                {post.categories.map((c) => (
+                  <span
+                    key={c}
+                    className={`text-[10px] font-semibold tracking-wider uppercase px-2 py-1 rounded-full text-white bg-gradient-to-br ${categoryColor[c]}`}
+                  >
+                    {c}
+                  </span>
+                ))}
                 <span className="text-muted-foreground">{post.date}</span>
               </div>
 
