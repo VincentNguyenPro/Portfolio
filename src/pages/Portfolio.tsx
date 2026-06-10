@@ -59,12 +59,19 @@ export default function Portfolio() {
                           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-black/20" />
                         </>
                       )}
-                      <div className="relative flex items-center gap-3">
-                        <span className="text-xs font-medium tracking-wider uppercase opacity-90">
-                          {project.company}
-                        </span>
-                        <span className="text-xs opacity-60">·</span>
-                        <span className="text-xs opacity-80">{project.period}</span>
+                      <div className="relative flex items-center justify-between gap-3">
+                        <div className="flex items-center gap-3 flex-wrap">
+                          <span className="text-xs font-medium tracking-wider uppercase opacity-90">
+                            {project.company}
+                          </span>
+                          <span className="text-xs opacity-60">·</span>
+                          <span className="text-xs opacity-80">{project.period}</span>
+                        </div>
+                        {project.badge && (
+                          <span className="text-[10px] font-semibold tracking-wide px-2 py-1 rounded-full bg-white/15 backdrop-blur border border-white/20 shrink-0">
+                            {project.badge}
+                          </span>
+                        )}
                       </div>
                       <div className="relative">
                         <h2 className="text-3xl md:text-4xl font-semibold leading-tight mb-3">
