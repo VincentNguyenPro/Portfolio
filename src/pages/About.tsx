@@ -10,6 +10,7 @@ import {
 import { SEOHead } from '@/components/seo/SEOHead';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import saintelyonPhoto from '@/assets/vincent-saintelyon.jpg.asset.json';
+import sunsetRoad from '@/assets/sunset-road.jpg.asset.json';
 import anthropicLogo from '@/assets/logos/anthropic.png.asset.json';
 import bartleLogo from '@/assets/logos/bartle.jpeg.asset.json';
 import fInitiativesLogo from '@/assets/logos/f-initiatives.webp.asset.json';
