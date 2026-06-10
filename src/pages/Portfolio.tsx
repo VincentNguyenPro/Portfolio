@@ -19,9 +19,9 @@ export default function Portfolio() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="max-w-3xl space-y-6"
+              className="space-y-6"
             >
-              <p className="text-sm font-semibold tracking-[0.2em] uppercase text-muted-foreground">
+              <p className="text-5xl md:text-6xl font-semibold tracking-tight uppercase text-muted-foreground">
                 Projets
               </p>
               <h1 className="text-5xl md:text-6xl font-semibold tracking-tight">

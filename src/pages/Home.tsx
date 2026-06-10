@@ -58,7 +58,7 @@ export default function Home() {
                   </span>
                 </h1>
 
-                <p className="text-lg md:text-xl text-white/75 font-light leading-relaxed max-w-2xl">
+                <p className="text-lg md:text-xl text-white/75 font-light leading-relaxed max-w-2xl text-justify hyphens-auto">
                   {photographerInfo.heroIntroduction}
                 </p>
 
@@ -117,7 +117,7 @@ export default function Home() {
         <section className="py-24 md:py-32 px-6 lg:px-8 bg-background">
           <div className="max-w-4xl mx-auto">
             <ScrollReveal>
-              <p className="text-sm font-semibold tracking-[0.2em] uppercase text-muted-foreground mb-6">
+              <p className="text-xl md:text-2xl font-semibold tracking-tight uppercase text-muted-foreground mb-6">
                 À propos
               </p>
               <p className="text-xl md:text-2xl font-light leading-relaxed text-foreground text-justify hyphens-auto">
@@ -142,7 +142,7 @@ export default function Home() {
             <ScrollReveal>
               <div className="flex items-end justify-between flex-wrap gap-4 mb-14">
                 <div>
-                  <p className="text-sm font-semibold tracking-[0.2em] uppercase text-muted-foreground mb-3">
+                  <p className="text-4xl md:text-5xl font-semibold tracking-tight uppercase text-muted-foreground mb-3">
                     Expertises
                   </p>
                   <h2 className="text-4xl md:text-5xl font-semibold tracking-tight">
@@ -181,7 +181,7 @@ export default function Home() {
             <ScrollReveal>
               <div className="flex items-end justify-between flex-wrap gap-4 mb-14">
                 <div>
-                  <p className="text-sm font-semibold tracking-[0.2em] uppercase text-muted-foreground mb-3">
+                  <p className="text-4xl md:text-5xl font-semibold tracking-tight uppercase text-muted-foreground mb-3">
                     Projets
                   </p>
                   <h2 className="text-4xl md:text-5xl font-semibold tracking-tight">
@@ -268,7 +268,7 @@ export default function Home() {
               <h2 className="text-4xl md:text-5xl font-semibold tracking-tight">
                 Un produit à fort enjeu ?
               </h2>
-              <p className="text-lg text-muted-foreground font-light">
+              <p className="text-xl md:text-2xl text-muted-foreground font-light">
                 Discutons de la manière dont je peux contribuer à votre roadmap.
               </p>
               <Link
