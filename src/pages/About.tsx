@@ -115,63 +115,67 @@ export default function About() {
 
         {/* Mon histoire */}
         <section className="px-6 lg:px-8 py-20 md:py-28 border-t border-border">
-          <div className="max-w-6xl mx-auto grid md:grid-cols-[1.4fr_1fr] gap-10 lg:gap-16 items-start">
+          <div className="max-w-6xl mx-auto">
             <ScrollReveal>
               <p className="text-sm font-semibold tracking-[0.2em] uppercase text-muted-foreground mb-6">
                 Mon histoire
               </p>
-              <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-8">
+              <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-10">
                 De l'ingénierie au Product Management : un parcours forgé dans la complexité
               </h2>
-              <div className="space-y-3 text-base font-light leading-snug text-justify hyphens-auto text-foreground/85">
-                <p>
-                  Formé en <strong className="font-semibold text-foreground">génie industriel à l'ISAE-SUPMECA</strong>, j'ai débuté chez <strong className="font-semibold text-foreground">Renault</strong> sur des projets techniques avant de basculer vers ce qui m'anime vraiment : <strong className="font-semibold text-foreground">construire des produits utiles à ceux qui les utilisent</strong>.
-                </p>
-                <p>
-                  En 2014, je rejoins <strong className="font-semibold text-foreground">F-Initiatives</strong>, cabinet en <strong className="font-semibold text-foreground">financement de l'innovation</strong>, où j'accompagne des entreprises de la start-up aux <strong className="font-semibold text-foreground">grands groupes du CAC 40</strong> pour financer leurs projets R&D. Je comprends vite que l'innovation ne vaut quelque chose que si elle est <strong className="font-semibold text-foreground">structurée et portée par les bons interlocuteurs</strong>.
-                </p>
-                <p>
-                  En 2016, je reviens chez <strong className="font-semibold text-foreground">Renault</strong> comme <strong className="font-semibold text-foreground">Product Owner</strong> sur un <strong className="font-semibold text-foreground">outil de costing critique</strong> — 10 M€, 250 utilisateurs, 12 pays. Je découvre ce que signifie vraiment <strong className="font-semibold text-foreground">livrer à grande échelle</strong> : spécifications, tests, conduite du changement.<br />
-                  Résultat : <strong className="font-semibold text-foreground">95 % de taux d'adoption</strong> et <strong className="font-semibold text-foreground">+15 % de fiabilité et rapidité d'exécution</strong> des calculs.
-                </p>
-                <p>
-                  En 2020, je deviens <strong className="font-semibold text-foreground">responsable transformation</strong> et je prends la responsabilité de l'<strong className="font-semibold text-foreground">outil de consolidation financière Supply Chain monde</strong> — 8 M€, +25 contrôleurs, 10 pays. Je vis pleinement le <strong className="font-semibold text-foreground">cycle produit</strong> : backlog, delivery Scrum, amélioration continue.<br />
-                  Impact direct : <strong className="font-semibold text-foreground">-50 % sur les délais de clôture</strong>, de J+10 à J+5.
-                </p>
-                <p>
-                  En 2023, chez <strong className="font-semibold text-foreground">Bartle</strong>, j'accompagne des grands groupes en <strong className="font-semibold text-foreground">restructuration DSI</strong>. Je construis de zéro un <strong className="font-semibold text-foreground">outil de pilotage des coûts DSI</strong>.<br />
-                  Résultat : <strong className="font-semibold text-foreground">MVP livré en 2 mois</strong>.<br />
-                  Je vis de l'intérieur le <strong className="font-semibold text-foreground">pain point universel des directions Finance et IT</strong> : les outils Excel ne suffisent plus pour piloter sérieusement un <strong className="font-semibold text-foreground">P&L DSI</strong>. Ce constat devient un <strong className="font-semibold text-foreground">déclic</strong>.
-                </p>
-                <p>
-                  En 2026, je consolide ma pratique à la <strong className="font-semibold text-foreground">formation Noé</strong> et commence à construire le <strong className="font-semibold text-foreground">SaaS qui manque au marché</strong> : une application de <strong className="font-semibold text-foreground">pilotage P&L DSI</strong> conçue avec les <strong className="font-semibold text-foreground">outils IA modernes</strong>.
-                </p>
-                <p>
-                  Aujourd'hui, je cherche à mettre cette <strong className="font-semibold text-foreground">triple culture — rigueur d'ingénieur, expertise finance & SI, maîtrise du cycle produit</strong> — au service de <strong className="font-semibold text-foreground">produits digitaux à fort impact</strong>, dans des environnements où la <strong className="font-semibold text-foreground">complexité métier est une opportunité, pas un obstacle</strong>.
-                </p>
-              </div>
             </ScrollReveal>
-            <ScrollReveal delay={0.1}>
-              <div className="md:sticky md:top-24 relative">
-                <div className="absolute -inset-3 rounded-3xl bg-gradient-to-br from-indigo-500/20 via-violet-500/15 to-emerald-500/15 blur-2xl" />
-                <div className="relative aspect-[4/5] rounded-3xl overflow-hidden border border-border bg-muted">
-                  <img
-                    src={saintelyonPhoto.url}
-                    alt="Vincent Nguyen à l'arrivée de la SaintéLyon"
-                    className="w-full h-full object-cover"
-                  />
+            <div className="grid md:grid-cols-[1.4fr_1fr] gap-10 lg:gap-16 items-start">
+              <ScrollReveal>
+                <div className="space-y-3 text-base font-light leading-snug text-justify hyphens-auto text-foreground/85">
+                  <p>
+                    Formé en <strong className="font-semibold text-foreground">génie industriel à l'ISAE-SUPMECA</strong>, j'ai débuté chez <strong className="font-semibold text-foreground">Renault</strong> sur des projets techniques avant de basculer vers ce qui m'anime vraiment : <strong className="font-semibold text-foreground">construire des produits utiles à ceux qui les utilisent</strong>.
+                  </p>
+                  <p>
+                    En 2014, je rejoins <strong className="font-semibold text-foreground">F-Initiatives</strong>, cabinet en <strong className="font-semibold text-foreground">financement de l'innovation</strong>, où j'accompagne des entreprises de la start-up aux <strong className="font-semibold text-foreground">grands groupes du CAC 40</strong> pour financer leurs projets R&D. Je comprends vite que l'innovation ne vaut quelque chose que si elle est <strong className="font-semibold text-foreground">structurée et portée par les bons interlocuteurs</strong>.
+                  </p>
+                  <p>
+                    En 2016, je reviens chez <strong className="font-semibold text-foreground">Renault</strong> comme <strong className="font-semibold text-foreground">Product Owner</strong> sur un <strong className="font-semibold text-foreground">outil de costing critique</strong> — 10 M€, 250 utilisateurs, 12 pays. Je découvre ce que signifie vraiment <strong className="font-semibold text-foreground">livrer à grande échelle</strong> : spécifications, tests, conduite du changement.<br />
+                    Résultat : <strong className="font-semibold text-foreground">95 % de taux d'adoption</strong> et <strong className="font-semibold text-foreground">+15 % de fiabilité et rapidité d'exécution</strong> des calculs.
+                  </p>
+                  <p>
+                    En 2020, je deviens <strong className="font-semibold text-foreground">responsable transformation</strong> et <strong className="font-semibold text-foreground">Product Owner</strong>. Je prends la responsabilité de l'<strong className="font-semibold text-foreground">outil de consolidation financière Supply Chain monde</strong> — 8 M€, +25 contrôleurs, 10 pays. Je vis pleinement le <strong className="font-semibold text-foreground">cycle produit</strong> : backlog, delivery Scrum, amélioration continue.<br />
+                    Impact direct : <strong className="font-semibold text-foreground">-50 % sur les délais de clôture</strong>, de J+10 à J+5.
+                  </p>
+                  <p>
+                    En 2023, chez <strong className="font-semibold text-foreground">Bartle</strong>, j'accompagne des grands groupes en <strong className="font-semibold text-foreground">restructuration DSI</strong>. Je construis de zéro un <strong className="font-semibold text-foreground">outil de pilotage des coûts DSI</strong>. Je mène des <strong className="font-semibold text-foreground">ateliers utilisateurs</strong> pour comprendre leurs besoins et je <strong className="font-semibold text-foreground">prototype en plusieurs itérations</strong> pour aboutir à un MVP.<br />
+                    Résultat : <strong className="font-semibold text-foreground">MVP livré en 2 mois</strong>.<br />
+                    Je vis de l'intérieur le <strong className="font-semibold text-foreground">pain point universel des directions Finance et IT</strong> : les outils Excel ne suffisent plus pour piloter sérieusement un <strong className="font-semibold text-foreground">P&L DSI</strong>. Ce constat devient un <strong className="font-semibold text-foreground">déclic</strong>.
+                  </p>
+                  <p>
+                    En 2026, je consolide ma pratique à la <strong className="font-semibold text-foreground">formation Noé</strong> et commence à construire le <strong className="font-semibold text-foreground">SaaS qui manque au marché</strong> : une application de <strong className="font-semibold text-foreground">pilotage P&L DSI</strong> conçue avec les <strong className="font-semibold text-foreground">outils IA modernes</strong>.
+                  </p>
+                  <p>
+                    Aujourd'hui, je cherche à mettre cette <strong className="font-semibold text-foreground">triple culture — rigueur d'ingénieur, expertise finance & SI, maîtrise du cycle produit</strong> — au service de <strong className="font-semibold text-foreground">produits digitaux à fort impact</strong>, dans des environnements où la <strong className="font-semibold text-foreground">complexité métier est une opportunité, pas un obstacle</strong>.
+                  </p>
                 </div>
-                <p className="mt-4 text-xs text-muted-foreground font-light italic text-center">
-                  Arrivée de la SaintéLyon — 78 km de nuit entre Saint-Étienne et Lyon
-                </p>
-              </div>
-            </ScrollReveal>
+              </ScrollReveal>
+              <ScrollReveal delay={0.1}>
+                <div className="md:sticky md:top-24 relative">
+                  <div className="absolute -inset-3 rounded-3xl bg-gradient-to-br from-indigo-500/20 via-violet-500/15 to-emerald-500/15 blur-2xl" />
+                  <div className="relative aspect-[4/5] rounded-3xl overflow-hidden border border-border bg-muted">
+                    <img
+                      src={saintelyonPhoto.url}
+                      alt="Vincent Nguyen à l'arrivée de la SaintéLyon"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <p className="mt-4 text-xs text-muted-foreground font-light italic text-center">
+                    Arrivée de la SaintéLyon — 78 km de nuit entre Saint-Étienne et Lyon
+                  </p>
+                </div>
+              </ScrollReveal>
+            </div>
           </div>
         </section>
 
         {/* Mon parcours professionnel */}
         <section className="px-6 lg:px-8 py-20 md:py-28 border-t border-border">
-          <div className="max-w-6xl mx-auto grid md:grid-cols-[1.4fr_1fr] gap-10 lg:gap-16 items-start">
+          <div className="max-w-6xl mx-auto">
             <ScrollReveal>
               <p className="text-sm font-semibold tracking-[0.2em] uppercase text-muted-foreground mb-6">
                 Mon parcours professionnel
@@ -179,40 +183,43 @@ export default function About() {
               <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-6">
                 Un fil rouge cohérent
               </h2>
-              <p className="text-base md:text-lg font-light leading-relaxed text-foreground/85 mb-10">
+              <p className="text-base md:text-lg font-light leading-relaxed text-foreground/85 mb-10 max-w-3xl">
                 De l'ingénierie au Product Management, un fil rouge cohérent : <strong className="font-semibold text-foreground">créer de la valeur à travers des produits digitaux utiles</strong>.
               </p>
-
-              <ul className="divide-y divide-border">
-                {experiences.map((exp, i) => (
-                  <li key={`${exp.company}-${i}`} className="py-5 flex items-center gap-4">
-                    <LogoBadge text={exp.company} fallback={<Building2 className="size-5" />} size={10} />
-                    <div className="flex-1 min-w-0">
-                      <h3 className="text-base md:text-lg font-semibold tracking-tight leading-snug">
-                        {exp.role}
-                      </h3>
-                      <p className="text-sm text-muted-foreground mt-0.5">{exp.company}</p>
-                    </div>
-                    <p className="shrink-0 text-xs md:text-sm font-medium text-muted-foreground tabular-nums">
-                      {exp.period}
-                    </p>
-                  </li>
-                ))}
-              </ul>
             </ScrollReveal>
-            <ScrollReveal delay={0.1}>
-              <div className="md:sticky md:top-24 relative">
-                <div className="absolute -inset-3 rounded-3xl bg-gradient-to-br from-amber-500/25 via-orange-500/15 to-rose-500/15 blur-2xl" />
-                <div className="relative aspect-[4/5] rounded-3xl overflow-hidden border border-border bg-muted">
-                  <img
-                    src={sunsetRoad.url}
-                    alt="Route au coucher de soleil — symbole du parcours professionnel"
-                    className="w-full h-full object-cover"
-                    loading="lazy"
-                  />
+            <div className="grid md:grid-cols-[1.4fr_1fr] gap-10 lg:gap-16 items-start">
+              <ScrollReveal>
+                <ul className="divide-y divide-border">
+                  {experiences.map((exp, i) => (
+                    <li key={`${exp.company}-${i}`} className="py-5 flex items-center gap-4">
+                      <LogoBadge text={exp.company} fallback={<Building2 className="size-5" />} size={10} />
+                      <div className="flex-1 min-w-0">
+                        <h3 className="text-base md:text-lg font-semibold tracking-tight leading-snug">
+                          {exp.role}
+                        </h3>
+                        <p className="text-sm text-muted-foreground mt-0.5">{exp.company}</p>
+                      </div>
+                      <p className="shrink-0 text-xs md:text-sm font-medium text-muted-foreground tabular-nums">
+                        {exp.period}
+                      </p>
+                    </li>
+                  ))}
+                </ul>
+              </ScrollReveal>
+              <ScrollReveal delay={0.1}>
+                <div className="md:sticky md:top-24 relative">
+                  <div className="absolute -inset-3 rounded-3xl bg-gradient-to-br from-amber-500/25 via-orange-500/15 to-rose-500/15 blur-2xl" />
+                  <div className="relative aspect-[4/5] rounded-3xl overflow-hidden border border-border bg-muted">
+                    <img
+                      src={sunsetRoad.url}
+                      alt="Route au coucher de soleil — symbole du parcours professionnel"
+                      className="w-full h-full object-cover"
+                      loading="lazy"
+                    />
+                  </div>
                 </div>
-              </div>
-            </ScrollReveal>
+              </ScrollReveal>
+            </div>
           </div>
         </section>
 
