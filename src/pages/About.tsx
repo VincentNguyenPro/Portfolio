@@ -60,7 +60,7 @@ export default function About() {
       <div className="min-h-screen">
         {/* Header */}
         <section className="px-6 lg:px-8 pt-16 pb-12 md:pt-24 md:pb-16 border-b border-border">
-          <div className="max-w-6xl mx-auto grid md:grid-cols-[1.5fr_1fr] gap-10 lg:gap-16 items-stretch">
+          <div className="max-w-6xl mx-auto grid md:grid-cols-[1.4fr_1fr] gap-10 lg:gap-16 items-start">
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
@@ -73,7 +73,7 @@ export default function About() {
               <h1 className="text-5xl md:text-6xl font-semibold tracking-tight">
                 Vincent Nguyen
               </h1>
-              <div className="space-y-4 text-lg text-muted-foreground font-light leading-relaxed">
+              <div className="space-y-4 text-lg text-muted-foreground font-light leading-relaxed text-justify hyphens-auto">
                 {photographerInfo.biography.split('\n\n').map((p, i) => (
                   <p key={i}>{p}</p>
                 ))}
@@ -83,17 +83,15 @@ export default function About() {
               initial={{ opacity: 0, scale: 0.96 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.7, delay: 0.1 }}
-              className="relative h-full flex justify-center md:justify-end"
+              className="md:sticky md:top-24 relative"
             >
-              <div className="relative h-full aspect-[4/5]">
-                <div className="absolute -inset-3 rounded-3xl bg-gradient-to-br from-indigo-500/20 via-violet-500/15 to-emerald-500/15 blur-2xl" />
-                <div className="relative h-full w-full rounded-3xl overflow-hidden border border-border bg-muted">
-                  <img
-                    src={photographerInfo.portraitImage}
-                    alt={photographerInfo.name}
-                    className="w-full h-full object-cover object-top grayscale"
-                  />
-                </div>
+              <div className="absolute -inset-3 rounded-3xl bg-gradient-to-br from-indigo-500/20 via-violet-500/15 to-emerald-500/15 blur-2xl" />
+              <div className="relative aspect-[4/5] rounded-3xl overflow-hidden border border-border bg-muted">
+                <img
+                  src={photographerInfo.portraitImage}
+                  alt={photographerInfo.name}
+                  className="w-full h-full object-cover object-top grayscale"
+                />
               </div>
             </motion.div>
           </div>
@@ -170,7 +168,7 @@ export default function About() {
               <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-6">
                 Un fil rouge cohérent
               </h2>
-              <p className="text-base md:text-lg font-light leading-relaxed text-foreground/85 mb-10 max-w-3xl">
+              <p className="text-base md:text-lg font-light leading-relaxed text-foreground/85 mb-10">
                 De l'ingénierie au Product Management, un fil rouge cohérent : <strong className="font-semibold text-foreground">créer de la valeur à travers des produits digitaux utiles</strong>.
               </p>
             </ScrollReveal>
@@ -213,25 +211,42 @@ export default function About() {
         {/* Formation */}
         <section className="px-6 lg:px-8 py-20 md:py-28 border-t border-border bg-muted/30">
           <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 lg:gap-16">
-            <div>
-              <div className="flex items-center gap-3 mb-8">
-                <GraduationCap className="size-5 text-muted-foreground" />
-                <h2 className="text-2xl md:text-3xl font-semibold tracking-tight">Formation</h2>
-              </div>
-              <div className="space-y-6">
-                {educationItems.map((e) => (
-                  <div key={e.title} className="flex gap-4">
-                    <LogoBadge text={e.school} fallback={<School className="size-5" />} size={10} />
+            <div className="space-y-12">
+              <div>
+                <div className="flex items-center gap-3 mb-8">
+                  <GraduationCap className="size-5 text-muted-foreground" />
+                  <h2 className="text-2xl md:text-3xl font-semibold tracking-tight">Formation</h2>
+                </div>
+                <div className="space-y-6">
+                  {educationItems.map((e) => (
+                    <div key={e.title} className="flex gap-4">
+                      <LogoBadge text={e.school} fallback={<School className="size-5" />} size={10} />
 
-                    <div>
-                      <p className="text-xs text-muted-foreground font-medium tracking-wide">
-                        {e.period}
-                      </p>
-                      <h3 className="text-lg font-semibold mt-1">{e.title}</h3>
-                      <p className="text-sm text-muted-foreground font-light mt-1">{e.school}</p>
+                      <div>
+                        <p className="text-xs text-muted-foreground font-medium tracking-wide">
+                          {e.period}
+                        </p>
+                        <h3 className="text-lg font-semibold mt-1">{e.title}</h3>
+                        <p className="text-sm text-muted-foreground font-light mt-1">{e.school}</p>
+                      </div>
                     </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
+              </div>
+
+              <div>
+                <div className="flex items-center gap-3 mb-6">
+                  <LanguagesIcon className="size-5 text-muted-foreground" />
+                  <h2 className="text-2xl md:text-3xl font-semibold tracking-tight">Langues</h2>
+                </div>
+                <ul className="space-y-2">
+                  {languages.map((l) => (
+                    <li key={l.name} className="flex items-baseline justify-between gap-4">
+                      <span className="text-base font-medium">{l.name}</span>
+                      <span className="text-sm text-muted-foreground font-light">{l.level}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
 
@@ -249,19 +264,6 @@ export default function About() {
                       <p className="text-base font-semibold">{c.label}</p>
                       <p className="text-sm text-muted-foreground font-light">{c.issuer}</p>
                     </div>
-                  </li>
-                ))}
-              </ul>
-
-              <div className="flex items-center gap-3 mt-12 mb-6">
-                <LanguagesIcon className="size-5 text-muted-foreground" />
-                <h2 className="text-2xl md:text-3xl font-semibold tracking-tight">Langues</h2>
-              </div>
-              <ul className="space-y-2">
-                {languages.map((l) => (
-                  <li key={l.name} className="flex items-baseline justify-between gap-4">
-                    <span className="text-base font-medium">{l.name}</span>
-                    <span className="text-sm text-muted-foreground font-light">{l.level}</span>
                   </li>
                 ))}
               </ul>
