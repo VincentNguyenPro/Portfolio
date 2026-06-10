@@ -185,7 +185,7 @@ export const projects: Project[] = [
 ];
 
 export function getFeaturedProjects(): Project[] {
-  return projects.slice(0, 3);
+  return projects;
 }
 
 export function getProjectBySlug(slug: string): Project | undefined {
