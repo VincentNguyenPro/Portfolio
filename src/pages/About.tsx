@@ -97,21 +97,6 @@ export default function About() {
           </div>
         </section>
 
-        {/* Approche */}
-        <section className="px-6 lg:px-8 py-20 md:py-28 bg-muted/30">
-          <div className="max-w-4xl mx-auto">
-            <ScrollReveal>
-              <p className="text-sm font-semibold tracking-[0.2em] uppercase text-muted-foreground mb-6">
-                Mon approche
-              </p>
-              <div className="space-y-5 text-xl md:text-2xl font-light leading-relaxed text-foreground">
-                {photographerInfo.approach.split('\n\n').map((p, i) => (
-                  <p key={i}>{p}</p>
-                ))}
-              </div>
-            </ScrollReveal>
-          </div>
-        </section>
 
         {/* Mon histoire */}
         <section className="px-6 lg:px-8 py-20 md:py-28 border-t border-border">
