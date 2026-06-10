@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { blogPosts } from '@/data/blog';
 import { SEOHead } from '@/components/seo/SEOHead';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
@@ -13,6 +14,8 @@ const categoryColor: Record<string, string> = {
 };
 
 export default function Blog() {
+  const posts = [...blogPosts].sort((a, b) => a.order - b.order);
+
   return (
     <>
       <SEOHead
@@ -44,34 +47,33 @@ export default function Blog() {
 
         <section className="px-6 lg:px-8 py-16 md:py-24">
           <div className="max-w-7xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {blogPosts.map((post, i) => (
-              <ScrollReveal key={post.id} delay={i * 0.05}>
-                <a
-                  href={post.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
+            {posts.map((post, i) => (
+              <ScrollReveal key={post.slug} delay={i * 0.05}>
+                <Link
+                  to={`/blog/${post.slug}`}
                   className="group h-full block rounded-2xl overflow-hidden border border-border bg-card hover:shadow-xl transition-all"
                 >
-                  <div
-                    className={`relative aspect-[16/9] bg-gradient-to-br ${
-                      categoryColor[post.category] ?? 'from-slate-700 to-slate-900'
-                    } p-6 flex flex-col justify-between text-white overflow-hidden`}
-                  >
-                    <div
-                      className="absolute inset-0 opacity-15"
-                      style={{
-                        backgroundImage:
-                          'linear-gradient(rgba(255,255,255,.6) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.6) 1px, transparent 1px)',
-                        backgroundSize: '32px 32px',
-                      }}
+                  <div className="relative aspect-[16/9] overflow-hidden bg-muted">
+                    <img
+                      src={post.cover.url}
+                      alt={post.cover.alt}
+                      className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      loading="lazy"
                     />
-                    <div className="relative flex items-center justify-between">
-                      <span className="text-[10px] font-semibold tracking-wider uppercase px-2 py-1 rounded-full bg-white/15 backdrop-blur border border-white/20">
-                        {post.category}
-                      </span>
-                      <ArrowUpRight className="size-5 opacity-90 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
+                    <div className="relative h-full p-5 flex flex-col justify-between text-white">
+                      <div className="flex items-center justify-between">
+                        <span
+                          className={`text-[10px] font-semibold tracking-wider uppercase px-2 py-1 rounded-full bg-gradient-to-br ${
+                            categoryColor[post.category] ?? 'from-slate-700 to-slate-900'
+                          } border border-white/20`}
+                        >
+                          {post.category}
+                        </span>
+                        <ArrowUpRight className="size-5 opacity-90 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                      </div>
+                      <p className="text-xs opacity-90">{post.date}</p>
                     </div>
-                    <p className="relative text-xs opacity-90">{post.date}</p>
                   </div>
                   <div className="p-6 space-y-3">
                     <h2 className="text-lg font-semibold tracking-tight leading-snug group-hover:text-foreground/80 transition-colors">
@@ -81,7 +83,7 @@ export default function Blog() {
                       {post.description}
                     </p>
                   </div>
-                </a>
+                </Link>
               </ScrollReveal>
             ))}
           </div>
