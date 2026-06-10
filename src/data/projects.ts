@@ -3,13 +3,58 @@ import blablacarCover from '@/assets/blablacar-cover.jpg';
 import bartleCover from '@/assets/bartle-cover.jpg';
 import renaultSupplyCover from '@/assets/renault-supply-cover.jpg';
 import renaultCostingCover from '@/assets/renault-costing-cover.jpg';
+import dsiFinopsCover from '@/assets/dsi-finops-saas.png.asset.json';
 
 export const projects: Project[] = [
+  {
+    id: '0',
+    slug: 'saas-pilotage-dsi',
+    title: 'SaaS de pilotage financier pour les DSI',
+    company: 'Projet personnel',
+    role: 'Founder · Product Manager',
+    period: '2026 — En cours',
+    category: 'finance',
+    summary:
+      "Application SaaS de pilotage du P&L DSI conçue pour piloter sérieusement un budget DSI au-delà d'Excel.",
+    context:
+      "Après plusieurs missions au cœur des directions Finance et IT, j'ai constaté qu'Excel ne suffisait plus pour piloter sérieusement un P&L DSI. Je construis une application SaaS dédiée, conçue avec les outils IA modernes.",
+    problem:
+      "Comment offrir aux DSI un outil de pilotage P&L moderne, simple et collaboratif, sans la lourdeur des ERP ni les limites d'Excel ?",
+    approach: [
+      {
+        heading: 'Pain point validé sur le terrain',
+        body: "Plusieurs années passées à observer le même besoin chez des directions DSI / Finance de grands groupes.",
+      },
+      {
+        heading: 'Discovery & prototypage IA',
+        body: "Itérations rapides sur les maquettes et le MVP en s'appuyant sur les outils IA modernes (Lovable, Claude Code, Cursor).",
+      },
+      {
+        heading: 'Build 0 → 1',
+        body: "Construction d'une version alpha couvrant la consolidation budgétaire, le suivi CAPEX / OPEX / MS et la projection annuelle.",
+      },
+    ],
+    results: [
+      "Pain point validé auprès de directions DSI",
+      "Version alpha en construction",
+      "Architecture conçue native IA",
+    ],
+    metrics: [
+      { value: 'Pain point', label: 'validé terrain' },
+      { value: 'IA', label: 'outils modernes' },
+      { value: '0 → 1', label: 'en construction' },
+    ],
+    stack: ['Lovable', 'Claude Code', 'React', 'Supabase', 'TypeScript'],
+    scope: 'Projet personnel · Conception produit, design et développement',
+    coverGradient: 'from-blue-600 via-indigo-600 to-violet-700',
+    coverImage: dsiFinopsCover.url,
+    badge: '🚧 En cours',
+  },
   {
     id: '1',
     slug: 'blablacar-first-ride',
     title: 'Améliorer le taux de réussite du premier trajet',
-    company: 'BlaBlaCar (via formation Noé)',
+    company: 'BlaBlaCar',
     role: 'Product Manager',
     period: '2026',
     category: 'mobile',
