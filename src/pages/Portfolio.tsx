@@ -10,7 +10,7 @@ export default function Portfolio() {
     <>
       <SEOHead
         title="Projets"
-        description="Études de cas de Vincent Nguyen : Product Management chez BlaBlaCar, Bartle et Renault — finance, supply chain et transformation digitale."
+        description="Réalisations de Vincent Nguyen : Product Management chez BlaBlaCar, Bartle et Renault — finance, supply chain et applications mobiles."
       />
       <div className="min-h-screen">
         <section className="px-6 lg:px-8 pt-16 pb-12 md:pt-24 md:pb-16 border-b border-border">
@@ -25,11 +25,10 @@ export default function Portfolio() {
                 Projets
               </p>
               <h1 className="text-5xl md:text-6xl font-semibold tracking-tight">
-                Études de cas
+                Réalisations
               </h1>
               <p className="text-lg text-muted-foreground font-light leading-relaxed">
-                Quatre projets représentatifs de mes 10 ans en Product Management, sur des outils
-                critiques en finance, supply chain et applications mobiles.
+                Des produits livrés, des impacts mesurés — Finance, Costing, Supply Chain, Applications mobiles.
               </p>
             </motion.div>
           </div>
