@@ -83,7 +83,7 @@ export default function About() {
               initial={{ opacity: 0, scale: 0.96 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.7, delay: 0.1 }}
-              className="relative"
+              className="relative md:mt-36"
             >
               <div className="absolute -inset-3 rounded-3xl bg-gradient-to-br from-indigo-500/20 via-violet-500/15 to-emerald-500/15 blur-2xl" />
               <div className="relative aspect-[4/5] rounded-3xl overflow-hidden border border-border bg-muted">
