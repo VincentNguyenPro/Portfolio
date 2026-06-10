@@ -120,8 +120,9 @@ export default function Home() {
               <p className="text-sm font-semibold tracking-[0.2em] uppercase text-muted-foreground mb-6">
                 À propos
               </p>
-              <p className="text-2xl md:text-3xl font-light leading-relaxed text-foreground">
-                {photographerInfo.biography.split('\n\n')[0]}
+              <p className="text-xl md:text-2xl font-light leading-relaxed text-foreground text-justify hyphens-auto">
+                Product Manager — Product Owner avec 10 ans d'expérience en SI finance et transformation digitale.
+                J'ai piloté des outils critiques (8 M€, +25 ETP), réduit de 50 % les délais de clôture, et j'utilise l'IA au quotidien pour accélérer la discovery comme la delivery produit.
               </p>
               <Link
                 to="/about"
@@ -133,6 +134,7 @@ export default function Home() {
             </ScrollReveal>
           </div>
         </section>
+
 
         {/* EXPERTISES */}
         <section className="py-24 md:py-32 px-6 lg:px-8 border-t border-border bg-muted/30">
