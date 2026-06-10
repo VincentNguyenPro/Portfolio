@@ -10,6 +10,7 @@ import {
 import { SEOHead } from '@/components/seo/SEOHead';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import saintelyonPhoto from '@/assets/vincent-saintelyon.jpg.asset.json';
+import sunsetRoad from '@/assets/sunset-road.jpg.asset.json';
 import anthropicLogo from '@/assets/logos/anthropic.png.asset.json';
 import bartleLogo from '@/assets/logos/bartle.jpeg.asset.json';
 import fInitiativesLogo from '@/assets/logos/f-initiatives.webp.asset.json';
@@ -114,7 +115,7 @@ export default function About() {
 
         {/* Mon histoire */}
         <section className="px-6 lg:px-8 py-20 md:py-28 border-t border-border">
-          <div className="max-w-6xl mx-auto grid md:grid-cols-[1.6fr_1fr] gap-10 lg:gap-16 items-start">
+          <div className="max-w-6xl mx-auto grid md:grid-cols-[1.4fr_1fr] gap-10 lg:gap-16 items-start">
             <ScrollReveal>
               <p className="text-sm font-semibold tracking-[0.2em] uppercase text-muted-foreground mb-6">
                 Mon histoire
@@ -123,13 +124,21 @@ export default function About() {
                 De l'ingénierie au Product Management : un parcours forgé dans la complexité
               </h2>
               <div className="space-y-5 text-base md:text-lg font-light leading-relaxed text-foreground/85">
-                <p>Formé en génie industriel à l'ISAE-SUPMECA, j'ai débuté chez Renault sur des projets techniques avant de basculer vers ce qui m'anime vraiment : construire des produits utiles à ceux qui les utilisent. Cette expérience terrain m'ancre dans une conviction qui guide encore mon approche aujourd'hui : un bon produit, c'est de la rigueur technique, des contraintes bien maîtrisées, et des équipes pluridisciplinaires qui savent vraiment collaborer.</p>
-                <p>En 2014, je rejoins F-Initiatives, cabinet spécialisé en financement de l'innovation. J'y apprends les fondamentaux du conseil — posture, communication, écoute client — et je suis exposé à des directeurs R&D, chefs de projets et financiers que j'accompagne pour financer leurs projets d'innovation, de la start-up aux grands groupes du CAC 40, dans les secteurs industriels et NTIC. Je croise des pionniers comme Carmat ou Qarnot Computing, et je comprends que l'innovation ne vaut quelque chose que si elle est financée, structurée et portée par les bons interlocuteurs.</p>
-                <p>En 2016, je reviens dans le Groupe Renault, missionné pour construire un outil de costing métier permettant de calculer le coût de revient de l'ensemble des véhicules du groupe — 10 M€ de budget, 250 utilisateurs dans 12 pays. J'agis en tant que Product Owner et je découvre ce que signifie vraiment livrer un outil critique : spécifications, tests fonctionnels, conduite du changement, adoption à grande échelle. Résultat : 95 % de taux d'adoption et +15 % de fiabilité sur les calculs de costing.</p>
-                <p>En 2020, je prends la responsabilité de la transformation finance et du Product Ownership sur l'outil de consolidation financière Supply Chain monde — 8 M€, une squad de 4 personnes, 25+ contrôleurs de gestion dans 10 pays. C'est là que je vis pleinement le cycle produit dans toute sa profondeur : roadmap, backlog, delivery Scrum, amélioration continue par la donnée. Impact concret : -50 % sur les délais de clôture, de J+10 à J+5.</p>
-                <p>En 2023, je rejoins Bartle, cabinet de conseil en management, où j'accompagne des grands groupes en pleine restructuration de leur DSI — carve-out, centralisation, réorganisation. Je construis pour eux des outils de pilotage financier et je vis de l'intérieur un pain point que toutes les directions Finance et IT partagent : les outils Excel ne suffisent plus pour piloter sérieusement un P&L DSI. Ce constat devient un déclic.</p>
-                <p>En 2026, je rejoins la formation Product Management de Noé pour consolider méthodiquement ma pratique — discovery, UX research, priorisation, prototypage — sur un cas concret avec BlaBlaCar. En parallèle, je commence à construire le SaaS qui manque au marché : une application de pilotage P&L DSI conçue avec les outils IA modernes.</p>
-                <p>Aujourd'hui, je cherche à mettre cette triple culture — rigueur d'ingénieur, expertise finance & SI, maîtrise du cycle produit — au service de produits digitaux à fort impact, dans des environnements où la complexité métier est une opportunité, pas un obstacle.</p>
+                <p>
+                  Formé <strong className="font-semibold text-foreground">ingénieur à l'ISAE-SUPMECA</strong>, j'ai vite basculé vers ce qui m'anime : <strong className="font-semibold text-foreground">construire des produits utiles</strong>. Une conviction qui me guide encore — un bon produit, c'est de la rigueur technique, des contraintes maîtrisées, et des équipes pluridisciplinaires qui collaborent vraiment.
+                </p>
+                <p>
+                  Chez <strong className="font-semibold text-foreground">F-Initiatives</strong> (2014), j'apprends les fondamentaux du conseil aux côtés de directeurs R&D et financiers, du start-up au CAC 40. Puis chez <strong className="font-semibold text-foreground">Renault</strong> (2016), je deviens Product Owner d'un <strong className="font-semibold text-foreground">outil de costing critique</strong> — 10 M€, 250 utilisateurs, 12 pays. Résultat : <strong className="font-semibold text-foreground">95 % d'adoption</strong> et +15 % de fiabilité.
+                </p>
+                <p>
+                  En 2020, je prends la <strong className="font-semibold text-foreground">transformation Supply Chain monde</strong> — 8 M€, squad de 4, 25+ contrôleurs dans 10 pays. Je vis le cycle produit en profondeur : roadmap, backlog, delivery Scrum. Impact : <strong className="font-semibold text-foreground">-50 % de délais de clôture</strong>, de J+10 à J+5.
+                </p>
+                <p>
+                  Chez <strong className="font-semibold text-foreground">Bartle</strong> (2023), j'accompagne des DSI en restructuration et je découvre un pain point partagé : <strong className="font-semibold text-foreground">Excel ne suffit plus pour piloter un P&L DSI</strong>. Le déclic. Aujourd'hui, je consolide ma pratique PM chez <strong className="font-semibold text-foreground">Noé / BlaBlaCar</strong> et je construis le SaaS qui manque au marché.
+                </p>
+                <p>
+                  Ma valeur : <strong className="font-semibold text-foreground">rigueur d'ingénieur, expertise Finance & SI, maîtrise du cycle produit</strong> — au service d'environnements où la complexité métier est une opportunité.
+                </p>
               </div>
             </ScrollReveal>
             <ScrollReveal delay={0.1}>
@@ -150,52 +159,50 @@ export default function About() {
           </div>
         </section>
 
-        {/* Expériences */}
+        {/* Mon parcours professionnel */}
         <section className="px-6 lg:px-8 py-20 md:py-28 border-t border-border">
-          <div className="max-w-5xl mx-auto">
+          <div className="max-w-6xl mx-auto grid md:grid-cols-[1.4fr_1fr] gap-10 lg:gap-16 items-start">
             <ScrollReveal>
-              <div className="flex items-center gap-3 mb-12">
-                <Briefcase className="size-5 text-muted-foreground" />
-                <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">
-                  Expériences professionnelles
-                </h2>
+              <p className="text-sm font-semibold tracking-[0.2em] uppercase text-muted-foreground mb-6">
+                Mon parcours professionnel
+              </p>
+              <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-6">
+                Un fil rouge cohérent
+              </h2>
+              <p className="text-base md:text-lg font-light leading-relaxed text-foreground/85 mb-10">
+                De l'ingénierie au Product Management, un fil rouge cohérent : <strong className="font-semibold text-foreground">créer de la valeur à travers des produits digitaux utiles</strong>.
+              </p>
+
+              <ul className="divide-y divide-border">
+                {experiences.map((exp, i) => (
+                  <li key={`${exp.company}-${i}`} className="py-5 flex items-center gap-4">
+                    <LogoBadge text={exp.company} fallback={<Building2 className="size-5" />} size={10} />
+                    <div className="flex-1 min-w-0">
+                      <h3 className="text-base md:text-lg font-semibold tracking-tight leading-snug">
+                        {exp.role}
+                      </h3>
+                      <p className="text-sm text-muted-foreground mt-0.5">{exp.company}</p>
+                    </div>
+                    <p className="shrink-0 text-xs md:text-sm font-medium text-muted-foreground tabular-nums">
+                      {exp.period}
+                    </p>
+                  </li>
+                ))}
+              </ul>
+            </ScrollReveal>
+            <ScrollReveal delay={0.1}>
+              <div className="md:sticky md:top-24 relative">
+                <div className="absolute -inset-3 rounded-3xl bg-gradient-to-br from-amber-500/25 via-orange-500/15 to-rose-500/15 blur-2xl" />
+                <div className="relative aspect-[4/5] rounded-3xl overflow-hidden border border-border bg-muted">
+                  <img
+                    src={sunsetRoad.url}
+                    alt="Route au coucher de soleil — symbole du parcours professionnel"
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                  />
+                </div>
               </div>
             </ScrollReveal>
-
-            <div className="space-y-10">
-              {experiences.map((exp, i) => (
-                <ScrollReveal key={`${exp.company}-${i}`} delay={i * 0.04}>
-                  <div className="grid md:grid-cols-[200px_1fr] gap-6 pb-10 border-b border-border last:border-0">
-                    <div>
-                      <p className="text-sm font-semibold tracking-wide text-foreground">
-                        {exp.period}
-                      </p>
-                      <p className="text-xs text-muted-foreground mt-1">{exp.location}</p>
-                    </div>
-                    <div className="flex gap-4">
-                      <LogoBadge text={exp.company} fallback={<Building2 className="size-5" />} />
-
-                      <div className="flex-1">
-                        <h3 className="text-xl md:text-2xl font-semibold tracking-tight">
-                          {exp.role}
-                        </h3>
-                        <p className="text-base text-muted-foreground mt-1 mb-4">{exp.company}</p>
-                        <ul className="space-y-2">
-                          {exp.highlights.map((h) => (
-                            <li
-                              key={h}
-                              className="text-sm md:text-base font-light leading-relaxed text-foreground/80 pl-5 relative before:content-['—'] before:absolute before:left-0 before:text-muted-foreground"
-                            >
-                              {h}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </ScrollReveal>
-              ))}
-            </div>
           </div>
         </section>
 
