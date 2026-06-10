@@ -125,19 +125,29 @@ export default function About() {
               </h2>
               <div className="space-y-5 text-base md:text-lg font-light leading-relaxed text-foreground/85">
                 <p>
-                  Formé <strong className="font-semibold text-foreground">ingénieur à l'ISAE-SUPMECA</strong>, j'ai vite basculé vers ce qui m'anime : <strong className="font-semibold text-foreground">construire des produits utiles</strong>. Une conviction qui me guide encore — un bon produit, c'est de la rigueur technique, des contraintes maîtrisées, et des équipes pluridisciplinaires qui collaborent vraiment.
+                  Formé en <strong className="font-semibold text-foreground">génie industriel à l'ISAE-SUPMECA</strong>, j'ai débuté chez <strong className="font-semibold text-foreground">Renault</strong> sur des projets techniques avant de basculer vers ce qui m'anime vraiment : <strong className="font-semibold text-foreground">construire des produits utiles à ceux qui les utilisent</strong>.
                 </p>
                 <p>
-                  Chez <strong className="font-semibold text-foreground">F-Initiatives</strong> (2014), j'apprends les fondamentaux du conseil aux côtés de directeurs R&D et financiers, du start-up au CAC 40. Puis chez <strong className="font-semibold text-foreground">Renault</strong> (2016), je deviens Product Owner d'un <strong className="font-semibold text-foreground">outil de costing critique</strong> — 10 M€, 250 utilisateurs, 12 pays. Résultat : <strong className="font-semibold text-foreground">95 % d'adoption</strong> et +15 % de fiabilité.
+                  En 2014, je rejoins <strong className="font-semibold text-foreground">F-Initiatives</strong>, cabinet en <strong className="font-semibold text-foreground">financement de l'innovation</strong>, où j'accompagne des entreprises de la start-up aux <strong className="font-semibold text-foreground">grands groupes du CAC 40</strong> pour financer leurs projets R&D. Je comprends vite que l'innovation ne vaut quelque chose que si elle est <strong className="font-semibold text-foreground">structurée et portée par les bons interlocuteurs</strong>.
                 </p>
                 <p>
-                  En 2020, je prends la <strong className="font-semibold text-foreground">transformation Supply Chain monde</strong> — 8 M€, squad de 4, 25+ contrôleurs dans 10 pays. Je vis le cycle produit en profondeur : roadmap, backlog, delivery Scrum. Impact : <strong className="font-semibold text-foreground">-50 % de délais de clôture</strong>, de J+10 à J+5.
+                  En 2016, je reviens chez <strong className="font-semibold text-foreground">Renault</strong> comme <strong className="font-semibold text-foreground">Product Owner</strong> sur un <strong className="font-semibold text-foreground">outil de costing critique</strong> — 10 M€, 250 utilisateurs, 12 pays. Je découvre ce que signifie vraiment <strong className="font-semibold text-foreground">livrer à grande échelle</strong> : spécifications, tests, conduite du changement.<br />
+                  Résultat : <strong className="font-semibold text-foreground">95 % de taux d'adoption</strong> et <strong className="font-semibold text-foreground">+15 % de fiabilité et rapidité d'exécution</strong> des calculs.
                 </p>
                 <p>
-                  Chez <strong className="font-semibold text-foreground">Bartle</strong> (2023), j'accompagne des DSI en restructuration et je découvre un pain point partagé : <strong className="font-semibold text-foreground">Excel ne suffit plus pour piloter un P&L DSI</strong>. Le déclic. Aujourd'hui, je consolide ma pratique PM chez <strong className="font-semibold text-foreground">Noé / BlaBlaCar</strong> et je construis le SaaS qui manque au marché.
+                  En 2020, je deviens <strong className="font-semibold text-foreground">responsable transformation</strong> et je prends la responsabilité de l'<strong className="font-semibold text-foreground">outil de consolidation financière Supply Chain monde</strong> — 8 M€, +25 contrôleurs, 10 pays. Je vis pleinement le <strong className="font-semibold text-foreground">cycle produit</strong> : backlog, delivery Scrum, amélioration continue.<br />
+                  Impact direct : <strong className="font-semibold text-foreground">-50 % sur les délais de clôture</strong>, de J+10 à J+5.
                 </p>
                 <p>
-                  Ma valeur : <strong className="font-semibold text-foreground">rigueur d'ingénieur, expertise Finance & SI, maîtrise du cycle produit</strong> — au service d'environnements où la complexité métier est une opportunité.
+                  En 2023, chez <strong className="font-semibold text-foreground">Bartle</strong>, j'accompagne des grands groupes en <strong className="font-semibold text-foreground">restructuration DSI</strong>. Je construis de zéro un <strong className="font-semibold text-foreground">outil de pilotage des coûts DSI</strong>.<br />
+                  Résultat : <strong className="font-semibold text-foreground">MVP livré en 2 mois</strong>.<br />
+                  Je vis de l'intérieur le <strong className="font-semibold text-foreground">pain point universel des directions Finance et IT</strong> : les outils Excel ne suffisent plus pour piloter sérieusement un <strong className="font-semibold text-foreground">P&L DSI</strong>. Ce constat devient un <strong className="font-semibold text-foreground">déclic</strong>.
+                </p>
+                <p>
+                  En 2026, je consolide ma pratique à la <strong className="font-semibold text-foreground">formation Noé</strong> et commence à construire le <strong className="font-semibold text-foreground">SaaS qui manque au marché</strong> : une application de <strong className="font-semibold text-foreground">pilotage P&L DSI</strong> conçue avec les <strong className="font-semibold text-foreground">outils IA modernes</strong>.
+                </p>
+                <p>
+                  Aujourd'hui, je cherche à mettre cette <strong className="font-semibold text-foreground">triple culture — rigueur d'ingénieur, expertise finance & SI, maîtrise du cycle produit</strong> — au service de <strong className="font-semibold text-foreground">produits digitaux à fort impact</strong>, dans des environnements où la <strong className="font-semibold text-foreground">complexité métier est une opportunité, pas un obstacle</strong>.
                 </p>
               </div>
             </ScrollReveal>
