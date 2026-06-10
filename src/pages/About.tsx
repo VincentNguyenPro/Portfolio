@@ -123,7 +123,7 @@ export default function About() {
               <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-8">
                 De l'ingénierie au Product Management : un parcours forgé dans la complexité
               </h2>
-              <div className="space-y-5 text-base md:text-lg font-light leading-relaxed text-foreground/85">
+              <div className="space-y-3 text-base font-light leading-snug text-justify hyphens-auto text-foreground/85">
                 <p>
                   Formé en <strong className="font-semibold text-foreground">génie industriel à l'ISAE-SUPMECA</strong>, j'ai débuté chez <strong className="font-semibold text-foreground">Renault</strong> sur des projets techniques avant de basculer vers ce qui m'anime vraiment : <strong className="font-semibold text-foreground">construire des produits utiles à ceux qui les utilisent</strong>.
                 </p>
