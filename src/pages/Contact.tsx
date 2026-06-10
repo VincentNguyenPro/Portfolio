@@ -84,14 +84,14 @@ ${form.message}`;
 
       <div className="min-h-screen">
         <section className="px-6 lg:px-8 pt-16 pb-12 md:pt-24 md:pb-16 border-b border-border">
-          <div className="max-w-5xl mx-auto">
+          <div className="max-w-7xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="space-y-6 max-w-3xl"
+              className="space-y-6"
             >
-              <p className="text-sm font-semibold tracking-[0.2em] uppercase text-muted-foreground">
+              <p className="text-5xl md:text-6xl font-semibold tracking-tight uppercase text-muted-foreground">
                 Contact
               </p>
               <h1 className="text-5xl md:text-6xl font-semibold tracking-tight">
