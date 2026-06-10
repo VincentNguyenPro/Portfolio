@@ -259,7 +259,7 @@ export default function Home() {
           <ScrollReveal>
             <div className="max-w-3xl mx-auto text-center space-y-6">
               <h2 className="text-4xl md:text-5xl font-semibold tracking-tight">
-                Un projet produit à fort enjeu ?
+                Un produit à fort enjeu ?
               </h2>
               <p className="text-lg text-muted-foreground font-light">
                 Discutons de la manière dont je peux contribuer à votre roadmap.
