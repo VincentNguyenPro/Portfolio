@@ -211,25 +211,42 @@ export default function About() {
         {/* Formation */}
         <section className="px-6 lg:px-8 py-20 md:py-28 border-t border-border bg-muted/30">
           <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 lg:gap-16">
-            <div>
-              <div className="flex items-center gap-3 mb-8">
-                <GraduationCap className="size-5 text-muted-foreground" />
-                <h2 className="text-2xl md:text-3xl font-semibold tracking-tight">Formation</h2>
-              </div>
-              <div className="space-y-6">
-                {educationItems.map((e) => (
-                  <div key={e.title} className="flex gap-4">
-                    <LogoBadge text={e.school} fallback={<School className="size-5" />} size={10} />
+            <div className="space-y-12">
+              <div>
+                <div className="flex items-center gap-3 mb-8">
+                  <GraduationCap className="size-5 text-muted-foreground" />
+                  <h2 className="text-2xl md:text-3xl font-semibold tracking-tight">Formation</h2>
+                </div>
+                <div className="space-y-6">
+                  {educationItems.map((e) => (
+                    <div key={e.title} className="flex gap-4">
+                      <LogoBadge text={e.school} fallback={<School className="size-5" />} size={10} />
 
-                    <div>
-                      <p className="text-xs text-muted-foreground font-medium tracking-wide">
-                        {e.period}
-                      </p>
-                      <h3 className="text-lg font-semibold mt-1">{e.title}</h3>
-                      <p className="text-sm text-muted-foreground font-light mt-1">{e.school}</p>
+                      <div>
+                        <p className="text-xs text-muted-foreground font-medium tracking-wide">
+                          {e.period}
+                        </p>
+                        <h3 className="text-lg font-semibold mt-1">{e.title}</h3>
+                        <p className="text-sm text-muted-foreground font-light mt-1">{e.school}</p>
+                      </div>
                     </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
+              </div>
+
+              <div>
+                <div className="flex items-center gap-3 mb-6">
+                  <LanguagesIcon className="size-5 text-muted-foreground" />
+                  <h2 className="text-2xl md:text-3xl font-semibold tracking-tight">Langues</h2>
+                </div>
+                <ul className="space-y-2">
+                  {languages.map((l) => (
+                    <li key={l.name} className="flex items-baseline justify-between gap-4">
+                      <span className="text-base font-medium">{l.name}</span>
+                      <span className="text-sm text-muted-foreground font-light">{l.level}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
 
@@ -247,19 +264,6 @@ export default function About() {
                       <p className="text-base font-semibold">{c.label}</p>
                       <p className="text-sm text-muted-foreground font-light">{c.issuer}</p>
                     </div>
-                  </li>
-                ))}
-              </ul>
-
-              <div className="flex items-center gap-3 mt-12 mb-6">
-                <LanguagesIcon className="size-5 text-muted-foreground" />
-                <h2 className="text-2xl md:text-3xl font-semibold tracking-tight">Langues</h2>
-              </div>
-              <ul className="space-y-2">
-                {languages.map((l) => (
-                  <li key={l.name} className="flex items-baseline justify-between gap-4">
-                    <span className="text-base font-medium">{l.name}</span>
-                    <span className="text-sm text-muted-foreground font-light">{l.level}</span>
                   </li>
                 ))}
               </ul>
