@@ -185,7 +185,7 @@ export default function Home() {
                     Projets
                   </p>
                   <h2 className="text-4xl md:text-5xl font-semibold tracking-tight">
-                    Études de cas
+                    Réalisations
                   </h2>
                 </div>
                 <Link
