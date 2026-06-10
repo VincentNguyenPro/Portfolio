@@ -221,11 +221,18 @@ export default function Home() {
                           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-black/10" />
                         </>
                       )}
-                      <div className="relative flex items-center justify-between">
+                      <div className="relative flex items-center justify-between gap-2">
                         <span className="text-xs font-medium tracking-wider uppercase opacity-90">
                           {project.company}
                         </span>
-                        <ArrowUpRight className="size-5 opacity-90 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                        <div className="flex items-center gap-2">
+                          {project.badge && (
+                            <span className="text-[10px] font-semibold tracking-wide px-2 py-1 rounded-full bg-white/15 backdrop-blur border border-white/20">
+                              {project.badge}
+                            </span>
+                          )}
+                          <ArrowUpRight className="size-5 opacity-90 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                        </div>
                       </div>
                       <div className="relative">
                         <p className="text-xs opacity-80 mb-2">{project.period}</p>
