@@ -1,9 +1,53 @@
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Linkedin, ArrowUpRight } from 'lucide-react';
+import { Mail, Phone, MapPin, Linkedin, ArrowUpRight, Send } from 'lucide-react';
+import { useState } from 'react';
 import { photographerInfo } from '@/data/photographer';
 import { SEOHead } from '@/components/seo/SEOHead';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+import { Label } from '@/components/ui/label';
+import { Button } from '@/components/ui/button';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select';
+
+const RECIPIENT_EMAIL = 'vincent.nguyen75020@gmail.com';
+
+const OPPORTUNITY_TYPES = [
+  'CDI/CDD',
+  'Mission freelance',
+  'Echange informel',
+  'Autre',
+];
 
 export default function Contact() {
+  const [form, setForm] = useState({
+    nom: '',
+    prenom: '',
+    email: '',
+    type: '',
+    message: '',
+  });
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const subject = `[Contact portfolio] ${form.type || 'Nouveau message'} — ${form.prenom} ${form.nom}`;
+    const body = `Nom : ${form.nom}
+Prénom : ${form.prenom}
+Email : ${form.email}
+Type d'opportunité : ${form.type}
+
+Message :
+${form.message}`;
+    window.location.href = `mailto:${RECIPIENT_EMAIL}?subject=${encodeURIComponent(
+      subject,
+    )}&body=${encodeURIComponent(body)}`;
+  };
+
   const contactItems = [
     {
       icon: Mail,
@@ -55,8 +99,8 @@ export default function Contact() {
               </h1>
               <p className="text-lg text-muted-foreground font-light leading-relaxed">
                 {photographerInfo.availability}. Pour échanger sur une opportunité Product Manager,
-                un projet à fort enjeu finance ou SI, ou simplement faire connaissance — le moyen
-                le plus rapide est l'email ou LinkedIn.
+                un projet à fort enjeu finance ou SI, ou simplement faire connaissance — utilisez
+                le formulaire ci-dessous ou l'un des moyens de contact directs.
               </p>
             </motion.div>
           </div>
@@ -113,15 +157,96 @@ export default function Contact() {
             })}
           </div>
 
-          <div className="max-w-5xl mx-auto mt-12 rounded-2xl bg-foreground text-background p-8 md:p-10">
-            <p className="text-xs font-semibold tracking-[0.2em] uppercase opacity-60 mb-3">
-              Réponse rapide
-            </p>
-            <p className="text-xl md:text-2xl font-light leading-relaxed">
-              Je réponds généralement sous 24-48h en semaine. Pour les sujets urgents,
-              n'hésitez pas à m'appeler directement.
-            </p>
-          </div>
+          <motion.form
+            onSubmit={handleSubmit}
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="max-w-5xl mx-auto mt-12 rounded-2xl border border-border bg-card p-8 md:p-10 space-y-6"
+          >
+            <div>
+              <p className="text-xs font-semibold tracking-[0.2em] uppercase text-muted-foreground mb-2">
+                Formulaire
+              </p>
+              <h2 className="text-2xl md:text-3xl font-semibold tracking-tight">
+                Écrivez-moi
+              </h2>
+            </div>
+
+            <div className="grid sm:grid-cols-2 gap-4">
+              <div className="space-y-2">
+                <Label htmlFor="nom">Nom</Label>
+                <Input
+                  id="nom"
+                  required
+                  placeholder="Ex. Dupont"
+                  value={form.nom}
+                  onChange={(e) => setForm({ ...form, nom: e.target.value })}
+                />
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="prenom">Prénom</Label>
+                <Input
+                  id="prenom"
+                  required
+                  placeholder="Ex. Marie"
+                  value={form.prenom}
+                  onChange={(e) => setForm({ ...form, prenom: e.target.value })}
+                />
+              </div>
+            </div>
+
+            <div className="space-y-2">
+              <Label htmlFor="email">Email</Label>
+              <Input
+                id="email"
+                type="email"
+                required
+                placeholder="marie.dupont@exemple.com"
+                value={form.email}
+                onChange={(e) => setForm({ ...form, email: e.target.value })}
+              />
+            </div>
+
+            <div className="space-y-2">
+              <Label htmlFor="type">Type d'opportunité</Label>
+              <Select
+                value={form.type}
+                onValueChange={(v) => setForm({ ...form, type: v })}
+              >
+                <SelectTrigger id="type">
+                  <SelectValue placeholder="Sélectionnez une option" />
+                </SelectTrigger>
+                <SelectContent>
+                  {OPPORTUNITY_TYPES.map((t) => (
+                    <SelectItem key={t} value={t}>
+                      {t}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </div>
+
+            <div className="space-y-2">
+              <Label htmlFor="message">Comment puis-je vous aider ?</Label>
+              <Textarea
+                id="message"
+                required
+                rows={6}
+                placeholder="Décrivez votre projet, contexte, calendrier…"
+                value={form.message}
+                onChange={(e) => setForm({ ...form, message: e.target.value })}
+              />
+            </div>
+
+            <div className="flex justify-end">
+              <Button type="submit" size="lg" className="gap-2">
+                <Send className="size-4" />
+                Envoyer
+              </Button>
+            </div>
+          </motion.form>
         </section>
       </div>
     </>
