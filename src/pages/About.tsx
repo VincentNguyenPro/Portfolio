@@ -112,6 +112,44 @@ export default function About() {
           </div>
         </section>
 
+        {/* Mon histoire */}
+        <section className="px-6 lg:px-8 py-20 md:py-28 border-t border-border">
+          <div className="max-w-6xl mx-auto grid md:grid-cols-[1.6fr_1fr] gap-10 lg:gap-16 items-start">
+            <ScrollReveal>
+              <p className="text-sm font-semibold tracking-[0.2em] uppercase text-muted-foreground mb-6">
+                Mon histoire
+              </p>
+              <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-8">
+                De l'ingénierie au Product Management : un parcours forgé dans la complexité
+              </h2>
+              <div className="space-y-5 text-base md:text-lg font-light leading-relaxed text-foreground/85">
+                <p>Formé en génie industriel à l'ISAE-SUPMECA, j'ai débuté chez Renault sur des projets techniques avant de basculer vers ce qui m'anime vraiment : construire des produits utiles à ceux qui les utilisent. Cette expérience terrain m'ancre dans une conviction qui guide encore mon approche aujourd'hui : un bon produit, c'est de la rigueur technique, des contraintes bien maîtrisées, et des équipes pluridisciplinaires qui savent vraiment collaborer.</p>
+                <p>En 2014, je rejoins F-Initiatives, cabinet spécialisé en financement de l'innovation. J'y apprends les fondamentaux du conseil — posture, communication, écoute client — et je suis exposé à des directeurs R&D, chefs de projets et financiers que j'accompagne pour financer leurs projets d'innovation, de la start-up aux grands groupes du CAC 40, dans les secteurs industriels et NTIC. Je croise des pionniers comme Carmat ou Qarnot Computing, et je comprends que l'innovation ne vaut quelque chose que si elle est financée, structurée et portée par les bons interlocuteurs.</p>
+                <p>En 2016, je reviens dans le Groupe Renault, missionné pour construire un outil de costing métier permettant de calculer le coût de revient de l'ensemble des véhicules du groupe — 10 M€ de budget, 250 utilisateurs dans 12 pays. J'agis en tant que Product Owner et je découvre ce que signifie vraiment livrer un outil critique : spécifications, tests fonctionnels, conduite du changement, adoption à grande échelle. Résultat : 95 % de taux d'adoption et +15 % de fiabilité sur les calculs de costing.</p>
+                <p>En 2020, je prends la responsabilité de la transformation finance et du Product Ownership sur l'outil de consolidation financière Supply Chain monde — 8 M€, une squad de 4 personnes, 25+ contrôleurs de gestion dans 10 pays. C'est là que je vis pleinement le cycle produit dans toute sa profondeur : roadmap, backlog, delivery Scrum, amélioration continue par la donnée. Impact concret : -50 % sur les délais de clôture, de J+10 à J+5.</p>
+                <p>En 2023, je rejoins Bartle, cabinet de conseil en management, où j'accompagne des grands groupes en pleine restructuration de leur DSI — carve-out, centralisation, réorganisation. Je construis pour eux des outils de pilotage financier et je vis de l'intérieur un pain point que toutes les directions Finance et IT partagent : les outils Excel ne suffisent plus pour piloter sérieusement un P&L DSI. Ce constat devient un déclic.</p>
+                <p>En 2026, je rejoins la formation Product Management de Noé pour consolider méthodiquement ma pratique — discovery, UX research, priorisation, prototypage — sur un cas concret avec BlaBlaCar. En parallèle, je commence à construire le SaaS qui manque au marché : une application de pilotage P&L DSI conçue avec les outils IA modernes.</p>
+                <p>Aujourd'hui, je cherche à mettre cette triple culture — rigueur d'ingénieur, expertise finance & SI, maîtrise du cycle produit — au service de produits digitaux à fort impact, dans des environnements où la complexité métier est une opportunité, pas un obstacle.</p>
+              </div>
+            </ScrollReveal>
+            <ScrollReveal delay={0.1}>
+              <div className="md:sticky md:top-24 relative">
+                <div className="absolute -inset-3 rounded-3xl bg-gradient-to-br from-indigo-500/20 via-violet-500/15 to-emerald-500/15 blur-2xl" />
+                <div className="relative aspect-[4/5] rounded-3xl overflow-hidden border border-border bg-muted">
+                  <img
+                    src={saintelyonPhoto.url}
+                    alt="Vincent Nguyen à l'arrivée de la SaintéLyon"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <p className="mt-4 text-xs text-muted-foreground font-light italic text-center">
+                  Arrivée de la SaintéLyon — 78 km de nuit entre Saint-Étienne et Lyon
+                </p>
+              </div>
+            </ScrollReveal>
+          </div>
+        </section>
+
         {/* Expériences */}
         <section className="px-6 lg:px-8 py-20 md:py-28 border-t border-border">
           <div className="max-w-5xl mx-auto">
