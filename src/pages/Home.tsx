@@ -21,19 +21,18 @@ export default function Home() {
       <SEOHead />
       <div className="min-h-screen">
         {/* HERO */}
-        <section className="relative min-h-screen w-full overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950">
-          {/* Decorative grid */}
+        <section className="relative min-h-screen w-full overflow-hidden bg-[#0b1a2f]">
+          {/* Soft radial highlights for depth */}
           <div
-            className="absolute inset-0 opacity-[0.07]"
+            className="absolute inset-0"
             style={{
-              backgroundImage:
-                'linear-gradient(rgba(255,255,255,.6) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.6) 1px, transparent 1px)',
-              backgroundSize: '64px 64px',
+              background:
+                'radial-gradient(ellipse 80% 60% at 20% 10%, rgba(59,130,246,0.18), transparent 60%), radial-gradient(ellipse 70% 55% at 85% 90%, rgba(14,165,233,0.14), transparent 65%)',
             }}
           />
-          {/* Glow */}
-          <div className="absolute top-1/3 -left-32 size-[480px] rounded-full bg-indigo-500/20 blur-[120px]" />
-          <div className="absolute bottom-0 right-0 size-[480px] rounded-full bg-emerald-500/15 blur-[140px]" />
+          {/* Subtle top-to-bottom polish */}
+          <div className="absolute inset-0 bg-gradient-to-b from-white/[0.03] via-transparent to-black/30" />
+
 
           <div className="relative max-w-7xl mx-auto px-6 lg:px-8 pt-32 md:pt-40 pb-20">
             <div className="grid lg:grid-cols-[1.4fr_1fr] gap-12 lg:gap-16 items-center">
