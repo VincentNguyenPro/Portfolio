@@ -299,30 +299,35 @@ export const blogPosts: BlogPost[] = [
     cover: { url: data5vIaeCover.url, alt: 'Conférence IAE Paris Alumni - Big Data & Beautiful Data' },
     sections: [
       {
+        fullWidth: true,
         paragraphs: [
           "Je suis venu à l'IAE Paris - Sorbonne Business School avec une question presque naïve : à force de courir derrière le « toujours plus » de données, ne sommes-nous pas en train d'oublier l'essentiel ? C'est exactement le débat que cette conférence est venue ouvrir, en confrontant les célèbres 5V du Big Data - Volume, Vélocité, Variété, Véracité, Valeur - à une grille beaucoup plus récente : les 5E du « Beautiful Data ».",
         ],
       },
       {
+        fullWidth: true,
         image: {
           url: data5vCover.url,
           alt: 'Slide « Les 5V du Big Data » projetée lors de la conférence',
-          aspectRatio: '5 / 3',
+          aspectRatio: '16 / 9',
           objectPosition: 'center 44%',
         },
       },
       {
+        fullWidth: true,
         paragraphs: [
           "La table ronde réunissait des regards très complémentaires. Xavier Morel, operating partner et expert de la transformation numérique, a posé le décor côté entreprise. Laurine Teixeira, doctorante en droit des sociétés, a rappelé combien le cadre juridique commence à dicter les bonnes pratiques data. Augustin de la Fouchardière, fondateur de MYPE, a parlé de l'informatique décisionnelle vue du terrain. Et Gilles Trigano, docteur en sciences de gestion et auteur d'une thèse sur les 5E du Beautiful Data, a déroulé la théorie qu'il défend depuis plusieurs années.",
         ],
       },
       {
+        fullWidth: true,
         paragraphs: [
           "Le fil rouge de la soirée a tourné autour de trois questions qui sont restées avec moi : avec l'essor de l'IA générative, va-t-on basculer d'un monde quantitatif vers un monde qualitatif ? Quelle complémentarité réelle entre le Big Data et le Beautiful Data ? Et quel rôle pour l'éthique et l'éducation dans une démarche d'éco-responsabilité numérique ?",
           "La thèse défendue m'a beaucoup parlé : le Big Data nous donne la matière - volume, vélocité, variété, véracité, valeur - mais c'est le Beautiful Data qui en révèle le sens. Les 5E (esthétique, éthique, éducatif, écologique, équitable) ne s'opposent pas aux 5V, ils les prolongent. Ensemble, ils dessinent un cercle vertueux dans lequel la performance globale d'une entreprise - y compris sociale et environnementale - devient mesurable et améliorable.",
         ],
       },
       {
+        fullWidth: true,
         paragraphs: [
           "En tant que PM Finance et SI, j'ai retrouvé dans cette grille beaucoup de débats internes que je vois passer chez mes clients : faut-il continuer à empiler des tableaux de bord, ou commencer à arbitrer ce que l'on mesure vraiment ? Quelle responsabilité quand on automatise une décision sur la base d'un modèle ? Comment former les équipes métier à lire la donnée sans la subir ?",
           "Je suis ressorti de cette soirée avec une conviction renforcée : la prochaine vague de valeur en data ne viendra pas d'un V supplémentaire, mais des E que l'on choisira d'incarner.",
