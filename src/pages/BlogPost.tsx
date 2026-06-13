@@ -43,7 +43,7 @@ function buildGroups(sections: BlogSection[]): SectionGroup[] {
       continue;
     }
     if (isImageOnly(s)) {
-      if (pending && !pending.image) {
+      if (pending && !pending.image && !s.image?.width) {
         pending.image = s.image;
         groups.push(pending);
         pending = null;
