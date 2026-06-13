@@ -108,7 +108,7 @@ export const blogPosts: BlogPost[] = [
       "Atelier Le Wagon : passer d'une idée e-commerce à une boutique en ligne fonctionnelle, encaissant de vrais paiements, en quelques heures et sans équipe tech.",
     date: '11 juin 2026',
     eventDate: '11/06/2026',
-    categories: ['Product Management', 'IA & Agents', 'Innovation & Tech'],
+    categories: ['IA', 'Communauté'],
     url: 'https://luma.com/0ivqgaik?tk=hNsezQ',
     cover: { url: webshopCover.url, alt: 'Atelier Webshop avec Mollie & Codex' },
     coverFit: 'contain',
