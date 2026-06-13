@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Linkedin, ArrowUpRight, Send } from 'lucide-react';
+import { Mail, Linkedin, ArrowUpRight, Send } from 'lucide-react';
 import { useState } from 'react';
 import { photographerInfo } from '@/data/photographer';
 import { SEOHead } from '@/components/seo/SEOHead';
@@ -56,22 +56,11 @@ ${form.message}`;
       href: `mailto:${photographerInfo.email}`,
     },
     {
-      icon: Phone,
-      label: 'Téléphone',
-      value: photographerInfo.phone,
-      href: `tel:${photographerInfo.phone.replace(/\s/g, '')}`,
-    },
-    {
       icon: Linkedin,
       label: 'LinkedIn',
       value: 'linkedin.com/in/vincentnguyenpro',
       href: photographerInfo.socialLinks.linkedin!,
       external: true,
-    },
-    {
-      icon: MapPin,
-      label: 'Localisation',
-      value: photographerInfo.location,
     },
   ];
 
