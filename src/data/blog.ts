@@ -22,6 +22,11 @@ import spotifyWrappedDark from '@/assets/blog/spotify-wrapped-dark.png.asset.jso
 import spotifyWrappedLight from '@/assets/blog/spotify-wrapped-light.png.asset.json';
 import roofoodMenu from '@/assets/blog/roofood-menu.png.asset.json';
 import roofoodCheckout from '@/assets/blog/roofood-checkout.png.asset.json';
+import portfolioHome from '@/assets/blog/lovable-portfolio-home.png.asset.json';
+import portfolioParcours from '@/assets/blog/lovable-portfolio-parcours.png.asset.json';
+import portfolioProjets from '@/assets/blog/lovable-portfolio-projets.png.asset.json';
+import portfolioBlog from '@/assets/blog/lovable-portfolio-blog.png.asset.json';
+import portfolioContact from '@/assets/blog/lovable-portfolio-contact.png.asset.json';
 
 export interface BlogImage {
   url: string;
