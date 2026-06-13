@@ -146,6 +146,18 @@ ${form.message}`;
             })}
           </div>
 
+          <div className="max-w-5xl mx-auto mt-12 flex flex-col items-start gap-3">
+            <p className="text-sm" style={{ color: '#6b7280' }}>
+              Préférez-vous consulter mon CV ?
+            </p>
+            <Button asChild variant="outline" size="lg" className="gap-2">
+              <a href="/Vincent-Nguyen-CV.pdf" download="Vincent-Nguyen-CV.pdf">
+                <Download className="size-4" />
+                Télécharger mon CV
+              </a>
+            </Button>
+          </div>
+
           <motion.form
             onSubmit={handleSubmit}
             initial={{ opacity: 0, y: 16 }}
