@@ -37,14 +37,14 @@ export default function Home() {
                   </span>
                   {photographerInfo.availability}
                 </div>
-                <div>📍 Paris · 💻 Hybride · ✅ Disponible immédiatement</div>
+                <div className="pl-4">📍 Paris · 💻 Hybride · ✅ Disponible immédiatement</div>
               </div>
 
               <p className="text-5xl md:text-6xl font-semibold tracking-tight uppercase text-muted-foreground">
                 Vincent Nguyen
               </p>
-              <h1 className="text-5xl md:text-6xl font-semibold tracking-tight">
-                Product Manager
+              <h1 className="text-3xl md:text-4xl font-semibold tracking-tight whitespace-nowrap">
+                Product Manager • Product Owner
                 <span className="block text-muted-foreground font-light mt-2">
                   Finance &amp; SI
                 </span>

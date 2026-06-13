@@ -8,10 +8,9 @@ import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { cn } from '@/lib/utils';
 
 const categoryColor: Record<BlogCategory, string> = {
-  'Product Management': 'from-sky-500 via-indigo-500 to-violet-600',
-  'IA & Agents': 'from-violet-600 via-fuchsia-500 to-rose-500',
+  Product: 'from-sky-500 via-indigo-500 to-violet-600',
+  IA: 'from-violet-600 via-fuchsia-500 to-rose-500',
   Data: 'from-emerald-500 via-teal-500 to-cyan-600',
-  'Innovation & Tech': 'from-amber-500 via-orange-500 to-rose-500',
   Formation: 'from-yellow-500 via-amber-500 to-orange-500',
   Communauté: 'from-slate-700 via-slate-900 to-zinc-900',
 };
@@ -45,7 +44,7 @@ export default function Blog() {
                 Blog
               </p>
               <h1 className="text-5xl md:text-6xl font-semibold tracking-tight">
-                Carnets de bord Product, IA, Data & Innovation
+                Carnets de bord Product, IA & Data
               </h1>
               <p className="text-lg text-muted-foreground font-light leading-relaxed">
                 Comptes-rendus d'événements, retours d'expérience et réflexions au fil de mes formations, ateliers et conférences.
@@ -107,23 +106,23 @@ export default function Blog() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent pointer-events-none" />
                     <div className="relative h-full p-5 flex flex-col justify-between text-white">
-                      <div className="flex items-start justify-between gap-2">
-                        <div className="flex flex-wrap gap-1.5">
-                          {post.categories.map((c) => (
-                            <span
-                              key={c}
-                              className={`text-[10px] font-semibold tracking-wider uppercase px-2 py-1 rounded-full bg-gradient-to-br ${categoryColor[c]} border border-white/20`}
-                            >
-                              {c}
-                            </span>
-                          ))}
-                        </div>
+                      <div className="flex items-start justify-end">
                         <ArrowUpRight className="size-5 opacity-90 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform shrink-0" />
                       </div>
                       <p className="text-xs opacity-90">{post.date}</p>
                     </div>
                   </div>
                   <div className="p-6 space-y-3">
+                    <div className="flex flex-wrap gap-1.5">
+                      {post.categories.map((c) => (
+                        <span
+                          key={c}
+                          className={`text-[10px] font-semibold tracking-wider uppercase px-2 py-1 rounded-full text-white bg-gradient-to-br ${categoryColor[c]}`}
+                        >
+                          {c}
+                        </span>
+                      ))}
+                    </div>
                     <h2 className="text-lg font-semibold tracking-tight leading-snug group-hover:text-foreground/80 transition-colors">
                       {post.title}
                     </h2>
