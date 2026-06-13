@@ -8,7 +8,7 @@ import { ScrollReveal } from '@/components/ui/ScrollReveal';
 
 const stats = [
   { value: '10', suffix: ' ans', label: "d'expérience SI Finance" },
-  { value: '-50 %', label: 'délais de clôture (J+10 → J+5)' },
+  { value: '+5', label: 'produits digitaux pilotés' },
   { value: '8 M€', label: 'budget produit piloté' },
   { value: '+250', label: 'utilisateurs accompagnés' },
 ];
@@ -21,94 +21,81 @@ export default function Home() {
       <SEOHead />
       <div className="min-h-screen">
         {/* HERO */}
-        <section className="relative min-h-screen w-full overflow-hidden bg-[#0b1a2f]">
-          {/* Soft radial highlights for depth */}
-          <div
-            className="absolute inset-0"
-            style={{
-              background:
-                'radial-gradient(ellipse 80% 60% at 20% 10%, rgba(59,130,246,0.18), transparent 60%), radial-gradient(ellipse 70% 55% at 85% 90%, rgba(14,165,233,0.14), transparent 65%)',
-            }}
-          />
-          {/* Subtle top-to-bottom polish */}
-          <div className="absolute inset-0 bg-gradient-to-b from-white/[0.03] via-transparent to-black/30" />
+        <section className="px-6 lg:px-8 pt-16 pb-12 md:pt-24 md:pb-16 border-b border-border bg-background">
+          <div className="max-w-6xl mx-auto grid md:grid-cols-[1.4fr_1fr] gap-10 lg:gap-16 items-start">
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="space-y-6"
+            >
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-border bg-muted/40 text-xs font-medium tracking-wide text-muted-foreground">
+                <span className="relative flex size-2">
+                  <span className="absolute inline-flex size-full rounded-full bg-emerald-500 opacity-75 animate-ping" />
+                  <span className="relative inline-flex size-2 rounded-full bg-emerald-500" />
+                </span>
+                {photographerInfo.availability}
+              </div>
 
+              <p className="text-5xl md:text-6xl font-semibold tracking-tight uppercase text-muted-foreground">
+                Vincent Nguyen
+              </p>
+              <h1 className="text-5xl md:text-6xl font-semibold tracking-tight">
+                Product Manager
+                <span className="block text-muted-foreground font-light mt-2">
+                  Finance &amp; SI
+                </span>
+              </h1>
 
-          <div className="relative max-w-7xl mx-auto px-6 lg:px-8 pt-32 md:pt-40 pb-20">
-            <div className="grid lg:grid-cols-[1.4fr_1fr] gap-12 lg:gap-16 items-center">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, ease: 'easeOut' }}
-                className="space-y-8 text-white"
-              >
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/15 bg-white/5 backdrop-blur text-xs font-medium tracking-wide text-white/80">
-                  <span className="relative flex size-2">
-                    <span className="absolute inline-flex size-full rounded-full bg-emerald-400 opacity-75 animate-ping" />
-                    <span className="relative inline-flex size-2 rounded-full bg-emerald-400" />
-                  </span>
-                  {photographerInfo.availability}
-                </div>
+              <p className="text-lg text-muted-foreground font-light leading-relaxed text-justify">
+                {photographerInfo.heroIntroduction}
+              </p>
 
-                <h1 className="text-5xl md:text-6xl lg:text-7xl font-semibold tracking-tight leading-[1.05]">
-                  Vincent Nguyen
-                  <span className="block text-white/60 font-light mt-2">
-                    Product Manager · Finance & SI
-                  </span>
-                </h1>
+              <div className="flex flex-wrap items-center gap-4 pt-2">
+                <Link
+                  to="/portfolio"
+                  className="group inline-flex items-center gap-2 px-6 py-3 rounded-full bg-foreground text-background font-medium hover:opacity-90 transition-opacity"
+                >
+                  Voir mes projets
+                  <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
+                </Link>
+                <Link
+                  to="/contact"
+                  className="group inline-flex items-center gap-2 px-6 py-3 rounded-full border border-border text-foreground hover:bg-muted transition-colors"
+                >
+                  Me contacter
+                </Link>
+              </div>
+            </motion.div>
 
-                <p className="text-lg md:text-xl text-white/75 font-light leading-relaxed max-w-2xl text-justify hyphens-auto">
-                  {photographerInfo.heroIntroduction}
-                </p>
-
-                <div className="flex flex-wrap items-center gap-4 pt-2">
-                  <Link
-                    to="/portfolio"
-                    className="group inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white text-slate-900 font-medium hover:bg-white/90 transition-colors"
-                  >
-                    Voir mes projets
-                    <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
-                  </Link>
-                  <Link
-                    to="/contact"
-                    className="group inline-flex items-center gap-2 px-6 py-3 rounded-full border border-white/20 text-white hover:bg-white/10 transition-colors"
-                  >
-                    Me contacter
-                  </Link>
-                </div>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, scale: 0.96 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.9, delay: 0.2 }}
-                className="relative hidden lg:block"
-              >
-                <div className="absolute -inset-4 rounded-3xl bg-gradient-to-br from-indigo-500/30 via-violet-500/20 to-emerald-500/20 blur-2xl" />
-                <div className="relative rounded-3xl overflow-hidden border border-white/10 bg-white/5 backdrop-blur aspect-[4/5]">
-                  <img
-                    src={photographerInfo.portraitImage}
-                    alt={photographerInfo.name}
-                    className="w-full h-full object-cover object-top grayscale"
-                  />
-                </div>
-              </motion.div>
-            </div>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.96 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.7, delay: 0.1 }}
+              className="md:sticky md:top-24 relative"
+            >
+              <div className="absolute -inset-3 rounded-3xl bg-gradient-to-br from-indigo-500/20 via-violet-500/15 to-emerald-500/15 blur-2xl" />
+              <div className="relative aspect-[4/5] rounded-3xl overflow-hidden border border-border bg-muted">
+                <img
+                  src={photographerInfo.portraitImage}
+                  alt={photographerInfo.name}
+                  className="w-full h-full object-cover object-top grayscale"
+                />
+              </div>
+            </motion.div>
           </div>
 
           {/* Stats strip */}
-          <div className="relative border-t border-white/10 bg-white/[0.02] backdrop-blur">
-            <div className="max-w-7xl mx-auto px-6 lg:px-8 py-8 grid grid-cols-2 md:grid-cols-4 gap-6">
-              {stats.map((s) => (
-                <div key={s.label} className="space-y-1">
-                  <div className="text-3xl md:text-4xl font-semibold text-white tracking-tight">
-                    {s.value}
-                    {s.suffix && <span className="text-white/60 text-2xl">{s.suffix}</span>}
-                  </div>
-                  <div className="text-xs md:text-sm text-white/60 font-light">{s.label}</div>
+          <div className="max-w-6xl mx-auto mt-12 pt-8 border-t border-border grid grid-cols-2 md:grid-cols-4 gap-6">
+            {stats.map((s) => (
+              <div key={s.label} className="space-y-1">
+                <div className="text-3xl md:text-4xl font-semibold tracking-tight">
+                  {s.value}
+                  {s.suffix && <span className="text-muted-foreground text-2xl">{s.suffix}</span>}
                 </div>
-              ))}
-            </div>
+                <div className="text-xs md:text-sm text-muted-foreground font-light">{s.label}</div>
+              </div>
+            ))}
           </div>
         </section>
 
