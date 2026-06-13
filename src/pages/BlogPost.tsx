@@ -215,6 +215,25 @@ export default function BlogPost() {
                   </div>
                 );
               }
+              if (g.gallery) {
+                const cols = g.gallery.columns ?? g.gallery.images.length;
+                const ar = g.gallery.aspectRatio ?? '16 / 10';
+                const colsClass =
+                  cols === 2
+                    ? 'grid-cols-1 sm:grid-cols-2 max-w-4xl mx-auto'
+                    : cols === 3
+                    ? 'grid-cols-1 sm:grid-cols-2 md:grid-cols-3'
+                    : cols === 4
+                    ? 'grid-cols-2 md:grid-cols-4'
+                    : 'grid-cols-1';
+                return (
+                  <div key={idx} className={`grid gap-4 md:gap-6 ${colsClass}`}>
+                    {g.gallery.images.map((im, i) => (
+                      <ImageBlock key={i} image={{ ...im, aspectRatio: im.aspectRatio ?? ar }} />
+                    ))}
+                  </div>
+                );
+              }
               if (g.text) {
                 return (
                   <div key={idx} className={g.fullWidth ? '' : 'max-w-3xl'}>
