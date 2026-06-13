@@ -16,11 +16,12 @@ const categoryColor: Record<BlogCategory, string> = {
 type SectionGroup = {
   text?: BlogSection;
   image?: BlogSection['image'];
+  gallery?: BlogSection['gallery'];
   fullWidth?: boolean;
 };
 
 const isImageOnly = (s: BlogSection) =>
-  !!s.image && !s.paragraphs && !s.heading && !s.bullets && !s.quote;
+  !!s.image && !s.paragraphs && !s.heading && !s.bullets && !s.quote && !s.gallery;
 
 const hasText = (s: BlogSection) =>
   !!(s.paragraphs || s.heading || s.bullets || s.quote);
@@ -36,6 +37,12 @@ function buildGroups(sections: BlogSection[]): SectionGroup[] {
   };
 
   for (const s of sections) {
+    if (s.gallery) {
+      flush();
+      if (hasText(s)) groups.push({ text: { ...s, image: undefined, gallery: undefined }, fullWidth: true });
+      groups.push({ gallery: s.gallery, fullWidth: true });
+      continue;
+    }
     if (s.fullWidth) {
       flush();
       if (hasText(s)) groups.push({ text: { ...s, image: undefined }, fullWidth: true });
