@@ -70,6 +70,15 @@ export function Header() {
               );
             })}
             <ThemeToggle />
+            <a
+              href={photographerInfo.socialLinks.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+              className="inline-flex items-center justify-center size-9 rounded-md text-foreground/80 hover:text-foreground hover:bg-accent transition-colors"
+            >
+              <Linkedin className="size-5" />
+            </a>
           </nav>
 
           <div className="md:hidden flex items-center gap-2">
