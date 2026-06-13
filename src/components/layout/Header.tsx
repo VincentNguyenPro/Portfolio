@@ -18,10 +18,9 @@ const navLinks = [
 
 export function Header() {
   const location = useLocation();
-  const { isScrolled } = useScrollPosition();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const isTransparent = location.pathname === '/' && !isScrolled;
+  const isTransparent = false;
 
   return (
     <motion.header
@@ -30,9 +29,7 @@ export function Header() {
       transition={{ duration: 0.6, ease: 'easeOut' }}
       className={cn(
         'fixed top-0 left-0 right-0 z-50 transition-all duration-500',
-        isTransparent
-          ? 'bg-transparent'
-          : 'bg-background/90 backdrop-blur-lg border-b border-border shadow-sm'
+        'bg-background/90 backdrop-blur-lg border-b border-border shadow-sm'
       )}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
