@@ -22,6 +22,20 @@ import spotifyWrappedDark from '@/assets/blog/spotify-wrapped-dark.png.asset.jso
 import spotifyWrappedLight from '@/assets/blog/spotify-wrapped-light.png.asset.json';
 import roofoodMenu from '@/assets/blog/roofood-menu.png.asset.json';
 import roofoodCheckout from '@/assets/blog/roofood-checkout.png.asset.json';
+import portfolioHome from '@/assets/blog/lovable-portfolio-home.png.asset.json';
+import portfolioParcours from '@/assets/blog/lovable-portfolio-parcours.png.asset.json';
+import portfolioProjets from '@/assets/blog/lovable-portfolio-projets.png.asset.json';
+import portfolioBlog from '@/assets/blog/lovable-portfolio-blog.png.asset.json';
+import portfolioContact from '@/assets/blog/lovable-portfolio-contact.png.asset.json';
+
+export interface BlogImage {
+  url: string;
+  alt: string;
+  caption?: string;
+  aspectRatio?: string;
+  objectPosition?: string;
+  width?: 'sm' | 'md' | 'lg' | 'full';
+}
 
 export interface BlogSection {
   heading?: string;
@@ -29,13 +43,11 @@ export interface BlogSection {
   bullets?: string[];
   quote?: string;
   fullWidth?: boolean;
-  image?: {
-    url: string;
-    alt: string;
-    caption?: string;
+  image?: BlogImage;
+  gallery?: {
+    images: BlogImage[];
+    columns?: number;
     aspectRatio?: string;
-    objectPosition?: string;
-    width?: 'sm' | 'md' | 'lg' | 'full';
   };
 }
 
@@ -146,14 +158,37 @@ export const blogPosts: BlogPost[] = [
     coverFit: 'contain',
     sections: [
       {
+        fullWidth: true,
         paragraphs: [
           "Quand je suis arrivé à la Jungle IA pour l'édition spéciale Lovable, j'avais cette sensation que je connais bien : celle d'être à deux doigts de me lancer sur une idée, mais de toujours trouver une bonne raison de la repousser. La promesse de la soirée était simple - ouvrir Lovable, prompter, bricoler une vraie idée, et voir où ça mène en quelques heures.",
+          "J'ai profité de ces 3 heures pour me lancer enfin sur un projet que je repoussais depuis longtemps : construire mon portfolio pour présenter mon parcours et mes projets à d'éventuels recruteurs. J'ai mis à profit toute la durée de l'hackathon pour avancer au maximum sur ce site, page par page.",
         ],
       },
       {
-        image: { url: lovableTalk.url, alt: 'Présentation d’un projet Lovable pendant le meetup' },
+        fullWidth: true,
+        gallery: {
+          columns: 3,
+          aspectRatio: '16 / 10',
+          images: [
+            { url: portfolioHome.url, alt: 'Landing page du portfolio Vincent Nguyen' },
+            { url: portfolioParcours.url, alt: 'Page Parcours du portfolio' },
+            { url: portfolioProjets.url, alt: 'Page Projets du portfolio' },
+          ],
+        },
       },
       {
+        fullWidth: true,
+        gallery: {
+          columns: 2,
+          aspectRatio: '16 / 10',
+          images: [
+            { url: portfolioBlog.url, alt: 'Page Blog du portfolio' },
+            { url: portfolioContact.url, alt: 'Page Contact du portfolio' },
+          ],
+        },
+      },
+      {
+        fullWidth: true,
         paragraphs: [
           "Très vite, la salle s'est remplie. Une soixantaine de personnes, chacune avec son idée, et autour de nous des facilitateurs prêts à débloquer le moindre bug ou la moindre hésitation sur un prompt. L'énergie était dingue : on entendait les claviers cliqueter, des éclats de rire à chaque feature qui fonctionnait, des « ah mais en fait c'est possible ?! » toutes les dix minutes.",
           "Ce qui m'a marqué, c'est de voir des profils non-techs sortir, en trois heures, un prototype publié, cliquable, presque crédible. Le rôle du PM change complètement dans ce contexte : on n'écrit plus une spec pour quelqu'un d'autre, on dialogue avec un agent qui construit en direct et on apprend en regardant ce qui sort de l'écran.",
@@ -163,12 +198,9 @@ export const blogPosts: BlogPost[] = [
         image: { url: lovableRoom.url, alt: 'Salle pleine pendant le meetup Lovable x Paatch', width: 'sm' },
       },
       {
+        fullWidth: true,
         paragraphs: [
           "En fin de soirée, chaque groupe est venu présenter son projet. Six équipes, six univers complètement différents, et le même fil rouge : on était parti d'une page blanche, et on terminait avec quelque chose à montrer.",
-        ],
-      },
-      {
-        paragraphs: [
           "Ce que je retiens : on n'avance pas en théorisant une idée pendant des mois, on avance en l'ouvrant, en la testant, en acceptant que la première version soit imparfaite. Merci à Lovable, à Paatch et à toute l'équipe d'avoir créé cet espace. J'y retournerai.",
           "📅 Date de l'événement : 09/06/2026",
         ],

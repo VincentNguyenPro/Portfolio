@@ -16,11 +16,12 @@ const categoryColor: Record<BlogCategory, string> = {
 type SectionGroup = {
   text?: BlogSection;
   image?: BlogSection['image'];
+  gallery?: BlogSection['gallery'];
   fullWidth?: boolean;
 };
 
 const isImageOnly = (s: BlogSection) =>
-  !!s.image && !s.paragraphs && !s.heading && !s.bullets && !s.quote;
+  !!s.image && !s.paragraphs && !s.heading && !s.bullets && !s.quote && !s.gallery;
 
 const hasText = (s: BlogSection) =>
   !!(s.paragraphs || s.heading || s.bullets || s.quote);
@@ -36,6 +37,12 @@ function buildGroups(sections: BlogSection[]): SectionGroup[] {
   };
 
   for (const s of sections) {
+    if (s.gallery) {
+      flush();
+      if (hasText(s)) groups.push({ text: { ...s, image: undefined, gallery: undefined }, fullWidth: true });
+      groups.push({ gallery: s.gallery, fullWidth: true });
+      continue;
+    }
     if (s.fullWidth) {
       flush();
       if (hasText(s)) groups.push({ text: { ...s, image: undefined }, fullWidth: true });
@@ -205,6 +212,25 @@ export default function BlogPost() {
                       image={g.image}
                       className={reverse ? 'md:order-1' : ''}
                     />
+                  </div>
+                );
+              }
+              if (g.gallery) {
+                const cols = g.gallery.columns ?? g.gallery.images.length;
+                const ar = g.gallery.aspectRatio ?? '16 / 10';
+                const colsClass =
+                  cols === 2
+                    ? 'grid-cols-1 sm:grid-cols-2 max-w-4xl mx-auto'
+                    : cols === 3
+                    ? 'grid-cols-1 sm:grid-cols-2 md:grid-cols-3'
+                    : cols === 4
+                    ? 'grid-cols-2 md:grid-cols-4'
+                    : 'grid-cols-1';
+                return (
+                  <div key={idx} className={`grid gap-4 md:gap-6 ${colsClass}`}>
+                    {g.gallery.images.map((im, i) => (
+                      <ImageBlock key={i} image={{ ...im, aspectRatio: im.aspectRatio ?? ar }} />
+                    ))}
                   </div>
                 );
               }
