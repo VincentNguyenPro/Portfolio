@@ -23,19 +23,26 @@ import spotifyWrappedLight from '@/assets/blog/spotify-wrapped-light.png.asset.j
 import roofoodMenu from '@/assets/blog/roofood-menu.png.asset.json';
 import roofoodCheckout from '@/assets/blog/roofood-checkout.png.asset.json';
 
+export interface BlogImage {
+  url: string;
+  alt: string;
+  caption?: string;
+  aspectRatio?: string;
+  objectPosition?: string;
+  width?: 'sm' | 'md' | 'lg' | 'full';
+}
+
 export interface BlogSection {
   heading?: string;
   paragraphs?: string[];
   bullets?: string[];
   quote?: string;
   fullWidth?: boolean;
-  image?: {
-    url: string;
-    alt: string;
-    caption?: string;
+  image?: BlogImage;
+  gallery?: {
+    images: BlogImage[];
+    columns?: number;
     aspectRatio?: string;
-    objectPosition?: string;
-    width?: 'sm' | 'md' | 'lg' | 'full';
   };
 }
 
