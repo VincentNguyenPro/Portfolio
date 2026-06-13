@@ -203,7 +203,7 @@ export const blogPosts: BlogPost[] = [
     order: 5,
     title: 'Formation Claude Code chez Noé',
     description:
-      "Quatre semaines pour intégrer Claude Code dans ma pratique de PM : du premier prompt maîtrisé au prototype publié en ligne, jusqu'à un vrai système de travail augmenté.",
+      "Deux jours pour intégrer Claude Code dans ma pratique de PM : de l'ajout d'une fonctionnalité sur un écran de synthèse à la Spotify, jusqu'à la correction de bugs et la mise en production via GitHub.",
     date: '29 & 30 mai 2026',
     eventDate: '29-30/05/2026',
     categories: ['IA & Agents', 'Formation', 'Product Management'],
@@ -211,36 +211,60 @@ export const blogPosts: BlogPost[] = [
     cover: { url: claudeCodeCover.url, alt: 'Formation Claude Code chez Noé' },
     sections: [
       {
+        fullWidth: true,
         paragraphs: [
-          "Quand j'ai commencé cette formation chez Noé, j'utilisais Claude Code comme la plupart des PM autour de moi : un peu au feeling, beaucoup en mode chat, sans vraiment exploiter ce que l'outil pouvait faire. Quatre semaines plus tard, c'est devenu un vrai membre de mon équipe - et c'est sans doute le changement de pratique le plus marquant que j'ai vécu cette année.",
+          "Quand j'ai commencé cette formation chez Noé, j'utilisais Claude Code comme la plupart des PM autour de moi : un peu au feeling, beaucoup en mode chat, sans vraiment exploiter ce que l'outil pouvait faire. Deux jours plus tard, c'est devenu un vrai membre de mon équipe - et c'est sans doute le changement de pratique le plus marquant que j'ai vécu cette année.",
+          "Le format est volontairement court et dense : deux journées en présentiel chez Noé, par petits groupes, avec des cas pratiques imposés sur des bases de code réelles. L'idée n'est pas d'apprendre à prompter dans le vide, mais de produire quelque chose de tangible à chaque demi-journée - une fonctionnalité, un correctif, une pull request. Cette contrainte change tout : on quitte la posture du PM qui rédige une spec et qu'on attend de voir, et on entre dans celle du PM qui contribue directement à la base de code, encadré par Claude.",
         ],
       },
       {
-        image: { url: claudeCodeRoom.url, alt: 'Salle de formation Claude Code chez Noé' },
+        fullWidth: true,
+        image: { url: claudeCodeRoom.url, alt: 'Salle de formation Claude Code chez Noé', aspectRatio: '16 / 9' },
       },
       {
+        fullWidth: true,
         paragraphs: [
-          "Tout a commencé par un travail sur les fondations. On a appris à connecter Claude Code à mes outils via MCP, à lui donner le bon contexte pour qu'il arrête d'inventer, à créer des skills pour standardiser les livrables que je refais sans cesse - specs, comptes-rendus, brouillons d'emails. Le déclic est venu avec le « plan mode » : Claude me propose un plan, je le valide, et seulement après il agit. Fini les exécutions qui partent dans tous les sens.",
+          "Jour 1 - apporter une nouvelle fonctionnalité. On part d'un projet existant : un écran de synthèse annuelle façon Spotify Wrapped, fourni en base. L'exercice : ajouter une vraie fonctionnalité utilisateur, en l'occurrence un toggle clair / sombre qui change complètement l'identité visuelle de la page. Avant de coder quoi que ce soit, on commence par cadrer le besoin avec Claude - quel comportement attendu, quels états, quels composants impactés - puis on bascule en plan mode pour qu'il propose une stratégie d'implémentation. Une fois le plan validé, il exécute, on teste, on itère.",
         ],
       },
       {
+        fullWidth: true,
+        image: { url: spotifyWrappedDark.url, alt: 'Écran de synthèse annuelle Spotify Wrapped en mode sombre', aspectRatio: '9 / 16', width: 'sm' },
+      },
+      {
+        fullWidth: true,
+        image: { url: spotifyWrappedLight.url, alt: 'Même écran de synthèse Spotify Wrapped en mode clair après ajout du toggle', aspectRatio: '9 / 16', width: 'sm' },
+      },
+      {
+        fullWidth: true,
         paragraphs: [
-          "La deuxième semaine, on est entrés dans le code. Pour quelqu'un qui n'est pas développeur de métier, c'était le moment de vérité. On a branché GitHub, fait nos premières pull requests, corrigé un vrai bug de bout en bout - du diagnostic au correctif poussé en production. Je n'aurais jamais pensé y arriver en autonomie, et pourtant.",
+          "Ce qui m'a marqué, ce n'est pas tellement de voir la fonctionnalité fonctionner - c'est de l'avoir conçue, fait implémenter, validée, puis publiée en autonomie, sans déranger une équipe de dev. Quand on a passé dix ans à écrire des specs sans pouvoir tester soi-même, c'est un vrai changement de référentiel.",
         ],
       },
       {
+        fullWidth: true,
         paragraphs: [
-          "Puis on est passés du besoin au prototype. J'ai appris à articuler des specs et un prototype directement sur Claude Code, dans une logique de « développement piloté par les specs » : on décrit le comportement attendu, l'agent construit, on itère. Le moment fort de la semaine, ça a été de publier mon proto sur Vercel et de pouvoir l'envoyer à des stakeholders pour qu'ils le testent en vrai, sans attendre un cycle de dev.",
+          "Jour 2 - identifier et corriger des bugs. On change complètement de contexte : une application e-commerce à la Deliveroo, avec un parcours menu / panier / commande, et plusieurs bugs glissés volontairement dans le code. L'exercice est très proche d'une journée de bug triage en équipe produit : reproduire le bug, isoler la cause avec Claude, proposer un correctif, écrire un message de commit propre, ouvrir une pull request sur GitHub.",
         ],
       },
       {
+        fullWidth: true,
+        image: { url: roofoodMenu.url, alt: 'Application Roofood (clone Deliveroo) - menu et panier latéral', aspectRatio: '16 / 9' },
+      },
+      {
+        fullWidth: true,
         paragraphs: [
-          "La dernière semaine a été la plus structurante. On a construit un « Personal OS » - un contexte persistant qui décrit comment je travaille, mes projets en cours, mes conventions - et un « Team OS » partagé avec l'équipe. C'est ce qui transforme Claude Code d'un outil pratique en un véritable système de travail. Aujourd'hui, je ne réfléchis plus en termes de prompts isolés, mais en termes d'environnement qui apprend avec moi.",
+          "Le moment fort de la journée a été la revue : chaque correctif est poussé sur une branche, soumis sur la branche main via une pull request, vérifié par un encadrant, puis mergé dans la base de code. On retrouve exactement le rythme d'une équipe tech - et on comprend de l'intérieur pourquoi une bonne description de PR, des commits atomiques et une vérification rigoureuse font gagner autant de temps en aval.",
         ],
       },
       {
+        fullWidth: true,
+        image: { url: roofoodCheckout.url, alt: 'Étape de récapitulatif de commande sur l’application Roofood', aspectRatio: '16 / 9' },
+      },
+      {
+        fullWidth: true,
         paragraphs: [
-          "Ce que je retiens de ces quatre semaines, c'est moins une liste de fonctionnalités qu'un changement de posture. Le PM augmenté par Claude Code, ce n'est pas celui qui sait mieux prompter, c'est celui qui sait quel contexte donner, quelle décision garder pour lui, et quelle partie de la chaîne il peut désormais prendre en charge sans déranger ses devs.",
+          "Ce que je retiens de ces deux jours, c'est moins une liste de fonctionnalités qu'un changement de posture. Le PM augmenté par Claude Code, ce n'est pas celui qui sait mieux prompter, c'est celui qui sait quel contexte donner, quelle décision garder pour lui, et quelle partie de la chaîne il peut désormais prendre en charge sans déranger ses devs.",
           "📅 Date de l'événement : 29-30/05/2026",
         ],
       },
