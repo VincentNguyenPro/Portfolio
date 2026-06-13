@@ -17,7 +17,14 @@ const categoryColor: Record<BlogCategory, string> = {
 };
 
 export default function Blog() {
-  const posts = [...blogPosts].sort((a, b) => a.order - b.order);
+  const allPosts = useMemo(() => [...blogPosts].sort((a, b) => a.order - b.order), []);
+  const allCategories = useMemo(() => {
+    const set = new Set<BlogCategory>();
+    allPosts.forEach((p) => p.categories.forEach((c) => set.add(c)));
+    return Array.from(set);
+  }, [allPosts]);
+  const [selected, setSelected] = useState<BlogCategory | 'all'>('all');
+  const posts = selected === 'all' ? allPosts : allPosts.filter((p) => p.categories.includes(selected));
 
   return (
     <>
