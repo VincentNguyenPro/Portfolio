@@ -468,7 +468,7 @@ export const blogPosts: BlogPost[] = [
       "Soirée Eria x Le Wagon x Dust : théorie et pratique pour repartir avec son propre agent IA opérationnel, connecté à Google Drive et aux emails, sans une seule ligne de code.",
     date: '8 avril 2026',
     eventDate: '08/04/2026',
-    categories: ['IA & Agents', 'Innovation & Tech'],
+    categories: ['IA', 'Communauté'],
     url: 'https://www.lewagon.com/fr/events/atelier-dust-build-your-first-ai-agent-5CkQZn',
     cover: { url: dustCover.url, alt: 'Construire son premier agent IA - Eria x Le Wagon x Dust' },
     sections: [
