@@ -52,10 +52,9 @@ export interface BlogSection {
 }
 
 export type BlogCategory =
-  | 'Product Management'
-  | 'IA & Agents'
+  | 'Product'
+  | 'IA'
   | 'Data'
-  | 'Innovation & Tech'
   | 'Formation'
   | 'Communauté';
 
@@ -82,7 +81,7 @@ export const blogPosts: BlogPost[] = [
       "Quatre jours porte de Versailles pour la 10ᵉ édition de VivaTech, le grand rendez-vous international de l'innovation et de la tech.",
     date: '20 juin 2026',
     eventDate: '20/06/2026',
-    categories: ['Innovation & Tech', 'Communauté'],
+    categories: ['IA', 'Data', 'Product'],
     url: 'https://vivatechnology.com/',
     cover: { url: vivatechCover.url, alt: 'VivaTech 2026 - Paris' },
     sections: [
@@ -109,7 +108,7 @@ export const blogPosts: BlogPost[] = [
       "Atelier Le Wagon : passer d'une idée e-commerce à une boutique en ligne fonctionnelle, encaissant de vrais paiements, en quelques heures et sans équipe tech.",
     date: '11 juin 2026',
     eventDate: '11/06/2026',
-    categories: ['Product Management', 'IA & Agents', 'Innovation & Tech'],
+    categories: ['IA', 'Communauté'],
     url: 'https://luma.com/0ivqgaik?tk=hNsezQ',
     cover: { url: webshopCover.url, alt: 'Atelier Webshop avec Mollie & Codex' },
     coverFit: 'contain',
@@ -152,7 +151,7 @@ export const blogPosts: BlogPost[] = [
       "Une soirée à la Jungle IA pour transformer une idée en application en 3h avec Lovable, entourée de 70 personnes qui se lancent en même temps.",
     date: '9 juin 2026',
     eventDate: '09/06/2026',
-    categories: ['IA & Agents', 'Innovation & Tech', 'Communauté'],
+    categories: ['IA', 'Communauté'],
     url: 'https://luma.com/jybxjxu4?locale=fr&tk=Aimmjv',
     cover: { url: lovableCover.url, alt: 'Meetup Lovable x Paatch - Jungle IA' },
     coverFit: 'contain',
@@ -215,7 +214,7 @@ export const blogPosts: BlogPost[] = [
       "Table ronde Le Wagon x Women in Tech France sur l'IA comme révolution de société : comment construire une IA inclusive, représentative et équitable.",
     date: '2 juin 2026',
     eventDate: '02/06/2026',
-    categories: ['IA & Agents', 'Communauté'],
+    categories: ['IA', 'Communauté'],
     url: 'https://www.lewagon.com/fr/events/construire-l-ia-de-demain-defis-et-opportunites-SsjIsz',
     cover: { url: iaDemainCover.url, alt: "Construire l'IA de demain - Défis et Opportunités" },
     sections: [
@@ -256,7 +255,7 @@ export const blogPosts: BlogPost[] = [
       "Deux jours pour intégrer Claude Code dans ma pratique de PM : de l'ajout d'une fonctionnalité sur un écran de synthèse à la Spotify, jusqu'à la correction de bugs et la mise en production via GitHub.",
     date: '29 & 30 mai 2026',
     eventDate: '29-30/05/2026',
-    categories: ['IA & Agents', 'Formation', 'Product Management'],
+    categories: ['Formation', 'Product', 'IA'],
     url: 'https://www.noe.pm/claude-code-pour-pms',
     cover: { url: claudeCodeCover.url, alt: 'Formation Claude Code chez Noé' },
     sections: [
@@ -328,7 +327,7 @@ export const blogPosts: BlogPost[] = [
       "Retour sur 4 semaines intensives de Product Management chez Noé, en tant que PM pour BlaBlaCar : stratégie, discovery, priorisation, prototypage, delivery et restitution finale au Lead PM.",
     date: '20 avril - 15 mai 2026',
     eventDate: '20/04 - 15/05/2026',
-    categories: ['Product Management', 'Formation'],
+    categories: ['Formation', 'Product'],
     url: 'https://www.noe.pm/formation-product-manager-la-formation-pm-en-4-semaines-noe',
     cover: { url: noePmPromo.url, alt: 'Promo 33 Noé - formation Product Management' },
     sections: [
@@ -423,7 +422,7 @@ export const blogPosts: BlogPost[] = [
       "Tech Talk Le Wagon x Welcome to the Jungle : comment le métier de PM a changé en 18 mois, ce qui s'automatise, et les compétences qui comptent vraiment en 2026.",
     date: '27 mai 2026',
     eventDate: '27/05/2026',
-    categories: ['Product Management', 'IA & Agents'],
+    categories: ['Product', 'IA'],
     url: 'https://www.lewagon.com/fr/events/comment-l-ia-transforme-le-product-management-HPFVtl',
     cover: { url: iaPmCover.url, alt: "Comment l'IA transforme le Product Management" },
     sections: [
@@ -469,7 +468,7 @@ export const blogPosts: BlogPost[] = [
       "Soirée Eria x Le Wagon x Dust : théorie et pratique pour repartir avec son propre agent IA opérationnel, connecté à Google Drive et aux emails, sans une seule ligne de code.",
     date: '8 avril 2026',
     eventDate: '08/04/2026',
-    categories: ['IA & Agents', 'Innovation & Tech'],
+    categories: ['IA', 'Communauté'],
     url: 'https://www.lewagon.com/fr/events/atelier-dust-build-your-first-ai-agent-5CkQZn',
     cover: { url: dustCover.url, alt: 'Construire son premier agent IA - Eria x Le Wagon x Dust' },
     sections: [
