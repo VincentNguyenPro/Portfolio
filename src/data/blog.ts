@@ -22,12 +22,14 @@ export interface BlogSection {
   paragraphs?: string[];
   bullets?: string[];
   quote?: string;
+  fullWidth?: boolean;
   image?: {
     url: string;
     alt: string;
     caption?: string;
     aspectRatio?: string;
     objectPosition?: string;
+    width?: 'sm' | 'md' | 'lg' | 'full';
   };
 }
 
