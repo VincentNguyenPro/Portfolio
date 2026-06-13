@@ -12,7 +12,7 @@ export const projects: Project[] = [
     title: 'SaaS de pilotage financier pour les DSI',
     company: 'Projet personnel',
     role: 'Founder · Product Manager',
-    period: '2026 — En cours',
+    period: '2026 - En cours',
     category: 'finance',
     summary:
       "Application SaaS de pilotage du P&L DSI conçue pour piloter sérieusement un budget DSI au-delà d'Excel.",
@@ -100,11 +100,11 @@ export const projects: Project[] = [
     slug: 'bartle-pilotage-dsi',
     title: 'Outil de consolidation et pilotage des coûts DSI',
     company: 'Bartle',
-    role: 'Product Manager — SI Finance & Pilotage budgétaire',
-    period: '2023 — 2025',
+    role: 'Product Manager - SI Finance & Pilotage budgétaire',
+    period: '2023 - 2025',
     category: 'finance',
     summary:
-      "Construire, piloter et optimiser le budget DSI dans un contexte de restructuration — MVP livré en 2 mois.",
+      "Construire, piloter et optimiser le budget DSI dans un contexte de restructuration - MVP livré en 2 mois.",
     context:
       "Mission de Product Management chez Bartle pour un grand groupe en restructuration. Portefeuille de projets DSI de 50 M€ à 230 M€.",
     problem:
@@ -147,10 +147,10 @@ export const projects: Project[] = [
     title: 'Consolidation financière Supply Chain monde',
     company: 'Renault',
     role: 'Product Owner Finance & Responsable Transformation',
-    period: '2020 — 2023',
+    period: '2020 - 2023',
     category: 'transformation',
     summary:
-      "Réduire les délais de livraison des tableaux de bord de coûts Supply Chain monde — clôture de J+10 à J+5.",
+      "Réduire les délais de livraison des tableaux de bord de coûts Supply Chain monde - clôture de J+10 à J+5.",
     context:
       "Outil de consolidation financière dédié à la Supply Chain Renault, équipe de 4 personnes (1 Tech Lead + 3 développeurs), budget 8 M€, +25 ETP contrôleurs utilisateurs dans le monde.",
     problem:
@@ -190,7 +190,7 @@ export const projects: Project[] = [
     title: "Remplacement et déploiement mondial d'outils de Costing",
     company: 'Renault',
     role: 'Product Owner Outils Costing',
-    period: '2016 — 2020',
+    period: '2016 - 2020',
     category: 'product',
     summary:
       "Remplacer, déployer et faire adopter de nouveaux outils de costing auprès de +250 utilisateurs dans 12 pays.",
