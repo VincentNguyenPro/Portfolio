@@ -422,7 +422,7 @@ export const blogPosts: BlogPost[] = [
       "Tech Talk Le Wagon x Welcome to the Jungle : comment le métier de PM a changé en 18 mois, ce qui s'automatise, et les compétences qui comptent vraiment en 2026.",
     date: '27 mai 2026',
     eventDate: '27/05/2026',
-    categories: ['Product Management', 'IA & Agents'],
+    categories: ['Product', 'IA'],
     url: 'https://www.lewagon.com/fr/events/comment-l-ia-transforme-le-product-management-HPFVtl',
     cover: { url: iaPmCover.url, alt: "Comment l'IA transforme le Product Management" },
     sections: [
