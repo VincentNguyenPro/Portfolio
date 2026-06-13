@@ -93,7 +93,7 @@ export const projects: Project[] = [
     ],
     stack: ['Figma', 'Notion', 'User testing', 'SQL'],
     coverGradient: 'from-sky-500 via-indigo-500 to-violet-600',
-    coverImage: blablacarCover,
+    coverImage: blablacarCover.url,
   },
   {
     id: '2',
