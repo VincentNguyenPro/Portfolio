@@ -255,7 +255,7 @@ export const blogPosts: BlogPost[] = [
       "Deux jours pour intégrer Claude Code dans ma pratique de PM : de l'ajout d'une fonctionnalité sur un écran de synthèse à la Spotify, jusqu'à la correction de bugs et la mise en production via GitHub.",
     date: '29 & 30 mai 2026',
     eventDate: '29-30/05/2026',
-    categories: ['IA & Agents', 'Formation', 'Product Management'],
+    categories: ['Formation', 'Product', 'IA'],
     url: 'https://www.noe.pm/claude-code-pour-pms',
     cover: { url: claudeCodeCover.url, alt: 'Formation Claude Code chez Noé' },
     sections: [
