@@ -206,8 +206,17 @@ export default function About() {
                 </div>
               </ScrollReveal>
             </div>
+            <div className="mt-8 flex justify-start">
+              <Button asChild variant="outline" size="lg" className="gap-2">
+                <a href="/Vincent-Nguyen-CV.pdf" download="Vincent-Nguyen-CV.pdf">
+                  <Download className="size-4" />
+                  Télécharger mon CV
+                </a>
+              </Button>
+            </div>
           </div>
         </section>
+
 
         {/* Formation */}
         <section className="px-6 lg:px-8 py-20 md:py-28 border-t border-border bg-muted/30">
