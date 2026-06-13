@@ -16,37 +16,47 @@ const categoryColor: Record<BlogCategory, string> = {
 type SectionGroup = {
   text?: BlogSection;
   image?: BlogSection['image'];
+  fullWidth?: boolean;
 };
 
 const isImageOnly = (s: BlogSection) =>
   !!s.image && !s.paragraphs && !s.heading && !s.bullets && !s.quote;
 
+const hasText = (s: BlogSection) =>
+  !!(s.paragraphs || s.heading || s.bullets || s.quote);
+
 function buildGroups(sections: BlogSection[]): SectionGroup[] {
   const groups: SectionGroup[] = [];
   let pending: SectionGroup | null = null;
+  const flush = () => {
+    if (pending) {
+      groups.push(pending);
+      pending = null;
+    }
+  };
 
   for (const s of sections) {
+    if (s.fullWidth) {
+      flush();
+      if (hasText(s)) groups.push({ text: { ...s, image: undefined }, fullWidth: true });
+      if (s.image) groups.push({ image: s.image, fullWidth: true });
+      continue;
+    }
     if (isImageOnly(s)) {
-      if (pending && !pending.image) {
+      if (pending && !pending.image && !s.image?.width) {
         pending.image = s.image;
         groups.push(pending);
         pending = null;
       } else {
-        if (pending) {
-          groups.push(pending);
-          pending = null;
-        }
+        flush();
         groups.push({ image: s.image });
       }
     } else {
-      if (pending) {
-        groups.push(pending);
-        pending = null;
-      }
+      flush();
       pending = { text: s };
     }
   }
-  if (pending) groups.push(pending);
+  flush();
   return groups;
 }
 
@@ -200,14 +210,24 @@ export default function BlogPost() {
               }
               if (g.text) {
                 return (
-                  <div key={idx} className="max-w-3xl">
+                  <div key={idx} className={g.fullWidth ? '' : 'max-w-3xl'}>
                     <TextBlock section={g.text} />
                   </div>
                 );
               }
               if (g.image) {
+                const w = g.image.width;
+                const widthClass = w === 'sm'
+                  ? 'max-w-sm mx-auto'
+                  : w === 'md'
+                  ? 'max-w-2xl mx-auto'
+                  : w === 'lg'
+                  ? 'max-w-3xl mx-auto'
+                  : w === 'full' || g.fullWidth
+                  ? ''
+                  : 'max-w-2xl mx-auto';
                 return (
-                  <div key={idx} className="max-w-2xl mx-auto">
+                  <div key={idx} className={widthClass}>
                     <ImageBlock image={g.image} />
                   </div>
                 );
