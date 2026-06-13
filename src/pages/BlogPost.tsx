@@ -217,12 +217,14 @@ export default function BlogPost() {
               }
               if (g.image) {
                 const w = g.image.width;
-                const widthClass = g.fullWidth || w === 'full'
-                  ? ''
-                  : w === 'sm'
+                const widthClass = w === 'sm'
                   ? 'max-w-sm mx-auto'
+                  : w === 'md'
+                  ? 'max-w-2xl mx-auto'
                   : w === 'lg'
                   ? 'max-w-3xl mx-auto'
+                  : w === 'full' || g.fullWidth
+                  ? ''
                   : 'max-w-2xl mx-auto';
                 return (
                   <div key={idx} className={widthClass}>
