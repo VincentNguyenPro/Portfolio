@@ -327,7 +327,7 @@ export const blogPosts: BlogPost[] = [
       "Retour sur 4 semaines intensives de Product Management chez Noé, en tant que PM pour BlaBlaCar : stratégie, discovery, priorisation, prototypage, delivery et restitution finale au Lead PM.",
     date: '20 avril - 15 mai 2026',
     eventDate: '20/04 - 15/05/2026',
-    categories: ['Product Management', 'Formation'],
+    categories: ['Formation', 'Product'],
     url: 'https://www.noe.pm/formation-product-manager-la-formation-pm-en-4-semaines-noe',
     cover: { url: noePmPromo.url, alt: 'Promo 33 Noé - formation Product Management' },
     sections: [
