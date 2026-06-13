@@ -36,10 +36,10 @@ export default function Blog() {
                 Blog
               </p>
               <h1 className="text-5xl md:text-6xl font-semibold tracking-tight">
-                Notes terrain — Product, IA, Data & Innovation
+                Notes terrain - Product, IA, Data & Innovation
               </h1>
               <p className="text-lg text-muted-foreground font-light leading-relaxed">
-                Comptes-rendus d'événements, retours d'expérience et notes prises au fil de mes formations, ateliers et conférences — Product Management, IA & agents, Data, Innovation et Communauté tech.
+                Comptes-rendus d'événements, retours d'expérience et notes prises au fil de mes formations, ateliers et conférences - Product Management, IA & agents, Data, Innovation et Communauté tech.
               </p>
             </motion.div>
           </div>

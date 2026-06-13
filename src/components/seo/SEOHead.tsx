@@ -14,7 +14,7 @@ export function SEOHead({ title, description, image, type = 'website' }: SEOHead
 
   const fullTitle = title
     ? `${title} | ${photographerInfo.name}`
-    : `${photographerInfo.name} — ${photographerInfo.tagline}`;
+    : `${photographerInfo.name} - ${photographerInfo.tagline}`;
 
   const fullDescription = description || photographerInfo.heroIntroduction;
   const baseUrl = typeof window !== 'undefined' ? window.location.origin : '';

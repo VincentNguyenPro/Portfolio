@@ -10,7 +10,7 @@ export default function Portfolio() {
     <>
       <SEOHead
         title="Projets"
-        description="Réalisations de Vincent Nguyen : Product Management chez BlaBlaCar, Bartle et Renault — finance, supply chain et applications mobiles."
+        description="Réalisations de Vincent Nguyen : Product Management chez BlaBlaCar, Bartle et Renault - finance, supply chain et applications mobiles."
       />
       <div className="min-h-screen">
         <section className="px-6 lg:px-8 pt-16 pb-12 md:pt-24 md:pb-16 border-b border-border">
@@ -28,7 +28,7 @@ export default function Portfolio() {
                 Réalisations
               </h1>
               <p className="text-lg text-muted-foreground font-light leading-relaxed">
-                Des produits livrés, des impacts mesurés — Finance, Costing, Supply Chain, Applications mobiles.
+                Des produits livrés, des impacts mesurés - Finance, Costing, Supply Chain, Applications mobiles.
               </p>
             </motion.div>
           </div>
@@ -52,7 +52,7 @@ export default function Portfolio() {
                         <>
                           <img
                             src={project.coverImage}
-                            alt={`${project.company} — ${project.title}`}
+                            alt={`${project.company} - ${project.title}`}
                             loading="lazy"
                             className="absolute inset-0 w-full h-full object-cover"
                           />
