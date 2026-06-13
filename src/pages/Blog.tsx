@@ -1,9 +1,11 @@
 import { motion } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useMemo, useState } from 'react';
 import { blogPosts, type BlogCategory } from '@/data/blog';
 import { SEOHead } from '@/components/seo/SEOHead';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
+import { cn } from '@/lib/utils';
 
 const categoryColor: Record<BlogCategory, string> = {
   'Product Management': 'from-sky-500 via-indigo-500 to-violet-600',
