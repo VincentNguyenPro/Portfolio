@@ -1,8 +1,7 @@
 import { Link, useLocation } from 'react-router-dom';
-import { Menu } from 'lucide-react';
+import { Menu, Linkedin } from 'lucide-react';
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { useScrollPosition } from '@/hooks/useScrollPosition';
 import { ThemeToggle } from './ThemeToggle';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
@@ -19,10 +18,9 @@ const navLinks = [
 
 export function Header() {
   const location = useLocation();
-  const { isScrolled } = useScrollPosition();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const isTransparent = location.pathname === '/' && !isScrolled;
+  const isTransparent = false;
 
   return (
     <motion.header
@@ -31,9 +29,7 @@ export function Header() {
       transition={{ duration: 0.6, ease: 'easeOut' }}
       className={cn(
         'fixed top-0 left-0 right-0 z-50 transition-all duration-500',
-        isTransparent
-          ? 'bg-transparent'
-          : 'bg-background/90 backdrop-blur-lg border-b border-border shadow-sm'
+        'bg-background/90 backdrop-blur-lg border-b border-border shadow-sm'
       )}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -74,10 +70,28 @@ export function Header() {
               );
             })}
             <ThemeToggle />
+            <a
+              href={photographerInfo.socialLinks.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+              className="inline-flex items-center justify-center size-9 rounded-md text-foreground/80 hover:text-foreground hover:bg-accent transition-colors"
+            >
+              <Linkedin className="size-5" />
+            </a>
           </nav>
 
           <div className="md:hidden flex items-center gap-2">
             <ThemeToggle />
+            <a
+              href={photographerInfo.socialLinks.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+              className="inline-flex items-center justify-center size-9 rounded-md text-foreground/80 hover:text-foreground hover:bg-accent transition-colors"
+            >
+              <Linkedin className="size-5" />
+            </a>
             <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
               <SheetTrigger asChild>
                 <Button

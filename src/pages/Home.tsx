@@ -29,12 +29,15 @@ export default function Home() {
               transition={{ duration: 0.6 }}
               className="space-y-6"
             >
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-border bg-muted/40 text-xs font-medium tracking-wide text-muted-foreground">
-                <span className="relative flex size-2">
-                  <span className="absolute inline-flex size-full rounded-full bg-emerald-500 opacity-75 animate-ping" />
-                  <span className="relative inline-flex size-2 rounded-full bg-emerald-500" />
-                </span>
-                {photographerInfo.availability}
+              <div className="inline-flex flex-col items-start gap-1.5 px-3 py-2 rounded-2xl border border-border bg-muted/40 text-xs font-medium tracking-wide text-muted-foreground">
+                <div className="inline-flex items-center gap-2">
+                  <span className="relative flex size-2">
+                    <span className="absolute inline-flex size-full rounded-full bg-emerald-500 opacity-75 animate-ping" />
+                    <span className="relative inline-flex size-2 rounded-full bg-emerald-500" />
+                  </span>
+                  {photographerInfo.availability}
+                </div>
+                <div>📍 Paris · 💻 Hybride · ✅ Disponible immédiatement</div>
               </div>
 
               <p className="text-5xl md:text-6xl font-semibold tracking-tight uppercase text-muted-foreground">
@@ -113,7 +116,7 @@ export default function Home() {
               </p>
               <Link
                 to="/about"
-                className="group inline-flex items-center gap-2 mt-10 text-base font-medium text-foreground hover:text-muted-foreground transition-colors"
+                className="group inline-flex items-center gap-2 mt-10 px-6 py-3 rounded-full bg-foreground text-background font-medium hover:opacity-90 transition-opacity"
               >
                 Découvrir mon parcours complet
                 <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
