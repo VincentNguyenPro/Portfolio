@@ -16,6 +16,12 @@ import noePmPromo from '@/assets/blog/noe-pm-promo.jpeg.asset.json';
 import data5vCover from '@/assets/blog/data-5v-cover.jpeg.asset.json';
 import data5vIaeCover from '@/assets/blog/data-5v-iae-cover.webp.asset.json';
 import vivatechCover from '@/assets/blog/vivatech-cover.png.asset.json';
+import pokemonProduct from '@/assets/blog/pokemon-product.png.asset.json';
+import pokemonCheckout from '@/assets/blog/pokemon-checkout.png.asset.json';
+import spotifyWrappedDark from '@/assets/blog/spotify-wrapped-dark.png.asset.json';
+import spotifyWrappedLight from '@/assets/blog/spotify-wrapped-light.png.asset.json';
+import roofoodMenu from '@/assets/blog/roofood-menu.png.asset.json';
+import roofoodCheckout from '@/assets/blog/roofood-checkout.png.asset.json';
 
 export interface BlogSection {
   heading?: string;
