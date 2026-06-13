@@ -133,7 +133,7 @@ export default function Blog() {
                   </div>
                 </Link>
               </ScrollReveal>
-            ))}
+            </div>
           </div>
         </section>
       </div>
