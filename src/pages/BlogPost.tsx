@@ -16,37 +16,47 @@ const categoryColor: Record<BlogCategory, string> = {
 type SectionGroup = {
   text?: BlogSection;
   image?: BlogSection['image'];
+  fullWidth?: boolean;
 };
 
 const isImageOnly = (s: BlogSection) =>
   !!s.image && !s.paragraphs && !s.heading && !s.bullets && !s.quote;
 
+const hasText = (s: BlogSection) =>
+  !!(s.paragraphs || s.heading || s.bullets || s.quote);
+
 function buildGroups(sections: BlogSection[]): SectionGroup[] {
   const groups: SectionGroup[] = [];
   let pending: SectionGroup | null = null;
+  const flush = () => {
+    if (pending) {
+      groups.push(pending);
+      pending = null;
+    }
+  };
 
   for (const s of sections) {
+    if (s.fullWidth) {
+      flush();
+      if (hasText(s)) groups.push({ text: { ...s, image: undefined }, fullWidth: true });
+      if (s.image) groups.push({ image: s.image, fullWidth: true });
+      continue;
+    }
     if (isImageOnly(s)) {
       if (pending && !pending.image) {
         pending.image = s.image;
         groups.push(pending);
         pending = null;
       } else {
-        if (pending) {
-          groups.push(pending);
-          pending = null;
-        }
+        flush();
         groups.push({ image: s.image });
       }
     } else {
-      if (pending) {
-        groups.push(pending);
-        pending = null;
-      }
+      flush();
       pending = { text: s };
     }
   }
-  if (pending) groups.push(pending);
+  flush();
   return groups;
 }
 
