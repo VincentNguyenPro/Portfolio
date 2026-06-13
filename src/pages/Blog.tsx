@@ -106,23 +106,23 @@ export default function Blog() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent pointer-events-none" />
                     <div className="relative h-full p-5 flex flex-col justify-between text-white">
-                      <div className="flex items-start justify-between gap-2">
-                        <div className="flex flex-wrap gap-1.5">
-                          {post.categories.map((c) => (
-                            <span
-                              key={c}
-                              className={`text-[10px] font-semibold tracking-wider uppercase px-2 py-1 rounded-full bg-gradient-to-br ${categoryColor[c]} border border-white/20`}
-                            >
-                              {c}
-                            </span>
-                          ))}
-                        </div>
+                      <div className="flex items-start justify-end">
                         <ArrowUpRight className="size-5 opacity-90 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform shrink-0" />
                       </div>
                       <p className="text-xs opacity-90">{post.date}</p>
                     </div>
                   </div>
                   <div className="p-6 space-y-3">
+                    <div className="flex flex-wrap gap-1.5">
+                      {post.categories.map((c) => (
+                        <span
+                          key={c}
+                          className={`text-[10px] font-semibold tracking-wider uppercase px-2 py-1 rounded-full text-white bg-gradient-to-br ${categoryColor[c]}`}
+                        >
+                          {c}
+                        </span>
+                      ))}
+                    </div>
                     <h2 className="text-lg font-semibold tracking-tight leading-snug group-hover:text-foreground/80 transition-colors">
                       {post.title}
                     </h2>
