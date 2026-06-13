@@ -55,7 +55,41 @@ export default function Blog() {
         </section>
 
         <section className="px-6 lg:px-8 py-16 md:py-24">
-          <div className="max-w-7xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="max-w-7xl mx-auto">
+            <div className="flex flex-wrap gap-2 mb-10">
+              <button
+                type="button"
+                onClick={() => setSelected('all')}
+                className={cn(
+                  'text-xs font-semibold tracking-wider uppercase px-3 py-1.5 rounded-full border transition-colors',
+                  selected === 'all'
+                    ? 'bg-foreground text-background border-foreground'
+                    : 'bg-card text-muted-foreground border-border hover:text-foreground hover:border-foreground/40'
+                )}
+              >
+                Tous ({allPosts.length})
+              </button>
+              {allCategories.map((c) => {
+                const count = allPosts.filter((p) => p.categories.includes(c)).length;
+                const active = selected === c;
+                return (
+                  <button
+                    key={c}
+                    type="button"
+                    onClick={() => setSelected(c)}
+                    className={cn(
+                      'text-xs font-semibold tracking-wider uppercase px-3 py-1.5 rounded-full border transition-all',
+                      active
+                        ? `text-white border-transparent bg-gradient-to-br ${categoryColor[c]}`
+                        : 'bg-card text-muted-foreground border-border hover:text-foreground hover:border-foreground/40'
+                    )}
+                  >
+                    {c} ({count})
+                  </button>
+                );
+              })}
+            </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {posts.map((post, i) => (
               <ScrollReveal key={post.slug} delay={i * 0.05}>
                 <Link
