@@ -144,15 +144,12 @@ export const blogPosts: BlogPost[] = [
         ],
       },
       {
-        image: { url: lovableRoom.url, alt: 'Salle pleine pendant le meetup Lovable x Paatch' },
+        image: { url: lovableRoom.url, alt: 'Salle pleine pendant le meetup Lovable x Paatch', width: 'sm' },
       },
       {
         paragraphs: [
           "En fin de soirée, chaque groupe est venu présenter son projet. Six équipes, six univers complètement différents, et le même fil rouge : on était parti d'une page blanche, et on terminait avec quelque chose à montrer.",
         ],
-      },
-      {
-        image: { url: lovableGroups.url, alt: 'Restitution finale des projets - 6 groupes au meetup Lovable' },
       },
       {
         paragraphs: [
