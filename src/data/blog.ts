@@ -175,20 +175,25 @@ export const blogPosts: BlogPost[] = [
     cover: { url: iaDemainCover.url, alt: "Construire l'IA de demain - Défis et Opportunités" },
     sections: [
       {
+        fullWidth: true,
         paragraphs: [
           "J'ai eu la chance de participer à la table ronde organisée par Le Wagon avec Women in Tech France, sur un sujet qui me tient à cœur : à quoi va ressembler l'IA de demain, et qui sera en train de la construire ? Aux côtés de Zena El Kurdi, Jaafar Elalamy et Héloïse Bertoux, on a passé une soirée à confronter nos expériences - startup, grand groupe, formation, terrain - autour de cette question.",
+          "Le format était volontairement ouvert : pas de pitch produit, pas de démo, mais des regards qui se croisent sur ce que l'IA va changer dans nos vies professionnelles et collectives. La salle, pleine, mélangeait fondatrices, ingénieures, designers, PM et profils en reconversion, et cette diversité a été un vrai moteur dans les échanges.",
         ],
       },
       {
-        image: { url: iaDemainRoom.url, alt: 'Table ronde Construire l’IA de demain au Wagon Paris' },
+        fullWidth: true,
+        image: { url: iaDemainRoom.url, alt: 'Table ronde Construire l’IA de demain au Wagon Paris', aspectRatio: '16 / 9' },
       },
       {
+        fullWidth: true,
         paragraphs: [
           "Une conviction est revenue plusieurs fois dans nos échanges : l'IA n'est pas seulement une révolution technologique, c'est une révolution de société. Elle va transformer nos métiers, notre accès à la connaissance, l'école, la santé, les services publics, et jusqu'à nos relations internationales. La vraie question n'est plus de savoir si elle va nous transformer, mais comment on choisit d'accompagner cette transformation.",
           "J'ai aussi partagé une intuition que je porte depuis quelques mois : l'IA ne remplacera pas les humains, mais les professionnels qui sauront s'en servir vont profondément transformer les organisations dans lesquelles ils travaillent. On le voit déjà côté produit, côté finance, côté ops - la barre se déplace.",
         ],
       },
       {
+        fullWidth: true,
         paragraphs: [
           "Le débat le plus intense a porté sur notre responsabilité collective. Si on laisse les biais des données d'aujourd'hui dicter les modèles de demain, on va figer dans la machine des inégalités qu'on essaie de corriger depuis vingt ans. Construire une IA inclusive, représentative et équitable, ce n'est pas une option : c'est une condition pour que cette technologie tienne ses promesses.",
           "On a aussi évoqué l'enjeu européen. L'IA est devenue stratégique au même titre que l'énergie ou la défense, et l'Europe a une carte à jouer si elle assume un modèle qui lui ressemble - exigeant sur les données personnelles, attentif à l'impact social, ambitieux côté recherche.",
