@@ -1,5 +1,5 @@
 import type { Project } from '@/types';
-import blablacarCover from '@/assets/blablacar-cover.jpg';
+import blablacarCover from '@/assets/blablacar-app.jpg.asset.json';
 import bartleCover from '@/assets/bartle-cover.jpg';
 import renaultSupplyCover from '@/assets/renault-supply-cover.jpg';
 import renaultCostingCover from '@/assets/renault-costing-cover.jpg';
