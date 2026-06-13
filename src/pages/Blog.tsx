@@ -1,9 +1,11 @@
 import { motion } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useMemo, useState } from 'react';
 import { blogPosts, type BlogCategory } from '@/data/blog';
 import { SEOHead } from '@/components/seo/SEOHead';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
+import { cn } from '@/lib/utils';
 
 const categoryColor: Record<BlogCategory, string> = {
   'Product Management': 'from-sky-500 via-indigo-500 to-violet-600',
@@ -15,7 +17,14 @@ const categoryColor: Record<BlogCategory, string> = {
 };
 
 export default function Blog() {
-  const posts = [...blogPosts].sort((a, b) => a.order - b.order);
+  const allPosts = useMemo(() => [...blogPosts].sort((a, b) => a.order - b.order), []);
+  const allCategories = useMemo(() => {
+    const set = new Set<BlogCategory>();
+    allPosts.forEach((p) => p.categories.forEach((c) => set.add(c)));
+    return Array.from(set);
+  }, [allPosts]);
+  const [selected, setSelected] = useState<BlogCategory | 'all'>('all');
+  const posts = selected === 'all' ? allPosts : allPosts.filter((p) => p.categories.includes(selected));
 
   return (
     <>
@@ -46,7 +55,41 @@ export default function Blog() {
         </section>
 
         <section className="px-6 lg:px-8 py-16 md:py-24">
-          <div className="max-w-7xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="max-w-7xl mx-auto">
+            <div className="flex flex-wrap gap-2 mb-10">
+              <button
+                type="button"
+                onClick={() => setSelected('all')}
+                className={cn(
+                  'text-xs font-semibold tracking-wider uppercase px-3 py-1.5 rounded-full border transition-colors',
+                  selected === 'all'
+                    ? 'bg-foreground text-background border-foreground'
+                    : 'bg-card text-muted-foreground border-border hover:text-foreground hover:border-foreground/40'
+                )}
+              >
+                Tous ({allPosts.length})
+              </button>
+              {allCategories.map((c) => {
+                const count = allPosts.filter((p) => p.categories.includes(c)).length;
+                const active = selected === c;
+                return (
+                  <button
+                    key={c}
+                    type="button"
+                    onClick={() => setSelected(c)}
+                    className={cn(
+                      'text-xs font-semibold tracking-wider uppercase px-3 py-1.5 rounded-full border transition-all',
+                      active
+                        ? `text-white border-transparent bg-gradient-to-br ${categoryColor[c]}`
+                        : 'bg-card text-muted-foreground border-border hover:text-foreground hover:border-foreground/40'
+                    )}
+                  >
+                    {c} ({count})
+                  </button>
+                );
+              })}
+            </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {posts.map((post, i) => (
               <ScrollReveal key={post.slug} delay={i * 0.05}>
                 <Link
@@ -91,6 +134,7 @@ export default function Blog() {
                 </Link>
               </ScrollReveal>
             ))}
+            </div>
           </div>
         </section>
       </div>
