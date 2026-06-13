@@ -52,10 +52,9 @@ export interface BlogSection {
 }
 
 export type BlogCategory =
-  | 'Product Management'
-  | 'IA & Agents'
+  | 'Product'
+  | 'IA'
   | 'Data'
-  | 'Innovation & Tech'
   | 'Formation'
   | 'Communauté';
 
