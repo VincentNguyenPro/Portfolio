@@ -214,7 +214,7 @@ export const blogPosts: BlogPost[] = [
       "Table ronde Le Wagon x Women in Tech France sur l'IA comme révolution de société : comment construire une IA inclusive, représentative et équitable.",
     date: '2 juin 2026',
     eventDate: '02/06/2026',
-    categories: ['IA & Agents', 'Communauté'],
+    categories: ['IA', 'Communauté'],
     url: 'https://www.lewagon.com/fr/events/construire-l-ia-de-demain-defis-et-opportunites-SsjIsz',
     cover: { url: iaDemainCover.url, alt: "Construire l'IA de demain - Défis et Opportunités" },
     sections: [
