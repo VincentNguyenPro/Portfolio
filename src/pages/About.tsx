@@ -119,11 +119,11 @@ export default function About() {
                     En 2014, je rejoins <strong className="font-semibold text-foreground">F-Initiatives</strong>, cabinet en <strong className="font-semibold text-foreground">financement de l'innovation</strong>, où j'accompagne des entreprises de la start-up aux <strong className="font-semibold text-foreground">grands groupes du CAC 40</strong> pour financer leurs projets R&D. Je comprends vite que l'innovation ne vaut quelque chose que si elle est <strong className="font-semibold text-foreground">structurée et portée par les bons interlocuteurs</strong>.
                   </p>
                   <p>
-                    En 2016, je reviens chez <strong className="font-semibold text-foreground">Renault</strong> comme <strong className="font-semibold text-foreground">Product Owner</strong> sur un <strong className="font-semibold text-foreground">outil de costing critique</strong> — 10 M€, 250 utilisateurs, 12 pays. Je découvre ce que signifie vraiment <strong className="font-semibold text-foreground">livrer à grande échelle</strong> : spécifications, tests, conduite du changement.<br />
+                    En 2016, je reviens chez <strong className="font-semibold text-foreground">Renault</strong> comme <strong className="font-semibold text-foreground">Product Owner</strong> sur un <strong className="font-semibold text-foreground">outil de costing critique</strong> - 10 M€, 250 utilisateurs, 12 pays. Je découvre ce que signifie vraiment <strong className="font-semibold text-foreground">livrer à grande échelle</strong> : spécifications, tests, conduite du changement.<br />
                     Résultat : <strong className="font-semibold text-foreground">95 % de taux d'adoption</strong> et <strong className="font-semibold text-foreground">+15 % de fiabilité et rapidité d'exécution</strong> des calculs.
                   </p>
                   <p>
-                    En 2020, je deviens <strong className="font-semibold text-foreground">responsable transformation</strong> et <strong className="font-semibold text-foreground">Product Owner</strong>. Je prends la responsabilité de l'<strong className="font-semibold text-foreground">outil de consolidation financière Supply Chain monde</strong> — 8 M€, +25 contrôleurs, 10 pays. Je vis pleinement le <strong className="font-semibold text-foreground">cycle produit</strong> : backlog, delivery Scrum, amélioration continue.<br />
+                    En 2020, je deviens <strong className="font-semibold text-foreground">responsable transformation</strong> et <strong className="font-semibold text-foreground">Product Owner</strong>. Je prends la responsabilité de l'<strong className="font-semibold text-foreground">outil de consolidation financière Supply Chain monde</strong> - 8 M€, +25 contrôleurs, 10 pays. Je vis pleinement le <strong className="font-semibold text-foreground">cycle produit</strong> : backlog, delivery Scrum, amélioration continue.<br />
                     Impact direct : <strong className="font-semibold text-foreground">-50 % sur les délais de clôture</strong>, de J+10 à J+5.
                   </p>
                   <p>
@@ -135,7 +135,7 @@ export default function About() {
                     En 2026, je consolide ma pratique à la <strong className="font-semibold text-foreground">formation Noé</strong> et commence à construire le <strong className="font-semibold text-foreground">SaaS qui manque au marché</strong> : une application de <strong className="font-semibold text-foreground">pilotage P&L DSI</strong> conçue avec les <strong className="font-semibold text-foreground">outils IA modernes</strong>.
                   </p>
                   <p>
-                    Aujourd'hui, je cherche à mettre cette <strong className="font-semibold text-foreground">triple culture — rigueur d'ingénieur, expertise finance & SI, maîtrise du cycle produit</strong> — au service de <strong className="font-semibold text-foreground">produits digitaux à fort impact</strong>, dans des environnements où la <strong className="font-semibold text-foreground">complexité métier est une opportunité, pas un obstacle</strong>.
+                    Aujourd'hui, je cherche à mettre cette <strong className="font-semibold text-foreground">triple culture - rigueur d'ingénieur, expertise finance & SI, maîtrise du cycle produit</strong> - au service de <strong className="font-semibold text-foreground">produits digitaux à fort impact</strong>, dans des environnements où la <strong className="font-semibold text-foreground">complexité métier est une opportunité, pas un obstacle</strong>.
                   </p>
                 </div>
               </ScrollReveal>
@@ -150,7 +150,7 @@ export default function About() {
                     />
                   </div>
                   <p className="mt-4 text-xs text-muted-foreground font-light italic text-center">
-                    Arrivée de la SaintéLyon — 78 km de nuit entre Saint-Étienne et Lyon
+                    Arrivée de la SaintéLyon - 78 km de nuit entre Saint-Étienne et Lyon
                   </p>
                 </div>
               </ScrollReveal>
@@ -197,7 +197,7 @@ export default function About() {
                   <div className="relative aspect-[4/5] rounded-3xl overflow-hidden border border-border bg-muted">
                     <img
                       src={sunsetRoad.url}
-                      alt="Route au coucher de soleil — symbole du parcours professionnel"
+                      alt="Route au coucher de soleil - symbole du parcours professionnel"
                       className="w-full h-full object-cover"
                       loading="lazy"
                     />

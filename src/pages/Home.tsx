@@ -120,7 +120,7 @@ export default function Home() {
                 À propos
               </p>
               <p className="text-xl md:text-2xl font-light leading-relaxed text-foreground text-justify hyphens-auto">
-                Product Manager — Product Owner avec 10 ans d'expérience en SI finance et transformation digitale.
+                Product Manager - Product Owner avec 10 ans d'expérience en SI finance et transformation digitale.
                 J'ai piloté des outils critiques (8 M€, +25 ETP), réduit de 50 % les délais de clôture, et j'utilise l'IA au quotidien pour accélérer la discovery comme la delivery produit.
               </p>
               <Link
@@ -213,7 +213,7 @@ export default function Home() {
                         <>
                           <img
                             src={project.coverImage}
-                            alt={`${project.company} — ${project.title}`}
+                            alt={`${project.company} - ${project.title}`}
                             loading="lazy"
                             className="absolute inset-0 w-full h-full object-cover"
                           />
