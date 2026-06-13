@@ -87,8 +87,8 @@ export const blogPosts: BlogPost[] = [
     title: 'Construire son webshop avec Mollie & Codex',
     description:
       "Atelier Le Wagon : passer d'une idée e-commerce à une boutique en ligne fonctionnelle, encaissant de vrais paiements, en quelques heures et sans équipe tech.",
-    date: 'Juin 2026',
-    eventDate: '12/06/2026',
+    date: '11 juin 2026',
+    eventDate: '11/06/2026',
     categories: ['Product Management', 'IA & Agents', 'Innovation & Tech'],
     url: 'https://luma.com/0ivqgaik?tk=hNsezQ',
     cover: { url: webshopCover.url, alt: 'Atelier Webshop avec Mollie & Codex' },
@@ -103,7 +103,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         paragraphs: [
-          "📅 Date de l'événement : 12/06/2026",
+          "📅 Date de l'événement : 11/06/2026",
         ],
       },
     ],
@@ -114,8 +114,8 @@ export const blogPosts: BlogPost[] = [
     title: 'Hackathon Lovable chez Join Lion',
     description:
       "Une soirée à la Jungle IA pour transformer une idée en application en 3h avec Lovable, entourée de 70 personnes qui se lancent en même temps.",
-    date: 'Juin 2026',
-    eventDate: '05/06/2026',
+    date: '9 juin 2026',
+    eventDate: '09/06/2026',
     categories: ['IA & Agents', 'Innovation & Tech', 'Communauté'],
     url: 'https://luma.com/jybxjxu4?locale=fr&tk=Aimmjv',
     cover: { url: lovableCover.url, alt: 'Meetup Lovable x Paatch - Jungle IA' },
@@ -149,7 +149,7 @@ export const blogPosts: BlogPost[] = [
       {
         paragraphs: [
           "Ce que je retiens : on n'avance pas en théorisant une idée pendant des mois, on avance en l'ouvrant, en la testant, en acceptant que la première version soit imparfaite. Merci à Lovable, à Paatch et à toute l'équipe d'avoir créé cet espace. J'y retournerai.",
-          "📅 Date de l'événement : 05/06/2026",
+          "📅 Date de l'événement : 09/06/2026",
         ],
       },
     ],
@@ -160,8 +160,8 @@ export const blogPosts: BlogPost[] = [
     title: "Construire l'IA de demain : défis et opportunités",
     description:
       "Table ronde Le Wagon x Women in Tech France sur l'IA comme révolution de société : comment construire une IA inclusive, représentative et équitable.",
-    date: 'Juin 2026',
-    eventDate: '03/06/2026',
+    date: '2 juin 2026',
+    eventDate: '02/06/2026',
     categories: ['IA & Agents', 'Communauté'],
     url: 'https://www.lewagon.com/fr/events/construire-l-ia-de-demain-defis-et-opportunites-SsjIsz',
     cover: { url: iaDemainCover.url, alt: "Construire l'IA de demain - Défis et Opportunités" },
@@ -185,7 +185,7 @@ export const blogPosts: BlogPost[] = [
           "Le débat le plus intense a porté sur notre responsabilité collective. Si on laisse les biais des données d'aujourd'hui dicter les modèles de demain, on va figer dans la machine des inégalités qu'on essaie de corriger depuis vingt ans. Construire une IA inclusive, représentative et équitable, ce n'est pas une option : c'est une condition pour que cette technologie tienne ses promesses.",
           "On a aussi évoqué l'enjeu européen. L'IA est devenue stratégique au même titre que l'énergie ou la défense, et l'Europe a une carte à jouer si elle assume un modèle qui lui ressemble - exigeant sur les données personnelles, attentif à l'impact social, ambitieux côté recherche.",
           "Je suis ressorti de cette soirée avec une certitude : l'avenir de l'IA ne doit pas être construit par quelques-uns pour tous, mais par tous pour tous.",
-          "📅 Date de l'événement : 03/06/2026",
+          "📅 Date de l'événement : 02/06/2026",
         ],
       },
     ],
@@ -196,8 +196,8 @@ export const blogPosts: BlogPost[] = [
     title: 'Formation Claude Code chez Noé',
     description:
       "Quatre semaines pour intégrer Claude Code dans ma pratique de PM : du premier prompt maîtrisé au prototype publié en ligne, jusqu'à un vrai système de travail augmenté.",
-    date: 'Mai 2026',
-    eventDate: '23/05/2026',
+    date: '29 & 30 mai 2026',
+    eventDate: '29-30/05/2026',
     categories: ['IA & Agents', 'Formation', 'Product Management'],
     url: 'https://www.noe.pm/claude-code-pour-pms',
     cover: { url: claudeCodeCover.url, alt: 'Formation Claude Code chez Noé' },
@@ -233,19 +233,19 @@ export const blogPosts: BlogPost[] = [
       {
         paragraphs: [
           "Ce que je retiens de ces quatre semaines, c'est moins une liste de fonctionnalités qu'un changement de posture. Le PM augmenté par Claude Code, ce n'est pas celui qui sait mieux prompter, c'est celui qui sait quel contexte donner, quelle décision garder pour lui, et quelle partie de la chaîne il peut désormais prendre en charge sans déranger ses devs.",
-          "📅 Date de l'événement : 23/05/2026",
+          "📅 Date de l'événement : 29-30/05/2026",
         ],
       },
     ],
   },
   {
     slug: 'noe-formation-pm',
-    order: 6,
+    order: 8,
     title: 'Formation Product Management - Noé promo 33',
     description:
       "Retour sur 4 semaines intensives de Product Management chez Noé, en tant que PM pour BlaBlaCar : stratégie, discovery, priorisation, prototypage, delivery et restitution finale au Lead PM.",
-    date: 'Mai 2026',
-    eventDate: '16/05/2026',
+    date: '20 avril - 15 mai 2026',
+    eventDate: '20/04 - 15/05/2026',
     categories: ['Product Management', 'Formation'],
     url: 'https://www.noe.pm/formation-product-manager-la-formation-pm-en-4-semaines-noe',
     cover: { url: noePmPromo.url, alt: 'Promo 33 Noé - formation Product Management' },
@@ -274,7 +274,7 @@ export const blogPosts: BlogPost[] = [
         paragraphs: [
           "Et puis il y a eu le grand oral. Présenter notre travail devant le Lead PM de BlaBlaCar, défendre nos choix, encaisser les questions. C'est dans ce moment-là que j'ai mesuré le chemin parcouru en quatre semaines.",
           "Je sors de cette formation avec une boîte à outils complète, un réseau de PM passionnés, et surtout une confiance nouvelle : je sais que je peux prendre un sujet produit complexe et le mener du flou stratégique jusqu'à des specs livrables.",
-          "📅 Date de l'événement : 16/05/2026",
+          "📅 Date de l'événement : 20/04 - 15/05/2026",
         ],
       },
     ],
@@ -285,7 +285,7 @@ export const blogPosts: BlogPost[] = [
     title: 'Des 5V du Big Data aux 5E du Beautiful Data - IAE Paris',
     description:
       "Conférence IAE Paris – Sorbonne Business School : et si l'immatériel du « Beautiful Data » venait compléter le matériel du Big Data, au service d'une performance plus durable ?",
-    date: 'Mai 2026',
+    date: '18 mai 2026',
     eventDate: '18/05/2026',
     categories: ['Data', 'Communauté'],
     cover: { url: data5vIaeCover.url, alt: 'Conférence IAE Paris Alumni - Big Data & Beautiful Data' },
@@ -325,11 +325,11 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'ia-transforme-pm',
-    order: 8,
+    order: 6,
     title: "Comment l'IA transforme le Product Management",
     description:
       "Tech Talk Le Wagon x Welcome to the Jungle : comment le métier de PM a changé en 18 mois, ce qui s'automatise, et les compétences qui comptent vraiment en 2026.",
-    date: 'Mai 2026',
+    date: '27 mai 2026',
     eventDate: '27/05/2026',
     categories: ['Product Management', 'IA & Agents'],
     url: 'https://www.lewagon.com/fr/events/comment-l-ia-transforme-le-product-management-HPFVtl',
@@ -368,8 +368,8 @@ export const blogPosts: BlogPost[] = [
     title: 'Atelier Dust - Construire son premier agent IA',
     description:
       "Soirée Eria x Le Wagon x Dust : théorie et pratique pour repartir avec son propre agent IA opérationnel, connecté à Google Drive et aux emails, sans une seule ligne de code.",
-    date: 'Avril 2026',
-    eventDate: '17/04/2026',
+    date: '8 avril 2026',
+    eventDate: '08/04/2026',
     categories: ['IA & Agents', 'Innovation & Tech'],
     url: 'https://www.lewagon.com/fr/events/atelier-dust-build-your-first-ai-agent-5CkQZn',
     cover: { url: dustCover.url, alt: 'Construire son premier agent IA - Eria x Le Wagon x Dust' },
@@ -395,7 +395,7 @@ export const blogPosts: BlogPost[] = [
         paragraphs: [
           "Je suis reparti avec un agent qui fonctionne vraiment, intégré à mes outils du quotidien, et une certitude : la barrière d'entrée pour utiliser l'IA en entreprise n'a jamais été aussi basse. Le vrai sujet maintenant, c'est la qualité du contexte qu'on lui donne et la rigueur des cas d'usage qu'on choisit.",
           "Un grand merci à Tifany, Melvin et toute l'équipe Le Wagon pour cette soirée qui mêlait théorie, cas concrets et mise en pratique immédiate.",
-          "📅 Date de l'événement : 17/04/2026",
+          "📅 Date de l'événement : 08/04/2026",
         ],
       },
     ],
