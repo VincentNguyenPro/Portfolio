@@ -35,7 +35,7 @@ export default function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const subject = `[Contact portfolio] ${form.type || 'Nouveau message'} — ${form.prenom} ${form.nom}`;
+    const subject = `[Contact portfolio] ${form.type || 'Nouveau message'} - ${form.prenom} ${form.nom}`;
     const body = `Nom : ${form.nom}
 Prénom : ${form.prenom}
 Email : ${form.email}
@@ -79,7 +79,7 @@ ${form.message}`;
     <>
       <SEOHead
         title="Contact"
-        description={`Contactez Vincent Nguyen, Product Manager — ${photographerInfo.availability}.`}
+        description={`Contactez Vincent Nguyen, Product Manager - ${photographerInfo.availability}.`}
       />
 
       <div className="min-h-screen">
@@ -99,7 +99,7 @@ ${form.message}`;
               </h1>
               <p className="text-lg text-muted-foreground font-light leading-relaxed">
                 {photographerInfo.availability}. Pour échanger sur une opportunité Product Manager,
-                un projet à fort enjeu finance ou SI, ou simplement faire connaissance — utilisez
+                un projet à fort enjeu finance ou SI, ou simplement faire connaissance - utilisez
                 le formulaire ci-dessous ou l'un des moyens de contact directs.
               </p>
             </motion.div>

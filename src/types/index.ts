@@ -31,7 +31,7 @@ export interface Project {
   stack: string[];
   scope?: string;
   coverGradient: string; // tailwind gradient classes for cover (fallback)
-  coverImage?: string; // optional cover image URL — overrides gradient on cards
+  coverImage?: string; // optional cover image URL - overrides gradient on cards
   badge?: string; // optional badge (e.g. "🚧 En cours")
 }
 
