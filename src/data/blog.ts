@@ -397,12 +397,12 @@ export const blogPosts: BlogPost[] = [
         ],
       },
       {
-        image: { url: dustFlyer.url, alt: 'Flyer Eria - Construire son premier agent IA' },
+        image: { url: dustFlyer.url, alt: 'Flyer Eria - Construire son premier agent IA', aspectRatio: '4 / 2.4' },
       },
       {
+        fullWidth: true,
         paragraphs: [
-          "Je suis reparti avec un agent qui fonctionne vraiment, intégré à mes outils du quotidien, et une certitude : la barrière d'entrée pour utiliser l'IA en entreprise n'a jamais été aussi basse. Le vrai sujet maintenant, c'est la qualité du contexte qu'on lui donne et la rigueur des cas d'usage qu'on choisit.",
-          "Un grand merci à Tifany, Melvin et toute l'équipe Le Wagon pour cette soirée qui mêlait théorie, cas concrets et mise en pratique immédiate.",
+          "Je suis reparti avec un agent qui fonctionne vraiment, intégré à mes outils du quotidien, et une certitude : la barrière d'entrée pour utiliser l'IA en entreprise n'a jamais été aussi basse. Le vrai sujet maintenant, c'est la qualité du contexte qu'on lui donne et la rigueur des cas d'usage qu'on choisit. Un grand merci à Tifany, Melvin et toute l'équipe Le Wagon pour cette soirée qui mêlait théorie, cas concrets et mise en pratique immédiate.",
           "📅 Date de l'événement : 08/04/2026",
         ],
       },
