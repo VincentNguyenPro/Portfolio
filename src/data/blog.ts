@@ -103,14 +103,30 @@ export const blogPosts: BlogPost[] = [
     coverFit: 'contain',
     sections: [
       {
+        fullWidth: true,
         paragraphs: [
           "Je suis arrivé au Wagon avec une question simple en tête : est-ce qu'on peut vraiment lancer un webshop en une soirée, sans monter une équipe tech ? Spoiler : oui, et c'est même devenu assez troublant de voir à quelle vitesse une idée prend forme.",
-          "On a commencé par poser le concept de boutique, choisir un catalogue, puis confier la construction du site à Codex. Pendant qu'il assemblait les pages produit et le tunnel d'achat, j'ai branché Mollie pour gérer les paiements : carte, virement, Apple Pay, le tout en quelques clics.",
-          "En fin d'atelier, j'avais une boutique en ligne capable d'encaisser un vrai paiement de test, avec un design soigné et un back-office propre. La leçon que je retiens : aujourd'hui, ce qui sépare une idée e-commerce d'un MVP qui vend, ce ne sont plus les compétences techniques, c'est la clarté du besoin et la rigueur du parcours utilisateur.",
+          "Pour cet atelier, j'ai choisi un terrain de jeu qui me parlait : une boutique en ligne dédiée à la vente de cartes Pokémon à l'unité. L'idée était de construire une vraie page de vente, avec une fiche collectionneur détaillée pour chaque carte - extension, numéro, langue, rareté, état de conservation - et un tunnel de commande complet, du choix de la carte jusqu'au paiement sécurisé.",
         ],
       },
       {
+        fullWidth: true,
+        image: { url: pokemonProduct.url, alt: 'Fiche produit Pokémon Market Place - carte Carapuce 007/165', aspectRatio: '16 / 9' },
+      },
+      {
+        fullWidth: true,
         paragraphs: [
+          "On a commencé par poser le concept de boutique, choisir le catalogue, puis confier la construction du site à Codex. Pendant qu'il assemblait les pages produit avec les descriptions de cartes, le carrousel et la fiche collectionneur, j'ai branché Mollie pour gérer les paiements : carte, virement, Apple Pay, le tout en quelques clics. L'agent gérait aussi le toggle FR / ENG et la mise à jour dynamique des libellés selon la langue.",
+        ],
+      },
+      {
+        fullWidth: true,
+        image: { url: pokemonCheckout.url, alt: 'Tunnel de commande avec récapitulatif et paiement Mollie', aspectRatio: '16 / 9' },
+      },
+      {
+        fullWidth: true,
+        paragraphs: [
+          "En fin d'atelier, j'avais une boutique en ligne capable d'encaisser un vrai paiement de test, avec un design soigné, un back-office propre et un tunnel d'achat qui passait sans accroc par Mollie. La leçon que je retiens : aujourd'hui, ce qui sépare une idée e-commerce d'un MVP qui vend, ce ne sont plus les compétences techniques, c'est la clarté du besoin et la rigueur du parcours utilisateur.",
           "📅 Date de l'événement : 11/06/2026",
         ],
       },
