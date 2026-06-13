@@ -73,7 +73,7 @@ export default function About() {
               <h1 className="text-5xl md:text-6xl font-semibold tracking-tight">
                 Vincent Nguyen
               </h1>
-              <div className="space-y-4 text-lg text-muted-foreground font-light leading-relaxed text-justify hyphens-auto">
+              <div className="space-y-4 text-lg text-muted-foreground font-light leading-relaxed text-justify">
                 {photographerInfo.biography.split('\n\n').map((p, i) => (
                   <p key={i}>{p}</p>
                 ))}
@@ -111,7 +111,7 @@ export default function About() {
             </ScrollReveal>
             <div className="grid md:grid-cols-[1.4fr_1fr] gap-10 lg:gap-16 items-start">
               <ScrollReveal>
-                <div className="space-y-3 text-base font-light leading-snug text-justify hyphens-auto text-foreground/85">
+                <div className="space-y-3 text-base font-light leading-snug text-justify text-foreground/85">
                   <p>
                     Formé en <strong className="font-semibold text-foreground">génie industriel à l'ISAE-SUPMECA</strong>, j'ai débuté chez <strong className="font-semibold text-foreground">Renault</strong> sur des projets techniques avant de basculer vers ce qui m'anime vraiment : <strong className="font-semibold text-foreground">construire des produits utiles à ceux qui les utilisent</strong>.
                   </p>
@@ -150,7 +150,7 @@ export default function About() {
                     />
                   </div>
                   <p className="mt-4 text-xs text-muted-foreground font-light italic text-center">
-                    Arrivée de la SaintéLyon - 78 km de nuit entre Saint-Étienne et Lyon
+                    Arrivée de la SaintéLyon - 44 km de nuit entre Saint-Catherine et Lyon
                   </p>
                 </div>
               </ScrollReveal>
