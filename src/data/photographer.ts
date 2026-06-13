@@ -6,7 +6,7 @@ export const photographerInfo: PhotographerInfo = {
   tagline: 'Product Manager - Expertise Finance & SI',
   heroIntroduction:
     "Je transforme des besoins métier complexes en produits à impact mesurable, dans des contextes à fort enjeu technique et financier.",
-  biography: `Product Manager - Product Owner avec 10 ans d'expérience en SI finance et transformation digitale. J'ai piloté des outils critiques (8 M€, 25+ ETP), réduit de 50 % les délais de clôture, et j'utilise l'IA au quotidien pour accélérer la discovery comme la delivery produit.
+  biography: `Product Manager & Product Owner avec 10 ans d'expérience en SI finance et transformation digitale.\nJ'ai piloté des outils critiques (8 M€,\u00a0+25\u00a0ETP), livré des produits à impact mesurable dans des environnements multi-acteurs complexes, et j'utilise l'IA au quotidien pour accélérer la discovery comme la delivery produit.
 
 Diplômé ingénieur (ISAE-SUPMECA) avec une formation en finance d'entreprise (HEC Paris) et en Product Management (Noé), j'évolue à l'intersection du métier, de la donnée et de la tech.
 
@@ -27,7 +27,7 @@ J'aime les sujets exigeants où la rigueur financière croise la créativité pr
   location: 'Paris, Île-de-France',
   email: 'vincent.nguyen75020@gmail.com',
   phone: '06 31 30 02 42',
-  availability: "Ouvert aux opportunités Product Manager / Product Owner",
+  availability: "Ouvert aux opportunités Product Manager & Product Owner",
   socialLinks: {
     linkedin: 'https://linkedin.com/in/vincentnguyenpro',
   },
