@@ -344,24 +344,31 @@ export const blogPosts: BlogPost[] = [
     cover: { url: iaPmCover.url, alt: "Comment l'IA transforme le Product Management" },
     sections: [
       {
+        fullWidth: true,
         paragraphs: [
           "Une phrase, lancée en début de soirée, a donné le ton de toute la table ronde : la fiche de poste d'un PM n'a presque pas bougé en cinq ans, mais le métier lui-même s'est complètement transformé en dix-huit mois. Tout le monde dans la salle a hoché la tête, et on s'est dit qu'on était au bon endroit pour en parler.",
+          "Je suis arrivé au Wagon avec une question très concrète : quels gestes de mon quotidien de PM sont en train d'être absorbés par l'IA, et lesquels prennent au contraire encore plus de valeur ? J'avais besoin de confronter mes intuitions à celles de PM qui vivent cette transformation à plus grande échelle que moi - en startup hyper-croissance comme en scale-up plus établie.",
+          "La salle était pleine, mélange de PM expérimentés, de juniors qui cherchent leur place, et de profils tech curieux de voir comment le métier évolue. Cette diversité a beaucoup nourri les échanges qui ont suivi.",
         ],
       },
       {
+        fullWidth: true,
         image: { url: iaPmRoom.url, alt: 'Tech Talk Comment l’IA transforme le Product Management - Le Wagon Paris' },
       },
       {
+        fullWidth: true,
         paragraphs: [
           "Le Wagon avait réuni des intervenants qui vivent ce basculement au quotidien : Louis Comte, qui voit défiler chaque jour des centaines de startups à STATION F en train de construire avec l'IA ; Leslie Malem, qui observe de l'intérieur les équipes produit de Welcome to the Jungle ; Emmanuel Hosanski, Head of Product chez Pennylane, qui embarque l'IA dans un produit comptable où l'erreur n'est pas une option ; et Anne Dumas, qui animait la discussion avec une vraie exigence.",
         ],
       },
       {
+        fullWidth: true,
         paragraphs: [
           "On a passé une bonne partie de la soirée à essayer de répondre à une question qui taraude beaucoup de PM autour de moi : qu'est-ce qui s'automatise vraiment dans notre métier, et qu'est-ce que ça veut dire pour les juniors qui arrivent ? La synthèse, c'est que la rédaction de specs, les premières analyses de données et la production de maquettes bougent énormément, mais que la priorisation, le sens du produit et la capacité à embarquer une équipe restent profondément humains - et deviennent même plus discriminants qu'avant.",
         ],
       },
       {
+        fullWidth: true,
         paragraphs: [
           "L'autre question forte de la soirée : quels produits peut-on construire aujourd'hui qui étaient impossibles il y a dix-huit mois ? Les exemples concrets ont fusé, des assistants métier capables de lire des documents complexes aux copilotes intégrés directement dans les outils internes. Et avec ça, un vrai sujet de fond : comment livrer des fonctionnalités IA quand les modèles hallucinent et que la confiance des utilisateurs se gagne lentement ?",
           "Je suis ressorti avec plein de notes, mais surtout avec la conviction que le PM de 2026 sera celui qui aura accepté que son métier change vite, et qui aura pris le temps d'apprendre à travailler avec ces nouveaux outils plutôt que de regarder ailleurs.",
