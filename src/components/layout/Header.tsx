@@ -83,6 +83,15 @@ export function Header() {
 
           <div className="md:hidden flex items-center gap-2">
             <ThemeToggle />
+            <a
+              href={photographerInfo.socialLinks.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+              className="inline-flex items-center justify-center size-9 rounded-md text-foreground/80 hover:text-foreground hover:bg-accent transition-colors"
+            >
+              <Linkedin className="size-5" />
+            </a>
             <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
               <SheetTrigger asChild>
                 <Button
