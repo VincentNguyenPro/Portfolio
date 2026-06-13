@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Mail, Linkedin, ArrowUpRight, Send } from 'lucide-react';
+import { Mail, Linkedin, ArrowUpRight, Send, Download } from 'lucide-react';
 import { useState } from 'react';
 import { photographerInfo } from '@/data/photographer';
 import { SEOHead } from '@/components/seo/SEOHead';
