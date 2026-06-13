@@ -56,22 +56,11 @@ ${form.message}`;
       href: `mailto:${photographerInfo.email}`,
     },
     {
-      icon: Phone,
-      label: 'Téléphone',
-      value: photographerInfo.phone,
-      href: `tel:${photographerInfo.phone.replace(/\s/g, '')}`,
-    },
-    {
       icon: Linkedin,
       label: 'LinkedIn',
       value: 'linkedin.com/in/vincentnguyenpro',
       href: photographerInfo.socialLinks.linkedin!,
       external: true,
-    },
-    {
-      icon: MapPin,
-      label: 'Localisation',
-      value: photographerInfo.location,
     },
   ];
 
