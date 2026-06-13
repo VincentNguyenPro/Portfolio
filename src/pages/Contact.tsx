@@ -98,9 +98,9 @@ ${form.message}`;
                 Discutons de votre projet.
               </h1>
               <p className="text-lg text-muted-foreground font-light leading-relaxed">
-                {photographerInfo.availability}. Pour échanger sur une opportunité Product Manager,
-                un projet à fort enjeu finance ou SI, ou simplement faire connaissance - utilisez
-                le formulaire ci-dessous ou l'un des moyens de contact directs.
+                {photographerInfo.availability}.
+                <br /><br />
+                Pour échanger sur une opportunité Product Manager, un projet à fort enjeu finance ou SI, ou simplement faire connaissance - utilisez le formulaire ci-dessous ou l'un des moyens de contact directs.
               </p>
             </motion.div>
           </div>
