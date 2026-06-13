@@ -60,8 +60,8 @@ export const blogPosts: BlogPost[] = [
     title: 'VivaTech 2026 - 10ᵉ édition',
     description:
       "Quatre jours porte de Versailles pour la 10ᵉ édition de VivaTech, le grand rendez-vous international de l'innovation et de la tech.",
-    date: 'Juin 2026',
-    eventDate: '17–20/06/2026',
+    date: '20 juin 2026',
+    eventDate: '20/06/2026',
     categories: ['Innovation & Tech', 'Communauté'],
     url: 'https://vivatechnology.com/',
     cover: { url: vivatechCover.url, alt: 'VivaTech 2026 - Paris' },
@@ -76,7 +76,7 @@ export const blogPosts: BlogPost[] = [
       {
         paragraphs: [
           "🚧 Article en attente de visite - compte-rendu à venir.",
-          "📅 Date de l'événement : 17–20/06/2026",
+          "📅 Date de l'événement : 20/06/2026",
         ],
       },
     ],
@@ -284,7 +284,7 @@ export const blogPosts: BlogPost[] = [
     order: 7,
     title: 'Des 5V du Big Data aux 5E du Beautiful Data - IAE Paris',
     description:
-      "Conférence IAE Paris – Sorbonne Business School : et si l'immatériel du « Beautiful Data » venait compléter le matériel du Big Data, au service d'une performance plus durable ?",
+      "Conférence IAE Paris - Sorbonne Business School : et si l'immatériel du « Beautiful Data » venait compléter le matériel du Big Data, au service d'une performance plus durable ?",
     date: '18 mai 2026',
     eventDate: '18/05/2026',
     categories: ['Data', 'Communauté'],
@@ -292,7 +292,7 @@ export const blogPosts: BlogPost[] = [
     sections: [
       {
         paragraphs: [
-          "Je suis venu à l'IAE Paris – Sorbonne Business School avec une question presque naïve : à force de courir derrière le « toujours plus » de données, ne sommes-nous pas en train d'oublier l'essentiel ? C'est exactement le débat que cette conférence est venue ouvrir, en confrontant les célèbres 5V du Big Data - Volume, Vélocité, Variété, Véracité, Valeur - à une grille beaucoup plus récente : les 5E du « Beautiful Data ».",
+          "Je suis venu à l'IAE Paris - Sorbonne Business School avec une question presque naïve : à force de courir derrière le « toujours plus » de données, ne sommes-nous pas en train d'oublier l'essentiel ? C'est exactement le débat que cette conférence est venue ouvrir, en confrontant les célèbres 5V du Big Data - Volume, Vélocité, Variété, Véracité, Valeur - à une grille beaucoup plus récente : les 5E du « Beautiful Data ».",
         ],
       },
       {
