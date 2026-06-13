@@ -8,10 +8,9 @@ import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { cn } from '@/lib/utils';
 
 const categoryColor: Record<BlogCategory, string> = {
-  'Product Management': 'from-sky-500 via-indigo-500 to-violet-600',
-  'IA & Agents': 'from-violet-600 via-fuchsia-500 to-rose-500',
+  Product: 'from-sky-500 via-indigo-500 to-violet-600',
+  IA: 'from-violet-600 via-fuchsia-500 to-rose-500',
   Data: 'from-emerald-500 via-teal-500 to-cyan-600',
-  'Innovation & Tech': 'from-amber-500 via-orange-500 to-rose-500',
   Formation: 'from-yellow-500 via-amber-500 to-orange-500',
   Communauté: 'from-slate-700 via-slate-900 to-zinc-900',
 };
