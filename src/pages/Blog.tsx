@@ -44,7 +44,7 @@ export default function Blog() {
                 Blog
               </p>
               <h1 className="text-5xl md:text-6xl font-semibold tracking-tight">
-                Carnets de bord Product, IA, Data & Innovation
+                Carnets de bord Product, IA & Data
               </h1>
               <p className="text-lg text-muted-foreground font-light leading-relaxed">
                 Comptes-rendus d'événements, retours d'expérience et réflexions au fil de mes formations, ateliers et conférences.
