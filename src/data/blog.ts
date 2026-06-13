@@ -81,7 +81,7 @@ export const blogPosts: BlogPost[] = [
       "Quatre jours porte de Versailles pour la 10ᵉ édition de VivaTech, le grand rendez-vous international de l'innovation et de la tech.",
     date: '20 juin 2026',
     eventDate: '20/06/2026',
-    categories: ['Innovation & Tech', 'Communauté'],
+    categories: ['IA', 'Data', 'Product'],
     url: 'https://vivatechnology.com/',
     cover: { url: vivatechCover.url, alt: 'VivaTech 2026 - Paris' },
     sections: [
