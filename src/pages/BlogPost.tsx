@@ -210,14 +210,22 @@ export default function BlogPost() {
               }
               if (g.text) {
                 return (
-                  <div key={idx} className="max-w-3xl">
+                  <div key={idx} className={g.fullWidth ? '' : 'max-w-3xl'}>
                     <TextBlock section={g.text} />
                   </div>
                 );
               }
               if (g.image) {
+                const w = g.image.width;
+                const widthClass = g.fullWidth || w === 'full'
+                  ? ''
+                  : w === 'sm'
+                  ? 'max-w-sm mx-auto'
+                  : w === 'lg'
+                  ? 'max-w-3xl mx-auto'
+                  : 'max-w-2xl mx-auto';
                 return (
-                  <div key={idx} className="max-w-2xl mx-auto">
+                  <div key={idx} className={widthClass}>
                     <ImageBlock image={g.image} />
                   </div>
                 );
