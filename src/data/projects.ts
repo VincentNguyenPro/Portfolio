@@ -1,5 +1,5 @@
 import type { Project } from '@/types';
-import blablacarCover from '@/assets/blablacar-cover.jpg';
+import blablacarCover from '@/assets/blablacar-app.jpg.asset.json';
 import bartleCover from '@/assets/bartle-cover.jpg';
 import renaultSupplyCover from '@/assets/renault-supply-cover.jpg';
 import renaultCostingCover from '@/assets/renault-costing-cover.jpg';
@@ -93,7 +93,7 @@ export const projects: Project[] = [
     ],
     stack: ['Figma', 'Notion', 'User testing', 'SQL'],
     coverGradient: 'from-sky-500 via-indigo-500 to-violet-600',
-    coverImage: blablacarCover,
+    coverImage: blablacarCover.url,
   },
   {
     id: '2',
