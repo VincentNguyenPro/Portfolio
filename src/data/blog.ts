@@ -16,18 +16,26 @@ import noePmPromo from '@/assets/blog/noe-pm-promo.jpeg.asset.json';
 import data5vCover from '@/assets/blog/data-5v-cover.jpeg.asset.json';
 import data5vIaeCover from '@/assets/blog/data-5v-iae-cover.webp.asset.json';
 import vivatechCover from '@/assets/blog/vivatech-cover.png.asset.json';
+import pokemonProduct from '@/assets/blog/pokemon-product.png.asset.json';
+import pokemonCheckout from '@/assets/blog/pokemon-checkout.png.asset.json';
+import spotifyWrappedDark from '@/assets/blog/spotify-wrapped-dark.png.asset.json';
+import spotifyWrappedLight from '@/assets/blog/spotify-wrapped-light.png.asset.json';
+import roofoodMenu from '@/assets/blog/roofood-menu.png.asset.json';
+import roofoodCheckout from '@/assets/blog/roofood-checkout.png.asset.json';
 
 export interface BlogSection {
   heading?: string;
   paragraphs?: string[];
   bullets?: string[];
   quote?: string;
+  fullWidth?: boolean;
   image?: {
     url: string;
     alt: string;
     caption?: string;
     aspectRatio?: string;
     objectPosition?: string;
+    width?: 'sm' | 'md' | 'lg' | 'full';
   };
 }
 
@@ -95,14 +103,30 @@ export const blogPosts: BlogPost[] = [
     coverFit: 'contain',
     sections: [
       {
+        fullWidth: true,
         paragraphs: [
           "Je suis arrivé au Wagon avec une question simple en tête : est-ce qu'on peut vraiment lancer un webshop en une soirée, sans monter une équipe tech ? Spoiler : oui, et c'est même devenu assez troublant de voir à quelle vitesse une idée prend forme.",
-          "On a commencé par poser le concept de boutique, choisir un catalogue, puis confier la construction du site à Codex. Pendant qu'il assemblait les pages produit et le tunnel d'achat, j'ai branché Mollie pour gérer les paiements : carte, virement, Apple Pay, le tout en quelques clics.",
-          "En fin d'atelier, j'avais une boutique en ligne capable d'encaisser un vrai paiement de test, avec un design soigné et un back-office propre. La leçon que je retiens : aujourd'hui, ce qui sépare une idée e-commerce d'un MVP qui vend, ce ne sont plus les compétences techniques, c'est la clarté du besoin et la rigueur du parcours utilisateur.",
+          "Pour cet atelier, j'ai choisi un terrain de jeu qui me parlait : une boutique en ligne dédiée à la vente de cartes Pokémon à l'unité. L'idée était de construire une vraie page de vente, avec une fiche collectionneur détaillée pour chaque carte - extension, numéro, langue, rareté, état de conservation - et un tunnel de commande complet, du choix de la carte jusqu'au paiement sécurisé.",
         ],
       },
       {
+        fullWidth: true,
+        image: { url: pokemonProduct.url, alt: 'Fiche produit Pokémon Market Place - carte Carapuce 007/165', aspectRatio: '16 / 9' },
+      },
+      {
+        fullWidth: true,
         paragraphs: [
+          "On a commencé par poser le concept de boutique, choisir le catalogue, puis confier la construction du site à Codex. Pendant qu'il assemblait les pages produit avec les descriptions de cartes, le carrousel et la fiche collectionneur, j'ai branché Mollie pour gérer les paiements : carte, virement, Apple Pay, le tout en quelques clics. L'agent gérait aussi le toggle FR / ENG et la mise à jour dynamique des libellés selon la langue.",
+        ],
+      },
+      {
+        fullWidth: true,
+        image: { url: pokemonCheckout.url, alt: 'Tunnel de commande avec récapitulatif et paiement Mollie', aspectRatio: '16 / 9' },
+      },
+      {
+        fullWidth: true,
+        paragraphs: [
+          "En fin d'atelier, j'avais une boutique en ligne capable d'encaisser un vrai paiement de test, avec un design soigné, un back-office propre et un tunnel d'achat qui passait sans accroc par Mollie. La leçon que je retiens : aujourd'hui, ce qui sépare une idée e-commerce d'un MVP qui vend, ce ne sont plus les compétences techniques, c'est la clarté du besoin et la rigueur du parcours utilisateur.",
           "📅 Date de l'événement : 11/06/2026",
         ],
       },
@@ -136,15 +160,12 @@ export const blogPosts: BlogPost[] = [
         ],
       },
       {
-        image: { url: lovableRoom.url, alt: 'Salle pleine pendant le meetup Lovable x Paatch' },
+        image: { url: lovableRoom.url, alt: 'Salle pleine pendant le meetup Lovable x Paatch', width: 'sm' },
       },
       {
         paragraphs: [
           "En fin de soirée, chaque groupe est venu présenter son projet. Six équipes, six univers complètement différents, et le même fil rouge : on était parti d'une page blanche, et on terminait avec quelque chose à montrer.",
         ],
-      },
-      {
-        image: { url: lovableGroups.url, alt: 'Restitution finale des projets - 6 groupes au meetup Lovable' },
       },
       {
         paragraphs: [
@@ -167,20 +188,25 @@ export const blogPosts: BlogPost[] = [
     cover: { url: iaDemainCover.url, alt: "Construire l'IA de demain - Défis et Opportunités" },
     sections: [
       {
+        fullWidth: true,
         paragraphs: [
           "J'ai eu la chance de participer à la table ronde organisée par Le Wagon avec Women in Tech France, sur un sujet qui me tient à cœur : à quoi va ressembler l'IA de demain, et qui sera en train de la construire ? Aux côtés de Zena El Kurdi, Jaafar Elalamy et Héloïse Bertoux, on a passé une soirée à confronter nos expériences - startup, grand groupe, formation, terrain - autour de cette question.",
+          "Le format était volontairement ouvert : pas de pitch produit, pas de démo, mais des regards qui se croisent sur ce que l'IA va changer dans nos vies professionnelles et collectives. La salle, pleine, mélangeait fondatrices, ingénieures, designers, PM et profils en reconversion, et cette diversité a été un vrai moteur dans les échanges.",
         ],
       },
       {
-        image: { url: iaDemainRoom.url, alt: 'Table ronde Construire l’IA de demain au Wagon Paris' },
+        fullWidth: true,
+        image: { url: iaDemainRoom.url, alt: 'Table ronde Construire l’IA de demain au Wagon Paris', aspectRatio: '16 / 9' },
       },
       {
+        fullWidth: true,
         paragraphs: [
           "Une conviction est revenue plusieurs fois dans nos échanges : l'IA n'est pas seulement une révolution technologique, c'est une révolution de société. Elle va transformer nos métiers, notre accès à la connaissance, l'école, la santé, les services publics, et jusqu'à nos relations internationales. La vraie question n'est plus de savoir si elle va nous transformer, mais comment on choisit d'accompagner cette transformation.",
           "J'ai aussi partagé une intuition que je porte depuis quelques mois : l'IA ne remplacera pas les humains, mais les professionnels qui sauront s'en servir vont profondément transformer les organisations dans lesquelles ils travaillent. On le voit déjà côté produit, côté finance, côté ops - la barre se déplace.",
         ],
       },
       {
+        fullWidth: true,
         paragraphs: [
           "Le débat le plus intense a porté sur notre responsabilité collective. Si on laisse les biais des données d'aujourd'hui dicter les modèles de demain, on va figer dans la machine des inégalités qu'on essaie de corriger depuis vingt ans. Construire une IA inclusive, représentative et équitable, ce n'est pas une option : c'est une condition pour que cette technologie tienne ses promesses.",
           "On a aussi évoqué l'enjeu européen. L'IA est devenue stratégique au même titre que l'énergie ou la défense, et l'Europe a une carte à jouer si elle assume un modèle qui lui ressemble - exigeant sur les données personnelles, attentif à l'impact social, ambitieux côté recherche.",
@@ -195,7 +221,7 @@ export const blogPosts: BlogPost[] = [
     order: 5,
     title: 'Formation Claude Code chez Noé',
     description:
-      "Quatre semaines pour intégrer Claude Code dans ma pratique de PM : du premier prompt maîtrisé au prototype publié en ligne, jusqu'à un vrai système de travail augmenté.",
+      "Deux jours pour intégrer Claude Code dans ma pratique de PM : de l'ajout d'une fonctionnalité sur un écran de synthèse à la Spotify, jusqu'à la correction de bugs et la mise en production via GitHub.",
     date: '29 & 30 mai 2026',
     eventDate: '29-30/05/2026',
     categories: ['IA & Agents', 'Formation', 'Product Management'],
@@ -203,36 +229,60 @@ export const blogPosts: BlogPost[] = [
     cover: { url: claudeCodeCover.url, alt: 'Formation Claude Code chez Noé' },
     sections: [
       {
+        fullWidth: true,
         paragraphs: [
-          "Quand j'ai commencé cette formation chez Noé, j'utilisais Claude Code comme la plupart des PM autour de moi : un peu au feeling, beaucoup en mode chat, sans vraiment exploiter ce que l'outil pouvait faire. Quatre semaines plus tard, c'est devenu un vrai membre de mon équipe - et c'est sans doute le changement de pratique le plus marquant que j'ai vécu cette année.",
+          "Quand j'ai commencé cette formation chez Noé, j'utilisais Claude Code comme la plupart des PM autour de moi : un peu au feeling, beaucoup en mode chat, sans vraiment exploiter ce que l'outil pouvait faire. Deux jours plus tard, c'est devenu un vrai membre de mon équipe - et c'est sans doute le changement de pratique le plus marquant que j'ai vécu cette année.",
+          "Le format est volontairement court et dense : deux journées en présentiel chez Noé, par petits groupes, avec des cas pratiques imposés sur des bases de code réelles. L'idée n'est pas d'apprendre à prompter dans le vide, mais de produire quelque chose de tangible à chaque demi-journée - une fonctionnalité, un correctif, une pull request. Cette contrainte change tout : on quitte la posture du PM qui rédige une spec et qu'on attend de voir, et on entre dans celle du PM qui contribue directement à la base de code, encadré par Claude.",
         ],
       },
       {
-        image: { url: claudeCodeRoom.url, alt: 'Salle de formation Claude Code chez Noé' },
+        fullWidth: true,
+        image: { url: claudeCodeRoom.url, alt: 'Salle de formation Claude Code chez Noé', aspectRatio: '16 / 9' },
       },
       {
+        fullWidth: true,
         paragraphs: [
-          "Tout a commencé par un travail sur les fondations. On a appris à connecter Claude Code à mes outils via MCP, à lui donner le bon contexte pour qu'il arrête d'inventer, à créer des skills pour standardiser les livrables que je refais sans cesse - specs, comptes-rendus, brouillons d'emails. Le déclic est venu avec le « plan mode » : Claude me propose un plan, je le valide, et seulement après il agit. Fini les exécutions qui partent dans tous les sens.",
+          "Jour 1 - apporter une nouvelle fonctionnalité. On part d'un projet existant : un écran de synthèse annuelle façon Spotify Wrapped, fourni en base. L'exercice : ajouter une vraie fonctionnalité utilisateur, en l'occurrence un toggle clair / sombre qui change complètement l'identité visuelle de la page. Avant de coder quoi que ce soit, on commence par cadrer le besoin avec Claude - quel comportement attendu, quels états, quels composants impactés - puis on bascule en plan mode pour qu'il propose une stratégie d'implémentation. Une fois le plan validé, il exécute, on teste, on itère.",
         ],
       },
       {
+        fullWidth: true,
+        image: { url: spotifyWrappedDark.url, alt: 'Écran de synthèse annuelle Spotify Wrapped en mode sombre', aspectRatio: '9 / 16', width: 'sm' },
+      },
+      {
+        fullWidth: true,
+        image: { url: spotifyWrappedLight.url, alt: 'Même écran de synthèse Spotify Wrapped en mode clair après ajout du toggle', aspectRatio: '9 / 16', width: 'sm' },
+      },
+      {
+        fullWidth: true,
         paragraphs: [
-          "La deuxième semaine, on est entrés dans le code. Pour quelqu'un qui n'est pas développeur de métier, c'était le moment de vérité. On a branché GitHub, fait nos premières pull requests, corrigé un vrai bug de bout en bout - du diagnostic au correctif poussé en production. Je n'aurais jamais pensé y arriver en autonomie, et pourtant.",
+          "Ce qui m'a marqué, ce n'est pas tellement de voir la fonctionnalité fonctionner - c'est de l'avoir conçue, fait implémenter, validée, puis publiée en autonomie, sans déranger une équipe de dev. Quand on a passé dix ans à écrire des specs sans pouvoir tester soi-même, c'est un vrai changement de référentiel.",
         ],
       },
       {
+        fullWidth: true,
         paragraphs: [
-          "Puis on est passés du besoin au prototype. J'ai appris à articuler des specs et un prototype directement sur Claude Code, dans une logique de « développement piloté par les specs » : on décrit le comportement attendu, l'agent construit, on itère. Le moment fort de la semaine, ça a été de publier mon proto sur Vercel et de pouvoir l'envoyer à des stakeholders pour qu'ils le testent en vrai, sans attendre un cycle de dev.",
+          "Jour 2 - identifier et corriger des bugs. On change complètement de contexte : une application e-commerce à la Deliveroo, avec un parcours menu / panier / commande, et plusieurs bugs glissés volontairement dans le code. L'exercice est très proche d'une journée de bug triage en équipe produit : reproduire le bug, isoler la cause avec Claude, proposer un correctif, écrire un message de commit propre, ouvrir une pull request sur GitHub.",
         ],
       },
       {
+        fullWidth: true,
+        image: { url: roofoodMenu.url, alt: 'Application Roofood (clone Deliveroo) - menu et panier latéral', aspectRatio: '16 / 9' },
+      },
+      {
+        fullWidth: true,
         paragraphs: [
-          "La dernière semaine a été la plus structurante. On a construit un « Personal OS » - un contexte persistant qui décrit comment je travaille, mes projets en cours, mes conventions - et un « Team OS » partagé avec l'équipe. C'est ce qui transforme Claude Code d'un outil pratique en un véritable système de travail. Aujourd'hui, je ne réfléchis plus en termes de prompts isolés, mais en termes d'environnement qui apprend avec moi.",
+          "Le moment fort de la journée a été la revue : chaque correctif est poussé sur une branche, soumis sur la branche main via une pull request, vérifié par un encadrant, puis mergé dans la base de code. On retrouve exactement le rythme d'une équipe tech - et on comprend de l'intérieur pourquoi une bonne description de PR, des commits atomiques et une vérification rigoureuse font gagner autant de temps en aval.",
         ],
       },
       {
+        fullWidth: true,
+        image: { url: roofoodCheckout.url, alt: 'Étape de récapitulatif de commande sur l’application Roofood', aspectRatio: '16 / 9' },
+      },
+      {
+        fullWidth: true,
         paragraphs: [
-          "Ce que je retiens de ces quatre semaines, c'est moins une liste de fonctionnalités qu'un changement de posture. Le PM augmenté par Claude Code, ce n'est pas celui qui sait mieux prompter, c'est celui qui sait quel contexte donner, quelle décision garder pour lui, et quelle partie de la chaîne il peut désormais prendre en charge sans déranger ses devs.",
+          "Ce que je retiens de ces deux jours, c'est moins une liste de fonctionnalités qu'un changement de posture. Le PM augmenté par Claude Code, ce n'est pas celui qui sait mieux prompter, c'est celui qui sait quel contexte donner, quelle décision garder pour lui, et quelle partie de la chaîne il peut désormais prendre en charge sans déranger ses devs.",
           "📅 Date de l'événement : 29-30/05/2026",
         ],
       },
@@ -251,26 +301,31 @@ export const blogPosts: BlogPost[] = [
     cover: { url: noePmPromo.url, alt: 'Promo 33 Noé - formation Product Management' },
     sections: [
       {
+        fullWidth: true,
         paragraphs: [
           "J'ai officiellement obtenu mon diplôme de Product Management chez Noé, avec la promo 33. Quatre semaines intenses, denses, parfois épuisantes, mais qui ont changé ma manière de penser le produit.",
         ],
       },
       {
-        image: { url: noePmPromo.url, alt: 'Photo de promo - Noé Product Management 33' },
+        fullWidth: true,
+        image: { url: noePmPromo.url, alt: 'Photo de promo - Noé Product Management 33', aspectRatio: '16 / 9' },
       },
       {
+        fullWidth: true,
         paragraphs: [
           "Le format est simple sur le papier et redoutable dans la pratique : on devient PM pour une vraie entreprise - dans mon cas BlaBlaCar - et on est encadré par des Senior PM, Head of Product et CPO qui ne nous laissent rien passer. La première semaine, on s'attaque à la stratégie : explorer la problématique, comprendre le positionnement de BlaBlaCar face aux autres acteurs en France, identifier où se trouvent les vraies opportunités.",
           "La deuxième semaine, j'ai plongé dans la discovery. Interviews utilisateurs, requêtes SQL pour creuser la donnée, croisements dans Excel, tests produit. C'est la semaine où j'ai compris à quel point la qualité d'une question d'interview pouvait changer la trajectoire d'un projet entier.",
         ],
       },
       {
+        fullWidth: true,
         paragraphs: [
           "Vient ensuite la priorisation. RICE, MoSCoW, KPIs impactés, arbitrages : on apprend à défendre ses choix devant des gens qui ont vu défiler des centaines de roadmaps. Puis le prototypage sur Figma, en testant chaque itération avec de vrais utilisateurs - pas des collègues complaisants, des vrais users qui te disent quand ça ne va pas.",
           "La dernière semaine, on bascule en mode delivery : rédaction des specs pour l'équipe tech, user stories, workflows, cas limites. L'objectif est clair - produire quelque chose qu'une équipe pourrait réellement développer derrière.",
         ],
       },
       {
+        fullWidth: true,
         paragraphs: [
           "Et puis il y a eu le grand oral. Présenter notre travail devant le Lead PM de BlaBlaCar, défendre nos choix, encaisser les questions. C'est dans ce moment-là que j'ai mesuré le chemin parcouru en quatre semaines.",
           "Je sors de cette formation avec une boîte à outils complète, un réseau de PM passionnés, et surtout une confiance nouvelle : je sais que je peux prendre un sujet produit complexe et le mener du flou stratégique jusqu'à des specs livrables.",
@@ -291,30 +346,35 @@ export const blogPosts: BlogPost[] = [
     cover: { url: data5vIaeCover.url, alt: 'Conférence IAE Paris Alumni - Big Data & Beautiful Data' },
     sections: [
       {
+        fullWidth: true,
         paragraphs: [
           "Je suis venu à l'IAE Paris - Sorbonne Business School avec une question presque naïve : à force de courir derrière le « toujours plus » de données, ne sommes-nous pas en train d'oublier l'essentiel ? C'est exactement le débat que cette conférence est venue ouvrir, en confrontant les célèbres 5V du Big Data - Volume, Vélocité, Variété, Véracité, Valeur - à une grille beaucoup plus récente : les 5E du « Beautiful Data ».",
         ],
       },
       {
+        fullWidth: true,
         image: {
           url: data5vCover.url,
           alt: 'Slide « Les 5V du Big Data » projetée lors de la conférence',
-          aspectRatio: '5 / 3',
+          aspectRatio: '16 / 9',
           objectPosition: 'center 44%',
         },
       },
       {
+        fullWidth: true,
         paragraphs: [
           "La table ronde réunissait des regards très complémentaires. Xavier Morel, operating partner et expert de la transformation numérique, a posé le décor côté entreprise. Laurine Teixeira, doctorante en droit des sociétés, a rappelé combien le cadre juridique commence à dicter les bonnes pratiques data. Augustin de la Fouchardière, fondateur de MYPE, a parlé de l'informatique décisionnelle vue du terrain. Et Gilles Trigano, docteur en sciences de gestion et auteur d'une thèse sur les 5E du Beautiful Data, a déroulé la théorie qu'il défend depuis plusieurs années.",
         ],
       },
       {
+        fullWidth: true,
         paragraphs: [
           "Le fil rouge de la soirée a tourné autour de trois questions qui sont restées avec moi : avec l'essor de l'IA générative, va-t-on basculer d'un monde quantitatif vers un monde qualitatif ? Quelle complémentarité réelle entre le Big Data et le Beautiful Data ? Et quel rôle pour l'éthique et l'éducation dans une démarche d'éco-responsabilité numérique ?",
           "La thèse défendue m'a beaucoup parlé : le Big Data nous donne la matière - volume, vélocité, variété, véracité, valeur - mais c'est le Beautiful Data qui en révèle le sens. Les 5E (esthétique, éthique, éducatif, écologique, équitable) ne s'opposent pas aux 5V, ils les prolongent. Ensemble, ils dessinent un cercle vertueux dans lequel la performance globale d'une entreprise - y compris sociale et environnementale - devient mesurable et améliorable.",
         ],
       },
       {
+        fullWidth: true,
         paragraphs: [
           "En tant que PM Finance et SI, j'ai retrouvé dans cette grille beaucoup de débats internes que je vois passer chez mes clients : faut-il continuer à empiler des tableaux de bord, ou commencer à arbitrer ce que l'on mesure vraiment ? Quelle responsabilité quand on automatise une décision sur la base d'un modèle ? Comment former les équipes métier à lire la donnée sans la subir ?",
           "Je suis ressorti de cette soirée avec une conviction renforcée : la prochaine vague de valeur en data ne viendra pas d'un V supplémentaire, mais des E que l'on choisira d'incarner.",
@@ -336,24 +396,31 @@ export const blogPosts: BlogPost[] = [
     cover: { url: iaPmCover.url, alt: "Comment l'IA transforme le Product Management" },
     sections: [
       {
+        fullWidth: true,
         paragraphs: [
           "Une phrase, lancée en début de soirée, a donné le ton de toute la table ronde : la fiche de poste d'un PM n'a presque pas bougé en cinq ans, mais le métier lui-même s'est complètement transformé en dix-huit mois. Tout le monde dans la salle a hoché la tête, et on s'est dit qu'on était au bon endroit pour en parler.",
+          "Je suis arrivé au Wagon avec une question très concrète : quels gestes de mon quotidien de PM sont en train d'être absorbés par l'IA, et lesquels prennent au contraire encore plus de valeur ? J'avais besoin de confronter mes intuitions à celles de PM qui vivent cette transformation à plus grande échelle que moi - en startup hyper-croissance comme en scale-up plus établie.",
+          "La salle était pleine, mélange de PM expérimentés, de juniors qui cherchent leur place, et de profils tech curieux de voir comment le métier évolue. Cette diversité a beaucoup nourri les échanges qui ont suivi.",
         ],
       },
       {
+        fullWidth: true,
         image: { url: iaPmRoom.url, alt: 'Tech Talk Comment l’IA transforme le Product Management - Le Wagon Paris' },
       },
       {
+        fullWidth: true,
         paragraphs: [
           "Le Wagon avait réuni des intervenants qui vivent ce basculement au quotidien : Louis Comte, qui voit défiler chaque jour des centaines de startups à STATION F en train de construire avec l'IA ; Leslie Malem, qui observe de l'intérieur les équipes produit de Welcome to the Jungle ; Emmanuel Hosanski, Head of Product chez Pennylane, qui embarque l'IA dans un produit comptable où l'erreur n'est pas une option ; et Anne Dumas, qui animait la discussion avec une vraie exigence.",
         ],
       },
       {
+        fullWidth: true,
         paragraphs: [
           "On a passé une bonne partie de la soirée à essayer de répondre à une question qui taraude beaucoup de PM autour de moi : qu'est-ce qui s'automatise vraiment dans notre métier, et qu'est-ce que ça veut dire pour les juniors qui arrivent ? La synthèse, c'est que la rédaction de specs, les premières analyses de données et la production de maquettes bougent énormément, mais que la priorisation, le sens du produit et la capacité à embarquer une équipe restent profondément humains - et deviennent même plus discriminants qu'avant.",
         ],
       },
       {
+        fullWidth: true,
         paragraphs: [
           "L'autre question forte de la soirée : quels produits peut-on construire aujourd'hui qui étaient impossibles il y a dix-huit mois ? Les exemples concrets ont fusé, des assistants métier capables de lire des documents complexes aux copilotes intégrés directement dans les outils internes. Et avec ça, un vrai sujet de fond : comment livrer des fonctionnalités IA quand les modèles hallucinent et que la confiance des utilisateurs se gagne lentement ?",
           "Je suis ressorti avec plein de notes, mais surtout avec la conviction que le PM de 2026 sera celui qui aura accepté que son métier change vite, et qui aura pris le temps d'apprendre à travailler avec ces nouveaux outils plutôt que de regarder ailleurs.",
@@ -389,12 +456,12 @@ export const blogPosts: BlogPost[] = [
         ],
       },
       {
-        image: { url: dustFlyer.url, alt: 'Flyer Eria - Construire son premier agent IA' },
+        image: { url: dustFlyer.url, alt: 'Flyer Eria - Construire son premier agent IA', aspectRatio: '4 / 2.4' },
       },
       {
+        fullWidth: true,
         paragraphs: [
-          "Je suis reparti avec un agent qui fonctionne vraiment, intégré à mes outils du quotidien, et une certitude : la barrière d'entrée pour utiliser l'IA en entreprise n'a jamais été aussi basse. Le vrai sujet maintenant, c'est la qualité du contexte qu'on lui donne et la rigueur des cas d'usage qu'on choisit.",
-          "Un grand merci à Tifany, Melvin et toute l'équipe Le Wagon pour cette soirée qui mêlait théorie, cas concrets et mise en pratique immédiate.",
+          "Je suis reparti avec un agent qui fonctionne vraiment, intégré à mes outils du quotidien, et une certitude : la barrière d'entrée pour utiliser l'IA en entreprise n'a jamais été aussi basse. Le vrai sujet maintenant, c'est la qualité du contexte qu'on lui donne et la rigueur des cas d'usage qu'on choisit. Un grand merci à Tifany, Melvin et toute l'équipe Le Wagon pour cette soirée qui mêlait théorie, cas concrets et mise en pratique immédiate.",
           "📅 Date de l'événement : 08/04/2026",
         ],
       },
