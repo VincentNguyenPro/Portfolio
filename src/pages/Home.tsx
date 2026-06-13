@@ -116,7 +116,7 @@ export default function Home() {
               </p>
               <Link
                 to="/about"
-                className="group inline-flex items-center gap-2 mt-10 text-base font-medium text-foreground hover:text-muted-foreground transition-colors"
+                className="group inline-flex items-center gap-2 mt-10 px-6 py-3 rounded-full bg-foreground text-background font-medium hover:opacity-90 transition-opacity"
               >
                 Découvrir mon parcours complet
                 <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
