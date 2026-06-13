@@ -151,7 +151,7 @@ export const blogPosts: BlogPost[] = [
       "Une soirée à la Jungle IA pour transformer une idée en application en 3h avec Lovable, entourée de 70 personnes qui se lancent en même temps.",
     date: '9 juin 2026',
     eventDate: '09/06/2026',
-    categories: ['IA & Agents', 'Innovation & Tech', 'Communauté'],
+    categories: ['IA', 'Communauté'],
     url: 'https://luma.com/jybxjxu4?locale=fr&tk=Aimmjv',
     cover: { url: lovableCover.url, alt: 'Meetup Lovable x Paatch - Jungle IA' },
     coverFit: 'contain',
