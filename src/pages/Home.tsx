@@ -18,7 +18,10 @@ export default function Home() {
 
   return (
     <>
-      <SEOHead />
+      <SEOHead
+        exactTitle="Vincent Nguyen — Product Manager & Product Owner | Finance & SI | Paris"
+        description="Portfolio de Vincent Nguyen, Product Manager & Product Owner avec 10 ans d'expérience en SI Finance et transformation digitale. Basé à Paris, disponible immédiatement."
+      />
       <div className="min-h-screen">
         {/* HERO */}
         <section className="px-6 lg:px-8 pt-16 pb-12 md:pt-24 md:pb-16 border-b border-border bg-background">

@@ -4,21 +4,26 @@ import { photographerInfo } from '@/data/photographer';
 
 interface SEOHeadProps {
   title?: string;
+  exactTitle?: string;
   description?: string;
   image?: string;
   type?: 'website' | 'article';
 }
 
-export function SEOHead({ title, description, image, type = 'website' }: SEOHeadProps) {
+const SITE_URL = 'https://vincentnguyen.pro';
+
+export function SEOHead({ title, exactTitle, description, image, type = 'website' }: SEOHeadProps) {
   const location = useLocation();
 
-  const fullTitle = title
-    ? `${title} | ${photographerInfo.name}`
-    : `${photographerInfo.name} - ${photographerInfo.tagline}`;
+  const fullTitle =
+    exactTitle ??
+    (title
+      ? `${title} | ${photographerInfo.name}`
+      : `${photographerInfo.name} - ${photographerInfo.tagline}`);
 
   const fullDescription = description || photographerInfo.heroIntroduction;
-  const baseUrl = typeof window !== 'undefined' ? window.location.origin : '';
-  const fullUrl = `${baseUrl}${location.pathname}`;
+  const canonicalPath = location.pathname === '/' ? '/' : location.pathname.replace(/\/$/, '');
+  const canonicalUrl = `${SITE_URL}${canonicalPath}`;
   const ogImage = image || photographerInfo.portraitImage;
 
   useEffect(() => {
@@ -35,11 +40,23 @@ export function SEOHead({ title, description, image, type = 'website' }: SEOHead
       element.setAttribute('content', content);
     };
 
+    const updateLinkTag = (rel: string, href: string) => {
+      let element = document.querySelector(`link[rel="${rel}"]`);
+      if (!element) {
+        element = document.createElement('link');
+        element.setAttribute('rel', rel);
+        document.head.appendChild(element);
+      }
+      element.setAttribute('href', href);
+    };
+
     updateMetaTag('description', fullDescription);
+    updateMetaTag('robots', 'index, follow');
+    updateLinkTag('canonical', canonicalUrl);
     updateMetaTag('og:title', fullTitle, true);
     updateMetaTag('og:description', fullDescription, true);
     updateMetaTag('og:type', type, true);
-    updateMetaTag('og:url', fullUrl, true);
+    updateMetaTag('og:url', canonicalUrl, true);
     updateMetaTag('og:image', ogImage, true);
     updateMetaTag('og:site_name', photographerInfo.name, true);
     updateMetaTag('twitter:card', 'summary_large_image');
@@ -51,7 +68,7 @@ export function SEOHead({ title, description, image, type = 'website' }: SEOHead
       'keywords',
       'Product Manager, Product Owner, SI Finance, Transformation digitale, Agile, Scrum, Vincent Nguyen, Paris'
     );
-  }, [fullTitle, fullDescription, fullUrl, ogImage, type]);
+  }, [fullTitle, fullDescription, canonicalUrl, ogImage, type]);
 
   return null;
 }
