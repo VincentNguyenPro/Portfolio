@@ -112,7 +112,7 @@ export default function Home() {
               <p className="text-4xl md:text-5xl font-semibold tracking-tight uppercase text-muted-foreground mb-6">
                 À propos
               </p>
-              <p className="text-xl md:text-2xl font-light leading-relaxed text-foreground text-justify">
+              <p className="text-lg md:text-xl font-light leading-relaxed text-foreground text-justify">
                 Product Manager &amp; Product Owner avec 10 ans d'expérience en SI finance et transformation digitale.
                 <br /><br />
                 J'ai piloté des outils critiques (8 M€,&nbsp;+25&nbsp;ETP), livré des produits à impact mesurable dans des environnements multi-acteurs complexes, et j'utilise l'IA au quotidien pour accélérer la discovery comme la delivery produit.
