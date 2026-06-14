@@ -69,7 +69,7 @@ export default function About() {
               className="space-y-6"
             >
               <p className="text-5xl md:text-6xl font-semibold tracking-tight uppercase text-muted-foreground">
-                À propos
+                Parcours
               </p>
               <h1 className="text-5xl md:text-6xl font-semibold tracking-tight">
                 Vincent Nguyen
