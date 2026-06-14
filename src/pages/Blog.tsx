@@ -28,8 +28,8 @@ export default function Blog() {
   return (
     <>
       <SEOHead
-        title="Blog"
-        description="Notes terrain de Vincent Nguyen : Product Management, IA & agents, Data, Innovation et formations."
+        exactTitle="Blog — Vincent Nguyen | Product, IA & Innovation"
+        description="Carnets de bord Product Management, IA et Innovation. Conférences, hackathons, retours d'expérience terrain."
       />
       <div className="min-h-screen">
         <section className="px-6 lg:px-8 pt-16 pb-12 md:pt-24 md:pb-16 border-b border-border">

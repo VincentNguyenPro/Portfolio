@@ -9,8 +9,8 @@ export default function Portfolio() {
   return (
     <>
       <SEOHead
-        title="Projets"
-        description="Réalisations de Vincent Nguyen : Product Management chez BlaBlaCar, Bartle et Renault - finance, supply chain et applications mobiles."
+        exactTitle="Projets — Vincent Nguyen Product Manager"
+        description="Découvrez les projets produit de Vincent Nguyen : BlaBlaCar, Bartle, Renault. Outils critiques, finance SI, supply chain."
       />
       <div className="min-h-screen">
         <section className="px-6 lg:px-8 pt-16 pb-12 md:pt-24 md:pb-16 border-b border-border">
