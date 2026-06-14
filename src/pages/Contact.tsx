@@ -67,7 +67,7 @@ ${form.message}`;
   return (
     <>
       <SEOHead
-        title="Contact"
+        exactTitle="Contact — Vincent Nguyen Product Manager"
         description={`Contactez Vincent Nguyen, Product Manager - ${photographerInfo.availability}.`}
       />
 

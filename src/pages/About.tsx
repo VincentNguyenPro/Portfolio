@@ -55,8 +55,8 @@ export default function About() {
   return (
     <>
       <SEOHead
-        title="Parcours"
-        description="Parcours, formation et certifications de Vincent Nguyen, Product Manager spécialisé en SI finance et transformation digitale."
+        exactTitle="Parcours — Vincent Nguyen Product Manager"
+        description="10 ans d'expérience en Product Management : Renault, Bartle, BlaBlaCar. Expertise Finance & SI, transformation digitale."
       />
       <div className="min-h-screen">
         {/* Header */}
