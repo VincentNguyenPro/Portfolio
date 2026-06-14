@@ -39,7 +39,7 @@ function AnimatedRoutes() {
           }
         />
         <Route
-          path="/portfolio"
+          path="/projets"
           element={
             <PageTransition>
               <Portfolio />
