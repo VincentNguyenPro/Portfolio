@@ -10,8 +10,8 @@ import { cn } from '@/lib/utils';
 
 const navLinks = [
   { name: 'Accueil', path: '/' },
-  { name: 'Parcours', path: '/about' },
-  { name: 'Projets', path: '/portfolio' },
+  { name: 'Parcours', path: '/parcours' },
+  { name: 'Projets', path: '/projets' },
   { name: 'Blog', path: '/blog' },
   { name: 'Contact', path: '/contact' },
 ];
