@@ -7,7 +7,7 @@ import { SEOHead } from '@/components/seo/SEOHead';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 
 const stats = [
-  { value: '10', suffix: ' ans', label: "d'expérience SI Finance" },
+  { value: '10', suffix: ' ans', label: "d'expérience produit & SI" },
   { value: '+5', label: 'produits digitaux pilotés' },
   { value: '8 M€', label: 'budget produit piloté' },
   { value: '+250', label: 'utilisateurs accompagnés' },
@@ -49,7 +49,7 @@ export default function Home() {
               <h1 className="text-3xl md:text-4xl font-semibold tracking-tight whitespace-nowrap">
                 Product Manager • Product Owner
                 <span className="block text-muted-foreground font-light mt-2">
-                  Finance &amp; SI
+                  Transformation digitale
                 </span>
               </h1>
 
