@@ -39,7 +39,7 @@ function AnimatedRoutes() {
           }
         />
         <Route
-          path="/portfolio"
+          path="/projets"
           element={
             <PageTransition>
               <Portfolio />
@@ -55,7 +55,7 @@ function AnimatedRoutes() {
           }
         />
         <Route
-          path="/about"
+          path="/parcours"
           element={
             <PageTransition>
               <About />
