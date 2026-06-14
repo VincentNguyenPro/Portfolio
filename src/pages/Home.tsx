@@ -195,7 +195,7 @@ export default function Home() {
               {featured.map((project, i) => (
                 <ScrollReveal key={project.id} delay={i * 0.1}>
                   <Link
-                    to={`/project/${project.slug}`}
+                    to={`/projet/${project.slug}`}
                     className="group block rounded-2xl overflow-hidden border border-border bg-card hover:shadow-xl transition-all"
                   >
                     <div
