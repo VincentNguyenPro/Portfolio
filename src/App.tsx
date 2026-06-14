@@ -55,7 +55,7 @@ function AnimatedRoutes() {
           }
         />
         <Route
-          path="/about"
+          path="/parcours"
           element={
             <PageTransition>
               <About />
