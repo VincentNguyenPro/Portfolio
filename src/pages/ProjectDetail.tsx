@@ -183,7 +183,7 @@ export default function ProjectDetail() {
           <div className="max-w-5xl mx-auto grid sm:grid-cols-2 gap-4">
             {previous ? (
               <Link
-                to={`/project/${previous.slug}`}
+                to={`/projet/${previous.slug}`}
                 className="group rounded-2xl border border-border p-5 hover:bg-muted/40 transition-colors"
               >
                 <div className="flex items-center gap-2 text-xs text-muted-foreground mb-2">
@@ -197,7 +197,7 @@ export default function ProjectDetail() {
             )}
             {next ? (
               <Link
-                to={`/project/${next.slug}`}
+                to={`/projet/${next.slug}`}
                 className="group rounded-2xl border border-border p-5 hover:bg-muted/40 transition-colors sm:text-right"
               >
                 <div className="flex items-center gap-2 text-xs text-muted-foreground mb-2 sm:justify-end">
