@@ -47,7 +47,7 @@ function AnimatedRoutes() {
           }
         />
         <Route
-          path="/project/:slug"
+          path="/projet/:slug"
           element={
             <PageTransition>
               <ProjectDetail />

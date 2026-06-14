@@ -39,7 +39,7 @@ export default function Portfolio() {
             {projects.map((project, i) => (
               <ScrollReveal key={project.id} delay={i * 0.05}>
                 <Link
-                  to={`/project/${project.slug}`}
+                  to={`/projet/${project.slug}`}
                   className="group block rounded-3xl overflow-hidden border border-border bg-card hover:shadow-xl transition-all"
                 >
                   <div className="grid md:grid-cols-[1fr_1.2fr]">
