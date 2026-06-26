@@ -37,7 +37,7 @@ export function Header() {
           <Link
             to="/"
             className={cn(
-              'text-sm font-semibold tracking-widest uppercase transition-colors',
+              'text-base font-semibold tracking-widest uppercase transition-colors',
               isTransparent ? 'text-white hover:text-white/80' : 'text-foreground hover:text-foreground/80'
             )}
           >
@@ -52,7 +52,7 @@ export function Header() {
                   key={link.path}
                   to={link.path}
                   className={cn(
-                    'relative text-sm font-medium tracking-wide transition-colors',
+                    'relative text-base font-medium tracking-wide transition-colors',
                     isTransparent ? 'text-white/90 hover:text-white' : 'text-foreground/80 hover:text-foreground'
                   )}
                 >
@@ -110,7 +110,7 @@ export function Header() {
                       key={link.path}
                       to={link.path}
                       onClick={() => setMobileMenuOpen(false)}
-                      className="text-lg font-medium tracking-wide text-foreground hover:text-foreground/80"
+                      className="text-xl font-medium tracking-wide text-foreground hover:text-foreground/80"
                     >
                       {link.name}
                     </Link>
