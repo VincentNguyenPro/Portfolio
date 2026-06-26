@@ -30,19 +30,11 @@ export default function ProjectDetail() {
                 alt={project.title}
                 className="absolute inset-0 w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/55 to-black/75" />
+              <div className="absolute inset-0 bg-gradient-to-b from-black/65 via-black/30 to-black/55" />
             </>
           ) : (
             <div className={`absolute inset-0 bg-gradient-to-br ${project.coverGradient}`} />
           )}
-          <div
-            className="absolute inset-0 opacity-[0.08]"
-            style={{
-              backgroundImage:
-                'linear-gradient(rgba(255,255,255,.6) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.6) 1px, transparent 1px)',
-              backgroundSize: '64px 64px',
-            }}
-          />
           <div className="relative max-w-5xl mx-auto">
             <Link
               to="/projets"
