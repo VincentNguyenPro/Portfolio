@@ -45,7 +45,6 @@ export const projects: Project[] = [
       { value: '0 → 1', label: 'en construction' },
     ],
     stack: ['Lovable', 'Claude Code', 'React', 'Supabase', 'TypeScript'],
-    scope: 'Projet personnel · Conception produit, design et développement',
     coverGradient: 'from-blue-600 via-indigo-600 to-violet-700',
     coverImage: dsiFinopsCover.url,
     badge: '🚧 En cours',

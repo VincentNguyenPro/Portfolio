@@ -38,9 +38,9 @@ export default function ProjectDetail() {
           <div className="relative max-w-5xl mx-auto">
             <Link
               to="/projets"
-              className="inline-flex items-center gap-2 text-sm text-white hover:text-white mb-10 transition-colors drop-shadow-sm"
+              className="inline-flex items-center gap-2 text-base md:text-lg font-medium text-white hover:text-white mb-10 transition-colors drop-shadow-sm px-4 py-2 rounded-full border border-white/30 bg-white/10 backdrop-blur hover:bg-white/20"
             >
-              <ArrowLeft className="size-4" />
+              <ArrowLeft className="size-5" />
               Tous les projets
             </Link>
 
@@ -50,14 +50,6 @@ export default function ProjectDetail() {
               transition={{ duration: 0.7 }}
               className="space-y-6"
             >
-              <div className="flex flex-wrap items-center gap-3 text-sm font-medium tracking-wider uppercase text-white drop-shadow-sm">
-                <span>{project.company}</span>
-                <span className="opacity-50">·</span>
-                <span>{project.period}</span>
-                <span className="opacity-50">·</span>
-                <span>{project.role}</span>
-              </div>
-
               <h1 className="text-4xl md:text-6xl font-semibold tracking-tight leading-[1.1] max-w-4xl drop-shadow-md">
                 {project.title}
               </h1>
@@ -82,6 +74,14 @@ export default function ProjectDetail() {
         {/* Body */}
         <div className="px-6 lg:px-8 py-20 md:py-28">
           <div className="max-w-5xl mx-auto space-y-16">
+            <div className="flex flex-wrap items-center gap-3 text-sm md:text-base font-medium tracking-wider uppercase text-foreground/80 border-b border-border pb-8">
+              <span>{project.company}</span>
+              <span className="text-muted-foreground/60">·</span>
+              <span className="text-muted-foreground">{project.period}</span>
+              <span className="text-muted-foreground/60">·</span>
+              <span className="text-muted-foreground">{project.role}</span>
+            </div>
+
             {project.scope && (
               <ScrollReveal>
                 <div className="rounded-2xl border border-border bg-muted/30 p-6">
