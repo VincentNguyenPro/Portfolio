@@ -59,7 +59,7 @@ export default function Home() {
 
               <div className="flex flex-wrap items-center gap-4 pt-2">
                 <Link
-                  to="/portfolio"
+                  to="/projets"
                   className="group inline-flex items-center gap-2 px-6 py-3 rounded-full bg-foreground text-background font-medium hover:opacity-90 transition-opacity"
                 >
                   Voir mes projets
