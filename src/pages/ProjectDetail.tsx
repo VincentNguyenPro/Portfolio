@@ -21,11 +21,22 @@ export default function ProjectDetail() {
 
       <article className="min-h-screen">
         {/* Hero */}
-        <section
-          className={`relative bg-gradient-to-br ${project.coverGradient} text-white px-6 lg:px-8 pt-24 md:pt-32 pb-20 md:pb-28 overflow-hidden`}
-        >
+        <section className="relative text-white px-6 lg:px-8 pt-24 md:pt-32 pb-20 md:pb-28 overflow-hidden">
+          {/* Cover image */}
+          {project.coverImage ? (
+            <>
+              <img
+                src={project.coverImage}
+                alt={project.title}
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/55 to-black/75" />
+            </>
+          ) : (
+            <div className={`absolute inset-0 bg-gradient-to-br ${project.coverGradient}`} />
+          )}
           <div
-            className="absolute inset-0 opacity-10"
+            className="absolute inset-0 opacity-[0.08]"
             style={{
               backgroundImage:
                 'linear-gradient(rgba(255,255,255,.6) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.6) 1px, transparent 1px)',
@@ -35,7 +46,7 @@ export default function ProjectDetail() {
           <div className="relative max-w-5xl mx-auto">
             <Link
               to="/projets"
-              className="inline-flex items-center gap-2 text-sm text-white/80 hover:text-white mb-10 transition-colors"
+              className="inline-flex items-center gap-2 text-sm text-white/90 hover:text-white mb-10 transition-colors"
             >
               <ArrowLeft className="size-4" />
               Tous les projets
@@ -47,7 +58,7 @@ export default function ProjectDetail() {
               transition={{ duration: 0.7 }}
               className="space-y-6"
             >
-              <div className="flex flex-wrap items-center gap-3 text-xs font-medium tracking-wider uppercase text-white/80">
+              <div className="flex flex-wrap items-center gap-3 text-sm font-medium tracking-wider uppercase text-white/90">
                 <span>{project.company}</span>
                 <span className="opacity-50">·</span>
                 <span>{project.period}</span>
@@ -55,21 +66,21 @@ export default function ProjectDetail() {
                 <span>{project.role}</span>
               </div>
 
-              <h1 className="text-4xl md:text-6xl font-semibold tracking-tight leading-[1.1] max-w-4xl">
+              <h1 className="text-4xl md:text-6xl font-semibold tracking-tight leading-[1.1] max-w-4xl drop-shadow-sm">
                 {project.title}
               </h1>
 
-              <p className="text-lg md:text-xl text-white/85 font-light leading-relaxed max-w-3xl">
+              <p className="text-lg md:text-xl text-white/90 font-light leading-relaxed max-w-3xl drop-shadow-sm">
                 {project.summary}
               </p>
             </motion.div>
 
             {/* Metrics */}
-            <div className="grid grid-cols-3 gap-6 mt-12 pt-8 border-t border-white/15">
+            <div className="grid grid-cols-3 gap-6 mt-12 pt-8 border-t border-white/20">
               {project.metrics.map((m) => (
                 <div key={m.label}>
-                  <div className="text-2xl md:text-4xl font-semibold tracking-tight">{m.value}</div>
-                  <div className="text-xs md:text-sm text-white/70 mt-1">{m.label}</div>
+                  <div className="text-2xl md:text-4xl font-semibold tracking-tight drop-shadow-sm">{m.value}</div>
+                  <div className="text-xs md:text-sm text-white/80 mt-1">{m.label}</div>
                 </div>
               ))}
             </div>
