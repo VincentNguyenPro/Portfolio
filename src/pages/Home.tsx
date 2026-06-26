@@ -231,19 +231,19 @@ export default function Home() {
                       </div>
                     </div>
                     <div className="p-6">
-                      <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs font-medium tracking-wider uppercase text-foreground mb-3">
+                      <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm font-medium tracking-wider uppercase text-foreground mb-3">
                         <span>{project.company}</span>
                         <span className="text-muted-foreground/60">·</span>
                         <span className="text-muted-foreground">{project.period}</span>
                       </div>
-                      <p className="text-sm text-muted-foreground font-light leading-relaxed mb-5">
+                      <p className="text-base text-muted-foreground font-light leading-relaxed mb-5">
                         {project.summary}
                       </p>
                       <div className="flex flex-wrap gap-4">
                         {project.metrics.slice(0, 3).map((m) => (
                           <div key={m.label}>
-                            <div className="text-lg font-semibold tracking-tight">{m.value}</div>
-                            <div className="text-xs text-muted-foreground">{m.label}</div>
+                            <div className="text-xl font-semibold tracking-tight">{m.value}</div>
+                            <div className="text-sm text-muted-foreground">{m.label}</div>
                           </div>
                         ))}
                       </div>
