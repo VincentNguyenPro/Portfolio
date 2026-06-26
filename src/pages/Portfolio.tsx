@@ -59,34 +59,32 @@ export default function Portfolio() {
                           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-black/20" />
                         </>
                       )}
-                      <div className="relative flex items-center justify-between gap-3">
-                        <div className="flex items-center gap-3 flex-wrap">
-                          <span className="text-xs font-medium tracking-wider uppercase opacity-90">
-                            {project.company}
-                          </span>
-                          <span className="text-xs opacity-60">·</span>
-                          <span className="text-xs opacity-80">{project.period}</span>
-                        </div>
+                      <div className="relative flex items-start justify-end gap-2">
                         {project.badge && (
-                          <span className="text-[10px] font-semibold tracking-wide px-2 py-1 rounded-full bg-white/15 backdrop-blur border border-white/20 shrink-0">
+                          <span className="text-[10px] font-semibold tracking-wide px-2 py-1 rounded-full bg-white/15 backdrop-blur border border-white/20">
                             {project.badge}
                           </span>
                         )}
+                        <ArrowUpRight className="size-5 opacity-90 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                       </div>
                       <div className="relative">
-                        <h2 className="text-3xl md:text-4xl font-semibold leading-tight mb-3">
+                        <h2 className="text-3xl md:text-4xl font-semibold leading-tight">
                           {project.title}
                         </h2>
-                        <p className="text-sm md:text-base text-white/80 font-light">
-                          {project.role}
-                        </p>
                       </div>
                     </div>
 
                     <div className="p-8 md:p-10 flex flex-col justify-between gap-8">
-                      <p className="text-base md:text-lg text-foreground/80 font-light leading-relaxed">
-                        {project.summary}
-                      </p>
+                      <div className="space-y-4">
+                        <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs font-medium tracking-wider uppercase text-foreground">
+                          <span>{project.company}</span>
+                          <span className="text-muted-foreground/60">·</span>
+                          <span className="text-muted-foreground">{project.period}</span>
+                        </div>
+                        <p className="text-base md:text-lg text-foreground/80 font-light leading-relaxed">
+                          {project.summary}
+                        </p>
+                      </div>
 
                       <div className="grid grid-cols-3 gap-4 pt-6 border-t border-border">
                         {project.metrics.map((m) => (
