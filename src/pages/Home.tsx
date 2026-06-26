@@ -43,10 +43,10 @@ export default function Home() {
                 <div className="pl-4">📍 Paris · 💻 Hybride · ✅ Disponible immédiatement</div>
               </div>
 
-              <p className="text-3xl sm:text-4xl md:text-6xl font-semibold tracking-tight uppercase text-muted-foreground">
+              <p className="text-3xl sm:text-4xl md:text-6xl font-semibold tracking-tight uppercase text-muted-foreground break-words">
                 Vincent Nguyen
               </p>
-              <h1 className="text-3xl md:text-4xl font-semibold tracking-tight whitespace-nowrap">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight">
                 Product Manager • Product Owner
                 <span className="block text-muted-foreground font-light mt-2">
                   Transformation digitale
