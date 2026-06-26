@@ -50,7 +50,7 @@ export default function ProjectDetail() {
               transition={{ duration: 0.7 }}
               className="space-y-6"
             >
-              <div className="flex flex-wrap items-center gap-3 text-sm font-medium tracking-wider uppercase text-white/90">
+              <div className="flex flex-wrap items-center gap-3 text-sm font-medium tracking-wider uppercase text-white drop-shadow-sm">
                 <span>{project.company}</span>
                 <span className="opacity-50">·</span>
                 <span>{project.period}</span>
@@ -58,11 +58,11 @@ export default function ProjectDetail() {
                 <span>{project.role}</span>
               </div>
 
-              <h1 className="text-4xl md:text-6xl font-semibold tracking-tight leading-[1.1] max-w-4xl drop-shadow-sm">
+              <h1 className="text-4xl md:text-6xl font-semibold tracking-tight leading-[1.1] max-w-4xl drop-shadow-md">
                 {project.title}
               </h1>
 
-              <p className="text-lg md:text-xl text-white/90 font-light leading-relaxed max-w-3xl drop-shadow-sm">
+              <p className="text-lg md:text-xl text-white font-light leading-relaxed max-w-3xl drop-shadow-md">
                 {project.summary}
               </p>
             </motion.div>
@@ -72,7 +72,7 @@ export default function ProjectDetail() {
               {project.metrics.map((m) => (
                 <div key={m.label}>
                   <div className="text-2xl md:text-4xl font-semibold tracking-tight drop-shadow-sm">{m.value}</div>
-                  <div className="text-xs md:text-sm text-white/80 mt-1">{m.label}</div>
+                  <div className="text-xs md:text-sm text-white drop-shadow-sm">{m.label}</div>
                 </div>
               ))}
             </div>
