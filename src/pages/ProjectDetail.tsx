@@ -35,7 +35,7 @@ export default function ProjectDetail() {
           ) : (
             <div className={`absolute inset-0 bg-gradient-to-br ${project.coverGradient}`} />
           )}
-          <div className="relative max-w-5xl mx-auto">
+          <div className="relative max-w-7xl mx-auto">
             <Link
               to="/projets"
               className="inline-flex items-center gap-2 text-base md:text-lg font-medium text-white hover:text-white mb-10 transition-colors drop-shadow-sm px-4 py-2 rounded-full border border-white/30 bg-white/10 backdrop-blur hover:bg-white/20"
@@ -73,7 +73,7 @@ export default function ProjectDetail() {
 
         {/* Body */}
         <div className="px-6 lg:px-8 py-20 md:py-28">
-          <div className="max-w-5xl mx-auto space-y-16">
+          <div className="max-w-7xl mx-auto space-y-16">
             <div className="flex flex-wrap items-center gap-3 text-sm md:text-base font-medium tracking-wider uppercase text-foreground/80 border-b border-border pb-8">
               <span>{project.company}</span>
               <span className="text-muted-foreground/60">·</span>
@@ -183,7 +183,7 @@ export default function ProjectDetail() {
 
         {/* Navigation */}
         <nav className="border-t border-border px-6 lg:px-8 py-10">
-          <div className="max-w-5xl mx-auto grid sm:grid-cols-2 gap-4">
+          <div className="max-w-7xl mx-auto grid sm:grid-cols-2 gap-4">
             {previous ? (
               <Link
                 to={`/projet/${previous.slug}`}
