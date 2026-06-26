@@ -10,7 +10,7 @@ export default function ProjectDetail() {
   const project = slug ? getProjectBySlug(slug) : undefined;
 
   if (!project) {
-    return <Navigate to="/portfolio" replace />;
+    return <Navigate to="/projets" replace />;
   }
 
   const { previous, next } = getProjectNavigation(project.slug);
