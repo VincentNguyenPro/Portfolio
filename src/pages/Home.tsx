@@ -118,7 +118,7 @@ export default function Home() {
                 J'ai piloté des outils critiques (8 M€,&nbsp;+25&nbsp;ETP), livré des produits à impact mesurable dans des environnements multi-acteurs complexes, et j'utilise l'IA au quotidien pour accélérer la discovery comme la delivery produit.
               </p>
               <Link
-                to="/about"
+                to="/parcours"
                 className="group inline-flex items-center gap-2 mt-10 px-6 py-3 rounded-full bg-foreground text-background font-medium hover:opacity-90 transition-opacity"
               >
                 Découvrir mon parcours complet
@@ -182,7 +182,7 @@ export default function Home() {
                   </h2>
                 </div>
                 <Link
-                  to="/portfolio"
+                  to="/projets"
                   className="group inline-flex items-center gap-2 text-sm font-medium text-foreground hover:text-muted-foreground transition-colors"
                 >
                   Tous les projets
@@ -214,10 +214,7 @@ export default function Home() {
                           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-black/10" />
                         </>
                       )}
-                      <div className="relative flex items-center justify-between gap-2">
-                        <span className="text-xs font-medium tracking-wider uppercase opacity-90">
-                          {project.company}
-                        </span>
+                      <div className="relative flex items-start justify-end gap-2">
                         <div className="flex items-center gap-2">
                           {project.badge && (
                             <span className="text-[10px] font-semibold tracking-wide px-2 py-1 rounded-full bg-white/15 backdrop-blur border border-white/20">
@@ -228,13 +225,17 @@ export default function Home() {
                         </div>
                       </div>
                       <div className="relative">
-                        <p className="text-xs opacity-80 mb-2">{project.period}</p>
                         <h3 className="text-2xl md:text-3xl font-semibold leading-tight">
                           {project.title}
                         </h3>
                       </div>
                     </div>
                     <div className="p-6">
+                      <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs font-medium tracking-wider uppercase text-foreground mb-3">
+                        <span>{project.company}</span>
+                        <span className="text-muted-foreground/60">·</span>
+                        <span className="text-muted-foreground">{project.period}</span>
+                      </div>
                       <p className="text-sm text-muted-foreground font-light leading-relaxed mb-5">
                         {project.summary}
                       </p>
