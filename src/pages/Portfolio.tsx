@@ -56,12 +56,12 @@ export default function Portfolio() {
                             loading="lazy"
                             className="absolute inset-0 w-full h-full object-cover"
                           />
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-black/20" />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/55 to-black/40" />
                         </>
                       )}
                       <div className="relative flex items-start justify-end gap-2">
                         {project.badge && (
-                          <span className="text-[10px] font-semibold tracking-wide px-2 py-1 rounded-full bg-white/15 backdrop-blur border border-white/20">
+                          <span className="text-xs md:text-sm font-semibold tracking-wide px-3 py-1.5 rounded-full bg-white/15 backdrop-blur border border-white/20">
                             {project.badge}
                           </span>
                         )}
