@@ -96,7 +96,7 @@ ${form.message}`;
         </section>
 
         <section className="px-6 lg:px-8 py-16 md:py-24">
-          <div className="max-w-5xl mx-auto grid sm:grid-cols-2 gap-4">
+          <div className="max-w-7xl mx-auto grid sm:grid-cols-2 gap-4">
             {contactItems.map((item, i) => {
               const Icon = item.icon;
               const content = (
@@ -146,7 +146,7 @@ ${form.message}`;
             })}
           </div>
 
-          <div className="max-w-5xl mx-auto mt-12 flex flex-col items-start gap-3">
+          <div className="max-w-7xl mx-auto mt-12 flex flex-col items-start gap-3">
             <p className="text-sm" style={{ color: '#6b7280' }}>
               Préférez-vous consulter mon CV ?
             </p>
@@ -164,7 +164,7 @@ ${form.message}`;
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="max-w-5xl mx-auto mt-12 rounded-2xl border border-border bg-card p-8 md:p-10 space-y-6"
+            className="max-w-7xl mx-auto mt-12 rounded-2xl border border-border bg-card p-8 md:p-10 space-y-6"
           >
             <div>
               <p className="text-xs font-semibold tracking-[0.2em] uppercase text-muted-foreground mb-2">
