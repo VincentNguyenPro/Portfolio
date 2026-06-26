@@ -150,12 +150,12 @@ export default function Home() {
               {skillGroups.map((group, i) => (
                 <ScrollReveal key={group.title} delay={i * 0.05}>
                   <div className="h-full rounded-2xl border border-border bg-card p-6 hover:shadow-md transition-shadow">
-                    <h3 className="text-base font-semibold tracking-tight mb-4">{group.title}</h3>
+                    <h3 className="text-xl font-semibold tracking-tight mb-4">{group.title}</h3>
                     <ul className="flex flex-wrap gap-2">
                       {group.items.map((item) => (
                         <li
                           key={item}
-                          className="text-xs font-medium px-2.5 py-1 rounded-full bg-muted text-muted-foreground"
+                          className="text-sm font-medium px-3 py-1.5 rounded-full bg-muted text-muted-foreground"
                         >
                           {item}
                         </li>
