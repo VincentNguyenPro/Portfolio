@@ -30,7 +30,7 @@ export default function ProjectDetail() {
                 alt={project.title}
                 className="absolute inset-0 w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-b from-black/65 via-black/30 to-black/55" />
+              <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/50 to-black/75" />
             </>
           ) : (
             <div className={`absolute inset-0 bg-gradient-to-br ${project.coverGradient}`} />
@@ -38,7 +38,7 @@ export default function ProjectDetail() {
           <div className="relative max-w-5xl mx-auto">
             <Link
               to="/projets"
-              className="inline-flex items-center gap-2 text-sm text-white/90 hover:text-white mb-10 transition-colors"
+              className="inline-flex items-center gap-2 text-sm text-white hover:text-white mb-10 transition-colors drop-shadow-sm"
             >
               <ArrowLeft className="size-4" />
               Tous les projets
@@ -50,7 +50,7 @@ export default function ProjectDetail() {
               transition={{ duration: 0.7 }}
               className="space-y-6"
             >
-              <div className="flex flex-wrap items-center gap-3 text-sm font-medium tracking-wider uppercase text-white/90">
+              <div className="flex flex-wrap items-center gap-3 text-sm font-medium tracking-wider uppercase text-white drop-shadow-sm">
                 <span>{project.company}</span>
                 <span className="opacity-50">·</span>
                 <span>{project.period}</span>
@@ -58,11 +58,11 @@ export default function ProjectDetail() {
                 <span>{project.role}</span>
               </div>
 
-              <h1 className="text-4xl md:text-6xl font-semibold tracking-tight leading-[1.1] max-w-4xl drop-shadow-sm">
+              <h1 className="text-4xl md:text-6xl font-semibold tracking-tight leading-[1.1] max-w-4xl drop-shadow-md">
                 {project.title}
               </h1>
 
-              <p className="text-lg md:text-xl text-white/90 font-light leading-relaxed max-w-3xl drop-shadow-sm">
+              <p className="text-lg md:text-xl text-white font-light leading-relaxed max-w-3xl drop-shadow-md">
                 {project.summary}
               </p>
             </motion.div>
@@ -72,7 +72,7 @@ export default function ProjectDetail() {
               {project.metrics.map((m) => (
                 <div key={m.label}>
                   <div className="text-2xl md:text-4xl font-semibold tracking-tight drop-shadow-sm">{m.value}</div>
-                  <div className="text-xs md:text-sm text-white/80 mt-1">{m.label}</div>
+                  <div className="text-xs md:text-sm text-white drop-shadow-sm">{m.label}</div>
                 </div>
               ))}
             </div>
