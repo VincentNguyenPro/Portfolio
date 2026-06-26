@@ -81,11 +81,11 @@ export default function ProjectDetail() {
 
         {/* Body */}
         <div className="px-6 lg:px-8 py-20 md:py-28">
-          <div className="max-w-3xl mx-auto space-y-16">
+          <div className="max-w-5xl mx-auto space-y-16">
             {project.scope && (
               <ScrollReveal>
                 <div className="rounded-2xl border border-border bg-muted/30 p-6">
-                  <p className="text-xs font-semibold tracking-[0.2em] uppercase text-muted-foreground mb-2">
+                  <p className="text-base font-semibold tracking-[0.2em] uppercase text-muted-foreground mb-2">
                     Périmètre
                   </p>
                   <p className="text-base font-light">{project.scope}</p>
@@ -95,7 +95,7 @@ export default function ProjectDetail() {
 
             <ScrollReveal>
               <section className="space-y-4">
-                <h2 className="text-sm font-semibold tracking-[0.2em] uppercase text-muted-foreground">
+                <h2 className="text-xl md:text-2xl font-semibold tracking-[0.2em] uppercase text-muted-foreground">
                   Contexte
                 </h2>
                 <p className="text-lg leading-relaxed text-foreground/85 font-light">
@@ -106,10 +106,10 @@ export default function ProjectDetail() {
 
             <ScrollReveal>
               <section className="space-y-4">
-                <h2 className="text-sm font-semibold tracking-[0.2em] uppercase text-muted-foreground">
+                <h2 className="text-xl md:text-2xl font-semibold tracking-[0.2em] uppercase text-muted-foreground">
                   Problématique
                 </h2>
-                <p className="text-2xl md:text-3xl font-light leading-snug text-foreground">
+                <p className="text-lg leading-relaxed text-foreground/85 font-light">
                   {project.problem}
                 </p>
               </section>
@@ -117,7 +117,7 @@ export default function ProjectDetail() {
 
             <ScrollReveal>
               <section className="space-y-8">
-                <h2 className="text-sm font-semibold tracking-[0.2em] uppercase text-muted-foreground">
+                <h2 className="text-xl md:text-2xl font-semibold tracking-[0.2em] uppercase text-muted-foreground">
                   Démarche
                 </h2>
                 <ol className="space-y-6">
@@ -147,7 +147,7 @@ export default function ProjectDetail() {
 
             <ScrollReveal>
               <section className="space-y-4 rounded-2xl bg-foreground text-background p-8 md:p-10">
-                <h2 className="text-sm font-semibold tracking-[0.2em] uppercase opacity-70">
+                <h2 className="text-xl md:text-2xl font-semibold tracking-[0.2em] uppercase opacity-70">
                   Résultats
                 </h2>
                 <ul className="space-y-3">
@@ -163,7 +163,7 @@ export default function ProjectDetail() {
 
             <ScrollReveal>
               <section className="space-y-4">
-                <h2 className="text-sm font-semibold tracking-[0.2em] uppercase text-muted-foreground">
+                <h2 className="text-xl md:text-2xl font-semibold tracking-[0.2em] uppercase text-muted-foreground">
                   Stack & méthodes
                 </h2>
                 <ul className="flex flex-wrap gap-2">
@@ -189,11 +189,11 @@ export default function ProjectDetail() {
                 to={`/projet/${previous.slug}`}
                 className="group rounded-2xl border border-border p-5 hover:bg-muted/40 transition-colors"
               >
-                <div className="flex items-center gap-2 text-xs text-muted-foreground mb-2">
-                  <ArrowLeft className="size-3" />
+                <div className="flex items-center gap-2 text-base font-medium text-muted-foreground mb-2">
+                  <ArrowLeft className="size-4" />
                   Projet précédent
                 </div>
-                <div className="font-semibold tracking-tight">{previous.title}</div>
+                <div className="text-lg font-semibold tracking-tight">{previous.title}</div>
               </Link>
             ) : (
               <div />
@@ -203,11 +203,11 @@ export default function ProjectDetail() {
                 to={`/projet/${next.slug}`}
                 className="group rounded-2xl border border-border p-5 hover:bg-muted/40 transition-colors sm:text-right"
               >
-                <div className="flex items-center gap-2 text-xs text-muted-foreground mb-2 sm:justify-end">
+                <div className="flex items-center gap-2 text-base font-medium text-muted-foreground mb-2 sm:justify-end">
                   Projet suivant
-                  <ArrowRight className="size-3" />
+                  <ArrowRight className="size-4" />
                 </div>
-                <div className="font-semibold tracking-tight">{next.title}</div>
+                <div className="text-lg font-semibold tracking-tight">{next.title}</div>
               </Link>
             ) : (
               <div />
