@@ -25,7 +25,7 @@ export default function Home() {
       <div className="min-h-screen">
         {/* HERO */}
         <section className="px-6 lg:px-8 pt-16 pb-12 md:pt-24 md:pb-16 border-b border-border bg-background">
-          <div className="max-w-6xl mx-auto grid md:grid-cols-[1.4fr_1fr] gap-10 lg:gap-16 items-start">
+          <div className="max-w-7xl mx-auto grid md:grid-cols-[1.4fr_1fr] gap-10 lg:gap-16 items-start">
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
@@ -92,7 +92,7 @@ export default function Home() {
           </div>
 
           {/* Stats strip */}
-          <div className="max-w-6xl mx-auto mt-12 pt-8 border-t border-border grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="max-w-7xl mx-auto mt-12 pt-8 border-t border-border grid grid-cols-2 md:grid-cols-4 gap-6">
             {stats.map((s) => (
               <div key={s.label} className="space-y-1">
                 <div className="text-3xl md:text-4xl font-semibold tracking-tight">
