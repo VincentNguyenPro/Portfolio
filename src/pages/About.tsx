@@ -61,7 +61,7 @@ export default function About() {
       <div className="min-h-screen">
         {/* Header */}
         <section className="px-6 lg:px-8 pt-16 pb-12 md:pt-24 md:pb-16 border-b border-border">
-          <div className="max-w-6xl mx-auto grid md:grid-cols-[1.4fr_1fr] gap-10 lg:gap-16 items-start">
+          <div className="max-w-7xl mx-auto grid md:grid-cols-[1.4fr_1fr] gap-10 lg:gap-16 items-start">
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
@@ -101,7 +101,7 @@ export default function About() {
 
         {/* Mon histoire */}
         <section className="px-6 lg:px-8 py-20 md:py-28 border-t border-border">
-          <div className="max-w-6xl mx-auto">
+            <div className="max-w-7xl mx-auto">
             <ScrollReveal>
               <p className="text-3xl md:text-4xl font-semibold tracking-tight uppercase text-muted-foreground mb-6">
                 Mon histoire
@@ -161,7 +161,7 @@ export default function About() {
 
         {/* Mon parcours professionnel */}
         <section className="px-6 lg:px-8 py-20 md:py-28 border-t border-border">
-          <div className="max-w-6xl mx-auto">
+          <div className="max-w-7xl mx-auto">
             <ScrollReveal>
               <p className="text-3xl md:text-4xl font-semibold tracking-tight uppercase text-muted-foreground mb-6">
                 Mon parcours professionnel
@@ -220,7 +220,7 @@ export default function About() {
 
         {/* Formation */}
         <section className="px-6 lg:px-8 py-20 md:py-28 border-t border-border bg-muted/30">
-          <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 lg:gap-16">
+          <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 lg:gap-16">
             <div className="space-y-12">
               <div>
                 <div className="flex items-center gap-3 mb-8">
