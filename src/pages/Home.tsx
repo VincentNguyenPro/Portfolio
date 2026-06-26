@@ -43,17 +43,17 @@ export default function Home() {
                 <div className="pl-4">📍 Paris · 💻 Hybride · ✅ Disponible immédiatement</div>
               </div>
 
-              <p className="text-5xl md:text-6xl font-semibold tracking-tight uppercase text-muted-foreground">
+              <p className="text-3xl sm:text-4xl md:text-6xl font-semibold tracking-tight uppercase text-muted-foreground break-words">
                 Vincent Nguyen
               </p>
-              <h1 className="text-3xl md:text-4xl font-semibold tracking-tight whitespace-nowrap">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight">
                 Product Manager • Product Owner
                 <span className="block text-muted-foreground font-light mt-2">
                   Transformation digitale
                 </span>
               </h1>
 
-              <p className="text-lg text-muted-foreground font-light leading-relaxed text-justify">
+              <p className="text-lg text-muted-foreground font-light leading-relaxed text-left md:text-justify">
                 {photographerInfo.heroIntroduction}
               </p>
 
@@ -109,10 +109,10 @@ export default function Home() {
         <section className="py-24 md:py-32 px-6 lg:px-8 bg-background">
           <div className="max-w-7xl mx-auto">
             <ScrollReveal>
-              <p className="text-4xl md:text-5xl font-semibold tracking-tight uppercase text-muted-foreground mb-6">
+              <p className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight uppercase text-muted-foreground mb-6">
                 À propos
               </p>
-              <p className="text-lg md:text-xl font-light leading-relaxed text-foreground text-justify">
+              <p className="text-lg md:text-xl font-light leading-relaxed text-foreground text-left md:text-justify">
                 Product Manager &amp; Product Owner avec 10 ans d'expérience en SI finance et transformation digitale.
                 <br /><br />
                 J'ai piloté des outils critiques (8 M€,&nbsp;+25&nbsp;ETP), livré des produits à impact mesurable dans des environnements multi-acteurs complexes, et j'utilise l'IA au quotidien pour accélérer la discovery comme la delivery produit.
@@ -135,10 +135,10 @@ export default function Home() {
             <ScrollReveal>
               <div className="flex items-end justify-between flex-wrap gap-4 mb-14">
                 <div>
-                  <p className="text-4xl md:text-5xl font-semibold tracking-tight uppercase text-muted-foreground mb-3">
+                  <p className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight uppercase text-muted-foreground mb-3">
                     Expertises
                   </p>
-                  <h2 className="text-4xl md:text-5xl font-semibold tracking-tight">
+                  <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight">
                     Ce que je sais faire
                   </h2>
                 </div>
@@ -174,10 +174,10 @@ export default function Home() {
             <ScrollReveal>
               <div className="flex items-end justify-between flex-wrap gap-4 mb-14">
                 <div>
-                  <p className="text-4xl md:text-5xl font-semibold tracking-tight uppercase text-muted-foreground mb-3">
+                  <p className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight uppercase text-muted-foreground mb-3">
                     Projets
                   </p>
-                  <h2 className="text-4xl md:text-5xl font-semibold tracking-tight">
+                  <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight">
                     Réalisations
                   </h2>
                 </div>
@@ -258,7 +258,7 @@ export default function Home() {
         <section className="py-24 md:py-32 px-6 lg:px-8 border-t border-border bg-muted/30">
           <ScrollReveal>
             <div className="max-w-3xl mx-auto text-center space-y-6">
-              <h2 className="text-4xl md:text-5xl font-semibold tracking-tight">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight">
                 Un produit à fort enjeu ?
               </h2>
               <p className="text-xl md:text-2xl text-muted-foreground font-light">
