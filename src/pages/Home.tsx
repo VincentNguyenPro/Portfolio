@@ -182,7 +182,7 @@ export default function Home() {
                   </h2>
                 </div>
                 <Link
-                  to="/portfolio"
+                  to="/projets"
                   className="group inline-flex items-center gap-2 text-sm font-medium text-foreground hover:text-muted-foreground transition-colors"
                 >
                   Tous les projets
