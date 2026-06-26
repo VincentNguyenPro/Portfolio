@@ -118,7 +118,7 @@ export default function Home() {
                 J'ai piloté des outils critiques (8 M€,&nbsp;+25&nbsp;ETP), livré des produits à impact mesurable dans des environnements multi-acteurs complexes, et j'utilise l'IA au quotidien pour accélérer la discovery comme la delivery produit.
               </p>
               <Link
-                to="/about"
+                to="/parcours"
                 className="group inline-flex items-center gap-2 mt-10 px-6 py-3 rounded-full bg-foreground text-background font-medium hover:opacity-90 transition-opacity"
               >
                 Découvrir mon parcours complet
