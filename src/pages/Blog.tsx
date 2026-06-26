@@ -109,19 +109,23 @@ export default function Blog() {
                       <div className="flex items-start justify-end">
                         <ArrowUpRight className="size-5 opacity-90 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform shrink-0" />
                       </div>
-                      <p className="text-xs opacity-90">{post.date}</p>
                     </div>
                   </div>
                   <div className="p-6 space-y-3">
-                    <div className="flex flex-wrap gap-1.5">
-                      {post.categories.map((c) => (
-                        <span
-                          key={c}
-                          className={`text-[10px] font-semibold tracking-wider uppercase px-2 py-1 rounded-full text-white bg-gradient-to-br ${categoryColor[c]}`}
-                        >
-                          {c}
-                        </span>
-                      ))}
+                    <div className="flex items-start justify-between gap-3">
+                      <div className="flex flex-wrap gap-1.5">
+                        {post.categories.map((c) => (
+                          <span
+                            key={c}
+                            className={`text-[10px] font-semibold tracking-wider uppercase px-2 py-1 rounded-full text-white bg-gradient-to-br ${categoryColor[c]}`}
+                          >
+                            {c}
+                          </span>
+                        ))}
+                      </div>
+                      <p className="text-xs font-medium text-muted-foreground whitespace-nowrap shrink-0 pt-1">
+                        {post.date}
+                      </p>
                     </div>
                     <h2 className="text-lg font-semibold tracking-tight leading-snug group-hover:text-foreground/80 transition-colors">
                       {post.title}

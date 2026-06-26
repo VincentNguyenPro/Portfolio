@@ -76,7 +76,7 @@ export default function Portfolio() {
 
                     <div className="p-8 md:p-10 flex flex-col justify-between gap-8">
                       <div className="space-y-4">
-                        <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs font-medium tracking-wider uppercase text-foreground">
+                        <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-base font-semibold tracking-wider uppercase text-foreground">
                           <span>{project.company}</span>
                           <span className="text-muted-foreground/60">·</span>
                           <span className="text-muted-foreground">{project.period}</span>
@@ -90,14 +90,14 @@ export default function Portfolio() {
                         {project.metrics.map((m) => (
                           <div key={m.label}>
                             <div className="text-2xl font-semibold tracking-tight">{m.value}</div>
-                            <div className="text-xs text-muted-foreground mt-1">{m.label}</div>
+                            <div className="text-sm text-muted-foreground mt-1">{m.label}</div>
                           </div>
                         ))}
                       </div>
 
-                      <div className="flex items-center gap-2 text-sm font-medium text-foreground">
+                      <div className="flex items-center gap-2 text-base font-semibold text-foreground">
                         Voir le projet
-                        <ArrowUpRight className="size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                        <ArrowUpRight className="size-5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                       </div>
                     </div>
                   </div>
