@@ -32,15 +32,17 @@ export default function Home() {
               transition={{ duration: 0.6 }}
               className="space-y-6"
             >
-              <div className="inline-flex flex-col items-start gap-1.5 px-3 py-2 rounded-2xl border border-border bg-muted/40 text-xs font-medium tracking-wide text-muted-foreground">
+              <div className="inline-flex flex-col items-start gap-2 px-4 py-3 rounded-2xl border border-border bg-muted/40 text-sm md:text-base font-medium tracking-wide text-muted-foreground">
                 <div className="inline-flex items-center gap-2">
-                  <span className="relative flex size-2">
+                  <span className="relative flex size-2.5">
                     <span className="absolute inline-flex size-full rounded-full bg-emerald-500 opacity-75 animate-ping" />
-                    <span className="relative inline-flex size-2 rounded-full bg-emerald-500" />
+                    <span className="relative inline-flex size-2.5 rounded-full bg-emerald-500" />
                   </span>
                   {photographerInfo.availability}
                 </div>
-                <div className="pl-4">📍 Paris · 💻 Hybride · ✅ Disponible immédiatement</div>
+                <div className="inline-flex items-center gap-2">
+                  📍 Paris · 💻 Hybride · ✅ Disponible immédiatement
+                </div>
               </div>
 
               <p className="text-3xl sm:text-4xl md:text-6xl font-semibold tracking-tight uppercase text-muted-foreground break-words">
