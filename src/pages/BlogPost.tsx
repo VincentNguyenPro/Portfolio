@@ -77,7 +77,7 @@ function TextBlock({ section }: { section: BlogSection }) {
       {section.paragraphs?.map((p, i) => (
         <p
           key={i}
-          className="text-base md:text-lg text-foreground/90 leading-relaxed text-justify"
+          className="text-base md:text-lg text-foreground/90 leading-relaxed text-left md:text-justify"
         >
           {p}
         </p>
