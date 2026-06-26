@@ -38,7 +38,7 @@ export default function ProjectDetail() {
           <div className="relative max-w-5xl mx-auto">
             <Link
               to="/projets"
-              className="inline-flex items-center gap-2 text-sm text-white/90 hover:text-white mb-10 transition-colors"
+              className="inline-flex items-center gap-2 text-sm text-white hover:text-white mb-10 transition-colors drop-shadow-sm"
             >
               <ArrowLeft className="size-4" />
               Tous les projets
