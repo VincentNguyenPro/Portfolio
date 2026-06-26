@@ -10,7 +10,7 @@ export default function ProjectDetail() {
   const project = slug ? getProjectBySlug(slug) : undefined;
 
   if (!project) {
-    return <Navigate to="/portfolio" replace />;
+    return <Navigate to="/projets" replace />;
   }
 
   const { previous, next } = getProjectNavigation(project.slug);
@@ -34,7 +34,7 @@ export default function ProjectDetail() {
           />
           <div className="relative max-w-5xl mx-auto">
             <Link
-              to="/portfolio"
+              to="/projets"
               className="inline-flex items-center gap-2 text-sm text-white/80 hover:text-white mb-10 transition-colors"
             >
               <ArrowLeft className="size-4" />
