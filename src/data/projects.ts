@@ -1,9 +1,9 @@
 import type { Project } from '@/types';
-import blablacarCover from '@/assets/blablacar-app.jpg.asset.json';
+import blablacarCover from '@/assets/blablacar-app.jpg';
 import bartleCover from '@/assets/bartle-cover.jpg';
 import renaultSupplyCover from '@/assets/renault-supply-cover.jpg';
 import renaultCostingCover from '@/assets/renault-costing-cover.jpg';
-import dsiFinopsCover from '@/assets/dsi-finops-saas.png.asset.json';
+import dsiFinopsCover from '@/assets/dsi-finops-saas.png';
 
 export const projects: Project[] = [
   {
@@ -46,7 +46,7 @@ export const projects: Project[] = [
     ],
     stack: ['Lovable', 'Claude Code', 'React', 'Supabase', 'TypeScript'],
     coverGradient: 'from-blue-600 via-indigo-600 to-violet-700',
-    coverImage: dsiFinopsCover.url,
+    coverImage: dsiFinopsCover,
     badge: '🚧 En cours',
   },
   {
@@ -92,7 +92,7 @@ export const projects: Project[] = [
     ],
     stack: ['Figma', 'Notion', 'User testing', 'SQL'],
     coverGradient: 'from-sky-500 via-indigo-500 to-violet-600',
-    coverImage: blablacarCover.url,
+    coverImage: blablacarCover,
   },
   {
     id: '2',

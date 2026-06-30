@@ -1,32 +1,32 @@
-import dustCover from '@/assets/blog/dust-cover.webp.asset.json';
-import dustRoom from '@/assets/blog/dust-room.jpeg.asset.json';
-import dustFlyer from '@/assets/blog/dust-flyer.jpeg.asset.json';
-import webshopCover from '@/assets/blog/webshop-cover.avif.asset.json';
-import iaPmCover from '@/assets/blog/ia-pm-cover.webp.asset.json';
-import iaPmRoom from '@/assets/blog/ia-pm-room.jpeg.asset.json';
-import iaDemainCover from '@/assets/blog/ia-demain-cover.webp.asset.json';
-import iaDemainRoom from '@/assets/blog/ia-demain-room.jpeg.asset.json';
-import lovableCover from '@/assets/blog/lovable-cover.avif.asset.json';
-import lovableRoom from '@/assets/blog/lovable-room.jpeg.asset.json';
-import lovableTalk from '@/assets/blog/lovable-talk.jpeg.asset.json';
-import lovableGroups from '@/assets/blog/lovable-groups.jpeg.asset.json';
-import claudeCodeCover from '@/assets/blog/claude-code-cover.webp.asset.json';
-import claudeCodeRoom from '@/assets/blog/claude-code-room.jpeg.asset.json';
-import noePmPromo from '@/assets/blog/noe-pm-promo.jpeg.asset.json';
-import data5vCover from '@/assets/blog/data-5v-cover.jpeg.asset.json';
-import data5vIaeCover from '@/assets/blog/data-5v-iae-cover.webp.asset.json';
-import vivatechCover from '@/assets/blog/vivatech-cover.png.asset.json';
-import pokemonProduct from '@/assets/blog/pokemon-product.png.asset.json';
-import pokemonCheckout from '@/assets/blog/pokemon-checkout.png.asset.json';
-import spotifyWrappedDark from '@/assets/blog/spotify-wrapped-dark.png.asset.json';
-import spotifyWrappedLight from '@/assets/blog/spotify-wrapped-light.png.asset.json';
-import roofoodMenu from '@/assets/blog/roofood-menu.png.asset.json';
-import roofoodCheckout from '@/assets/blog/roofood-checkout.png.asset.json';
-import portfolioHome from '@/assets/blog/lovable-portfolio-home.png.asset.json';
-import portfolioParcours from '@/assets/blog/lovable-portfolio-parcours.png.asset.json';
-import portfolioProjets from '@/assets/blog/lovable-portfolio-projets.png.asset.json';
-import portfolioBlog from '@/assets/blog/lovable-portfolio-blog.png.asset.json';
-import portfolioContact from '@/assets/blog/lovable-portfolio-contact.png.asset.json';
+import dustCover from '@/assets/blog/dust-cover.webp';
+import dustRoom from '@/assets/blog/dust-room.jpeg';
+import dustFlyer from '@/assets/blog/dust-flyer.jpeg';
+import webshopCover from '@/assets/blog/webshop-cover.avif';
+import iaPmCover from '@/assets/blog/ia-pm-cover.webp';
+import iaPmRoom from '@/assets/blog/ia-pm-room.jpeg';
+import iaDemainCover from '@/assets/blog/ia-demain-cover.webp';
+import iaDemainRoom from '@/assets/blog/ia-demain-room.jpeg';
+import lovableCover from '@/assets/blog/lovable-cover.avif';
+import lovableRoom from '@/assets/blog/lovable-room.jpeg';
+import lovableTalk from '@/assets/blog/lovable-talk.jpeg';
+import lovableGroups from '@/assets/blog/lovable-groups.jpeg';
+import claudeCodeCover from '@/assets/blog/claude-code-cover.webp';
+import claudeCodeRoom from '@/assets/blog/claude-code-room.jpeg';
+import noePmPromo from '@/assets/blog/noe-pm-promo.jpeg';
+import data5vCover from '@/assets/blog/data-5v-cover.jpeg';
+import data5vIaeCover from '@/assets/blog/data-5v-iae-cover.webp';
+import vivatechCover from '@/assets/blog/vivatech-cover.png';
+import pokemonProduct from '@/assets/blog/pokemon-product.png';
+import pokemonCheckout from '@/assets/blog/pokemon-checkout.png';
+import spotifyWrappedDark from '@/assets/blog/spotify-wrapped-dark.png';
+import spotifyWrappedLight from '@/assets/blog/spotify-wrapped-light.png';
+import roofoodMenu from '@/assets/blog/roofood-menu.png';
+import roofoodCheckout from '@/assets/blog/roofood-checkout.png';
+import portfolioHome from '@/assets/blog/lovable-portfolio-home.png';
+import portfolioParcours from '@/assets/blog/lovable-portfolio-parcours.png';
+import portfolioProjets from '@/assets/blog/lovable-portfolio-projets.png';
+import portfolioBlog from '@/assets/blog/lovable-portfolio-blog.png';
+import portfolioContact from '@/assets/blog/lovable-portfolio-contact.png';
 
 export interface BlogImage {
   url: string;
@@ -83,7 +83,7 @@ export const blogPosts: BlogPost[] = [
     eventDate: '20/06/2026',
     categories: ['IA', 'Data', 'Product'],
     url: 'https://vivatechnology.com/',
-    cover: { url: vivatechCover.url, alt: 'VivaTech 2026 - Paris' },
+    cover: { url: vivatechCover, alt: 'VivaTech 2026 - Paris' },
     sections: [
       {
         paragraphs: [
@@ -110,7 +110,7 @@ export const blogPosts: BlogPost[] = [
     eventDate: '11/06/2026',
     categories: ['IA', 'Communauté'],
     url: 'https://luma.com/0ivqgaik?tk=hNsezQ',
-    cover: { url: webshopCover.url, alt: 'Atelier Webshop avec Mollie & Codex' },
+    cover: { url: webshopCover, alt: 'Atelier Webshop avec Mollie & Codex' },
     coverFit: 'contain',
     sections: [
       {
@@ -122,7 +122,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         fullWidth: true,
-        image: { url: pokemonProduct.url, alt: 'Fiche produit Pokémon Market Place - carte Carapuce 007/165', aspectRatio: '16 / 9' },
+        image: { url: pokemonProduct, alt: 'Fiche produit Pokémon Market Place - carte Carapuce 007/165', aspectRatio: '16 / 9' },
       },
       {
         fullWidth: true,
@@ -132,7 +132,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         fullWidth: true,
-        image: { url: pokemonCheckout.url, alt: 'Tunnel de commande avec récapitulatif et paiement Mollie', aspectRatio: '16 / 9' },
+        image: { url: pokemonCheckout, alt: 'Tunnel de commande avec récapitulatif et paiement Mollie', aspectRatio: '16 / 9' },
       },
       {
         fullWidth: true,
@@ -153,7 +153,7 @@ export const blogPosts: BlogPost[] = [
     eventDate: '09/06/2026',
     categories: ['IA', 'Communauté'],
     url: 'https://luma.com/jybxjxu4?locale=fr&tk=Aimmjv',
-    cover: { url: lovableCover.url, alt: 'Meetup Lovable x Paatch - Jungle IA' },
+    cover: { url: lovableCover, alt: 'Meetup Lovable x Paatch - Jungle IA' },
     coverFit: 'contain',
     sections: [
       {
@@ -169,9 +169,9 @@ export const blogPosts: BlogPost[] = [
           columns: 3,
           aspectRatio: '16 / 10',
           images: [
-            { url: portfolioHome.url, alt: 'Landing page du portfolio Vincent Nguyen' },
-            { url: portfolioParcours.url, alt: 'Page Parcours du portfolio' },
-            { url: portfolioProjets.url, alt: 'Page Projets du portfolio' },
+            { url: portfolioHome, alt: 'Landing page du portfolio Vincent Nguyen' },
+            { url: portfolioParcours, alt: 'Page Parcours du portfolio' },
+            { url: portfolioProjets, alt: 'Page Projets du portfolio' },
           ],
         },
       },
@@ -181,8 +181,8 @@ export const blogPosts: BlogPost[] = [
           columns: 2,
           aspectRatio: '16 / 10',
           images: [
-            { url: portfolioBlog.url, alt: 'Page Blog du portfolio' },
-            { url: portfolioContact.url, alt: 'Page Contact du portfolio' },
+            { url: portfolioBlog, alt: 'Page Blog du portfolio' },
+            { url: portfolioContact, alt: 'Page Contact du portfolio' },
           ],
         },
       },
@@ -194,7 +194,7 @@ export const blogPosts: BlogPost[] = [
         ],
       },
       {
-        image: { url: lovableRoom.url, alt: 'Salle pleine pendant le meetup Lovable x Paatch', width: 'sm' },
+        image: { url: lovableRoom, alt: 'Salle pleine pendant le meetup Lovable x Paatch', width: 'sm' },
       },
       {
         fullWidth: true,
@@ -216,7 +216,7 @@ export const blogPosts: BlogPost[] = [
     eventDate: '02/06/2026',
     categories: ['IA', 'Communauté'],
     url: 'https://www.lewagon.com/fr/events/construire-l-ia-de-demain-defis-et-opportunites-SsjIsz',
-    cover: { url: iaDemainCover.url, alt: "Construire l'IA de demain - Défis et Opportunités" },
+    cover: { url: iaDemainCover, alt: "Construire l'IA de demain - Défis et Opportunités" },
     sections: [
       {
         fullWidth: true,
@@ -227,7 +227,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         fullWidth: true,
-        image: { url: iaDemainRoom.url, alt: 'Table ronde Construire l’IA de demain au Wagon Paris', aspectRatio: '16 / 9' },
+        image: { url: iaDemainRoom, alt: 'Table ronde Construire l’IA de demain au Wagon Paris', aspectRatio: '16 / 9' },
       },
       {
         fullWidth: true,
@@ -257,7 +257,7 @@ export const blogPosts: BlogPost[] = [
     eventDate: '29-30/05/2026',
     categories: ['Formation', 'Product', 'IA'],
     url: 'https://www.noe.pm/claude-code-pour-pms',
-    cover: { url: claudeCodeCover.url, alt: 'Formation Claude Code chez Noé' },
+    cover: { url: claudeCodeCover, alt: 'Formation Claude Code chez Noé' },
     sections: [
       {
         fullWidth: true,
@@ -268,7 +268,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         fullWidth: true,
-        image: { url: claudeCodeRoom.url, alt: 'Salle de formation Claude Code chez Noé', aspectRatio: '16 / 9' },
+        image: { url: claudeCodeRoom, alt: 'Salle de formation Claude Code chez Noé', aspectRatio: '16 / 9' },
       },
       {
         fullWidth: true,
@@ -278,11 +278,11 @@ export const blogPosts: BlogPost[] = [
       },
       {
         fullWidth: true,
-        image: { url: spotifyWrappedDark.url, alt: 'Écran de synthèse annuelle Spotify Wrapped en mode sombre', aspectRatio: '9 / 16', width: 'sm' },
+        image: { url: spotifyWrappedDark, alt: 'Écran de synthèse annuelle Spotify Wrapped en mode sombre', aspectRatio: '9 / 16', width: 'sm' },
       },
       {
         fullWidth: true,
-        image: { url: spotifyWrappedLight.url, alt: 'Même écran de synthèse Spotify Wrapped en mode clair après ajout du toggle', aspectRatio: '9 / 16', width: 'sm' },
+        image: { url: spotifyWrappedLight, alt: 'Même écran de synthèse Spotify Wrapped en mode clair après ajout du toggle', aspectRatio: '9 / 16', width: 'sm' },
       },
       {
         fullWidth: true,
@@ -298,7 +298,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         fullWidth: true,
-        image: { url: roofoodMenu.url, alt: 'Application Roofood (clone Deliveroo) - menu et panier latéral', aspectRatio: '16 / 9' },
+        image: { url: roofoodMenu, alt: 'Application Roofood (clone Deliveroo) - menu et panier latéral', aspectRatio: '16 / 9' },
       },
       {
         fullWidth: true,
@@ -308,7 +308,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         fullWidth: true,
-        image: { url: roofoodCheckout.url, alt: 'Étape de récapitulatif de commande sur l’application Roofood', aspectRatio: '16 / 9' },
+        image: { url: roofoodCheckout, alt: 'Étape de récapitulatif de commande sur l’application Roofood', aspectRatio: '16 / 9' },
       },
       {
         fullWidth: true,
@@ -329,7 +329,7 @@ export const blogPosts: BlogPost[] = [
     eventDate: '20/04 - 15/05/2026',
     categories: ['Formation', 'Product'],
     url: 'https://www.noe.pm/formation-product-manager-la-formation-pm-en-4-semaines-noe',
-    cover: { url: noePmPromo.url, alt: 'Promo 33 Noé - formation Product Management' },
+    cover: { url: noePmPromo, alt: 'Promo 33 Noé - formation Product Management' },
     sections: [
       {
         fullWidth: true,
@@ -339,7 +339,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         fullWidth: true,
-        image: { url: noePmPromo.url, alt: 'Photo de promo - Noé Product Management 33', aspectRatio: '16 / 9' },
+        image: { url: noePmPromo, alt: 'Photo de promo - Noé Product Management 33', aspectRatio: '16 / 9' },
       },
       {
         fullWidth: true,
@@ -374,7 +374,7 @@ export const blogPosts: BlogPost[] = [
     date: '18 mai 2026',
     eventDate: '18/05/2026',
     categories: ['Data', 'Communauté'],
-    cover: { url: data5vIaeCover.url, alt: 'Conférence IAE Paris Alumni - Big Data & Beautiful Data' },
+    cover: { url: data5vIaeCover, alt: 'Conférence IAE Paris Alumni - Big Data & Beautiful Data' },
     sections: [
       {
         fullWidth: true,
@@ -385,7 +385,7 @@ export const blogPosts: BlogPost[] = [
       {
         fullWidth: true,
         image: {
-          url: data5vCover.url,
+          url: data5vCover,
           alt: 'Slide « Les 5V du Big Data » projetée lors de la conférence',
           aspectRatio: '16 / 9',
           objectPosition: 'center 44%',
@@ -424,7 +424,7 @@ export const blogPosts: BlogPost[] = [
     eventDate: '27/05/2026',
     categories: ['Product', 'IA', 'Communauté'],
     url: 'https://www.lewagon.com/fr/events/comment-l-ia-transforme-le-product-management-HPFVtl',
-    cover: { url: iaPmCover.url, alt: "Comment l'IA transforme le Product Management" },
+    cover: { url: iaPmCover, alt: "Comment l'IA transforme le Product Management" },
     sections: [
       {
         fullWidth: true,
@@ -436,7 +436,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         fullWidth: true,
-        image: { url: iaPmRoom.url, alt: 'Tech Talk Comment l’IA transforme le Product Management - Le Wagon Paris' },
+        image: { url: iaPmRoom, alt: 'Tech Talk Comment l’IA transforme le Product Management - Le Wagon Paris' },
       },
       {
         fullWidth: true,
@@ -470,7 +470,7 @@ export const blogPosts: BlogPost[] = [
     eventDate: '08/04/2026',
     categories: ['IA', 'Communauté'],
     url: 'https://www.lewagon.com/fr/events/atelier-dust-build-your-first-ai-agent-5CkQZn',
-    cover: { url: dustCover.url, alt: 'Construire son premier agent IA - Eria x Le Wagon x Dust' },
+    cover: { url: dustCover, alt: 'Construire son premier agent IA - Eria x Le Wagon x Dust' },
     sections: [
       {
         paragraphs: [
@@ -478,7 +478,7 @@ export const blogPosts: BlogPost[] = [
         ],
       },
       {
-        image: { url: dustRoom.url, alt: 'Salle pleine pour l’atelier Construire son premier agent IA au Wagon Paris' },
+        image: { url: dustRoom, alt: 'Salle pleine pour l’atelier Construire son premier agent IA au Wagon Paris' },
       },
       {
         paragraphs: [
@@ -487,7 +487,7 @@ export const blogPosts: BlogPost[] = [
         ],
       },
       {
-        image: { url: dustFlyer.url, alt: 'Flyer Eria - Construire son premier agent IA', aspectRatio: '4 / 2.4' },
+        image: { url: dustFlyer, alt: 'Flyer Eria - Construire son premier agent IA', aspectRatio: '4 / 2.4' },
       },
       {
         fullWidth: true,
