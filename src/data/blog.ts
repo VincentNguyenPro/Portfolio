@@ -16,6 +16,15 @@ import noePmPromo from '@/assets/blog/noe-pm-promo.jpeg';
 import data5vCover from '@/assets/blog/data-5v-cover.jpeg';
 import data5vIaeCover from '@/assets/blog/data-5v-iae-cover.webp';
 import vivatechCover from '@/assets/blog/vivatech-cover.png';
+import productPartnersCover from '@/assets/blog/product-partners-cover.png';
+import productPartnersRoom from '@/assets/blog/product-partners-room.jpeg';
+import betterCallClaudeCover from '@/assets/blog/better-call-claude-cover.jpeg';
+import betterCallClaudeDemo from '@/assets/blog/better-call-claude-demo.jpg';
+import betterCallClaudeWorkflow from '@/assets/blog/better-call-claude-workflow.jpg';
+import vivatechEntree from '@/assets/blog/vivatech-entree.jpg';
+import vivatechIbmQuantum from '@/assets/blog/vivatech-ibm-quantum.jpg';
+import vivatechLifepods from '@/assets/blog/vivatech-lifepods.jpg';
+import vivatechTetmet from '@/assets/blog/vivatech-tetmet.jpg';
 import pokemonProduct from '@/assets/blog/pokemon-product.png';
 import pokemonCheckout from '@/assets/blog/pokemon-checkout.png';
 import spotifyWrappedDark from '@/assets/blog/spotify-wrapped-dark.png';
@@ -74,11 +83,134 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
-    slug: 'vivatech-2026',
+    slug: 'product-partners-retrospective',
     order: 1,
+    title: 'Rétrospective Product Partners : documenter pour performer',
+    description:
+      "Bilan à mi-année chez Lucca avec Product Partners : comment transformer la documentation en levier de performance et en carburant pour les agents IA.",
+    date: '25 juin 2026',
+    eventDate: '25/06/2026',
+    categories: ['Product', 'Communauté'],
+    cover: { url: productPartnersCover, alt: "Product Partners - Rétrospective avant l'été chez Lucca" },
+    coverFit: 'contain',
+    sections: [
+      {
+        fullWidth: true,
+        paragraphs: [
+          "Les événements entre pairs, comme la session Product Partners organisée le 25 juin dernier chez Lucca, sont essentiels pour affiner nos pratiques quotidiennes de Product Management. Lors de cette « Rétrospective avant l'été », nous avons réalisé un bilan à mi-année pour confronter nos défis respectifs.",
+          "Une problématique centrale a dominé les échanges : comment garantir aux équipes Produit un accès simple à une documentation de confiance ?",
+        ],
+      },
+      {
+        fullWidth: true,
+        image: {
+          url: productPartnersRoom,
+          alt: "Session Product Partners - Rétrospective avant l'été chez Lucca Paris 13ème",
+          aspectRatio: '16 / 9',
+          caption: 'La session Product Partners chez Lucca (Paris 13ème) : ateliers en groupes, post-its et échanges entre pairs PM.',
+        },
+      },
+      {
+        fullWidth: true,
+        heading: 'Le constat : la documentation, angle mort de la vélocité',
+        paragraphs: [
+          "La documentation est trop souvent la pièce oubliée du cycle de développement. Au-delà du manque d'écrits, c'est le coût de la dépendance qui pèse sur nos organisations. Lorsque peu de personnes détiennent la connaissance fiable du produit, cela crée des frictions invisibles qui limitent silencieusement notre vitesse d'exécution.",
+        ],
+      },
+      {
+        fullWidth: true,
+        heading: "Les 3 leviers pour une documentation « source de vérité »",
+        paragraphs: [
+          "Notre groupe a convergé vers trois approches concrètes pour réconcilier documentation et agilité :",
+        ],
+        bullets: [
+          "Responsabilisation claire : Chaque document doit avoir un propriétaire identifié. Nous devons traiter la relecture de documents comme une revue de code : celui qui construit, maintient. Pas de propriétaire, pas de document.",
+          "La base de code comme socle : Utiliser la base de code comme source de vérité pour alimenter des agents IA capables de générer une documentation structurée, partageable et versionnée.",
+          "Industrialisation documentaire : Intégrer la documentation directement dans le pipeline de publication, avec des agents rédigeant des journaux de modifications qui assurent une mise à jour constante des documents.",
+        ],
+      },
+      {
+        fullWidth: true,
+        heading: "La documentation comme moteur pour l'IA",
+        paragraphs: [
+          "La conclusion de nos échanges est claire : une documentation de qualité n'est plus un simple « confort », c'est un levier stratégique. Des documents propres et à jour constituent le carburant indispensable pour les agents IA qui soutiennent désormais les équipes Produit. En leur donnant un contexte rapide et fiable, nous multiplions la capacité d'action de nos équipes.",
+          "À l'heure où je développe Kostbase.com, ces réflexions sur la structuration de la connaissance et l'automatisation par l'IA résonnent avec mes propres défis. Maîtriser la documentation, c'est avant tout maîtriser la scalabilité de son produit.",
+          "📅 Date de l'événement : 25/06/2026",
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'better-call-claude-arynor',
+    order: 2,
+    title: "Better Call Claude : l'IA au service de l'efficacité métier",
+    description:
+      "Premier meetup Better Call Claude par Arynor : deux démos live sur la consolidation de données et la préparation prospect — du concret applicable dès le lendemain.",
+    date: '24 juin 2026',
+    eventDate: '24/06/2026',
+    categories: ['IA', 'Communauté'],
+    cover: { url: betterCallClaudeCover, alt: "Better Call Claude - Communauté Claude IA Paris par Arynor" },
+    sections: [
+      {
+        fullWidth: true,
+        paragraphs: [
+          "Oubliez les conférences théoriques et les promesses abstraites sur « le futur de l'IA ». J'ai récemment assisté au premier meetup Better Call Claude, et ce fut une plongée pragmatique dans ce que l'IA peut réellement accomplir pour un professionnel dès demain.",
+        ],
+      },
+      {
+        fullWidth: true,
+        heading: "L'approche : démos réelles, cas concrets",
+        paragraphs: [
+          "Organisé par Nicolas Camilli et Djeli Agbadou (Arynor), le format est clair : pas de slides interminables, mais deux processus métier démontrés en live, du début à la fin. L'objectif est simple : que chaque participant reparte avec les prompts et la méthode pour tester ces solutions dès le lendemain.",
+        ],
+      },
+      {
+        fullWidth: true,
+        image: {
+          url: betterCallClaudeDemo,
+          alt: "Démonstration live lors du meetup Better Call Claude - Arynor Paris",
+          aspectRatio: '16 / 9',
+          caption: "Une démo en conditions réelles : l'audience suit le processus d'automatisation pas à pas, sans slides théoriques.",
+        },
+      },
+      {
+        fullWidth: true,
+        heading: 'Deux démonstrations marquantes',
+        paragraphs: [
+          "Lors de la session, deux cas d'usage ont particulièrement illustré la puissance de Claude comme collaborateur :",
+        ],
+        bullets: [
+          "Pilotage de données (Excel > Consolidation > Dashboard) : Cette démo a montré comment transformer des données chiffrées brutes en insights stratégiques. C'est une problématique que je connais bien : passer du temps sur le nettoyage de données au lieu de se concentrer sur l'analyse. Claude permet ici d'automatiser cette consolidation pour obtenir un dashboard prêt à l'emploi.",
+          "Automatisation de la préparation client : Nous avons vu comment préparer un premier échange prospect en automatisant la collecte d'informations multi-sources (Emails, CRM, Calendrier, Web, LinkedIn, Sirene). Le processus transforme ces données dispersées en un rapport structuré, synchronisé directement dans HubSpot. Ce flux, qui pouvait prendre jusqu'à deux heures par appel, est désormais réduit à une fraction du temps.",
+        ],
+      },
+      {
+        fullWidth: true,
+        image: {
+          url: betterCallClaudeWorkflow,
+          alt: "Slide Arynor - workflow de préparation d'un premier échange avec un prospect",
+          aspectRatio: '16 / 9',
+          caption: "Le workflow de préparation prospect démontré par Arynor : de la collecte multi-sources (HubSpot, LinkedIn, data.gouv.fr) à la fiche contact synchronisée en 30 min contre 2h auparavant.",
+        },
+      },
+      {
+        fullWidth: true,
+        heading: 'Pourquoi ça résonne avec Kostbase.com',
+        paragraphs: [
+          "Ces échanges, portés par une communauté de freelances, fondateurs et dirigeants, soulignent une réalité : l'IA n'est performante que lorsqu'elle est intégrée dans un processus métier rigoureux.",
+          "Pour Kostbase.com, ces démonstrations sur l'automatisation des tâches complexes renforcent ma conviction : la valeur d'un SaaS ne réside pas seulement dans ses fonctionnalités, mais dans sa capacité à faire gagner un temps précieux à l'utilisateur final en supprimant la friction de la donnée. Comprendre comment les agents IA peuvent « interroger » des sources multiples pour générer des comptes-rendus automatisés est une brique essentielle que je compte bien intégrer à ma roadmap.",
+          "Si vous êtes sur Paris et que vous cherchez à passer du stade de « curieux de l'IA » à celui d'utilisateur quotidien, je vous recommande vivement de suivre les prochains rendez-vous d'Arynor.",
+          "📅 Date de l'événement : 24/06/2026",
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'vivatech-2026',
+    order: 3,
     title: 'VivaTech 2026 - 10ᵉ édition',
     description:
-      "Quatre jours porte de Versailles pour la 10ᵉ édition de VivaTech, le grand rendez-vous international de l'innovation et de la tech.",
+      "Immersion dans les ruptures technologiques de VivaTech 2026 : IBM Quantum System Two, Lifepods, TETMET, et un focus SaaS pour nourrir Kostbase.com.",
     date: '20 juin 2026',
     eventDate: '20/06/2026',
     categories: ['IA', 'Data', 'Product'],
@@ -86,15 +218,79 @@ export const blogPosts: BlogPost[] = [
     cover: { url: vivatechCover, alt: 'VivaTech 2026 - Paris' },
     sections: [
       {
+        fullWidth: true,
         paragraphs: [
-          "Du 17 au 20 juin 2026, j'aurai la chance d'arpenter les allées de VivaTech pour sa 10ᵉ édition. Pendant quatre jours, le 15ᵉ arrondissement de Paris se transforme en capitale mondiale de l'innovation : startups, grands groupes, investisseurs et passionnés de tech convergent vers la porte de Versailles pour une édition anniversaire placée sous le signe de l'ambition.",
-          "Avec environ 180 000 visiteurs en moyenne, VivaTech s'est imposé comme le principal point de rencontre entre les acteurs de la transformation numérique - IA, deeptech, climate tech, fintech, mobilité, santé. C'est l'endroit idéal pour prendre la température de ce qui va structurer le produit et la finance dans les prochaines années.",
-          "Je publierai mon compte-rendu personnel après l'événement : pitchs marquants, démos qui ont fait bouger les lignes, et tendances IA à suivre côté Product.",
+          "Vivatech 2026 a été le terrain d'une immersion fascinante dans les ruptures technologiques qui façonneront les produits de demain. Voici une analyse détaillée des innovations qui ont marqué cette édition, ainsi qu'un focus sur l'écosystème SaaS que j'ai scruté pour nourrir le développement de Kostbase.com.",
         ],
       },
       {
+        fullWidth: true,
+        image: { url: vivatechEntree, alt: 'Installation gonflable VivaTech 2026 - Porte de Versailles', aspectRatio: '16 / 9', caption: "L'installation gonflable emblématique de VivaTech à l'entrée de la Porte de Versailles." },
+      },
+      {
+        fullWidth: true,
+        heading: '1. La puissance brute du calcul : IBM Quantum System Two',
         paragraphs: [
-          "🚧 Article en attente de visite - compte-rendu à venir.",
+          "La visite du stand IBM a été une véritable claque technique. Face au Quantum System Two, on mesure les défis colossaux de l'ingénierie matérielle.",
+        ],
+        bullets: [
+          "L'enjeu technique : Il s'agit d'une prouesse de miniaturisation et de gestion thermique. Pour qu'un ordinateur quantique fonctionne, ses processeurs doivent être maintenus à des températures proches du zéro absolu.",
+          "La prouesse : La structure en « lustre » que l'on observe permet de filtrer le bruit thermique et les interférences électromagnétiques, conditions sine qua non pour préserver la décohérence des qubits et permettre des calculs d'une puissance exponentielle par rapport aux machines classiques.",
+        ],
+      },
+      {
+        fullWidth: true,
+        image: { url: vivatechIbmQuantum, alt: 'IBM Quantum System Two - VivaTech 2026', aspectRatio: '3 / 4', width: 'sm', caption: 'IBM Quantum System Two : la structure en lustre permet de maintenir les qubits proches du zéro absolu.' },
+      },
+      {
+        fullWidth: true,
+        heading: '2. Mobilité et confort : La capsule Lifepods',
+        paragraphs: [
+          "L'innovation Lifepods répond aux enjeux de la mobilité urbaine saturée.",
+        ],
+        bullets: [
+          "La vision : Plutôt que de simplement augmenter la vitesse de déplacement, Lifepods se concentre sur la qualité du temps passé en transit.",
+          "L'approche produit : C'est un design résolument human-centric. L'idée est de transformer un environnement contraint (le transport) en une bulle de sérénité, offrant sécurité et confort ergonomique. C'est une leçon de design produit : répondre à un besoin émotionnel dans un contexte utilitaire.",
+        ],
+      },
+      {
+        fullWidth: true,
+        image: { url: vivatechLifepods, alt: 'Capsule Lifepods - VivaTech 2026', aspectRatio: '3 / 4', width: 'sm', caption: 'La capsule Lifepods : transformer le transit urbain en bulle de sérénité ergonomique.' },
+      },
+      {
+        fullWidth: true,
+        heading: '3. La révolution industrielle : Le savoir-faire TETMET',
+        paragraphs: [
+          "L'innovation industrielle la plus impressionnante provenait de TETMET.",
+        ],
+        bullets: [
+          "La technologie : La machine utilise un bras robotisé six axes équipé d'une tête de soudage laser. Ce système permet une fabrication additive métallique de haute précision.",
+          "L'impact : En concevant des structures au plus proche des contraintes mécaniques réelles, on obtient des pièces ultra-légères tout en maximisant la résistance. Pour la durabilité, c'est un game-changer : on réduit drastiquement la consommation de matière première pour un gain de performance structurelle, ouvrant la voie à une industrie plus légère et moins énergivore.",
+        ],
+      },
+      {
+        fullWidth: true,
+        image: { url: vivatechTetmet, alt: 'Stand TETMET - bras robotisé à soudage laser - VivaTech 2026', aspectRatio: '16 / 9', caption: 'TETMET : fabrication additive métallique par bras robotisé six axes à soudage laser.' },
+      },
+      {
+        fullWidth: true,
+        heading: 'Focus SaaS : Un œil aiguisé pour Kostbase.com',
+        paragraphs: [
+          "Au-delà des innovations matérielles, Vivatech a été une véritable mine d'or pour ma User Research dans le cadre du développement de Kostbase.com. Analyser ces solutions SaaS m'a permis d'aiguiser mon œil de Product Manager en observant comment elles résolvent des problématiques de complexité, d'automatisation et de transparence financière :",
+        ],
+        bullets: [
+          "Odoo : Une architecture open-source remarquable qui centralise la gestion d'entreprise. La force d'Odoo réside dans son approche « tout-en-un » : une base unique qui couvre la comptabilité, les ventes, les stocks et les RH, permettant une scalabilité cohérente des TPE vers les grands groupes grâce à son système de modules interconnectés.",
+          "Deel : Solution SI RH de référence, Deel simplifie la gestion globale des talents. Ses fonctionnalités incluent l'automatisation de la conformité légale dans plus de 150 pays, la gestion des contrats internationaux, ainsi que le traitement de la paie automatisé pour des milliers d'employés.",
+          "Freshservice : Cette plateforme ITSM excelle dans la gestion des opérations informatiques. Ses fonctionnalités majeures — gestion automatisée des tickets d'incidents, catalogue de services en libre-service et Asset Management — offrent une visibilité et une réactivité indispensables pour les équipes DSI.",
+          "Pigment : Acteur clé du pilotage de la performance d'entreprise (EPM). Pigment propose des fonctionnalités de modélisation financière agile, de planification budgétaire en temps réel et de simulation de scénarios complexes. C'est l'outil idéal pour transformer des données brutes en indicateurs stratégiques de performance — très proche de la vision que j'ai pour Kostbase.",
+          "Active Asset Allocation (Coanda PMS) : Une solution spécialisée dans la gestion de portefeuille financier. Offerte en marque blanche, elle permet aux institutions financières de digitaliser toute la chaîne de valeur : de la construction de portefeuilles personnalisés à l'automatisation de la conformité réglementaire, en passant par le reporting client.",
+          "Spendbase : Véritable miroir des ambitions de Kostbase, Spendbase se focalise sur l'optimisation des coûts logiciels. Ses fonctionnalités incluent le suivi centralisé de tous les abonnements SaaS, l'analyse des dépenses inutilisées, l'automatisation des renouvellements et des outils de négociation pour réduire la facture globale des licences.",
+        ],
+      },
+      {
+        fullWidth: true,
+        paragraphs: [
+          "Cette immersion a été cruciale pour structurer ma vision de Kostbase.com. En étudiant comment ces plateformes articulent leur interface utilisateur, leur gestion des données et leur capacité à générer des décisions actionnables pour les décideurs (CFO/DSI), je renforce ma capacité à concevoir un outil qui apporte une clarté financière et environnementale indispensable sur le marché actuel.",
           "📅 Date de l'événement : 20/06/2026",
         ],
       },
@@ -102,7 +298,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'webshop-mollie-codex',
-    order: 2,
+    order: 4,
     title: 'Construire son webshop avec Mollie & Codex',
     description:
       "Atelier Le Wagon : passer d'une idée e-commerce à une boutique en ligne fonctionnelle, encaissant de vrais paiements, en quelques heures et sans équipe tech.",
@@ -122,7 +318,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         fullWidth: true,
-        image: { url: pokemonProduct, alt: 'Fiche produit Pokémon Market Place - carte Carapuce 007/165', aspectRatio: '16 / 9' },
+        image: { url: pokemonProduct, alt: 'Fiche produit Pokémon Market Place - carte Carapuce 007/165', aspectRatio: '16 / 9', caption: "La fiche produit générée par Codex : détails collectionneur (extension, numéro, rareté, état) et toggle FR/EN." },
       },
       {
         fullWidth: true,
@@ -132,7 +328,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         fullWidth: true,
-        image: { url: pokemonCheckout, alt: 'Tunnel de commande avec récapitulatif et paiement Mollie', aspectRatio: '16 / 9' },
+        image: { url: pokemonCheckout, alt: 'Tunnel de commande avec récapitulatif et paiement Mollie', aspectRatio: '16 / 9', caption: "Le tunnel de commande complet avec récapitulatif et paiement sécurisé via Mollie — opérationnel en une soirée." },
       },
       {
         fullWidth: true,
@@ -145,7 +341,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'hackathon-lovable-join-lion',
-    order: 3,
+    order: 5,
     title: 'Hackathon Lovable chez Join Lion',
     description:
       "Une soirée à la Jungle IA pour transformer une idée en application en 3h avec Lovable, entourée de 70 personnes qui se lancent en même temps.",
@@ -169,9 +365,9 @@ export const blogPosts: BlogPost[] = [
           columns: 3,
           aspectRatio: '16 / 10',
           images: [
-            { url: portfolioHome, alt: 'Landing page du portfolio Vincent Nguyen' },
-            { url: portfolioParcours, alt: 'Page Parcours du portfolio' },
-            { url: portfolioProjets, alt: 'Page Projets du portfolio' },
+            { url: portfolioHome, alt: 'Landing page du portfolio Vincent Nguyen', caption: "La landing page du portfolio, construite en live pendant le hackathon." },
+            { url: portfolioParcours, alt: 'Page Parcours du portfolio', caption: "La page Parcours, générée par Lovable en quelques prompts." },
+            { url: portfolioProjets, alt: 'Page Projets du portfolio', caption: "La page Projets, itérée en temps réel au fil de la soirée." },
           ],
         },
       },
@@ -181,8 +377,8 @@ export const blogPosts: BlogPost[] = [
           columns: 2,
           aspectRatio: '16 / 10',
           images: [
-            { url: portfolioBlog, alt: 'Page Blog du portfolio' },
-            { url: portfolioContact, alt: 'Page Contact du portfolio' },
+            { url: portfolioBlog, alt: 'Page Blog du portfolio', caption: "La page Blog, construite avant la fin du hackathon." },
+            { url: portfolioContact, alt: 'Page Contact du portfolio', caption: "La page Contact, dernière page finalisée avant les présentations." },
           ],
         },
       },
@@ -194,7 +390,7 @@ export const blogPosts: BlogPost[] = [
         ],
       },
       {
-        image: { url: lovableRoom, alt: 'Salle pleine pendant le meetup Lovable x Paatch', width: 'sm' },
+        image: { url: lovableRoom, alt: 'Salle pleine pendant le meetup Lovable x Paatch', width: 'sm', caption: "La Jungle IA comble pour le hackathon Lovable x Paatch : une soixantaine de participants qui construisent en simultané." },
       },
       {
         fullWidth: true,
@@ -208,7 +404,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'construire-ia-demain',
-    order: 4,
+    order: 6,
     title: "Construire l'IA de demain : défis et opportunités",
     description:
       "Table ronde Le Wagon x Women in Tech France sur l'IA comme révolution de société : comment construire une IA inclusive, représentative et équitable.",
@@ -227,7 +423,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         fullWidth: true,
-        image: { url: iaDemainRoom, alt: 'Table ronde Construire l’IA de demain au Wagon Paris', aspectRatio: '16 / 9' },
+        image: { url: iaDemainRoom, alt: "Table ronde Construire l'IA de demain au Wagon Paris", aspectRatio: '16 / 9', caption: "Table ronde « Construire l'IA de demain » au Wagon Paris avec Women in Tech France." },
       },
       {
         fullWidth: true,
@@ -249,7 +445,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'claude-code-pms',
-    order: 5,
+    order: 7,
     title: 'Formation Claude Code chez Noé',
     description:
       "Deux jours pour intégrer Claude Code dans ma pratique de PM : de l'ajout d'une fonctionnalité sur un écran de synthèse à la Spotify, jusqu'à la correction de bugs et la mise en production via GitHub.",
@@ -268,7 +464,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         fullWidth: true,
-        image: { url: claudeCodeRoom, alt: 'Salle de formation Claude Code chez Noé', aspectRatio: '16 / 9' },
+        image: { url: claudeCodeRoom, alt: 'Salle de formation Claude Code chez Noé', aspectRatio: '16 / 9', caption: "La salle de formation Claude Code chez Noé : petits groupes, cas pratiques sur des bases de code réelles." },
       },
       {
         fullWidth: true,
@@ -278,11 +474,11 @@ export const blogPosts: BlogPost[] = [
       },
       {
         fullWidth: true,
-        image: { url: spotifyWrappedDark, alt: 'Écran de synthèse annuelle Spotify Wrapped en mode sombre', aspectRatio: '9 / 16', width: 'sm' },
+        image: { url: spotifyWrappedDark, alt: 'Écran de synthèse annuelle Spotify Wrapped en mode sombre', aspectRatio: '9 / 16', width: 'sm', caption: "Le point de départ de l'exercice Jour 1 : l'écran de synthèse annuelle en mode sombre." },
       },
       {
         fullWidth: true,
-        image: { url: spotifyWrappedLight, alt: 'Même écran de synthèse Spotify Wrapped en mode clair après ajout du toggle', aspectRatio: '9 / 16', width: 'sm' },
+        image: { url: spotifyWrappedLight, alt: 'Même écran de synthèse Spotify Wrapped en mode clair après ajout du toggle', aspectRatio: '9 / 16', width: 'sm', caption: "Le même écran en mode clair après ajout du toggle — fonctionnalité conçue, implémentée et publiée en autonomie." },
       },
       {
         fullWidth: true,
@@ -298,7 +494,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         fullWidth: true,
-        image: { url: roofoodMenu, alt: 'Application Roofood (clone Deliveroo) - menu et panier latéral', aspectRatio: '16 / 9' },
+        image: { url: roofoodMenu, alt: 'Application Roofood (clone Deliveroo) - menu et panier latéral', aspectRatio: '16 / 9', caption: "L'application Roofood (clone Deliveroo) : le terrain de jeu du Jour 2, avec des bugs glissés volontairement dans le code." },
       },
       {
         fullWidth: true,
@@ -308,7 +504,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         fullWidth: true,
-        image: { url: roofoodCheckout, alt: 'Étape de récapitulatif de commande sur l’application Roofood', aspectRatio: '16 / 9' },
+        image: { url: roofoodCheckout, alt: "Étape de récapitulatif de commande sur l'application Roofood", aspectRatio: '16 / 9', caption: "L'étape de récapitulatif de commande sur Roofood, après correction du bug et merge de la pull request." },
       },
       {
         fullWidth: true,
@@ -321,7 +517,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'noe-formation-pm',
-    order: 8,
+    order: 10,
     title: 'Formation Product Management - Noé promo 33',
     description:
       "Retour sur 4 semaines intensives de Product Management chez Noé, en tant que PM pour BlaBlaCar : stratégie, discovery, priorisation, prototypage, delivery et restitution finale au Lead PM.",
@@ -339,7 +535,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         fullWidth: true,
-        image: { url: noePmPromo, alt: 'Photo de promo - Noé Product Management 33', aspectRatio: '16 / 9' },
+        image: { url: noePmPromo, alt: 'Photo de promo - Noé Product Management 33', aspectRatio: '16 / 9', caption: "La promo 33 Noé — quatre semaines de Product Management intensif avec BlaBlaCar comme entreprise cliente." },
       },
       {
         fullWidth: true,
@@ -367,7 +563,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'big-data-beautiful-data',
-    order: 7,
+    order: 9,
     title: 'Des 5V du Big Data aux 5E du Beautiful Data - IAE Paris',
     description:
       "Conférence IAE Paris - Sorbonne Business School : et si l'immatériel du « Beautiful Data » venait compléter le matériel du Big Data, au service d'une performance plus durable ?",
@@ -389,6 +585,7 @@ export const blogPosts: BlogPost[] = [
           alt: 'Slide « Les 5V du Big Data » projetée lors de la conférence',
           aspectRatio: '16 / 9',
           objectPosition: 'center 44%',
+          caption: "Les 5V du Big Data (Volume, Vélocité, Variété, Véracité, Valeur) — point de départ du débat avec les 5E du Beautiful Data.",
         },
       },
       {
@@ -416,7 +613,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'ia-transforme-pm',
-    order: 6,
+    order: 8,
     title: "Comment l'IA transforme le Product Management",
     description:
       "Tech Talk Le Wagon x Welcome to the Jungle : comment le métier de PM a changé en 18 mois, ce qui s'automatise, et les compétences qui comptent vraiment en 2026.",
@@ -436,7 +633,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         fullWidth: true,
-        image: { url: iaPmRoom, alt: 'Tech Talk Comment l’IA transforme le Product Management - Le Wagon Paris' },
+        image: { url: iaPmRoom, alt: "Tech Talk Comment l'IA transforme le Product Management - Le Wagon Paris", caption: "Tech Talk Le Wagon x Welcome to the Jungle : salle pleine pour débattre de la transformation du métier de PM par l'IA." },
       },
       {
         fullWidth: true,
@@ -462,7 +659,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'dust-ai-agent',
-    order: 9,
+    order: 11,
     title: 'Atelier Dust - Construire son premier agent IA',
     description:
       "Soirée Eria x Le Wagon x Dust : théorie et pratique pour repartir avec son propre agent IA opérationnel, connecté à Google Drive et aux emails, sans une seule ligne de code.",
@@ -478,7 +675,7 @@ export const blogPosts: BlogPost[] = [
         ],
       },
       {
-        image: { url: dustRoom, alt: 'Salle pleine pour l’atelier Construire son premier agent IA au Wagon Paris' },
+        image: { url: dustRoom, alt: "Salle pleine pour l'atelier Construire son premier agent IA au Wagon Paris", caption: "Salle pleine pour l'atelier Dust au Wagon Paris — une soirée pour repartir avec son propre agent IA opérationnel." },
       },
       {
         paragraphs: [
@@ -487,7 +684,7 @@ export const blogPosts: BlogPost[] = [
         ],
       },
       {
-        image: { url: dustFlyer, alt: 'Flyer Eria - Construire son premier agent IA', aspectRatio: '4 / 2.4' },
+        image: { url: dustFlyer, alt: 'Flyer Eria - Construire son premier agent IA', aspectRatio: '4 / 2.4', caption: "Le flyer Eria pour l'atelier Dust : construire son premier agent IA sans une ligne de code." },
       },
       {
         fullWidth: true,
