@@ -10,30 +10,30 @@ import {
 } from '@/data/photographer';
 import { SEOHead } from '@/components/seo/SEOHead';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
-import saintelyonPhoto from '@/assets/vincent-saintelyon.jpg.asset.json';
-import sunsetRoad from '@/assets/sunset-road.jpg.asset.json';
-import anthropicLogo from '@/assets/logos/anthropic.png.asset.json';
-import bartleLogo from '@/assets/logos/bartle.jpeg.asset.json';
-import fInitiativesLogo from '@/assets/logos/f-initiatives.webp.asset.json';
-import hecLogo from '@/assets/logos/hec.png.asset.json';
-import microsoftLogo from '@/assets/logos/microsoft.png.asset.json';
-import noeLogo from '@/assets/logos/noe.png.asset.json';
-import renaultLogo from '@/assets/logos/renault.svg.asset.json';
-import scrumLogo from '@/assets/logos/scrum.svg.asset.json';
-import supmecaLogo from '@/assets/logos/supmeca.png.asset.json';
+import saintelyonPhoto from '@/assets/vincent-saintelyon.jpg';
+import sunsetRoad from '@/assets/sunset-road.jpg';
+import anthropicLogo from '@/assets/logos/anthropic.png';
+import bartleLogo from '@/assets/logos/bartle.jpeg';
+import fInitiativesLogo from '@/assets/logos/f-initiatives.webp';
+import hecLogo from '@/assets/logos/hec.png';
+import microsoftLogo from '@/assets/logos/microsoft.png';
+import noeLogo from '@/assets/logos/noe.png';
+import renaultLogo from '@/assets/logos/renault.svg';
+import scrumLogo from '@/assets/logos/scrum.svg';
+import supmecaLogo from '@/assets/logos/supmeca.png';
 
 const matchLogo = (text: string): string | null => {
   const t = text.toLowerCase();
-  if (t.includes('bartle')) return bartleLogo.url;
-  if (t.includes('renault')) return renaultLogo.url;
-  if (t.includes('blablacar')) return noeLogo.url; // formation via Noé
-  if (t.includes('f-initiatives') || t.includes('f initiatives')) return fInitiativesLogo.url;
-  if (t.includes('noé') || t.includes('noe')) return noeLogo.url;
-  if (t.includes('hec')) return hecLogo.url;
-  if (t.includes('supmeca') || t.includes('isae')) return supmecaLogo.url;
-  if (t.includes('microsoft')) return microsoftLogo.url;
-  if (t.includes('scrum')) return scrumLogo.url;
-  if (t.includes('anthropic') || t.includes('claude')) return anthropicLogo.url;
+  if (t.includes('bartle')) return bartleLogo;
+  if (t.includes('renault')) return renaultLogo;
+  if (t.includes('blablacar')) return noeLogo; // formation via Noé
+  if (t.includes('f-initiatives') || t.includes('f initiatives')) return fInitiativesLogo;
+  if (t.includes('noé') || t.includes('noe')) return noeLogo;
+  if (t.includes('hec')) return hecLogo;
+  if (t.includes('supmeca') || t.includes('isae')) return supmecaLogo;
+  if (t.includes('microsoft')) return microsoftLogo;
+  if (t.includes('scrum')) return scrumLogo;
+  if (t.includes('anthropic') || t.includes('claude')) return anthropicLogo;
   return null;
 };
 
@@ -145,7 +145,7 @@ export default function About() {
                   <div className="absolute -inset-3 rounded-3xl bg-gradient-to-br from-indigo-500/20 via-violet-500/15 to-emerald-500/15 blur-2xl" />
                   <div className="relative aspect-[4/5] rounded-3xl overflow-hidden border border-border bg-muted">
                     <img
-                      src={saintelyonPhoto.url}
+                      src={saintelyonPhoto}
                       alt="Vincent Nguyen à l'arrivée de la SaintéLyon"
                       className="w-full h-full object-cover"
                     />
@@ -197,7 +197,7 @@ export default function About() {
                   <div className="absolute -inset-3 rounded-3xl bg-gradient-to-br from-amber-500/25 via-orange-500/15 to-rose-500/15 blur-2xl" />
                   <div className="relative aspect-[4/5] rounded-3xl overflow-hidden border border-border bg-muted">
                     <img
-                      src={sunsetRoad.url}
+                      src={sunsetRoad}
                       alt="Route au coucher de soleil - symbole du parcours professionnel"
                       className="w-full h-full object-cover"
                       loading="lazy"

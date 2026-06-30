@@ -1,5 +1,5 @@
 import type { PhotographerInfo, ExperienceItem, SkillGroup, Certification } from '@/types';
-import portrait from '@/assets/vincent-nguyen.jpg.asset.json';
+import portrait from '@/assets/vincent-nguyen.jpg';
 
 export const photographerInfo: PhotographerInfo = {
   name: 'Vincent Nguyen',
@@ -31,7 +31,7 @@ J'aime les sujets exigeants où la rigueur financière croise la créativité pr
   socialLinks: {
     linkedin: 'https://linkedin.com/in/vincentnguyenpro',
   },
-  portraitImage: portrait.url,
+  portraitImage: portrait,
 };
 
 export const experiences: ExperienceItem[] = [
