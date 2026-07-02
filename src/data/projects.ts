@@ -1,9 +1,9 @@
 import type { Project } from '@/types';
-import blablacarCover from '@/assets/blablacar-app.jpg';
+import blablacarCover from '@/assets/blablacar-app.webp';
 import bartleCover from '@/assets/bartle-cover.jpg';
-import renaultSupplyCover from '@/assets/renault-supply-cover.jpg';
-import renaultCostingCover from '@/assets/renault-costing-cover.jpg';
-import dsiFinopsCover from '@/assets/dsi-finops-saas.png';
+import renaultSupplyCover from '@/assets/renault-supply-cover.webp';
+import renaultCostingCover from '@/assets/renault-costing-cover.webp';
+import dsiFinopsCover from '@/assets/dsi-finops-saas.webp';
 
 export const projects: Project[] = [
   {

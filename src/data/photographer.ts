@@ -1,5 +1,5 @@
 import type { PhotographerInfo, ExperienceItem, SkillGroup, Certification } from '@/types';
-import portrait from '@/assets/vincent-nguyen.jpg';
+import portrait from '@/assets/vincent-nguyen.webp';
 
 export const photographerInfo: PhotographerInfo = {
   name: 'Vincent Nguyen',

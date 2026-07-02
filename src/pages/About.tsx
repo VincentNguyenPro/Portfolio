@@ -10,8 +10,8 @@ import {
 } from '@/data/photographer';
 import { SEOHead } from '@/components/seo/SEOHead';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
-import saintelyonPhoto from '@/assets/vincent-saintelyon.jpg';
-import sunsetRoad from '@/assets/sunset-road.jpg';
+import saintelyonPhoto from '@/assets/vincent-saintelyon.webp';
+import sunsetRoad from '@/assets/sunset-road.webp';
 import anthropicLogo from '@/assets/logos/anthropic.png';
 import bartleLogo from '@/assets/logos/bartle.jpeg';
 import fInitiativesLogo from '@/assets/logos/f-initiatives.webp';
