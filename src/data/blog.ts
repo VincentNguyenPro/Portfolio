@@ -270,7 +270,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         fullWidth: true,
-        image: { url: vivatechTetmet, alt: 'Stand TETMET - bras robotisé à soudage laser - VivaTech 2026', aspectRatio: '16 / 9', caption: 'TETMET : fabrication additive métallique par bras robotisé six axes à soudage laser.' },
+        image: { url: vivatechTetmet, alt: 'Stand TETMET - bras robotisé à soudage laser - VivaTech 2026', aspectRatio: '3 / 4', width: 'sm', caption: 'TETMET : fabrication additive métallique par bras robotisé six axes à soudage laser.' },
       },
       {
         fullWidth: true,
