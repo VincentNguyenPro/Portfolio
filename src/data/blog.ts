@@ -1,3 +1,11 @@
+import agenticGtmCover from '@/assets/blog/agentic-gtm-cover.png';
+import agenticGtmRoom from '@/assets/blog/agentic-gtm-room.jpeg';
+import agenticGtmTeam from '@/assets/blog/agentic-gtm-team.jpeg';
+import agenticGtmPitch from '@/assets/blog/agentic-gtm-pitch.jpeg';
+import agenticGtmAppMap from '@/assets/blog/agentic-gtm-app-map.png';
+import agenticGtmAppDealroom from '@/assets/blog/agentic-gtm-app-dealroom.png';
+import agenticGtmAppGraph from '@/assets/blog/agentic-gtm-app-graph.png';
+import agenticGtmAppFollowup from '@/assets/blog/agentic-gtm-app-followup.png';
 import alanLovableCover from '@/assets/blog/alan-lovable-cover.png';
 import alanLovableRoom from '@/assets/blog/alan-lovable-room.jpeg';
 import alanLovableAppSelection from '@/assets/blog/alan-lovable-app-selection.png';
@@ -93,8 +101,111 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
-    slug: 'hackathon-alan-lovable',
+    slug: 'agentic-gtm-hackathon-locus',
     order: 1,
+    title: 'Agentic GTM Hackathon chez Station F : construire Locus avec Claude, Full Enrich & Sillage',
+    description:
+      "Une journée complète chez Station F avec Anthropic, Full Enrich et Sillage : avec mon coéquipier Duhan, nous avons construit Locus, un outil qui identifie le vrai décisionnaire d'un deal et prépare l'action pour le faire signer.",
+    date: '9 juillet 2026',
+    eventDate: '09/07/2026',
+    categories: ['IA', 'Product', 'Communauté'],
+    url: 'https://luma.com/96wafjf6',
+    cover: { url: agenticGtmCover, alt: 'Agentic GTM Hackathon by Anthropic, Full Enrich & Sillage - Station F, July 9 2026' },
+    coverFit: 'contain',
+    sections: [
+      {
+        fullWidth: true,
+        paragraphs: [
+          "Une journée entière, de 8h30 à 21h, chez Station F : c'est le format qu'Anthropic, Full Enrich et Sillage avaient choisi pour l'Agentic GTM Hackathon. Plus de 800 candidatures pour ce créneau, une cinquantaine d'équipes retenues, un stack imposé à trois outils - Claude (Anthropic) comme moteur de raisonnement et de construction, Sillage pour les signaux d'intention (changements de poste, tracking de champions, engagement concurrentiel, intentions de recrutement), et Full Enrich pour l'enrichissement de contacts (emails vérifiés, téléphones, données personnes et entreprises).",
+          "L'objectif affiché : construire des agents GTM prêts pour la production, pensés pour faire gagner du temps réel aux équipes commerciales - séquenceurs d'outreach, moteurs de scoring ICP, mise à jour automatique de CRM, monitoring de risque pipeline.",
+        ],
+      },
+      {
+        fullWidth: true,
+        image: {
+          url: agenticGtmRoom,
+          alt: "Kickoff de l'Agentic GTM Hackathon chez Station F, présentation de Claude",
+          aspectRatio: '2000 / 1500',
+          caption: "Le kickoff chez Station F, sous la verrière : présentation du stack Claude devant l'ensemble des participants avant le sprint de build.",
+        },
+      },
+      {
+        fullWidth: true,
+        heading: 'Mon idée avec Duhan : Locus, retrouver le décisionnaire absent',
+        paragraphs: [
+          "Avec mon coéquipier Duhan, nous sommes partis de son intuition : dans une phase de prospection commerciale, on perd énormément de temps sur la partie amont - collecter les informations sur le client ciblé (secteur d'activité, projets en cours, staffing, organisation). Pire, pendant la réunion de kickoff commercial, la personne réellement décisionnaire n'est presque jamais présente dans la salle. Résultat : tout le monde reprend la discussion depuis le début lors du vrai rendez-vous de décision, ce qui fait perdre un temps précieux à tous les participants.",
+          "Locus répond directement à ce problème. L'outil se connecte via MCP aux boîtes mails pour construire un contexte et un historique sur les échanges avec chaque client, puis lance des plans d'action pour faire avancer le deal - jusqu'à préparer en amont les emails à envoyer. Il va aussi chercher des informations sur l'entreprise elle-même (actualités, mouvements internes, secteur d'activité) via Full Enrich et Sillage. Toutes ces informations sont agrégées et visualisées dans une carte de nœuds qui montre les liens entre les décisionnaires identifiés et les actions à lancer pour closer le deal.",
+        ],
+      },
+      {
+        fullWidth: true,
+        gallery: {
+          columns: 2,
+          images: [
+            {
+              url: agenticGtmAppMap,
+              alt: 'Vue d’ensemble Locus - carte des deal rooms actives',
+              aspectRatio: '1600 / 1069',
+              caption: "La vue d'ensemble : chaque bâtiment est une deal room active (Sephora, L'Oréal, Doctolib...), avec ses signaux et son statut de préparation.",
+            },
+            {
+              url: agenticGtmAppDealroom,
+              alt: 'Deal room Sephora sur Locus - décisionnaire non identifié',
+              aspectRatio: '1600 / 1067',
+              caption: "La deal room Sephora, construite à partir du dernier meeting transcrit : deux interlocuteurs connus, un décisionnaire budgétaire encore inconnu.",
+            },
+            {
+              url: agenticGtmAppGraph,
+              alt: 'Carte de nœuds Locus avec panneau Account Intelligence',
+              aspectRatio: '1600 / 1062',
+              caption: "Une fois le décisionnaire identifié via Full Enrich et Sillage (Marc Dupont, Head of Sales), Locus construit l'angle de vente et liste les signaux qui le concernent.",
+            },
+            {
+              url: agenticGtmAppFollowup,
+              alt: 'Email de relance rédigé automatiquement par Locus',
+              aspectRatio: '1600 / 1065',
+              caption: "Dernière étape : l'agent rédige directement l'email de relance vers le décisionnaire, en s'appuyant sur le contexte collecté auprès des autres interlocuteurs.",
+            },
+          ],
+        },
+      },
+      {
+        fullWidth: true,
+        paragraphs: [
+          "Nous avons buildé toute la journée, jusqu'à la deadline de 17h30 pour la soumission finale. Sur la cinquantaine de groupes-projets présents, nous sommes passés sur scène à 18h pour présenter Locus en 3 minutes devant un jury composé de VP de plusieurs entreprises tech, dont Anthropic et Deel.",
+        ],
+      },
+      {
+        fullWidth: true,
+        image: {
+          url: agenticGtmPitch,
+          alt: 'Pitch final devant le jury - Agentic GTM Hackathon Station F',
+          aspectRatio: '2000 / 1500',
+          caption: "Les pitchs finalistes sur la scène de Station F : 3 minutes chrono pour convaincre un jury de VP tech, dont Anthropic et Deel.",
+        },
+      },
+      {
+        fullWidth: true,
+        image: {
+          url: agenticGtmTeam,
+          alt: "Vincent Nguyen et Duhan à l'Agentic GTM Hackathon, Station F",
+          aspectRatio: '1500 / 2000',
+          width: 'sm',
+          caption: "Avec Duhan, mon coéquipier sur Locus, devant le mur de sponsors Anthropic x Full Enrich x Sillage.",
+        },
+      },
+      {
+        fullWidth: true,
+        paragraphs: [
+          "Nous n'avons pas été retenus dans le top 10 final. Mais cette journée reste l'une des plus formatrices de mon année : j'ai appris à combiner plusieurs outils IA en conditions réelles - un LLM pour construire, deux sources de données pour enrichir - et surtout à condenser un produit entier en un pitch de 3 minutes devant un public exigeant. C'est un exercice que je referai avec plaisir.",
+          "📅 Date de l'événement : 09/07/2026",
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'hackathon-alan-lovable',
+    order: 2,
     title: 'Hackathon Alan x Lovable : builder une app wellness en 60 minutes',
     description:
       "Un hackathon éclair dans les locaux d'Alan : 60 minutes pour construire un produit bien-être avec Lovable et le pitcher en 90 secondes. J'ai construit RunReady, un coach personnel pour préparer sa course à pied.",
@@ -185,7 +296,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'travel-ai-build-night',
-    order: 2,
+    order: 3,
     title: 'Travel x AI Build Night : construire Nomad-K avec Lovable & Jinko',
     description:
       "Build night chez swanbase avec Lovable et Jinko sur le thème du voyage : j'ai construit Nomad-K, une app qui explore les destinations accessibles selon un budget total donné.",
@@ -250,7 +361,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'product-partners-retrospective',
-    order: 3,
+    order: 4,
     title: 'Rétrospective Product Partners : documenter pour performer',
     description:
       "Bilan à mi-année chez Lucca avec Product Partners : comment transformer la documentation en levier de performance et en carburant pour les agents IA.",
@@ -308,7 +419,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'better-call-claude-arynor',
-    order: 4,
+    order: 5,
     title: "Better Call Claude : l'IA au service de l'efficacité métier",
     description:
       "Premier meetup Better Call Claude par Arynor : deux démos live sur la consolidation de données et la préparation prospect — du concret applicable dès le lendemain.",
@@ -373,7 +484,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'vivatech-2026',
-    order: 5,
+    order: 6,
     title: 'VivaTech 2026 - 10ᵉ édition',
     description:
       "Immersion dans les ruptures technologiques de VivaTech 2026 : IBM Quantum System Two, Lifepods, TETMET, et un focus SaaS pour nourrir Kostbase.com.",
@@ -464,7 +575,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'webshop-mollie-codex',
-    order: 6,
+    order: 7,
     title: 'Construire son webshop avec Mollie & Codex',
     description:
       "Atelier Le Wagon : passer d'une idée e-commerce à une boutique en ligne fonctionnelle, encaissant de vrais paiements, en quelques heures et sans équipe tech.",
@@ -507,7 +618,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'hackathon-lovable-join-lion',
-    order: 7,
+    order: 8,
     title: 'Hackathon Lovable chez Join Lion',
     description:
       "Une soirée à la Jungle IA pour transformer une idée en application en 3h avec Lovable, entourée de 70 personnes qui se lancent en même temps.",
@@ -570,7 +681,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'construire-ia-demain',
-    order: 8,
+    order: 9,
     title: "Construire l'IA de demain : défis et opportunités",
     description:
       "Table ronde Le Wagon x Women in Tech France sur l'IA comme révolution de société : comment construire une IA inclusive, représentative et équitable.",
@@ -611,7 +722,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'claude-code-pms',
-    order: 9,
+    order: 10,
     title: 'Formation Claude Code chez Noé',
     description:
       "Deux jours pour intégrer Claude Code dans ma pratique de PM : de l'ajout d'une fonctionnalité sur un écran de synthèse à la Spotify, jusqu'à la correction de bugs et la mise en production via GitHub.",
@@ -683,7 +794,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'noe-formation-pm',
-    order: 12,
+    order: 13,
     title: 'Formation Product Management - Noé promo 33',
     description:
       "Retour sur 4 semaines intensives de Product Management chez Noé, en tant que PM pour BlaBlaCar : stratégie, discovery, priorisation, prototypage, delivery et restitution finale au Lead PM.",
@@ -729,7 +840,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'big-data-beautiful-data',
-    order: 11,
+    order: 12,
     title: 'Des 5V du Big Data aux 5E du Beautiful Data - IAE Paris',
     description:
       "Conférence IAE Paris - Sorbonne Business School : et si l'immatériel du « Beautiful Data » venait compléter le matériel du Big Data, au service d'une performance plus durable ?",
@@ -779,7 +890,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'ia-transforme-pm',
-    order: 10,
+    order: 11,
     title: "Comment l'IA transforme le Product Management",
     description:
       "Tech Talk Le Wagon x Welcome to the Jungle : comment le métier de PM a changé en 18 mois, ce qui s'automatise, et les compétences qui comptent vraiment en 2026.",
@@ -825,7 +936,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'dust-ai-agent',
-    order: 13,
+    order: 14,
     title: 'Atelier Dust - Construire son premier agent IA',
     description:
       "Soirée Eria x Le Wagon x Dust : théorie et pratique pour repartir avec son propre agent IA opérationnel, connecté à Google Drive et aux emails, sans une seule ligne de code.",
