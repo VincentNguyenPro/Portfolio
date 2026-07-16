@@ -4,6 +4,10 @@ import alanLovableAppSelection from '@/assets/blog/alan-lovable-app-selection.pn
 import alanLovableAppDashboard from '@/assets/blog/alan-lovable-app-dashboard.png';
 import alanLovableAppChecklist from '@/assets/blog/alan-lovable-app-checklist.png';
 import alanLovableAppShoes from '@/assets/blog/alan-lovable-app-shoes.png';
+import travelAiCover from '@/assets/blog/travel-ai-cover.png';
+import travelAiRoom from '@/assets/blog/travel-ai-room.jpeg';
+import travelAiAppSearch from '@/assets/blog/travel-ai-app-search.png';
+import travelAiAppDetail from '@/assets/blog/travel-ai-app-detail.png';
 import dustCover from '@/assets/blog/dust-cover.webp';
 import dustRoom from '@/assets/blog/dust-room.webp';
 import dustFlyer from '@/assets/blog/dust-flyer.webp';
@@ -180,8 +184,73 @@ export const blogPosts: BlogPost[] = [
     ],
   },
   {
-    slug: 'product-partners-retrospective',
+    slug: 'travel-ai-build-night',
     order: 2,
+    title: 'Travel x AI Build Night : construire Nomad-K avec Lovable & Jinko',
+    description:
+      "Build night chez swanbase avec Lovable et Jinko sur le thème du voyage : j'ai construit Nomad-K, une app qui explore les destinations accessibles selon un budget total donné.",
+    date: '7 juillet 2026',
+    eventDate: '07/07/2026',
+    categories: ['IA', 'Communauté'],
+    url: 'https://luma.com/tru412zk?tk=A20cbH',
+    cover: { url: travelAiCover, alt: 'Travel x AI Build Night - Lovable x Jinko, Venue Partner swanbase' },
+    coverFit: 'contain',
+    sections: [
+      {
+        fullWidth: true,
+        paragraphs: [
+          "Chez swanbase, dans le Sentier, Just Build It! avait posé un cadre simple pour cette Build Night : construire un produit sur le thème du voyage, de la mobilité ou de l'hospitality, avec Lovable pour le code et Jinko pour la donnée - vols, prix billets toutes compagnies, disponibilités hôtelières en direct. Accueil à 19h, kickoff et setup à 19h30, build time à 20h, puis démos live de 2 minutes à 21h30 devant la salle.",
+          "L'événement était porté par Satvik Puti (Just Build It!), Kevin Gauthier (fondateur de Jinko) et Théo Sitjar (co-fondateur de swanbase), pour une quarantaine de participants venus construire vite plutôt qu'écouter.",
+        ],
+      },
+      {
+        fullWidth: true,
+        image: {
+          url: travelAiRoom,
+          alt: 'Salle de la Travel x AI Build Night chez swanbase, Paris',
+          aspectRatio: '2000 / 1500',
+          caption: "Chez swanbase, Paris 2e : la salle penchée sur ses laptops pendant le build time, écran affichant le programme Lovable x Jinko.",
+        },
+      },
+      {
+        fullWidth: true,
+        heading: 'Mon idée : Nomad-K, voyager selon son budget, pas l’inverse',
+        paragraphs: [
+          "Le problème que je voulais attaquer est très concret : on choisit rarement sa destination de vacances dans l'absolu, on la choisit sous contrainte de budget. Deux personnes avec le même montant en poche n'ont pourtant pas la même liste de destinations accessibles une fois vols et hôtel comptés. J'ai donc construit Nomad-K, une application qui inverse la logique de recherche classique : au lieu de partir d'une destination pour découvrir son prix, on part d'un budget total pour découvrir ses destinations.",
+          "Le principe : on indique une ville de départ, un budget total (avec ou sans hôtel), des dates et un nombre de voyageurs. Nomad-K interroge Jinko en direct pour retourner une sélection de destinations qui tiennent dans l'enveloppe, avec la répartition du budget entre vol et hébergement pour chacune.",
+        ],
+      },
+      {
+        fullWidth: true,
+        image: {
+          url: travelAiAppSearch,
+          alt: 'Application Nomad-K - recherche de destinations par budget total avec Jinko',
+          aspectRatio: '1600 / 827',
+          caption: "Nomad-K : pour 5 000 € et 10 nuits au départ de Paris, l'app retourne Le Cap, Reykjavík et la Patagonie avec la répartition vol/hôtel de chaque destination, en données live via Jinko.",
+        },
+      },
+      {
+        fullWidth: true,
+        image: {
+          url: travelAiAppDetail,
+          alt: 'Fiche destination Cape Town sur Nomad-K avec devis détaillé',
+          aspectRatio: '1600 / 835',
+          caption: "La fiche destination détaille le devis (vol, hôtel, empreinte carbone) et les temps forts du séjour, avant confirmation de réservation.",
+        },
+      },
+      {
+        fullWidth: true,
+        paragraphs: [
+          "Comme pour tout hackathon, il faut prendre du recul sur l'exercice : le temps de build était limité à environ une heure, ce qui ne m'a pas laissé la place de faire de la discovery pour vérifier que ce problème de recherche par budget est bien celui que rencontrent réellement les voyageurs. C'est la limite assumée du format - on valide une intuition produit, pas encore un besoin confirmé.",
+          "Reste que la combinaison Lovable + Jinko a permis, en une heure, de brancher une vraie source de données de voyage sur un concept produit qui tient debout. De quoi donner envie de creuser Nomad-K au-delà de la soirée.",
+          "📅 Date de l'événement : 07/07/2026",
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'product-partners-retrospective',
+    order: 3,
     title: 'Rétrospective Product Partners : documenter pour performer',
     description:
       "Bilan à mi-année chez Lucca avec Product Partners : comment transformer la documentation en levier de performance et en carburant pour les agents IA.",
@@ -239,7 +308,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'better-call-claude-arynor',
-    order: 3,
+    order: 4,
     title: "Better Call Claude : l'IA au service de l'efficacité métier",
     description:
       "Premier meetup Better Call Claude par Arynor : deux démos live sur la consolidation de données et la préparation prospect — du concret applicable dès le lendemain.",
@@ -304,7 +373,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'vivatech-2026',
-    order: 4,
+    order: 5,
     title: 'VivaTech 2026 - 10ᵉ édition',
     description:
       "Immersion dans les ruptures technologiques de VivaTech 2026 : IBM Quantum System Two, Lifepods, TETMET, et un focus SaaS pour nourrir Kostbase.com.",
@@ -395,7 +464,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'webshop-mollie-codex',
-    order: 5,
+    order: 6,
     title: 'Construire son webshop avec Mollie & Codex',
     description:
       "Atelier Le Wagon : passer d'une idée e-commerce à une boutique en ligne fonctionnelle, encaissant de vrais paiements, en quelques heures et sans équipe tech.",
@@ -438,7 +507,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'hackathon-lovable-join-lion',
-    order: 6,
+    order: 7,
     title: 'Hackathon Lovable chez Join Lion',
     description:
       "Une soirée à la Jungle IA pour transformer une idée en application en 3h avec Lovable, entourée de 70 personnes qui se lancent en même temps.",
@@ -501,7 +570,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'construire-ia-demain',
-    order: 7,
+    order: 8,
     title: "Construire l'IA de demain : défis et opportunités",
     description:
       "Table ronde Le Wagon x Women in Tech France sur l'IA comme révolution de société : comment construire une IA inclusive, représentative et équitable.",
@@ -542,7 +611,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'claude-code-pms',
-    order: 8,
+    order: 9,
     title: 'Formation Claude Code chez Noé',
     description:
       "Deux jours pour intégrer Claude Code dans ma pratique de PM : de l'ajout d'une fonctionnalité sur un écran de synthèse à la Spotify, jusqu'à la correction de bugs et la mise en production via GitHub.",
@@ -614,7 +683,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'noe-formation-pm',
-    order: 11,
+    order: 12,
     title: 'Formation Product Management - Noé promo 33',
     description:
       "Retour sur 4 semaines intensives de Product Management chez Noé, en tant que PM pour BlaBlaCar : stratégie, discovery, priorisation, prototypage, delivery et restitution finale au Lead PM.",
@@ -660,7 +729,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'big-data-beautiful-data',
-    order: 10,
+    order: 11,
     title: 'Des 5V du Big Data aux 5E du Beautiful Data - IAE Paris',
     description:
       "Conférence IAE Paris - Sorbonne Business School : et si l'immatériel du « Beautiful Data » venait compléter le matériel du Big Data, au service d'une performance plus durable ?",
@@ -710,7 +779,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'ia-transforme-pm',
-    order: 9,
+    order: 10,
     title: "Comment l'IA transforme le Product Management",
     description:
       "Tech Talk Le Wagon x Welcome to the Jungle : comment le métier de PM a changé en 18 mois, ce qui s'automatise, et les compétences qui comptent vraiment en 2026.",
@@ -756,7 +825,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'dust-ai-agent',
-    order: 12,
+    order: 13,
     title: 'Atelier Dust - Construire son premier agent IA',
     description:
       "Soirée Eria x Le Wagon x Dust : théorie et pratique pour repartir avec son propre agent IA opérationnel, connecté à Google Drive et aux emails, sans une seule ligne de code.",
