@@ -1,3 +1,9 @@
+import alanLovableCover from '@/assets/blog/alan-lovable-cover.png';
+import alanLovableRoom from '@/assets/blog/alan-lovable-room.jpeg';
+import alanLovableAppSelection from '@/assets/blog/alan-lovable-app-selection.png';
+import alanLovableAppDashboard from '@/assets/blog/alan-lovable-app-dashboard.png';
+import alanLovableAppChecklist from '@/assets/blog/alan-lovable-app-checklist.png';
+import alanLovableAppShoes from '@/assets/blog/alan-lovable-app-shoes.png';
 import dustCover from '@/assets/blog/dust-cover.webp';
 import dustRoom from '@/assets/blog/dust-room.webp';
 import dustFlyer from '@/assets/blog/dust-flyer.webp';
@@ -83,8 +89,99 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
-    slug: 'product-partners-retrospective',
+    slug: 'hackathon-alan-lovable',
     order: 1,
+    title: 'Hackathon Alan x Lovable : builder une app wellness en 60 minutes',
+    description:
+      "Un hackathon éclair dans les locaux d'Alan : 60 minutes pour construire un produit bien-être avec Lovable et le pitcher en 90 secondes. J'ai construit RunReady, un coach personnel pour préparer sa course à pied.",
+    date: '8 juillet 2026',
+    eventDate: '08/07/2026',
+    categories: ['IA', 'Communauté'],
+    url: 'https://luma.com/ey6j9say?tk=6Y7Idh',
+    cover: { url: alanLovableCover, alt: 'Alan x Lovable Hackathon - Build. Launch. Pitch. From idea to MVP in one hour.' },
+    coverFit: 'contain',
+    sections: [
+      {
+        fullWidth: true,
+        paragraphs: [
+          "60 minutes. Pas une de plus. C'est le format qu'Alan et Lovable avaient choisi pour ce hackathon organisé dans les locaux d'Alan, 117 Quai de Valmy à Paris : partir d'une idée et repartir avec un prototype fonctionnel autour d'un seul thème, le wellness. À la clé, des pitchs de 90 secondes devant un jury et, pour tous les participants, un accès Lovable Pro avec 100 crédits pour builder sans se soucier du reste.",
+          "Organisé par Hector Laine, l'événement a réuni une trentaine de participants, aucune expérience préalable de Lovable n'étant requise. Le brief tenait en une question : comment l'IA peut-elle améliorer le bien-être ?",
+        ],
+      },
+      {
+        fullWidth: true,
+        image: {
+          url: alanLovableRoom,
+          alt: "Salle du hackathon Alan x Lovable dans les locaux d'Alan, Paris",
+          aspectRatio: '2000 / 1335',
+          caption: "Les locaux d'Alan, 117 Quai de Valmy : une trentaine de participants penchés sur leur écran pour builder en 60 minutes chrono.",
+        },
+      },
+      {
+        fullWidth: true,
+        heading: 'Mon idée : RunReady, un coach pour préparer sa course',
+        paragraphs: [
+          "En tant que coureur, je bute régulièrement sur le même problème : je manque de temps pour bien préparer mes courses en compétition, et cette désorganisation finit par se payer - blessures, appréhension, plaisir de course en moins. J'ai donc choisi de construire RunReady, une application qui décharge mentalement toute la préparation d'une course, du jour J jusqu'à l'entraînement du jour.",
+          "Le workflow est simple : on sélectionne sa course parmi une sélection d'événements parisiens (5 km, 10 km, semi, marathon), avec sa date et son lieu. On choisit ensuite son objectif de rythme et de temps. À partir de là, RunReady agit comme un coach personnel.",
+        ],
+      },
+      {
+        fullWidth: true,
+        gallery: {
+          columns: 3,
+          images: [
+            {
+              url: alanLovableAppSelection,
+              alt: 'Écran de sélection de course RunReady - La Parisienne, The Color Run Paris',
+              aspectRatio: '1600 / 1026',
+              caption: "Le point de départ : choisir sa course parmi une sélection parisienne (5 km, 10 km, semi, marathon).",
+            },
+            {
+              url: alanLovableAppDashboard,
+              alt: 'Tableau de bord RunReady - compte à rebours, plan d’entraînement et conditions du jour',
+              aspectRatio: '1600 / 919',
+              caption: "Le tableau de bord : compte à rebours jusqu'à la course, séance du jour et plan d'entraînement sur la semaine.",
+            },
+            {
+              url: alanLovableAppChecklist,
+              alt: 'Checklist matériel, nutrition et suivi des chaussures RunReady',
+              aspectRatio: '1600 / 849',
+              caption: "La checklist matériel et nutrition s'adapte à la météo cochée (ici « Froid ») : gants, bonnet, lampe frontale.",
+            },
+          ],
+        },
+      },
+      {
+        fullWidth: true,
+        paragraphs: [
+          "Le plan d'entraînement alterne fondamental, fractionné et sorties longues, semaine après semaine jusqu'au jour J. Selon la météo cochée - ensoleillé, pluie, froid, nuit - l'application met à jour la checklist matériel : gants thermiques et bonnet par temps froid, gilet réfléchissant et lampe frontale de nuit.",
+          "Le volet nutrition suit la même logique adaptative, structuré en trois temps - avant, pendant, après - et calibré selon l'intensité de la séance. Pour une sortie courte, RunReady reste simple : compote et tartine de beurre d'amande 1h30 avant, de l'eau pendant si la séance dure moins d'une heure, puis œufs, légumes et patate douce après pour la récupération. Sur une séance plus longue ou le jour de la course, les conseils montent en gamme : glucides lents (riz basmati, poulet, banane) 3h avant pour constituer les réserves, un gel énergétique toutes les 30 minutes avec de l'eau régulière pendant l'effort, puis une boisson de récupération et des fruits secs dans la fenêtre des 30 minutes suivant l'arrivée, avant un vrai repas. L'idée : ne plus improviser sa nutrition la veille d'une course.",
+          "Un détail auquel je tenais : le suivi du kilométrage de mes paires de running. Une paire trop usée est une cause fréquente de blessure au genou, et RunReady comptabilise les kilomètres parcourus par paire pour prévenir le moment où il faut la changer.",
+        ],
+      },
+      {
+        fullWidth: true,
+        image: {
+          url: alanLovableAppShoes,
+          alt: 'Suivi du kilométrage des chaussures de running dans RunReady',
+          aspectRatio: '1600 / 1021',
+          width: 'md',
+          caption: "Le suivi « Mes chaussures » : chaque paire cumule ses kilomètres (Nike Pegasus 41, Vaporfly 3, Adidas Adizero Adios Pro 3) pour anticiper le moment du remplacement.",
+        },
+      },
+      {
+        fullWidth: true,
+        paragraphs: [
+          "En 60 minutes, je n'ai évidemment pas pu creuser toutes les fonctionnalités, ni tester l'application auprès de vrais coureurs - débutants comme confirmés - pour valider qu'elle répond à un besoin réel. C'est la limite assumée de l'exercice : le hackathon force à trancher vite plutôt qu'à approfondir. Mais l'idée reste solide et je compte bien la reprendre à tête reposée.",
+          "Merci à Hector Laine et aux équipes Alan et Lovable pour cette soirée qui condense, en une heure, l'essentiel du prototypage produit : cadrer une idée, construire vite, et savoir la défendre en 90 secondes.",
+          "📅 Date de l'événement : 08/07/2026",
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'product-partners-retrospective',
+    order: 2,
     title: 'Rétrospective Product Partners : documenter pour performer',
     description:
       "Bilan à mi-année chez Lucca avec Product Partners : comment transformer la documentation en levier de performance et en carburant pour les agents IA.",
@@ -142,7 +239,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'better-call-claude-arynor',
-    order: 2,
+    order: 3,
     title: "Better Call Claude : l'IA au service de l'efficacité métier",
     description:
       "Premier meetup Better Call Claude par Arynor : deux démos live sur la consolidation de données et la préparation prospect — du concret applicable dès le lendemain.",
@@ -207,7 +304,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'vivatech-2026',
-    order: 3,
+    order: 4,
     title: 'VivaTech 2026 - 10ᵉ édition',
     description:
       "Immersion dans les ruptures technologiques de VivaTech 2026 : IBM Quantum System Two, Lifepods, TETMET, et un focus SaaS pour nourrir Kostbase.com.",
@@ -298,7 +395,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'webshop-mollie-codex',
-    order: 4,
+    order: 5,
     title: 'Construire son webshop avec Mollie & Codex',
     description:
       "Atelier Le Wagon : passer d'une idée e-commerce à une boutique en ligne fonctionnelle, encaissant de vrais paiements, en quelques heures et sans équipe tech.",
@@ -341,7 +438,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'hackathon-lovable-join-lion',
-    order: 5,
+    order: 6,
     title: 'Hackathon Lovable chez Join Lion',
     description:
       "Une soirée à la Jungle IA pour transformer une idée en application en 3h avec Lovable, entourée de 70 personnes qui se lancent en même temps.",
@@ -404,7 +501,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'construire-ia-demain',
-    order: 6,
+    order: 7,
     title: "Construire l'IA de demain : défis et opportunités",
     description:
       "Table ronde Le Wagon x Women in Tech France sur l'IA comme révolution de société : comment construire une IA inclusive, représentative et équitable.",
@@ -445,7 +542,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'claude-code-pms',
-    order: 7,
+    order: 8,
     title: 'Formation Claude Code chez Noé',
     description:
       "Deux jours pour intégrer Claude Code dans ma pratique de PM : de l'ajout d'une fonctionnalité sur un écran de synthèse à la Spotify, jusqu'à la correction de bugs et la mise en production via GitHub.",
@@ -517,7 +614,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'noe-formation-pm',
-    order: 10,
+    order: 11,
     title: 'Formation Product Management - Noé promo 33',
     description:
       "Retour sur 4 semaines intensives de Product Management chez Noé, en tant que PM pour BlaBlaCar : stratégie, discovery, priorisation, prototypage, delivery et restitution finale au Lead PM.",
@@ -563,7 +660,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'big-data-beautiful-data',
-    order: 9,
+    order: 10,
     title: 'Des 5V du Big Data aux 5E du Beautiful Data - IAE Paris',
     description:
       "Conférence IAE Paris - Sorbonne Business School : et si l'immatériel du « Beautiful Data » venait compléter le matériel du Big Data, au service d'une performance plus durable ?",
@@ -613,7 +710,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'ia-transforme-pm',
-    order: 8,
+    order: 9,
     title: "Comment l'IA transforme le Product Management",
     description:
       "Tech Talk Le Wagon x Welcome to the Jungle : comment le métier de PM a changé en 18 mois, ce qui s'automatise, et les compétences qui comptent vraiment en 2026.",
@@ -659,7 +756,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'dust-ai-agent',
-    order: 11,
+    order: 12,
     title: 'Atelier Dust - Construire son premier agent IA',
     description:
       "Soirée Eria x Le Wagon x Dust : théorie et pratique pour repartir avec son propre agent IA opérationnel, connecté à Google Drive et aux emails, sans une seule ligne de code.",
