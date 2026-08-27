@@ -168,22 +168,13 @@ export default function Home() {
         <section className="py-14 md:py-32 px-6 lg:px-8 border-t border-border">
           <div className="max-w-7xl mx-auto">
             <ScrollReveal>
-              <div className="flex items-end justify-between flex-wrap gap-4 mb-5 md:mb-14">
-                <div>
-                  <p className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight uppercase text-muted-foreground mb-3">
-                    Projets
-                  </p>
-                  <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight">
-                    Réalisations
-                  </h2>
-                </div>
-                <Link
-                  to="/projets"
-                  className="group inline-flex items-center gap-2 text-sm font-medium text-foreground hover:text-muted-foreground transition-colors"
-                >
-                  Tous les projets
-                  <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
-                </Link>
+              <div className="mb-5 md:mb-14">
+                <p className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight uppercase text-muted-foreground mb-3">
+                  Projets
+                </p>
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight">
+                  Réalisations
+                </h2>
               </div>
             </ScrollReveal>
 
