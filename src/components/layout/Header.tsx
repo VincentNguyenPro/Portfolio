@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ThemeToggle } from './ThemeToggle';
 import { Button } from '@/components/ui/button';
-import { Sheet, SheetContent, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
+import { Sheet, SheetContent, SheetDescription, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 import { photographerInfo } from '@/data/photographer';
 import { cn } from '@/lib/utils';
 
@@ -105,6 +105,9 @@ export function Header() {
               </SheetTrigger>
               <SheetContent side="right" className="w-full sm:w-80">
                 <SheetTitle className="sr-only">Menu de navigation</SheetTitle>
+                <SheetDescription className="sr-only">
+                  Liens de navigation vers les différentes pages du site
+                </SheetDescription>
                 <nav className="flex flex-col gap-6 mt-8">
                   {navLinks.map((link) => (
                     <Link
