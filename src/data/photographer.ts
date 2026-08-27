@@ -6,13 +6,9 @@ export const photographerInfo: PhotographerInfo = {
   tagline: 'Product Manager - Expertise Finance & SI',
   heroIntroduction:
     "Je transforme des besoins métier complexes en produits à impact mesurable, dans des contextes à fort enjeu technique et financier.",
-  biography: `Product Manager & Product Owner avec 10 ans d'expérience en SI finance et transformation digitale.\nJ'ai piloté des outils critiques (8 M€,\u00a0+25\u00a0ETP), livré des produits à impact mesurable dans des environnements multi-acteurs complexes, et j'utilise l'IA au quotidien pour accélérer la discovery comme la delivery produit.
+  biography: `Product Manager & Product Owner, 10 ans d'expérience en SI finance et transformation digitale (outils pilotés : 8 M€, +25 ETP). Ingénieur de formation (ISAE-SUPMECA, HEC Paris, Noé), à l'intersection du métier, de la donnée et de la tech - j'utilise l'IA au quotidien pour accélérer discovery et delivery.
 
-Diplômé ingénieur (ISAE-SUPMECA) avec une formation en finance d'entreprise (HEC Paris) et en Product Management (Noé), j'évolue à l'intersection du métier, de la donnée et de la tech.
-
-Ma méthode repose sur trois convictions : commencer par la donnée et la voix utilisateur, prototyper vite pour apprendre, et déployer avec une conduite du changement qui transforme l'adoption en impact mesurable.
-
-J'aime les sujets exigeants où la rigueur financière croise la créativité produit - et où l'IA devient un véritable copilote.`,
+Ma méthode : partir de la donnée et de la voix utilisateur, prototyper vite, déployer avec une vraie conduite du changement. J'aime les sujets exigeants où rigueur financière et créativité produit se rencontrent.`,
   approach: `Ma méthode repose sur trois convictions : commencer par la donnée et la voix utilisateur, prototyper vite pour apprendre, et déployer avec une conduite du changement qui transforme l'adoption en impact mesurable.
 
 J'aime les sujets exigeants où la rigueur financière croise la créativité produit - et où l'IA devient un véritable copilote.`,

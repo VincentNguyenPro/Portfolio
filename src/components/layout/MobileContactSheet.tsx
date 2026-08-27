@@ -105,7 +105,7 @@ export function MobileContactSheet({ children }: MobileContactSheetProps) {
             />
           </div>
 
-          <Button type="submit" size="lg" className="w-full gap-2 bg-blue-600 hover:bg-blue-700">
+          <Button type="submit" size="lg" className="w-full gap-2 rounded-full bg-blue-600 hover:bg-blue-700">
             <Send className="size-4" />
             Envoyer
           </Button>

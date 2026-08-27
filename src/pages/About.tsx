@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
-import { GraduationCap, Award, Languages as LanguagesIcon, Building2, School, BadgeCheck, Download, ChevronDown } from 'lucide-react';
+import { GraduationCap, Award, Languages as LanguagesIcon, Building2, School, BadgeCheck, Download, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { MobileCarousel } from '@/components/ui/MobileCarousel';
 import {
@@ -24,6 +24,13 @@ import renaultLogo from '@/assets/logos/renault.svg';
 import scrumLogo from '@/assets/logos/scrum.svg';
 import supmecaLogo from '@/assets/logos/supmeca.png';
 
+const languageFlags: Record<string, string> = {
+  'Français': '🇫🇷',
+  'Anglais': '🇬🇧',
+  'Espagnol': '🇪🇸',
+  'Chinois (Mandarin)': '🇨🇳',
+};
+
 const matchLogo = (text: string): string | null => {
   const t = text.toLowerCase();
   if (t.includes('bartle')) return bartleLogo;
@@ -39,45 +46,58 @@ const matchLogo = (text: string): string | null => {
   return null;
 };
 
-const storyMilestones: { year: string; content: React.ReactNode }[] = [
+const storyMilestones: { year: string; logos: string[]; content: React.ReactNode }[] = [
   {
-    year: 'Origine',
+    year: '2011',
+    logos: [supmecaLogo, renaultLogo],
     content: (
       <>
         Formé en <strong className="font-semibold text-foreground">génie industriel à l'ISAE-SUPMECA</strong>, j'ai débuté chez <strong className="font-semibold text-foreground">Renault</strong> sur des projets techniques avant de basculer vers ce qui m'anime vraiment : <strong className="font-semibold text-foreground">construire des produits utiles à ceux qui les utilisent</strong>.
+        <br />
+        Ces premières années en usine et en bureau d'études m'apprennent une chose que je n'ai plus jamais oubliée : un produit se juge sur le terrain, avec les gens qui l'utilisent, pas sur un slide.
       </>
     ),
   },
   {
     year: '2014',
+    logos: [fInitiativesLogo],
     content: (
       <>
         Je rejoins <strong className="font-semibold text-foreground">F-Initiatives</strong>, cabinet en <strong className="font-semibold text-foreground">financement de l'innovation</strong>, où j'accompagne des entreprises de la start-up aux <strong className="font-semibold text-foreground">grands groupes du CAC 40</strong> pour financer leurs projets R&D. Je comprends vite que l'innovation ne vaut quelque chose que si elle est <strong className="font-semibold text-foreground">structurée et portée par les bons interlocuteurs</strong>.
+        <br />
+        C'est là que je prends goût à la mécanique du financement de projet : cadrer un dossier, défendre un budget, convaincre des décideurs qui n'ont pas le temps de lire 40 pages.
       </>
     ),
   },
   {
     year: '2016',
+    logos: [renaultLogo],
     content: (
       <>
         Je reviens chez <strong className="font-semibold text-foreground">Renault</strong> comme <strong className="font-semibold text-foreground">Product Owner</strong> sur un <strong className="font-semibold text-foreground">outil de costing critique</strong> - 10 M€, 250 utilisateurs, 12 pays. Je découvre ce que signifie vraiment <strong className="font-semibold text-foreground">livrer à grande échelle</strong> : spécifications, tests, conduite du changement.
         <br />
         Résultat : <strong className="font-semibold text-foreground">95 % de taux d'adoption</strong> et <strong className="font-semibold text-foreground">+15 % de fiabilité et rapidité d'exécution</strong> des calculs.
+        <br />
+        Je pilote un backlog partagé entre 12 pays aux pratiques comptables différentes - la première fois que je mesure à quel point l'alignement métier compte autant que la technique.
       </>
     ),
   },
   {
     year: '2020',
+    logos: [renaultLogo],
     content: (
       <>
         Je deviens <strong className="font-semibold text-foreground">responsable transformation</strong> et <strong className="font-semibold text-foreground">Product Owner</strong>. Je prends la responsabilité de l'<strong className="font-semibold text-foreground">outil de consolidation financière Supply Chain monde</strong> - 8 M€, +25 contrôleurs, 10 pays. Je vis pleinement le <strong className="font-semibold text-foreground">cycle produit</strong> : backlog, delivery Scrum, amélioration continue.
         <br />
         Impact direct : <strong className="font-semibold text-foreground">-50 % sur les délais de clôture</strong>, de J+10 à J+5.
+        <br />
+        Je forme les équipes locales aux nouveaux rituels agiles et découvre qu'un outil ne transforme rien tant que la conduite du changement ne suit pas.
       </>
     ),
   },
   {
     year: '2023',
+    logos: [bartleLogo],
     content: (
       <>
         Chez <strong className="font-semibold text-foreground">Bartle</strong>, j'accompagne des grands groupes en <strong className="font-semibold text-foreground">restructuration DSI</strong>. Je construis de zéro un <strong className="font-semibold text-foreground">outil de pilotage des coûts DSI</strong>. Je mène des <strong className="font-semibold text-foreground">ateliers utilisateurs</strong> pour comprendre leurs besoins et je <strong className="font-semibold text-foreground">prototype en plusieurs itérations</strong> pour aboutir à un MVP.
@@ -90,17 +110,23 @@ const storyMilestones: { year: string; content: React.ReactNode }[] = [
   },
   {
     year: '2026',
+    logos: [noeLogo],
     content: (
       <>
         Je consolide ma pratique à la <strong className="font-semibold text-foreground">formation Noé</strong> et commence à construire le <strong className="font-semibold text-foreground">SaaS qui manque au marché</strong> : une application de <strong className="font-semibold text-foreground">pilotage P&L DSI</strong> conçue avec les <strong className="font-semibold text-foreground">outils IA modernes</strong>.
+        <br />
+        Je reprends volontairement une posture d'apprenant pour challenger mes réflexes de dix ans de Product Management avec les pratiques les plus récentes du métier.
       </>
     ),
   },
   {
-    year: "Aujourd'hui",
+    year: 'Présent',
+    logos: [sunsetRoad],
     content: (
       <>
         Je cherche à mettre cette <strong className="font-semibold text-foreground">triple culture - rigueur d'ingénieur, expertise finance & SI, maîtrise du cycle produit</strong> - au service de <strong className="font-semibold text-foreground">produits digitaux à fort impact</strong>, dans des environnements où la <strong className="font-semibold text-foreground">complexité métier est une opportunité, pas un obstacle</strong>.
+        <br />
+        Si votre organisation a un sujet Finance ou SI qui mérite un vrai produit plutôt qu'un énième fichier Excel, discutons-en.
       </>
     ),
   },
@@ -122,7 +148,6 @@ const LogoBadge = ({ text, fallback, size = 11 }: { text: string; fallback: Reac
 
 export default function About() {
   const [activeMilestone, setActiveMilestone] = useState(0);
-  const [bioExpanded, setBioExpanded] = useState(false);
 
   return (
     <>
@@ -140,34 +165,14 @@ export default function About() {
               transition={{ duration: 0.6 }}
               className="space-y-3 md:space-y-6"
             >
-              <p className="text-2xl sm:text-4xl md:text-6xl font-semibold tracking-tight uppercase text-muted-foreground">
+              <h1 className="text-2xl sm:text-4xl md:text-6xl font-semibold tracking-tight uppercase text-muted-foreground">
                 Parcours
-              </p>
-              <h1 className="text-2xl sm:text-4xl md:text-6xl font-semibold tracking-tight">
-                Vincent Nguyen
               </h1>
-              <div className="relative">
-                <div
-                  className={`space-y-2 md:space-y-4 text-base md:text-lg text-muted-foreground font-light leading-relaxed text-left md:text-justify overflow-hidden md:!max-h-none ${
-                    bioExpanded ? 'max-h-none' : 'max-h-[150px] md:max-h-none'
-                  }`}
-                >
-                  {photographerInfo.biography.split('\n\n').map((p, i) => (
-                    <p key={i}>{p}</p>
-                  ))}
-                </div>
-                {!bioExpanded && (
-                  <div className="md:hidden absolute bottom-0 inset-x-0 h-12 bg-gradient-to-t from-background to-transparent pointer-events-none" />
-                )}
+              <div className="space-y-2 md:space-y-4 text-base md:text-lg text-muted-foreground font-light leading-relaxed text-left md:text-justify">
+                {photographerInfo.biography.split('\n\n').map((p, i) => (
+                  <p key={i}>{p}</p>
+                ))}
               </div>
-              <button
-                type="button"
-                onClick={() => setBioExpanded((v) => !v)}
-                className="md:hidden inline-flex items-center gap-1.5 text-sm font-semibold text-blue-600"
-              >
-                {bioExpanded ? 'Voir moins' : 'Lire la suite'}
-                <ChevronDown className={`size-4 transition-transform ${bioExpanded ? 'rotate-180' : ''}`} />
-              </button>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, scale: 0.96 }}
@@ -178,9 +183,14 @@ export default function About() {
               <div className="absolute -inset-1 sm:-inset-3 rounded-3xl bg-gradient-to-br from-indigo-500/20 via-violet-500/15 to-emerald-500/15 blur-2xl" />
               <div className="relative aspect-[4/3] sm:aspect-[4/5] rounded-3xl overflow-hidden border border-border bg-muted">
                 <img
+                  src={saintelyonPhoto}
+                  alt="Vincent Nguyen à l'arrivée de la SaintéLyon"
+                  className="md:hidden w-full h-full object-cover"
+                />
+                <img
                   src={photographerInfo.portraitImage}
                   alt={photographerInfo.name}
-                  className="w-full h-full object-cover object-top grayscale"
+                  className="hidden md:block w-full h-full object-cover object-top grayscale"
                 />
               </div>
             </motion.div>
@@ -189,8 +199,8 @@ export default function About() {
 
 
         {/* Mon histoire */}
-        <section className="px-6 lg:px-8 py-8 md:py-28 border-t border-border min-h-[100dvh] md:min-h-0 flex flex-col justify-center md:block">
-            <div className="max-w-7xl mx-auto">
+        <section className="px-6 lg:px-8 py-8 md:py-28 border-t border-border min-h-[100dvh] md:min-h-0 flex flex-col justify-start md:block">
+            <div className="max-w-7xl mx-auto w-full">
             <ScrollReveal>
               <p className="text-2xl md:text-4xl font-semibold tracking-tight uppercase text-muted-foreground mb-3 md:mb-6">
                 Mon histoire
@@ -201,7 +211,9 @@ export default function About() {
             </ScrollReveal>
             {/* Mobile: horizontal stepper + fixed detail card */}
             <div className="md:hidden">
-              <div className="flex items-start">
+              <div className="relative flex items-start pr-6">
+                <div className="absolute left-3 right-2 top-[7px] h-px bg-border" />
+                <ArrowRight className="absolute right-0 top-0 size-3.5 text-border" />
                 {storyMilestones.map((m, i) => {
                   const active = i === activeMilestone;
                   return (
@@ -227,10 +239,31 @@ export default function About() {
                   );
                 })}
               </div>
-              <div className="mt-4 rounded-2xl border border-border bg-card p-5 min-h-[220px]">
-                <p className="text-xs font-semibold tracking-wide uppercase text-blue-600 mb-2">
-                  {storyMilestones[activeMilestone].year}
-                </p>
+              <div className="mt-4 min-h-[280px] rounded-2xl border border-border bg-card p-5">
+                <div className="flex flex-col items-center text-center mb-4">
+                  <p className="text-2xl font-bold tracking-tight text-blue-600 mb-3">
+                    {storyMilestones[activeMilestone].year}
+                  </p>
+                  {storyMilestones[activeMilestone].logos.length > 0 && (
+                    <div className="flex items-center justify-center">
+                      {storyMilestones[activeMilestone].logos.map((logo, li) => (
+                        <span
+                          key={li}
+                          className={`size-16 rounded-full border border-border bg-white overflow-hidden flex items-center justify-center shrink-0 shadow-sm ${
+                            li > 0 ? '-ml-4' : ''
+                          }`}
+                          style={{ zIndex: storyMilestones[activeMilestone].logos.length - li }}
+                        >
+                          <img
+                            src={logo}
+                            alt=""
+                            className={`w-full h-full ${logo === sunsetRoad ? 'object-cover' : 'object-contain p-2'}`}
+                          />
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                </div>
                 <p className="text-base font-light leading-snug text-foreground/85">
                   {storyMilestones[activeMilestone].content}
                 </p>
@@ -266,7 +299,7 @@ export default function About() {
         </section>
 
         {/* Mon parcours professionnel */}
-        <section className="px-6 lg:px-8 py-8 md:py-28 border-t border-border">
+        <section className="hidden md:block px-6 lg:px-8 py-8 md:py-28 border-t border-border">
           <div className="max-w-7xl mx-auto">
             <ScrollReveal>
               <p className="text-2xl md:text-4xl font-semibold tracking-tight uppercase text-muted-foreground mb-3 md:mb-6">
@@ -337,7 +370,7 @@ export default function About() {
                 </div>
               </ScrollReveal>
             </div>
-            <div className="mt-6 md:mt-8 flex justify-start">
+            <div className="hidden md:flex mt-6 md:mt-8 justify-start">
               <Button asChild variant="outline" size="lg" className="gap-2">
                 <a href="/Vincent-Nguyen-CV.pdf" download="Vincent-Nguyen-CV.pdf">
                   <Download className="size-4" />
@@ -369,7 +402,7 @@ export default function About() {
                         </div>
                         <div className="space-y-4">
                           {educationItems.map((e) => (
-                            <div key={e.title} className="flex gap-4">
+                            <div key={e.title} className="flex items-center gap-4">
                               <LogoBadge text={e.school} fallback={<School className="size-5" />} size={10} />
                               <div>
                                 <p className="text-xs text-muted-foreground font-medium tracking-wide">{e.period}</p>
@@ -391,9 +424,14 @@ export default function About() {
                         </div>
                         <ul className="space-y-3">
                           {languages.map((l) => (
-                            <li key={l.name} className="flex items-baseline justify-between gap-4">
-                              <span className="text-base font-medium">{l.name}</span>
-                              <span className="text-sm text-muted-foreground font-light">{l.level}</span>
+                            <li key={l.name} className="flex items-center gap-4">
+                              <span className="shrink-0 size-10 rounded-xl border border-border bg-white flex items-center justify-center overflow-hidden text-xl">
+                                {languageFlags[l.name]}
+                              </span>
+                              <span className="flex-1 min-w-0 flex items-baseline justify-between gap-4">
+                                <span className="text-base font-medium">{l.name}</span>
+                                <span className="text-sm text-muted-foreground font-light">{l.level}</span>
+                              </span>
                             </li>
                           ))}
                         </ul>
@@ -452,11 +490,16 @@ export default function About() {
                     <LanguagesIcon className="size-5 text-muted-foreground" />
                     <h2 className="text-xl md:text-3xl font-semibold tracking-tight">Langues</h2>
                   </div>
-                  <ul className="space-y-2">
+                  <ul className="space-y-3">
                     {languages.map((l) => (
-                      <li key={l.name} className="flex items-baseline justify-between gap-4">
-                        <span className="text-base font-medium">{l.name}</span>
-                        <span className="text-sm text-muted-foreground font-light">{l.level}</span>
+                      <li key={l.name} className="flex items-center gap-4">
+                        <span className="shrink-0 size-10 rounded-xl border border-border bg-white flex items-center justify-center overflow-hidden text-xl">
+                          {languageFlags[l.name]}
+                        </span>
+                        <span className="flex-1 min-w-0 flex items-baseline justify-between gap-4">
+                          <span className="text-base font-medium">{l.name}</span>
+                          <span className="text-sm text-muted-foreground font-light">{l.level}</span>
+                        </span>
                       </li>
                     ))}
                   </ul>

@@ -34,17 +34,14 @@ export default function Home() {
               transition={{ duration: 0.6 }}
               className="space-y-4 md:space-y-6"
             >
-              <p className="text-3xl sm:text-4xl md:text-6xl font-semibold tracking-tight uppercase text-muted-foreground break-words">
+              <p className="text-4xl sm:text-4xl md:text-6xl font-semibold tracking-tight uppercase text-muted-foreground break-words">
                 Vincent Nguyen
               </p>
-              <h1 className="text-[clamp(1rem,5.2vw,1.5rem)] sm:text-3xl md:text-4xl font-semibold tracking-tight whitespace-nowrap">
+              <h1 className="text-[clamp(1.15rem,5.6vw,1.6rem)] sm:text-3xl md:text-4xl font-semibold tracking-tight whitespace-nowrap">
                 Product Manager • Product Owner
-                <span className="block text-muted-foreground font-light mt-2 text-base sm:text-3xl md:text-4xl whitespace-normal">
-                  Transformation digitale
-                </span>
               </h1>
 
-              <p className="text-base md:text-lg text-muted-foreground font-light leading-relaxed text-left md:text-justify">
+              <p className="text-lg text-muted-foreground font-light leading-relaxed text-left md:text-justify">
                 {photographerInfo.heroIntroduction}
               </p>
 

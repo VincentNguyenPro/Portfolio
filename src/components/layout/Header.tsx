@@ -1,11 +1,12 @@
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, Linkedin } from 'lucide-react';
+import { Menu, Linkedin, Briefcase, ArrowRight, LayoutDashboard, Car, PieChart, Truck, Calculator } from 'lucide-react';
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ThemeToggle } from './ThemeToggle';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetDescription, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 import { photographerInfo } from '@/data/photographer';
+import { projects } from '@/data/projects';
 import { cn } from '@/lib/utils';
 
 const navLinks = [
@@ -15,6 +16,24 @@ const navLinks = [
   { name: 'Blog', path: '/blog' },
   { name: 'Contact', path: '/contact' },
 ];
+
+const menuNavLinks = navLinks.filter((link) => link.path !== '/projets');
+
+const projectShortTitles: Record<string, string> = {
+  'saas-pilotage-dsi': 'SaaS pilotage DSI',
+  'blablacar-first-ride': 'Premier trajet BlaBlaCar',
+  'bartle-pilotage-dsi': 'Pilotage coûts DSI',
+  'renault-supply-chain': 'Supply Chain Renault',
+  'renault-costing': 'Costing Renault',
+};
+
+const projectIcons: Record<string, typeof Briefcase> = {
+  'saas-pilotage-dsi': LayoutDashboard,
+  'blablacar-first-ride': Car,
+  'bartle-pilotage-dsi': PieChart,
+  'renault-supply-chain': Truck,
+  'renault-costing': Calculator,
+};
 
 export function Header() {
   const location = useLocation();
@@ -103,23 +122,64 @@ export function Header() {
                   <Menu className="size-5" />
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right" className="w-full sm:w-80">
-                <SheetTitle className="sr-only">Menu de navigation</SheetTitle>
+              <SheetContent
+                side="bottom"
+                className="rounded-t-3xl max-h-[85vh] overflow-y-auto pb-[calc(1.5rem+env(safe-area-inset-bottom))]"
+              >
+                <div className="mx-auto mb-4 h-1.5 w-10 rounded-full bg-border" />
+                <SheetTitle className="sr-only">Menu</SheetTitle>
                 <SheetDescription className="sr-only">
                   Liens de navigation vers les différentes pages du site
                 </SheetDescription>
-                <nav className="flex flex-col gap-6 mt-8">
-                  {navLinks.map((link) => (
+
+                <p className="text-xs font-semibold tracking-wide uppercase text-muted-foreground mb-2">
+                  Navigation
+                </p>
+                <nav className="flex flex-col">
+                  {menuNavLinks.map((link) => (
                     <Link
                       key={link.path}
                       to={link.path}
                       onClick={() => setMobileMenuOpen(false)}
-                      className="text-xl font-medium tracking-wide text-foreground hover:text-foreground/80"
+                      className="py-3 text-base font-medium text-foreground border-b border-border last:border-0"
                     >
                       {link.name}
                     </Link>
                   ))}
                 </nav>
+
+                <p className="text-base font-medium text-foreground border-t border-border pt-3 mb-2">
+                  Projets
+                </p>
+                <nav className="flex flex-col">
+                  {projects.map((project) => {
+                    const Icon = projectIcons[project.slug] ?? Briefcase;
+                    return (
+                      <Link
+                        key={project.slug}
+                        to={`/projet/${project.slug}`}
+                        onClick={() => setMobileMenuOpen(false)}
+                        className="flex items-center gap-3 py-2"
+                      >
+                        <span className="shrink-0 size-8 rounded-lg bg-blue-50 dark:bg-blue-950/40 flex items-center justify-center">
+                          <Icon className="size-3.5 text-blue-600" />
+                        </span>
+                        <span className="flex-1 min-w-0 truncate text-sm font-medium text-foreground">
+                          {projectShortTitles[project.slug] ?? project.title}
+                        </span>
+                      </Link>
+                    );
+                  })}
+                </nav>
+
+                <Link
+                  to="/contact"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="group flex items-center justify-center gap-2 w-full px-6 py-3 rounded-full bg-blue-600 text-white font-medium hover:bg-blue-700 transition-colors mt-6"
+                >
+                  Me contacter
+                  <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
+                </Link>
               </SheetContent>
             </Sheet>
           </div>

@@ -42,13 +42,13 @@ export default function Contact() {
       />
 
       <div className="min-h-screen">
-        <section className="px-6 lg:px-8 pt-16 pb-12 md:pt-24 md:pb-16 border-b border-border">
+        <section className="px-6 lg:px-8 pt-20 pb-6 md:pt-24 md:pb-16 border-b border-border">
           <div className="max-w-7xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="space-y-6"
+              className="space-y-3 md:space-y-6"
             >
               <p className="text-3xl sm:text-4xl md:text-6xl font-semibold tracking-tight uppercase text-muted-foreground">
                 Contact
@@ -56,68 +56,107 @@ export default function Contact() {
               <h1 className="text-3xl sm:text-4xl md:text-6xl font-semibold tracking-tight">
                 Discutons de votre projet.
               </h1>
-              <p className="text-lg text-muted-foreground font-light leading-relaxed">
-                {photographerInfo.availability}.
-                <br /><br />
-                Pour échanger sur une opportunité Product Manager, un projet à fort enjeu finance ou SI, ou simplement faire connaissance - utilisez le formulaire ci-dessous ou l'un des moyens de contact directs.
+              <p className="text-base md:text-lg text-muted-foreground font-light leading-relaxed">
+                {photographerInfo.availability}. Pour échanger sur une opportunité Product Manager ou un projet à fort enjeu finance ou SI, contactez-moi directement.
               </p>
             </motion.div>
           </div>
         </section>
 
-        <section className="px-6 lg:px-8 py-10 md:py-24">
-          <div className="max-w-7xl mx-auto grid sm:grid-cols-2 gap-4">
-            {contactItems.map((item, i) => {
-              const Icon = item.icon;
-              const content = (
-                <>
-                  <div className="flex items-center justify-between">
-                    <div className="size-10 rounded-full bg-muted flex items-center justify-center">
+        <section className="px-6 lg:px-8 py-6 md:py-24">
+          <div className="max-w-7xl mx-auto">
+            {/* Mobile: icon-only CTAs */}
+            <div className="md:hidden grid grid-cols-3 gap-3">
+              {contactItems.map((item, i) => {
+                const Icon = item.icon;
+                return (
+                  <motion.a
+                    key={item.label}
+                    href={item.href}
+                    {...(item.external
+                      ? { target: '_blank', rel: 'noopener noreferrer' }
+                      : {})}
+                    initial={{ opacity: 0, y: 12 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: i * 0.05 }}
+                    className="flex flex-col items-center justify-center gap-2.5 rounded-2xl border border-border bg-card py-6 hover:border-foreground/20 transition-colors"
+                  >
+                    <div className="size-11 rounded-full bg-muted flex items-center justify-center">
                       <Icon className="size-5 text-foreground" />
                     </div>
-                    {item.href && (
-                      <ArrowUpRight className="size-4 text-muted-foreground group-hover:text-foreground group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
+                    <span className="text-sm font-medium">{item.label}</span>
+                  </motion.a>
+                );
+              })}
+              <motion.a
+                href="/Vincent-Nguyen-CV.pdf"
+                download="Vincent-Nguyen-CV.pdf"
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: contactItems.length * 0.05 }}
+                className="flex flex-col items-center justify-center gap-2.5 rounded-2xl border border-border bg-card py-6 hover:border-foreground/20 transition-colors"
+              >
+                <div className="size-11 rounded-full bg-muted flex items-center justify-center">
+                  <Download className="size-5 text-foreground" />
+                </div>
+                <span className="text-sm font-medium">CV</span>
+              </motion.a>
+            </div>
+
+            {/* Desktop: full cards with address/label */}
+            <div className="hidden md:grid sm:grid-cols-2 gap-4">
+              {contactItems.map((item, i) => {
+                const Icon = item.icon;
+                const content = (
+                  <>
+                    <div className="flex items-center justify-between">
+                      <div className="size-10 rounded-full bg-muted flex items-center justify-center">
+                        <Icon className="size-5 text-foreground" />
+                      </div>
+                      {item.href && (
+                        <ArrowUpRight className="size-4 text-muted-foreground group-hover:text-foreground group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
+                      )}
+                    </div>
+                    <div className="mt-6">
+                      <p className="text-xs font-semibold tracking-[0.2em] uppercase text-muted-foreground mb-2">
+                        {item.label}
+                      </p>
+                      <p className="text-lg md:text-xl font-medium tracking-tight break-words">{item.value}</p>
+                    </div>
+                  </>
+                );
+
+                const className =
+                  'group block min-w-0 rounded-2xl border border-border bg-card p-6 md:p-8 hover:shadow-md hover:border-foreground/20 transition-all';
+
+                return (
+                  <motion.div
+                    key={item.label}
+                    className="min-w-0"
+                    initial={{ opacity: 0, y: 12 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: i * 0.05 }}
+                  >
+                    {item.href ? (
+                      <a
+                        href={item.href}
+                        {...(item.external
+                          ? { target: '_blank', rel: 'noopener noreferrer' }
+                          : {})}
+                        className={className}
+                      >
+                        {content}
+                      </a>
+                    ) : (
+                      <div className={className}>{content}</div>
                     )}
-                  </div>
-                  <div className="mt-6">
-                    <p className="text-xs font-semibold tracking-[0.2em] uppercase text-muted-foreground mb-2">
-                      {item.label}
-                    </p>
-                    <p className="text-lg md:text-xl font-medium tracking-tight break-words">{item.value}</p>
-                  </div>
-                </>
-              );
-
-              const className =
-                'group block min-w-0 rounded-2xl border border-border bg-card p-6 md:p-8 hover:shadow-md hover:border-foreground/20 transition-all';
-
-              return (
-                <motion.div
-                  key={item.label}
-                  className="min-w-0"
-                  initial={{ opacity: 0, y: 12 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: i * 0.05 }}
-                >
-                  {item.href ? (
-                    <a
-                      href={item.href}
-                      {...(item.external
-                        ? { target: '_blank', rel: 'noopener noreferrer' }
-                        : {})}
-                      className={className}
-                    >
-                      {content}
-                    </a>
-                  ) : (
-                    <div className={className}>{content}</div>
-                  )}
-                </motion.div>
-              );
-            })}
+                  </motion.div>
+                );
+              })}
+            </div>
           </div>
 
-          <div className="max-w-7xl mx-auto mt-12 flex flex-col items-start gap-3">
+          <div className="hidden md:flex max-w-7xl mx-auto mt-12 flex-col items-start gap-3">
             <p className="text-sm text-muted-foreground">
               Préférez-vous consulter mon CV ?
             </p>
@@ -135,7 +174,7 @@ export default function Contact() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="max-w-7xl mx-auto mt-12 rounded-2xl border border-border bg-card p-8 md:p-10 space-y-6"
+            className="hidden md:block max-w-7xl mx-auto mt-12 rounded-2xl border border-border bg-card p-8 md:p-10 space-y-6"
           >
             <div>
               <p className="text-xs font-semibold tracking-[0.2em] uppercase text-muted-foreground mb-2">
@@ -226,7 +265,7 @@ export default function Contact() {
             </div>
 
             <div className="flex justify-end">
-              <Button type="submit" size="lg" className="gap-2">
+              <Button type="submit" size="lg" className="gap-2 rounded-full">
                 <Send className="size-4" />
                 Envoyer
               </Button>
