@@ -26,8 +26,6 @@ import iaDemainCover from '@/assets/blog/ia-demain-cover.webp';
 import iaDemainRoom from '@/assets/blog/ia-demain-room.webp';
 import lovableCover from '@/assets/blog/lovable-cover.avif';
 import lovableRoom from '@/assets/blog/lovable-room.webp';
-import lovableTalk from '@/assets/blog/lovable-talk.webp';
-import lovableGroups from '@/assets/blog/lovable-groups.webp';
 import claudeCodeCover from '@/assets/blog/claude-code-cover.webp';
 import claudeCodeRoom from '@/assets/blog/claude-code-room.webp';
 import noePmPromo from '@/assets/blog/noe-pm-promo.webp';
