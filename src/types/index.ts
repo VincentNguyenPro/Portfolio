@@ -73,11 +73,3 @@ export interface PhotographerInfo {
   };
   portraitImage: string;
 }
-
-export interface ContactSubmission {
-  name: string;
-  email: string;
-  projectType: 'editorial' | 'commercial' | 'personal';
-  message: string;
-  timestamp: Date;
-}
