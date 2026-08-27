@@ -105,7 +105,7 @@ export const blogPosts: BlogPost[] = [
     order: 1,
     title: 'Agentic GTM Hackathon chez Station F : construire Locus avec Claude, Full Enrich & Sillage',
     description:
-      "Une journée complète chez Station F avec Anthropic, Full Enrich et Sillage : avec mon coéquipier Duhan, nous avons construit Locus, un outil qui identifie le vrai décisionnaire d'un deal et prépare l'action pour le faire signer.",
+      "Hackathon chez Station F avec Anthropic, Full Enrich et Sillage : avec Duhan, j'ai construit Locus, un outil qui identifie le vrai décisionnaire d'un deal.",
     date: '9 juillet 2026',
     eventDate: '09/07/2026',
     categories: ['IA', 'Product', 'Communauté'],
@@ -208,7 +208,7 @@ export const blogPosts: BlogPost[] = [
     order: 2,
     title: 'Hackathon Alan x Lovable : builder une app wellness en 60 minutes',
     description:
-      "Un hackathon éclair dans les locaux d'Alan : 60 minutes pour construire un produit bien-être avec Lovable et le pitcher en 90 secondes. J'ai construit RunReady, un coach personnel pour préparer sa course à pied.",
+      "Hackathon éclair chez Alan : 60 minutes pour construire un produit bien-être avec Lovable et le pitcher en 90 secondes. J'ai créé RunReady, coach running.",
     date: '8 juillet 2026',
     eventDate: '08/07/2026',
     categories: ['IA', 'Communauté'],
@@ -299,7 +299,7 @@ export const blogPosts: BlogPost[] = [
     order: 3,
     title: 'Travel x AI Build Night : construire Nomad-K avec Lovable & Jinko',
     description:
-      "Build night chez swanbase avec Lovable et Jinko sur le thème du voyage : j'ai construit Nomad-K, une app qui explore les destinations accessibles selon un budget total donné.",
+      "Build night chez swanbase avec Lovable et Jinko sur le voyage : j'ai construit Nomad-K, une app qui explore des destinations selon un budget donné.",
     date: '7 juillet 2026',
     eventDate: '07/07/2026',
     categories: ['IA', 'Communauté'],
@@ -422,7 +422,7 @@ export const blogPosts: BlogPost[] = [
     order: 5,
     title: "Better Call Claude : l'IA au service de l'efficacité métier",
     description:
-      "Premier meetup Better Call Claude par Arynor : deux démos live sur la consolidation de données et la préparation prospect — du concret applicable dès le lendemain.",
+      "Premier meetup Better Call Claude par Arynor : deux démos live sur la consolidation de données et la préparation prospect, applicables dès le lendemain.",
     date: '24 juin 2026',
     eventDate: '24/06/2026',
     categories: ['IA', 'Communauté'],
@@ -725,7 +725,7 @@ export const blogPosts: BlogPost[] = [
     order: 10,
     title: 'Formation Claude Code chez Noé',
     description:
-      "Deux jours pour intégrer Claude Code dans ma pratique de PM : de l'ajout d'une fonctionnalité sur un écran de synthèse à la Spotify, jusqu'à la correction de bugs et la mise en production via GitHub.",
+      "Deux jours pour intégrer Claude Code à ma pratique de PM : ajout de fonctionnalité, correction de bugs et mise en production via GitHub.",
     date: '29 & 30 mai 2026',
     eventDate: '29-30/05/2026',
     categories: ['Formation', 'Product', 'IA'],
@@ -797,7 +797,7 @@ export const blogPosts: BlogPost[] = [
     order: 13,
     title: 'Formation Product Management - Noé promo 33',
     description:
-      "Retour sur 4 semaines intensives de Product Management chez Noé, en tant que PM pour BlaBlaCar : stratégie, discovery, priorisation, prototypage, delivery et restitution finale au Lead PM.",
+      "Retour sur 4 semaines intensives de Product Management chez Noé, comme PM pour BlaBlaCar : stratégie, discovery, priorisation, prototypage et delivery.",
     date: '20 avril - 15 mai 2026',
     eventDate: '20/04 - 15/05/2026',
     categories: ['Formation', 'Product'],
@@ -843,7 +843,7 @@ export const blogPosts: BlogPost[] = [
     order: 12,
     title: 'Des 5V du Big Data aux 5E du Beautiful Data - IAE Paris',
     description:
-      "Conférence IAE Paris - Sorbonne Business School : et si l'immatériel du « Beautiful Data » venait compléter le matériel du Big Data, au service d'une performance plus durable ?",
+      "Conférence IAE Paris - Sorbonne Business School : et si l'immatériel du « Beautiful Data » complétait le Big Data, pour une performance plus durable ?",
     date: '18 mai 2026',
     eventDate: '18/05/2026',
     categories: ['Data', 'Communauté'],
@@ -939,7 +939,7 @@ export const blogPosts: BlogPost[] = [
     order: 14,
     title: 'Atelier Dust - Construire son premier agent IA',
     description:
-      "Soirée Eria x Le Wagon x Dust : théorie et pratique pour repartir avec son propre agent IA opérationnel, connecté à Google Drive et aux emails, sans une seule ligne de code.",
+      "Soirée Eria x Le Wagon x Dust : théorie et pratique pour repartir avec son agent IA opérationnel, connecté à Google Drive et aux emails, sans coder.",
     date: '8 avril 2026',
     eventDate: '08/04/2026',
     categories: ['IA', 'Communauté'],
