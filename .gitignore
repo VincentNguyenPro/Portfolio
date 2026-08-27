@@ -12,6 +12,15 @@ dist
 dist-ssr
 *.local
 
+# graphify
+graphify-out/
+
+# playwright-cli session artifacts
+.playwright-cli/
+
+# local-only Claude Code settings
+.claude/settings.local.json
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
