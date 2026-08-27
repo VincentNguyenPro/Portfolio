@@ -59,17 +59,17 @@ export default function Home() {
                 {photographerInfo.heroIntroduction}
               </p>
 
-              <div className="flex flex-wrap items-center gap-3 md:gap-4 pt-2">
+              <div className="flex flex-nowrap items-center gap-2 md:gap-4 pt-2">
                 <Link
                   to="/projets"
-                  className="group inline-flex items-center gap-2 px-5 py-2.5 md:px-6 md:py-3 rounded-full bg-foreground text-background font-medium hover:opacity-90 transition-opacity"
+                  className="group inline-flex items-center gap-1.5 md:gap-2 px-4 py-2.5 md:px-6 md:py-3 rounded-full bg-foreground text-background font-medium text-sm md:text-base whitespace-nowrap hover:opacity-90 transition-opacity"
                 >
                   Voir mes projets
-                  <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
+                  <ArrowRight className="size-4 shrink-0 transition-transform group-hover:translate-x-0.5" />
                 </Link>
                 <Link
                   to="/contact"
-                  className="group inline-flex items-center gap-2 px-5 py-2.5 md:px-6 md:py-3 rounded-full border border-border text-foreground hover:bg-muted transition-colors"
+                  className="group inline-flex items-center gap-2 px-4 py-2.5 md:px-6 md:py-3 rounded-full border border-border text-foreground font-medium text-sm md:text-base whitespace-nowrap hover:bg-muted transition-colors"
                 >
                   Me contacter
                 </Link>
@@ -82,7 +82,7 @@ export default function Home() {
               transition={{ duration: 0.7, delay: 0.1 }}
               className="md:sticky md:top-24 relative"
             >
-              <div className="absolute -inset-3 rounded-3xl bg-gradient-to-br from-indigo-500/20 via-violet-500/15 to-emerald-500/15 blur-2xl" />
+              <div className="absolute -inset-1 sm:-inset-3 rounded-3xl bg-gradient-to-br from-indigo-500/20 via-violet-500/15 to-emerald-500/15 blur-2xl" />
               <div className="relative aspect-[4/3] sm:aspect-[4/5] rounded-3xl overflow-hidden border border-border bg-muted">
                 <img
                   src={photographerInfo.portraitImage}
