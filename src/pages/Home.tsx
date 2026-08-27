@@ -148,9 +148,13 @@ export default function Home() {
               </div>
             </ScrollReveal>
 
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div className="flex gap-4 overflow-x-auto snap-x snap-mandatory -mx-6 px-6 pb-2 sm:grid sm:grid-cols-2 sm:gap-4 sm:overflow-visible sm:mx-0 sm:px-0 sm:pb-0 lg:grid-cols-3">
               {skillGroups.map((group, i) => (
-                <ScrollReveal key={group.title} delay={i * 0.05}>
+                <ScrollReveal
+                  key={group.title}
+                  delay={i * 0.05}
+                  className="shrink-0 w-[80%] snap-center sm:w-auto sm:shrink"
+                >
                   <div className="h-full rounded-2xl border border-border bg-card p-6 hover:shadow-md transition-shadow">
                     <h3 className="text-xl font-semibold tracking-tight mb-4">{group.title}</h3>
                     <ul className="flex flex-wrap gap-2">
@@ -193,9 +197,13 @@ export default function Home() {
               </div>
             </ScrollReveal>
 
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="flex gap-4 overflow-x-auto snap-x snap-mandatory -mx-6 px-6 pb-2 md:grid md:grid-cols-2 md:gap-6 md:overflow-visible md:mx-0 md:px-0 md:pb-0">
               {featured.map((project, i) => (
-                <ScrollReveal key={project.id} delay={i * 0.1}>
+                <ScrollReveal
+                  key={project.id}
+                  delay={i * 0.1}
+                  className="shrink-0 w-[85%] snap-center md:w-auto md:shrink"
+                >
                   <Link
                     to={`/projet/${project.slug}`}
                     className="group block rounded-2xl overflow-hidden border border-border bg-card hover:shadow-xl transition-all"
