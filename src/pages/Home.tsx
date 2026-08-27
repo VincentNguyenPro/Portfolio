@@ -152,7 +152,7 @@ export default function Home() {
             <MobileCarousel
               items={skillGroups}
               keyExtractor={(group) => group.title}
-              trackClassName="flex gap-4 overflow-x-auto overflow-y-hidden snap-x snap-mandatory -mx-6 px-6 pb-2 sm:grid sm:grid-cols-2 sm:gap-4 sm:overflow-visible sm:mx-0 sm:px-0 sm:pb-0 lg:grid-cols-3"
+              trackClassName="flex gap-4 overflow-x-auto overflow-y-hidden hide-scrollbar snap-x snap-mandatory -mx-6 px-6 pb-2 sm:grid sm:grid-cols-2 sm:gap-4 sm:overflow-visible sm:mx-0 sm:px-0 sm:pb-0 lg:grid-cols-3"
               itemClassName="shrink-0 w-[80%] snap-center sm:w-auto sm:shrink"
               navClassName="sm:hidden"
               renderItem={(group, i) => (
@@ -202,7 +202,7 @@ export default function Home() {
             <MobileCarousel
               items={featured}
               keyExtractor={(project) => project.id}
-              trackClassName="flex gap-4 overflow-x-auto overflow-y-hidden snap-x snap-mandatory -mx-6 px-6 pb-2 md:grid md:grid-cols-2 md:gap-6 md:overflow-visible md:mx-0 md:px-0 md:pb-0"
+              trackClassName="flex gap-4 overflow-x-auto overflow-y-hidden hide-scrollbar snap-x snap-mandatory -mx-6 px-6 pb-2 md:grid md:grid-cols-2 md:gap-6 md:overflow-visible md:mx-0 md:px-0 md:pb-0"
               itemClassName="shrink-0 w-[85%] snap-center md:w-auto md:shrink"
               navClassName="md:hidden"
               renderItem={(project, i) => (

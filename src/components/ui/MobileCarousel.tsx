@@ -52,7 +52,14 @@ export function MobileCarousel<T>({
   }, [items.length]);
 
   const scrollToIndex = useCallback((index: number) => {
-    itemRefs.current[index]?.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+    const track = trackRef.current;
+    const target = itemRefs.current[index];
+    if (!track || !target) return;
+
+    const trackRect = track.getBoundingClientRect();
+    const targetRect = target.getBoundingClientRect();
+    const offset = targetRect.left - trackRect.left - (trackRect.width - targetRect.width) / 2;
+    track.scrollTo({ left: track.scrollLeft + offset, behavior: 'smooth' });
   }, []);
 
   return (
