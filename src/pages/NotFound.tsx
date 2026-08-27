@@ -16,7 +16,7 @@ const NotFound = () => {
         description="The page you're looking for doesn't exist. Return to the homepage to continue browsing."
       />
       
-      <main className="min-h-[calc(100vh-8rem)] flex items-center justify-center px-6">
+      <div className="min-h-[calc(100vh-8rem)] flex items-center justify-center px-6">
         <motion.div
           className="max-w-2xl w-full text-center space-y-8"
           initial={{ opacity: 0, y: 20 }}
@@ -84,7 +84,7 @@ const NotFound = () => {
             <div className="h-px w-24 mx-auto bg-border" />
           </motion.div>
         </motion.div>
-      </main>
+      </div>
     </>
   );
 };
