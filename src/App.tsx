@@ -10,7 +10,7 @@ import { ScrollToTop } from "@/components/ui/ScrollToTop";
 import { LoadingFallback } from "@/components/ui/LoadingFallback";
 import { PageTransition } from "@/components/ui/PageTransition";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
-import { AnimatePresence } from "framer-motion";
+import { AnimatePresence, MotionConfig } from "framer-motion";
 import { lazy, Suspense } from "react";
 
 // Code-split route components for better performance
@@ -107,15 +107,17 @@ const App = () => (
         <TooltipProvider>
           <Toaster />
           <Sonner />
-          <BrowserRouter>
-            <ScrollToTop />
-            <SkipToContent />
-            <Layout>
-              <Suspense fallback={<LoadingFallback />}>
-                <AnimatedRoutes />
-              </Suspense>
-            </Layout>
-          </BrowserRouter>
+          <MotionConfig reducedMotion="user">
+            <BrowserRouter>
+              <ScrollToTop />
+              <SkipToContent />
+              <Layout>
+                <Suspense fallback={<LoadingFallback />}>
+                  <AnimatedRoutes />
+                </Suspense>
+              </Layout>
+            </BrowserRouter>
+          </MotionConfig>
         </TooltipProvider>
       </ThemeProvider>
     </QueryClientProvider>

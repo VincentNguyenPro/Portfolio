@@ -113,17 +113,18 @@ ${form.message}`;
                     <p className="text-xs font-semibold tracking-[0.2em] uppercase text-muted-foreground mb-2">
                       {item.label}
                     </p>
-                    <p className="text-lg md:text-xl font-medium tracking-tight">{item.value}</p>
+                    <p className="text-lg md:text-xl font-medium tracking-tight break-words">{item.value}</p>
                   </div>
                 </>
               );
 
               const className =
-                'group block rounded-2xl border border-border bg-card p-6 md:p-8 hover:shadow-md hover:border-foreground/20 transition-all';
+                'group block min-w-0 rounded-2xl border border-border bg-card p-6 md:p-8 hover:shadow-md hover:border-foreground/20 transition-all';
 
               return (
                 <motion.div
                   key={item.label}
+                  className="min-w-0"
                   initial={{ opacity: 0, y: 12 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: i * 0.05 }}
