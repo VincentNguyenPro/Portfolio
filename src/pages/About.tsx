@@ -100,7 +100,7 @@ export default function About() {
 
 
         {/* Mon histoire */}
-        <section className="px-6 lg:px-8 py-20 md:py-28 border-t border-border">
+        <section className="px-6 lg:px-8 py-12 md:py-28 border-t border-border">
             <div className="max-w-7xl mx-auto">
             <ScrollReveal>
               <p className="text-3xl md:text-4xl font-semibold tracking-tight uppercase text-muted-foreground mb-6">
@@ -160,7 +160,7 @@ export default function About() {
         </section>
 
         {/* Mon parcours professionnel */}
-        <section className="px-6 lg:px-8 py-20 md:py-28 border-t border-border">
+        <section className="px-6 lg:px-8 py-12 md:py-28 border-t border-border">
           <div className="max-w-7xl mx-auto">
             <ScrollReveal>
               <p className="text-3xl md:text-4xl font-semibold tracking-tight uppercase text-muted-foreground mb-6">
@@ -219,7 +219,7 @@ export default function About() {
 
 
         {/* Formation */}
-        <section className="px-6 lg:px-8 py-20 md:py-28 border-t border-border bg-muted/30">
+        <section className="px-6 lg:px-8 py-12 md:py-28 border-t border-border bg-muted/30">
           <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 lg:gap-16">
             <div className="space-y-12">
               <div>

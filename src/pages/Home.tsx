@@ -24,8 +24,8 @@ export default function Home() {
       />
       <div className="min-h-screen">
         {/* HERO */}
-        <section className="px-6 lg:px-8 pt-16 pb-12 md:pt-24 md:pb-16 border-b border-border bg-background">
-          <div className="max-w-7xl mx-auto grid md:grid-cols-[1.4fr_1fr] gap-10 lg:gap-16 items-start">
+        <section className="px-6 lg:px-8 pt-10 pb-8 md:pt-24 md:pb-16 border-b border-border bg-background">
+          <div className="max-w-7xl mx-auto grid md:grid-cols-[1.4fr_1fr] gap-8 md:gap-10 lg:gap-16 items-start">
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
@@ -94,7 +94,7 @@ export default function Home() {
           </div>
 
           {/* Stats strip */}
-          <div className="max-w-7xl mx-auto mt-12 pt-8 border-t border-border grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="max-w-7xl mx-auto mt-8 pt-6 md:mt-12 md:pt-8 border-t border-border grid grid-cols-2 md:grid-cols-4 gap-6">
             {stats.map((s) => (
               <div key={s.label} className="space-y-1">
                 <div className="text-3xl md:text-4xl font-semibold tracking-tight">
@@ -108,7 +108,7 @@ export default function Home() {
         </section>
 
         {/* INTRO */}
-        <section className="py-24 md:py-32 px-6 lg:px-8 bg-background">
+        <section className="py-14 md:py-32 px-6 lg:px-8 bg-background">
           <div className="max-w-7xl mx-auto">
             <ScrollReveal>
               <p className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight uppercase text-muted-foreground mb-6">
@@ -132,10 +132,10 @@ export default function Home() {
 
 
         {/* EXPERTISES */}
-        <section className="py-24 md:py-32 px-6 lg:px-8 border-t border-border bg-muted/30">
+        <section className="py-14 md:py-32 px-6 lg:px-8 border-t border-border bg-muted/30">
           <div className="max-w-7xl mx-auto">
             <ScrollReveal>
-              <div className="flex items-end justify-between flex-wrap gap-4 mb-14">
+              <div className="flex items-end justify-between flex-wrap gap-4 mb-8 md:mb-14">
                 <div>
                   <p className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight uppercase text-muted-foreground mb-3">
                     Expertises
@@ -171,10 +171,10 @@ export default function Home() {
         </section>
 
         {/* FEATURED PROJECTS */}
-        <section className="py-24 md:py-32 px-6 lg:px-8 border-t border-border">
+        <section className="py-14 md:py-32 px-6 lg:px-8 border-t border-border">
           <div className="max-w-7xl mx-auto">
             <ScrollReveal>
-              <div className="flex items-end justify-between flex-wrap gap-4 mb-14">
+              <div className="flex items-end justify-between flex-wrap gap-4 mb-8 md:mb-14">
                 <div>
                   <p className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight uppercase text-muted-foreground mb-3">
                     Projets
@@ -258,7 +258,7 @@ export default function Home() {
         </section>
 
         {/* CTA */}
-        <section className="py-24 md:py-32 px-6 lg:px-8 border-t border-border bg-muted/30">
+        <section className="py-14 md:py-32 px-6 lg:px-8 border-t border-border bg-muted/30">
           <ScrollReveal>
             <div className="max-w-3xl mx-auto text-center space-y-6">
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight">

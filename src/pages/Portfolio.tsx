@@ -34,7 +34,7 @@ export default function Portfolio() {
           </div>
         </section>
 
-        <section className="px-6 lg:px-8 py-16 md:py-24">
+        <section className="px-6 lg:px-8 py-10 md:py-24">
           <div className="max-w-7xl mx-auto space-y-6">
             {projects.map((project, i) => (
               <ScrollReveal key={project.id} delay={i * 0.05}>

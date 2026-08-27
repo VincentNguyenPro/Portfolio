@@ -53,7 +53,7 @@ export default function Blog() {
           </div>
         </section>
 
-        <section className="px-6 lg:px-8 py-16 md:py-24">
+        <section className="px-6 lg:px-8 py-10 md:py-24">
           <div className="max-w-7xl mx-auto">
             <div className="flex flex-wrap gap-2 mb-10">
               <button

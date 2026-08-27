@@ -194,7 +194,7 @@ export default function BlogPost() {
           </div>
         </div>
 
-        <div className="px-6 lg:px-8 py-12 md:py-16">
+        <div className="px-6 lg:px-8 py-8 md:py-16">
           <div className="max-w-5xl mx-auto space-y-12">
             {groups.map((g, idx) => {
               if (g.text && g.image) {

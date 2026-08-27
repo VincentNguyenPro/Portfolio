@@ -72,7 +72,7 @@ export default function ProjectDetail() {
         </section>
 
         {/* Body */}
-        <div className="px-6 lg:px-8 py-20 md:py-28">
+        <div className="px-6 lg:px-8 py-12 md:py-28">
           <div className="max-w-7xl mx-auto space-y-16">
             <div className="flex flex-wrap items-center gap-3 text-sm md:text-base font-medium tracking-wider uppercase text-foreground/80 border-b border-border pb-8">
               <span>{project.company}</span>

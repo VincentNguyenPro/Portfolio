@@ -100,7 +100,7 @@ ${form.message}`;
           </div>
         </section>
 
-        <section className="px-6 lg:px-8 py-16 md:py-24">
+        <section className="px-6 lg:px-8 py-10 md:py-24">
           <div className="max-w-7xl mx-auto grid sm:grid-cols-2 gap-4">
             {contactItems.map((item, i) => {
               const Icon = item.icon;
