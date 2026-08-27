@@ -32,10 +32,15 @@ export default function Contact() {
     type: '',
     message: '',
   });
+  const [typeError, setTypeError] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const subject = `[Contact portfolio] ${form.type || 'Nouveau message'} - ${form.prenom} ${form.nom}`;
+    if (!form.type) {
+      setTypeError(true);
+      return;
+    }
+    const subject = `[Contact portfolio] ${form.type} - ${form.prenom} ${form.nom}`;
     const body = `Nom : ${form.nom}
 Prénom : ${form.prenom}
 Email : ${form.email}
@@ -215,9 +220,17 @@ ${form.message}`;
               <Label htmlFor="type">Type d'opportunité</Label>
               <Select
                 value={form.type}
-                onValueChange={(v) => setForm({ ...form, type: v })}
+                onValueChange={(v) => {
+                  setForm({ ...form, type: v });
+                  setTypeError(false);
+                }}
               >
-                <SelectTrigger id="type">
+                <SelectTrigger
+                  id="type"
+                  aria-invalid={typeError}
+                  aria-describedby={typeError ? 'type-error' : undefined}
+                  className={typeError ? 'border-destructive' : undefined}
+                >
                   <SelectValue placeholder="Sélectionnez une option" />
                 </SelectTrigger>
                 <SelectContent>
@@ -228,6 +241,11 @@ ${form.message}`;
                   ))}
                 </SelectContent>
               </Select>
+              {typeError && (
+                <p id="type-error" className="text-sm text-destructive">
+                  Merci de sélectionner un type d'opportunité.
+                </p>
+              )}
             </div>
 
             <div className="space-y-2">
