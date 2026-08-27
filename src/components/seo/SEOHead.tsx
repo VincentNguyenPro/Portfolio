@@ -24,7 +24,8 @@ export function SEOHead({ title, exactTitle, description, image, type = 'website
   const fullDescription = description || photographerInfo.heroIntroduction;
   const canonicalPath = location.pathname === '/' ? '/' : location.pathname.replace(/\/$/, '');
   const canonicalUrl = `${SITE_URL}${canonicalPath}`;
-  const ogImage = image || photographerInfo.portraitImage;
+  const rawImage = image || photographerInfo.portraitImage;
+  const ogImage = rawImage.startsWith('http') ? rawImage : `${SITE_URL}${rawImage}`;
 
   useEffect(() => {
     document.title = fullTitle;
