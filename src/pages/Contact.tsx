@@ -148,7 +148,7 @@ ${form.message}`;
           </div>
 
           <div className="max-w-7xl mx-auto mt-12 flex flex-col items-start gap-3">
-            <p className="text-sm" style={{ color: '#6b7280' }}>
+            <p className="text-sm text-muted-foreground">
               Préférez-vous consulter mon CV ?
             </p>
             <Button asChild variant="outline" size="lg" className="gap-2">
