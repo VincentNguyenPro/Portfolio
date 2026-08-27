@@ -51,6 +51,12 @@ Images referenced by `projects.ts`/`blog.ts` are imported from `src/assets/` (Vi
 
 shadcn/ui components live in `src/components/ui/`, configured via `components.json` (aliases `@/components`, `@/lib`, `@/hooks`, etc., resolved through the `@` → `src` path alias in `vite.config.ts`/`tsconfig.json`). `tailwind-plus/` at the repo root (examples, ui-blocks, ui-kits) is reference material only — it is not imported by anything under `src/`.
 
+### Mobile navigation & contact CTA
+
+The mobile header menu (`Header.tsx`) is a bottom-sheet (`Sheet` with `side="bottom"`), not a side drawer — grouped into a "Navigation" list (all routes except `/projets`) and a "Projets" list (one row per entry in `src/data/projects.ts`, each with a per-slug icon from a `projectIcons` map and a shortened label from `projectShortTitles`, both keyed by slug).
+
+`MobileContactBar.tsx` is a global floating bar rendered once in `Layout.tsx` (mobile only), showing a CV download link and a "Me contacter" trigger (`MobileContactSheet.tsx`, a second bottom sheet with the actual contact form). It hides itself on `/contact` and whenever any on-page element carries a `data-contact-cta` attribute and is in the viewport (see `Home.tsx`), so the floating bar never duplicates a CTA the page is already showing; it also slides out on scroll-down and back in on scroll-up.
+
 ### Deployment
 
 `.github/workflows/deploy.yml` builds the app and FTP-deploys `dist/` to Hostinger on every push to `main` (no staging environment/preview deploys).
