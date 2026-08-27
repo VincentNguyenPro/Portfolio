@@ -189,7 +189,7 @@ export default function About() {
 
 
         {/* Mon histoire */}
-        <section className="px-6 lg:px-8 py-8 md:py-28 border-t border-border">
+        <section className="px-6 lg:px-8 py-8 md:py-28 border-t border-border min-h-[100dvh] md:min-h-0 flex flex-col justify-center md:block">
             <div className="max-w-7xl mx-auto">
             <ScrollReveal>
               <p className="text-2xl md:text-4xl font-semibold tracking-tight uppercase text-muted-foreground mb-3 md:mb-6">
@@ -199,38 +199,35 @@ export default function About() {
                 De l'ingénierie au Product Management : un parcours forgé dans la complexité
               </h2>
             </ScrollReveal>
-            {/* Mobile: vertical stepper + fixed detail card */}
-            <div className="md:hidden flex gap-3">
-              <div className="relative shrink-0 pt-1">
-                <div className="absolute left-[7px] top-3 bottom-3 w-px bg-border" />
-                <div className="relative flex flex-col">
-                  {storyMilestones.map((m, i) => {
-                    const active = i === activeMilestone;
-                    return (
-                      <button
-                        key={m.year}
-                        type="button"
-                        onClick={() => setActiveMilestone(i)}
-                        className="relative z-10 flex items-center gap-2 py-2.5 text-left"
+            {/* Mobile: horizontal stepper + fixed detail card */}
+            <div className="md:hidden">
+              <div className="flex items-start">
+                {storyMilestones.map((m, i) => {
+                  const active = i === activeMilestone;
+                  return (
+                    <button
+                      key={m.year}
+                      type="button"
+                      onClick={() => setActiveMilestone(i)}
+                      className="relative z-10 flex flex-1 flex-col items-center gap-1.5 min-w-0 px-0.5"
+                    >
+                      <span
+                        className={`size-3.5 rounded-full ring-4 ring-background transition-colors ${
+                          active ? 'bg-blue-600' : 'bg-border'
+                        }`}
+                      />
+                      <span
+                        className={`text-[10px] font-semibold leading-tight text-center transition-colors ${
+                          active ? 'text-blue-600' : 'text-muted-foreground'
+                        }`}
                       >
-                        <span
-                          className={`size-3.5 rounded-full ring-4 ring-background shrink-0 transition-colors ${
-                            active ? 'bg-blue-600' : 'bg-border'
-                          }`}
-                        />
-                        <span
-                          className={`text-xs font-semibold whitespace-nowrap transition-colors ${
-                            active ? 'text-blue-600' : 'text-muted-foreground'
-                          }`}
-                        >
-                          {m.year}
-                        </span>
-                      </button>
-                    );
-                  })}
-                </div>
+                        {m.year}
+                      </span>
+                    </button>
+                  );
+                })}
               </div>
-              <div className="flex-1 min-w-0 rounded-2xl border border-border bg-card p-5 min-h-[260px]">
+              <div className="mt-4 rounded-2xl border border-border bg-card p-5 min-h-[220px]">
                 <p className="text-xs font-semibold tracking-wide uppercase text-blue-600 mb-2">
                   {storyMilestones[activeMilestone].year}
                 </p>
