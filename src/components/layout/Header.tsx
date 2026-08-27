@@ -33,7 +33,7 @@ export function Header() {
       )}
     >
       <div className="px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto flex items-center justify-between h-16">
+        <div className="max-w-7xl mx-auto flex items-center justify-between h-14 md:h-16">
           <Link
             to="/"
             className={cn(
@@ -41,7 +41,7 @@ export function Header() {
               isTransparent ? 'text-white hover:text-white/80' : 'text-foreground hover:text-foreground/80'
             )}
           >
-            {photographerInfo.name}
+            Accueil
           </Link>
 
           <nav className="hidden md:flex items-center gap-8">

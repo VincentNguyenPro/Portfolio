@@ -6,12 +6,13 @@ import { getFeaturedProjects } from '@/data/projects';
 import { SEOHead } from '@/components/seo/SEOHead';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { MobileCarousel } from '@/components/ui/MobileCarousel';
+import { CountUpStat } from '@/components/ui/CountUpStat';
 
 const stats = [
-  { value: '10', suffix: ' ans', label: "d'expérience produit & SI" },
-  { value: '+5', label: 'produits digitaux pilotés' },
-  { value: '8 M€', label: 'budget produit piloté' },
-  { value: '+250', label: 'utilisateurs accompagnés' },
+  { target: 10, suffix: ' ans', label: "d'expérience produit & SI" },
+  { target: 5, prefix: '+', label: 'produits digitaux pilotés' },
+  { target: 8, suffix: ' M€', label: 'budget produit piloté' },
+  { target: 250, prefix: '+', label: 'utilisateurs accompagnés' },
 ];
 
 export default function Home() {
@@ -25,7 +26,7 @@ export default function Home() {
       />
       <div className="min-h-screen">
         {/* HERO */}
-        <section className="px-6 lg:px-8 pt-6 pb-6 md:pt-24 md:pb-16 border-b border-border bg-background">
+        <section className="px-6 lg:px-8 pt-20 pb-6 md:pt-24 md:pb-16 border-b border-border bg-background">
           <div className="max-w-7xl mx-auto grid md:grid-cols-[1.4fr_1fr] gap-8 md:gap-10 lg:gap-16 items-start">
             <motion.div
               initial={{ opacity: 0, y: 16 }}
@@ -33,25 +34,12 @@ export default function Home() {
               transition={{ duration: 0.6 }}
               className="space-y-4 md:space-y-6"
             >
-              <div className="inline-flex flex-col items-start gap-2 px-3 py-2 md:px-4 md:py-3 rounded-2xl border border-border bg-muted/40 text-sm md:text-base font-medium tracking-wide text-muted-foreground">
-                <div className="inline-flex items-center gap-2">
-                  <span className="relative flex size-2.5">
-                    <span className="absolute inline-flex size-full rounded-full bg-emerald-500 opacity-75 animate-ping" />
-                    <span className="relative inline-flex size-2.5 rounded-full bg-emerald-500" />
-                  </span>
-                  {photographerInfo.availability}
-                </div>
-                <div className="inline-flex items-center gap-2">
-                  📍 Paris · 💻 Hybride · ✅ Disponible immédiatement
-                </div>
-              </div>
-
               <p className="text-3xl sm:text-4xl md:text-6xl font-semibold tracking-tight uppercase text-muted-foreground break-words">
                 Vincent Nguyen
               </p>
-              <h1 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight">
+              <h1 className="text-[clamp(1rem,5.2vw,1.5rem)] sm:text-3xl md:text-4xl font-semibold tracking-tight whitespace-nowrap">
                 Product Manager • Product Owner
-                <span className="block text-muted-foreground font-light mt-2">
+                <span className="block text-muted-foreground font-light mt-2 text-base sm:text-3xl md:text-4xl whitespace-normal">
                   Transformation digitale
                 </span>
               </h1>
@@ -63,14 +51,15 @@ export default function Home() {
               <div className="flex flex-nowrap items-center gap-2 md:gap-4 pt-2">
                 <Link
                   to="/projets"
-                  className="group inline-flex items-center gap-1.5 md:gap-2 px-4 py-2.5 md:px-6 md:py-3 rounded-full bg-foreground text-background font-medium text-sm md:text-base whitespace-nowrap hover:opacity-90 transition-opacity"
+                  className="group flex flex-1 items-center justify-center gap-1.5 md:gap-2 px-4 py-2.5 md:px-6 md:py-3 rounded-full bg-blue-600 text-white font-medium text-sm md:text-base whitespace-nowrap hover:bg-blue-700 transition-colors"
                 >
                   Voir mes projets
                   <ArrowRight className="size-4 shrink-0 transition-transform group-hover:translate-x-0.5" />
                 </Link>
                 <Link
                   to="/contact"
-                  className="group inline-flex items-center gap-2 px-4 py-2.5 md:px-6 md:py-3 rounded-full border border-border text-foreground font-medium text-sm md:text-base whitespace-nowrap hover:bg-muted transition-colors"
+                  data-contact-cta
+                  className="group flex flex-1 items-center justify-center gap-2 px-4 py-2.5 md:px-6 md:py-3 rounded-full border border-border text-foreground font-medium text-sm md:text-base whitespace-nowrap hover:bg-muted transition-colors"
                 >
                   Me contacter
                 </Link>
@@ -90,6 +79,13 @@ export default function Home() {
                   alt={photographerInfo.name}
                   className="w-full h-full object-cover object-top grayscale"
                 />
+                <div className="absolute top-3 right-3 md:top-4 md:right-4 inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-full bg-black/40 backdrop-blur border border-white/20 text-white text-xs font-medium">
+                  <span className="relative flex size-2">
+                    <span className="absolute inline-flex size-full rounded-full bg-emerald-400 opacity-75 animate-ping" />
+                    <span className="relative inline-flex size-2 rounded-full bg-emerald-400" />
+                  </span>
+                  Disponible
+                </div>
               </div>
             </motion.div>
           </div>
@@ -97,13 +93,7 @@ export default function Home() {
           {/* Stats strip */}
           <div className="max-w-7xl mx-auto mt-6 pt-4 md:mt-12 md:pt-8 border-t border-border grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
             {stats.map((s) => (
-              <div key={s.label} className="space-y-1">
-                <div className="text-2xl md:text-4xl font-semibold tracking-tight">
-                  {s.value}
-                  {s.suffix && <span className="text-muted-foreground text-2xl">{s.suffix}</span>}
-                </div>
-                <div className="text-xs md:text-sm text-muted-foreground font-light">{s.label}</div>
-              </div>
+              <CountUpStat key={s.label} target={s.target} prefix={s.prefix} suffix={s.suffix} label={s.label} />
             ))}
           </div>
         </section>
@@ -122,7 +112,7 @@ export default function Home() {
               </p>
               <Link
                 to="/parcours"
-                className="group inline-flex items-center gap-2 mt-10 px-6 py-3 rounded-full bg-foreground text-background font-medium hover:opacity-90 transition-opacity"
+                className="group inline-flex items-center gap-2 mt-10 px-6 py-3 rounded-full bg-blue-600 text-white font-medium hover:bg-blue-700 transition-colors"
               >
                 Découvrir mon parcours complet
                 <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
@@ -153,24 +143,22 @@ export default function Home() {
               items={skillGroups}
               keyExtractor={(group) => group.title}
               trackClassName="flex gap-4 overflow-x-auto overflow-y-hidden hide-scrollbar snap-x snap-mandatory -mx-6 px-6 pb-2 sm:grid sm:grid-cols-2 sm:gap-4 sm:overflow-visible sm:mx-0 sm:px-0 sm:pb-0 lg:grid-cols-3"
-              itemClassName="shrink-0 w-[80%] snap-center sm:w-auto sm:shrink"
+              itemClassName="shrink-0 w-full snap-center sm:w-auto sm:shrink"
               navClassName="sm:hidden"
-              renderItem={(group, i) => (
-                <ScrollReveal delay={i * 0.05} className="h-full">
-                  <div className="h-full rounded-2xl border border-border bg-card p-6 hover:shadow-md transition-shadow">
-                    <h3 className="text-xl font-semibold tracking-tight mb-4">{group.title}</h3>
-                    <ul className="flex flex-wrap gap-2">
-                      {group.items.map((item) => (
-                        <li
-                          key={item}
-                          className="text-sm font-medium px-3 py-1.5 rounded-full bg-muted text-muted-foreground"
-                        >
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </ScrollReveal>
+              renderItem={(group) => (
+                <div className="h-full rounded-2xl border border-border bg-card p-6 hover:shadow-md transition-shadow">
+                  <h3 className="text-xl font-semibold tracking-tight mb-4">{group.title}</h3>
+                  <ul className="flex flex-wrap gap-2">
+                    {group.items.map((item) => (
+                      <li
+                        key={item}
+                        className="text-sm font-medium px-3 py-1.5 rounded-full bg-muted text-muted-foreground"
+                      >
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               )}
             />
           </div>
@@ -180,7 +168,7 @@ export default function Home() {
         <section className="py-14 md:py-32 px-6 lg:px-8 border-t border-border">
           <div className="max-w-7xl mx-auto">
             <ScrollReveal>
-              <div className="flex items-end justify-between flex-wrap gap-4 mb-8 md:mb-14">
+              <div className="flex items-end justify-between flex-wrap gap-4 mb-5 md:mb-14">
                 <div>
                   <p className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight uppercase text-muted-foreground mb-3">
                     Projets
@@ -203,18 +191,17 @@ export default function Home() {
               items={featured}
               keyExtractor={(project) => project.id}
               trackClassName="flex gap-4 overflow-x-auto overflow-y-hidden hide-scrollbar snap-x snap-mandatory -mx-6 px-6 pb-2 md:grid md:grid-cols-2 md:gap-6 md:overflow-visible md:mx-0 md:px-0 md:pb-0"
-              itemClassName="shrink-0 w-[85%] snap-center md:w-auto md:shrink"
+              itemClassName="shrink-0 w-full snap-center md:w-auto md:shrink"
               navClassName="md:hidden"
-              renderItem={(project, i) => (
-                <ScrollReveal delay={i * 0.1} className="h-full">
+              renderItem={(project) => (
                   <Link
                     to={`/projet/${project.slug}`}
                     className="group block h-full rounded-2xl overflow-hidden border border-border bg-card hover:shadow-xl transition-all"
                   >
                     <div
-                      className={`relative aspect-[16/10] overflow-hidden ${
+                      className={`relative aspect-[16/9] md:aspect-[16/10] overflow-hidden ${
                         project.coverImage ? 'bg-muted' : `bg-gradient-to-br ${project.coverGradient}`
-                      } p-8 flex flex-col justify-between text-white`}
+                      } p-5 md:p-8 flex flex-col justify-end text-white`}
                     >
                       {project.coverImage && (
                         <>
@@ -227,42 +214,40 @@ export default function Home() {
                           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-black/10" />
                         </>
                       )}
-                      <div className="relative flex items-start justify-end gap-2">
-                        <div className="flex items-center gap-2">
-                          {project.badge && (
-                            <span className="text-[10px] font-semibold tracking-wide px-2 py-1 rounded-full bg-white/15 backdrop-blur border border-white/20">
-                              {project.badge}
-                            </span>
-                          )}
-                          <ArrowUpRight className="size-5 opacity-90 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-                        </div>
-                      </div>
+                      {project.badge && (
+                        <span className="absolute top-3 right-3 md:top-4 md:right-4 text-[9px] md:text-[10px] font-semibold tracking-wide px-2 py-1 rounded-full bg-white/15 backdrop-blur border border-white/20">
+                          {project.badge}
+                        </span>
+                      )}
                       <div className="relative">
-                        <h3 className="text-2xl md:text-3xl font-semibold leading-tight">
+                        <h3 className="text-xl md:text-3xl font-semibold leading-tight line-clamp-2 md:line-clamp-none">
                           {project.title}
                         </h3>
                       </div>
                     </div>
-                    <div className="p-6">
-                      <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm font-medium tracking-wider uppercase text-foreground mb-3">
+                    <div className="p-5 md:p-6">
+                      <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm font-medium tracking-wider uppercase text-foreground mb-2 md:mb-3 min-h-10">
                         <span>{project.company}</span>
                         <span className="text-muted-foreground/60">·</span>
                         <span className="text-muted-foreground">{project.period}</span>
                       </div>
-                      <p className="text-base text-muted-foreground font-light leading-relaxed mb-5">
+                      <p className="text-base text-muted-foreground font-light leading-relaxed mb-3 md:mb-5 line-clamp-2 md:line-clamp-none">
                         {project.summary}
                       </p>
-                      <div className="flex flex-wrap gap-4">
+                      <div className="grid grid-cols-3 gap-3">
                         {project.metrics.slice(0, 3).map((m) => (
                           <div key={m.label}>
-                            <div className="text-xl font-semibold tracking-tight">{m.value}</div>
-                            <div className="text-sm text-muted-foreground">{m.label}</div>
+                            <div className="text-lg md:text-xl font-semibold tracking-tight min-h-14 md:min-h-0">{m.value}</div>
+                            <div className="text-xs md:text-sm text-muted-foreground min-h-8">{m.label}</div>
                           </div>
                         ))}
                       </div>
+                      <div className="flex items-center gap-1.5 text-sm font-semibold text-foreground mt-3 md:mt-5 pt-3 md:pt-5 border-t border-border">
+                        Voir le projet
+                        <ArrowUpRight className="size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                      </div>
                     </div>
                   </Link>
-                </ScrollReveal>
               )}
             />
           </div>
@@ -280,7 +265,8 @@ export default function Home() {
               </p>
               <Link
                 to="/contact"
-                className="group inline-flex items-center gap-2 px-6 py-3 rounded-full bg-foreground text-background font-medium hover:opacity-90 transition-opacity"
+                data-contact-cta
+                className="group inline-flex items-center gap-2 px-6 py-3 rounded-full bg-blue-600 text-white font-medium hover:bg-blue-700 transition-colors"
               >
                 Me contacter
                 <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />

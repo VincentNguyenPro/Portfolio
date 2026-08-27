@@ -62,7 +62,7 @@ export default function Blog() {
                 className={cn(
                   'text-xs font-semibold tracking-wider uppercase px-3 py-1.5 rounded-full border transition-colors',
                   selected === 'all'
-                    ? 'bg-foreground text-background border-foreground'
+                    ? 'bg-blue-600 text-white border-blue-600'
                     : 'bg-card text-muted-foreground border-border hover:text-foreground hover:border-foreground/40'
                 )}
               >

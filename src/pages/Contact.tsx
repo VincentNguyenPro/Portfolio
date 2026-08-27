@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
 import { Mail, Linkedin, ArrowUpRight, Send, Download } from 'lucide-react';
-import { useState } from 'react';
 import { photographerInfo } from '@/data/photographer';
 import { SEOHead } from '@/components/seo/SEOHead';
 import { Input } from '@/components/ui/input';
@@ -14,44 +13,10 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
-
-const RECIPIENT_EMAIL = 'vincent.nguyen75020@gmail.com';
-
-const OPPORTUNITY_TYPES = [
-  'CDI/CDD',
-  'Mission freelance',
-  'Echange informel',
-  'Autre',
-];
+import { OPPORTUNITY_TYPES, useContactForm } from '@/hooks/useContactForm';
 
 export default function Contact() {
-  const [form, setForm] = useState({
-    nom: '',
-    prenom: '',
-    email: '',
-    type: '',
-    message: '',
-  });
-  const [typeError, setTypeError] = useState(false);
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!form.type) {
-      setTypeError(true);
-      return;
-    }
-    const subject = `[Contact portfolio] ${form.type} - ${form.prenom} ${form.nom}`;
-    const body = `Nom : ${form.nom}
-Prénom : ${form.prenom}
-Email : ${form.email}
-Type d'opportunité : ${form.type}
-
-Message :
-${form.message}`;
-    window.location.href = `mailto:${RECIPIENT_EMAIL}?subject=${encodeURIComponent(
-      subject,
-    )}&body=${encodeURIComponent(body)}`;
-  };
+  const { form, setForm, typeError, setTypeError, handleSubmit } = useContactForm();
 
   const contactItems = [
     {
