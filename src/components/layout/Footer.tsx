@@ -6,7 +6,7 @@ export function Footer() {
 
   return (
     <footer className="border-t border-border">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 py-10">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 pt-10 pb-24 md:pb-10">
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-muted-foreground font-light tracking-wide">
             © {currentYear} {photographerInfo.name}. Tous droits réservés.

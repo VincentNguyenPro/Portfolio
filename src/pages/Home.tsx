@@ -5,6 +5,7 @@ import { photographerInfo, skillGroups } from '@/data/photographer';
 import { getFeaturedProjects } from '@/data/projects';
 import { SEOHead } from '@/components/seo/SEOHead';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
+import { MobileCarousel } from '@/components/ui/MobileCarousel';
 
 const stats = [
   { value: '10', suffix: ' ans', label: "d'expérience produit & SI" },
@@ -148,13 +149,14 @@ export default function Home() {
               </div>
             </ScrollReveal>
 
-            <div className="flex gap-4 overflow-x-auto snap-x snap-mandatory -mx-6 px-6 pb-2 sm:grid sm:grid-cols-2 sm:gap-4 sm:overflow-visible sm:mx-0 sm:px-0 sm:pb-0 lg:grid-cols-3">
-              {skillGroups.map((group, i) => (
-                <ScrollReveal
-                  key={group.title}
-                  delay={i * 0.05}
-                  className="shrink-0 w-[80%] snap-center sm:w-auto sm:shrink"
-                >
+            <MobileCarousel
+              items={skillGroups}
+              keyExtractor={(group) => group.title}
+              trackClassName="flex gap-4 overflow-x-auto snap-x snap-mandatory -mx-6 px-6 pb-2 sm:grid sm:grid-cols-2 sm:gap-4 sm:overflow-visible sm:mx-0 sm:px-0 sm:pb-0 lg:grid-cols-3"
+              itemClassName="shrink-0 w-[80%] snap-center sm:w-auto sm:shrink"
+              navClassName="sm:hidden"
+              renderItem={(group, i) => (
+                <ScrollReveal delay={i * 0.05} className="h-full">
                   <div className="h-full rounded-2xl border border-border bg-card p-6 hover:shadow-md transition-shadow">
                     <h3 className="text-xl font-semibold tracking-tight mb-4">{group.title}</h3>
                     <ul className="flex flex-wrap gap-2">
@@ -169,8 +171,8 @@ export default function Home() {
                     </ul>
                   </div>
                 </ScrollReveal>
-              ))}
-            </div>
+              )}
+            />
           </div>
         </section>
 
@@ -197,16 +199,17 @@ export default function Home() {
               </div>
             </ScrollReveal>
 
-            <div className="flex gap-4 overflow-x-auto snap-x snap-mandatory -mx-6 px-6 pb-2 md:grid md:grid-cols-2 md:gap-6 md:overflow-visible md:mx-0 md:px-0 md:pb-0">
-              {featured.map((project, i) => (
-                <ScrollReveal
-                  key={project.id}
-                  delay={i * 0.1}
-                  className="shrink-0 w-[85%] snap-center md:w-auto md:shrink"
-                >
+            <MobileCarousel
+              items={featured}
+              keyExtractor={(project) => project.id}
+              trackClassName="flex gap-4 overflow-x-auto snap-x snap-mandatory -mx-6 px-6 pb-2 md:grid md:grid-cols-2 md:gap-6 md:overflow-visible md:mx-0 md:px-0 md:pb-0"
+              itemClassName="shrink-0 w-[85%] snap-center md:w-auto md:shrink"
+              navClassName="md:hidden"
+              renderItem={(project, i) => (
+                <ScrollReveal delay={i * 0.1} className="h-full">
                   <Link
                     to={`/projet/${project.slug}`}
-                    className="group block rounded-2xl overflow-hidden border border-border bg-card hover:shadow-xl transition-all"
+                    className="group block h-full rounded-2xl overflow-hidden border border-border bg-card hover:shadow-xl transition-all"
                   >
                     <div
                       className={`relative aspect-[16/10] overflow-hidden ${
@@ -260,8 +263,8 @@ export default function Home() {
                     </div>
                   </Link>
                 </ScrollReveal>
-              ))}
-            </div>
+              )}
+            />
           </div>
         </section>
 
