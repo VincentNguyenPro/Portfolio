@@ -108,7 +108,7 @@ const App = () => (
           <Toaster />
           <Sonner />
           <MotionConfig reducedMotion="user">
-            <BrowserRouter>
+            <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
               <ScrollToTop />
               <SkipToContent />
               <Layout>
