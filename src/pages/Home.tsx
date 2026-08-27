@@ -24,15 +24,15 @@ export default function Home() {
       />
       <div className="min-h-screen">
         {/* HERO */}
-        <section className="px-6 lg:px-8 pt-10 pb-8 md:pt-24 md:pb-16 border-b border-border bg-background">
+        <section className="px-6 lg:px-8 pt-6 pb-6 md:pt-24 md:pb-16 border-b border-border bg-background">
           <div className="max-w-7xl mx-auto grid md:grid-cols-[1.4fr_1fr] gap-8 md:gap-10 lg:gap-16 items-start">
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="space-y-6"
+              className="space-y-4 md:space-y-6"
             >
-              <div className="inline-flex flex-col items-start gap-2 px-4 py-3 rounded-2xl border border-border bg-muted/40 text-sm md:text-base font-medium tracking-wide text-muted-foreground">
+              <div className="inline-flex flex-col items-start gap-2 px-3 py-2 md:px-4 md:py-3 rounded-2xl border border-border bg-muted/40 text-sm md:text-base font-medium tracking-wide text-muted-foreground">
                 <div className="inline-flex items-center gap-2">
                   <span className="relative flex size-2.5">
                     <span className="absolute inline-flex size-full rounded-full bg-emerald-500 opacity-75 animate-ping" />
@@ -55,21 +55,21 @@ export default function Home() {
                 </span>
               </h1>
 
-              <p className="text-lg text-muted-foreground font-light leading-relaxed text-left md:text-justify">
+              <p className="text-base md:text-lg text-muted-foreground font-light leading-relaxed text-left md:text-justify">
                 {photographerInfo.heroIntroduction}
               </p>
 
-              <div className="flex flex-wrap items-center gap-4 pt-2">
+              <div className="flex flex-wrap items-center gap-3 md:gap-4 pt-2">
                 <Link
                   to="/projets"
-                  className="group inline-flex items-center gap-2 px-6 py-3 rounded-full bg-foreground text-background font-medium hover:opacity-90 transition-opacity"
+                  className="group inline-flex items-center gap-2 px-5 py-2.5 md:px-6 md:py-3 rounded-full bg-foreground text-background font-medium hover:opacity-90 transition-opacity"
                 >
                   Voir mes projets
                   <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
                 </Link>
                 <Link
                   to="/contact"
-                  className="group inline-flex items-center gap-2 px-6 py-3 rounded-full border border-border text-foreground hover:bg-muted transition-colors"
+                  className="group inline-flex items-center gap-2 px-5 py-2.5 md:px-6 md:py-3 rounded-full border border-border text-foreground hover:bg-muted transition-colors"
                 >
                   Me contacter
                 </Link>
@@ -83,7 +83,7 @@ export default function Home() {
               className="md:sticky md:top-24 relative"
             >
               <div className="absolute -inset-3 rounded-3xl bg-gradient-to-br from-indigo-500/20 via-violet-500/15 to-emerald-500/15 blur-2xl" />
-              <div className="relative aspect-[4/5] rounded-3xl overflow-hidden border border-border bg-muted">
+              <div className="relative aspect-[4/3] sm:aspect-[4/5] rounded-3xl overflow-hidden border border-border bg-muted">
                 <img
                   src={photographerInfo.portraitImage}
                   alt={photographerInfo.name}
@@ -94,10 +94,10 @@ export default function Home() {
           </div>
 
           {/* Stats strip */}
-          <div className="max-w-7xl mx-auto mt-8 pt-6 md:mt-12 md:pt-8 border-t border-border grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="max-w-7xl mx-auto mt-6 pt-4 md:mt-12 md:pt-8 border-t border-border grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
             {stats.map((s) => (
               <div key={s.label} className="space-y-1">
-                <div className="text-3xl md:text-4xl font-semibold tracking-tight">
+                <div className="text-2xl md:text-4xl font-semibold tracking-tight">
                   {s.value}
                   {s.suffix && <span className="text-muted-foreground text-2xl">{s.suffix}</span>}
                 </div>
