@@ -263,8 +263,10 @@ export default function BlogPost() {
                   ? 'max-w-2xl mx-auto'
                   : w === 'lg'
                   ? 'max-w-3xl mx-auto'
-                  : w === 'full' || g.fullWidth
+                  : w === 'full'
                   ? ''
+                  : g.fullWidth
+                  ? 'max-w-3xl mx-auto'
                   : 'max-w-2xl mx-auto';
                 return (
                   <div key={idx} className={widthClass}>
