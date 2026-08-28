@@ -197,7 +197,7 @@ export default function Contact() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="hidden md:block max-w-7xl mx-auto mt-4 rounded-2xl border border-border bg-card p-5 space-y-3"
+            className="hidden md:block max-w-2xl mx-auto mt-4 rounded-2xl border border-border bg-card p-5 space-y-3"
           >
             <div>
               <p className="text-xs font-semibold tracking-[0.2em] uppercase text-muted-foreground mb-1">
