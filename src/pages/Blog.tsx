@@ -15,7 +15,7 @@ const categoryColor: Record<BlogCategory, string> = {
   Communauté: 'from-slate-700 via-slate-900 to-zinc-900',
 };
 
-const POSTS_PER_PAGE = 6;
+const POSTS_PER_PAGE = 8;
 
 export default function Blog() {
   const allPosts = useMemo(() => [...blogPosts].sort((a, b) => a.order - b.order), []);
@@ -51,28 +51,28 @@ export default function Blog() {
         description="Carnets de bord Product Management, IA et Innovation. Conférences, hackathons, retours d'expérience terrain."
       />
       <div className="min-h-screen">
-        <section className="px-6 lg:px-8 pt-6 pb-6 md:pt-24 md:pb-16 border-b border-border">
+        <section className="px-6 lg:px-8 pt-6 pb-6 md:pt-12 md:pb-6 border-b border-border">
           <div className="max-w-7xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="space-y-6"
+              className="space-y-3 md:space-y-3"
             >
-              <p className="text-3xl sm:text-4xl md:text-6xl font-semibold tracking-tight uppercase text-muted-foreground">
+              <p className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight uppercase text-muted-foreground">
                 Blog
               </p>
-              <h1 className="text-3xl sm:text-4xl md:text-6xl font-semibold tracking-tight">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight">
                 Carnets de bord Product, IA & Data
               </h1>
-              <p className="text-lg text-muted-foreground font-light leading-relaxed">
+              <p className="text-lg md:text-base text-muted-foreground font-light leading-relaxed">
                 Comptes-rendus d'événements, retours d'expérience et réflexions au fil de mes formations, ateliers et conférences.
               </p>
             </motion.div>
           </div>
         </section>
 
-        <section className="px-6 lg:px-8 py-10 md:py-24">
+        <section className="px-6 lg:px-8 py-10 md:py-10">
           <div className="max-w-7xl mx-auto">
             <div className="flex flex-wrap gap-2 mb-10">
               <button
@@ -107,7 +107,7 @@ export default function Blog() {
                 );
               })}
             </div>
-            <div ref={gridRef} className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 scroll-mt-24">
+            <div ref={gridRef} className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 scroll-mt-24">
             {paginatedPosts.map((post, i) => (
               <ScrollReveal key={post.slug} delay={i * 0.05}>
                 <Link

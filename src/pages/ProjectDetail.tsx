@@ -182,7 +182,7 @@ export default function ProjectDetail() {
         </div>
 
         {/* Navigation */}
-        <nav className="border-t border-border px-6 lg:px-8 py-5 md:py-10">
+        <nav className="md:hidden border-t border-border px-6 lg:px-8 py-5">
           <div className="max-w-7xl mx-auto grid grid-cols-2 gap-3 sm:gap-4">
             {previous ? (
               <Link
