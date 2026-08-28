@@ -97,26 +97,26 @@ export default function ProjectDetail() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7 }}
               >
-                <div className="flex flex-wrap items-center gap-2 text-sm font-medium tracking-wider uppercase text-muted-foreground mb-3">
+                <div className="flex flex-wrap items-center gap-2 text-base font-medium tracking-wider uppercase text-muted-foreground mb-3">
                   <span>{project.company}</span>
                   <span className="text-muted-foreground/60">·</span>
                   <span>{project.period}</span>
                   <span className="text-muted-foreground/60">·</span>
                   <span>{project.role}</span>
                 </div>
-                <h1 className="text-3xl font-semibold tracking-tight leading-[1.15] mb-3">
+                <h1 className="text-4xl font-semibold tracking-tight leading-[1.15] mb-3">
                   {project.title}
                 </h1>
-                <p className="text-base text-muted-foreground font-light leading-relaxed max-w-xl mb-5">
+                <p className="text-lg text-muted-foreground font-light leading-relaxed max-w-xl mb-5">
                   {project.summary}
                 </p>
                 <div className="grid grid-cols-3 gap-6 max-w-lg pt-4 border-t border-border">
                   {project.metrics.map((m) => (
                     <div key={m.label}>
-                      <div className="text-xl font-semibold tracking-tight">
+                      <div className="text-2xl font-semibold tracking-tight">
                         <KpiValue value={m.value} />
                       </div>
-                      <div className="text-xs text-muted-foreground">{m.label}</div>
+                      <div className="text-sm text-muted-foreground">{m.label}</div>
                     </div>
                   ))}
                 </div>

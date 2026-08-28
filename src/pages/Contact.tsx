@@ -42,7 +42,7 @@ export default function Contact() {
       />
 
       <div className="min-h-screen">
-        <section className="px-6 lg:px-8 pt-6 pb-6 md:pt-10 md:pb-4 border-b border-border">
+        <section className="px-6 lg:px-8 pt-6 pb-6 md:pt-10 md:pb-3 border-b border-border">
           <div className="max-w-7xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 16 }}
@@ -63,7 +63,7 @@ export default function Contact() {
           </div>
         </section>
 
-        <section className="px-6 lg:px-8 py-6 md:py-6">
+        <section className="px-6 lg:px-8 py-6 md:py-4">
           <div className="max-w-7xl mx-auto">
             {/* Mobile: icon-only CTAs */}
             <div className="md:hidden grid grid-cols-3 gap-3">
@@ -117,7 +117,7 @@ export default function Contact() {
             </motion.div>
 
             {/* Desktop: full cards with address/label, CV as a third tile */}
-            <div className="hidden md:grid sm:grid-cols-3 gap-4">
+            <div className="hidden md:grid sm:grid-cols-3 gap-3">
               {contactItems.map((item, i) => {
                 const Icon = item.icon;
                 const content = (
@@ -130,7 +130,7 @@ export default function Contact() {
                         <ArrowUpRight className="size-4 text-muted-foreground group-hover:text-foreground group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
                       )}
                     </div>
-                    <div className="mt-3">
+                    <div className="mt-2">
                       <p className="text-xs font-semibold tracking-[0.2em] uppercase text-muted-foreground mb-1">
                         {item.label}
                       </p>
@@ -140,7 +140,7 @@ export default function Contact() {
                 );
 
                 const className =
-                  'group block min-w-0 rounded-2xl border border-border bg-card p-4 hover:shadow-md hover:border-foreground/20 transition-all';
+                  'group block min-w-0 rounded-2xl border border-border bg-card p-3 hover:shadow-md hover:border-foreground/20 transition-all';
 
                 return (
                   <motion.div
@@ -173,7 +173,7 @@ export default function Contact() {
                 initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: contactItems.length * 0.05 }}
-                className="group block min-w-0 rounded-2xl border border-border bg-card p-4 hover:shadow-md hover:border-foreground/20 transition-all"
+                className="group block min-w-0 rounded-2xl border border-border bg-card p-3 hover:shadow-md hover:border-foreground/20 transition-all"
               >
                 <div className="flex items-center justify-between">
                   <div className="size-9 rounded-full bg-muted flex items-center justify-center">
@@ -181,7 +181,7 @@ export default function Contact() {
                   </div>
                   <ArrowUpRight className="size-4 text-muted-foreground group-hover:text-foreground group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
                 </div>
-                <div className="mt-3">
+                <div className="mt-2">
                   <p className="text-xs font-semibold tracking-[0.2em] uppercase text-muted-foreground mb-1">
                     CV
                   </p>
@@ -197,7 +197,7 @@ export default function Contact() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="hidden md:block max-w-2xl mx-auto mt-4 rounded-2xl border border-border bg-card p-5 space-y-3"
+            className="hidden md:block max-w-2xl mx-auto mt-3 rounded-2xl border border-border bg-card p-4 space-y-2"
           >
             <div>
               <p className="text-xs font-semibold tracking-[0.2em] uppercase text-muted-foreground mb-1">
@@ -208,7 +208,7 @@ export default function Contact() {
               </h2>
             </div>
 
-            <div className="grid sm:grid-cols-2 gap-3">
+            <div className="grid sm:grid-cols-2 gap-2">
               <div className="space-y-1">
                 <Label htmlFor="nom">Nom</Label>
                 <Input
@@ -278,7 +278,7 @@ export default function Contact() {
               <Textarea
                 id="message"
                 required
-                rows={3}
+                rows={2}
                 placeholder="Décrivez votre projet, contexte, calendrier…"
                 value={form.message}
                 onChange={(e) => setForm({ ...form, message: e.target.value })}
