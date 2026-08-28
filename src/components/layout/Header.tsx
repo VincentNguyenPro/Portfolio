@@ -90,7 +90,7 @@ export function Header() {
                       )}
                     </Link>
 
-                    <div className="absolute left-1/2 -translate-x-1/2 top-full pt-3 opacity-0 invisible translate-y-1 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-200">
+                    <div className="absolute left-0 top-full pt-3 opacity-0 invisible translate-y-1 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-200">
                       <div className="w-60 rounded-2xl border border-border bg-background shadow-lg p-2">
                         {projects.map((project) => (
                           <Link
