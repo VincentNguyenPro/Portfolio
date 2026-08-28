@@ -11,6 +11,13 @@ interface State {
   error?: Error;
 }
 
+const CHUNK_LOAD_ERROR_PATTERN = /dynamically imported module|importing a module script failed|loading chunk/i;
+const CHUNK_RELOAD_KEY = 'chunk-load-reload-attempted';
+
+function isChunkLoadError(error?: Error): boolean {
+  return !!error && CHUNK_LOAD_ERROR_PATTERN.test(error.message);
+}
+
 /**
  * Error Boundary component to catch and handle React errors gracefully
  * Provides a user-friendly error message and recovery option
@@ -28,6 +35,11 @@ export class ErrorBoundary extends Component<Props, State> {
     if (import.meta.env.DEV) {
       console.error('Error caught by boundary:', error, errorInfo);
     }
+
+    if (isChunkLoadError(error) && !sessionStorage.getItem(CHUNK_RELOAD_KEY)) {
+      sessionStorage.setItem(CHUNK_RELOAD_KEY, '1');
+      window.location.reload();
+    }
   }
 
   private handleReset = () => {
@@ -37,6 +49,10 @@ export class ErrorBoundary extends Component<Props, State> {
 
   public render() {
     if (this.state.hasError) {
+      if (isChunkLoadError(this.state.error) && !sessionStorage.getItem(CHUNK_RELOAD_KEY)) {
+        return <div className="min-h-screen" />;
+      }
+
       return (
         <div className="min-h-screen flex items-center justify-center px-6">
           <div className="max-w-md text-center space-y-6">
