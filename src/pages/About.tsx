@@ -379,7 +379,7 @@ export default function About() {
               />
             </div>
 
-            <div className="hidden md:grid md:grid-cols-[1.4fr_1fr] gap-10 lg:gap-16 items-stretch">
+            <div className="hidden md:grid md:grid-cols-[1.4fr_1fr] gap-10 lg:gap-16 items-center">
               <ScrollReveal>
                 <ul className="divide-y divide-border">
                   {experiences.map((exp, i) => (
@@ -398,10 +398,10 @@ export default function About() {
                   ))}
                 </ul>
               </ScrollReveal>
-              <ScrollReveal delay={0.1} className="h-full">
-                <div className="md:sticky md:top-24 relative h-full">
+              <ScrollReveal delay={0.1}>
+                <div className="relative">
                   <div className="absolute -inset-3 rounded-3xl bg-gradient-to-br from-amber-500/25 via-orange-500/15 to-rose-500/15 blur-2xl" />
-                  <div className="relative h-full rounded-3xl overflow-hidden border border-border bg-muted">
+                  <div className="relative aspect-[4/3] rounded-3xl overflow-hidden border border-border bg-muted">
                     <img
                       src={sunsetRoad}
                       alt="Route au coucher de soleil - symbole du parcours professionnel"
