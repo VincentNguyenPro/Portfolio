@@ -25,7 +25,7 @@ function ProjectCard({ project }: { project: Project }) {
       <div
         className={`relative aspect-[16/9] md:aspect-[16/10] overflow-hidden ${
           project.coverImage ? 'bg-muted' : `bg-gradient-to-br ${project.coverGradient}`
-        } p-5 md:p-8 flex flex-col justify-end text-white`}
+        } p-5 md:p-5 flex flex-col justify-end text-white`}
       >
         {project.coverImage && (
           <>
@@ -44,13 +44,13 @@ function ProjectCard({ project }: { project: Project }) {
           </span>
         )}
         <div className="relative">
-          <h3 className="text-xl md:text-3xl font-semibold leading-tight line-clamp-2 md:line-clamp-none">
+          <h3 className="text-xl md:text-xl font-semibold leading-tight line-clamp-2">
             {project.title}
           </h3>
         </div>
       </div>
-      <div className="p-5 md:p-6">
-        <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm font-medium tracking-wider uppercase text-foreground mb-3 min-h-10">
+      <div className="p-5 md:p-5">
+        <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm font-medium tracking-wider uppercase text-foreground mb-3 md:mb-2 min-h-10 md:min-h-0">
           <span>{project.company}</span>
           <span className="text-muted-foreground/60">·</span>
           <span className="text-muted-foreground">{project.period}</span>
@@ -76,7 +76,7 @@ export default function Home() {
       <div className="min-h-screen">
         {/* HERO */}
         <section className="px-6 lg:px-8 pt-20 pb-6 md:pt-24 md:pb-16 border-b border-border bg-background">
-          <div className="max-w-7xl mx-auto grid md:grid-cols-[1.4fr_1fr] gap-8 md:gap-10 lg:gap-16 items-start">
+          <div className="max-w-7xl mx-auto grid md:grid-cols-[1.7fr_1fr] gap-8 md:gap-10 lg:gap-16 items-start">
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
@@ -94,12 +94,23 @@ export default function Home() {
                 {photographerInfo.heroIntroduction}
               </p>
 
+              <p className="hidden md:block text-lg text-muted-foreground font-light leading-relaxed md:text-justify">
+                Product Manager &amp; Product Owner, 10 ans d'expérience en SI finance et transformation digitale. J'ai piloté des outils critiques (8 M€,&nbsp;+25&nbsp;ETP) dans des environnements multi-acteurs complexes, et j'utilise l'IA au quotidien pour accélérer la discovery comme la delivery.
+              </p>
+
               <div className="flex flex-nowrap items-center gap-2 md:gap-4 pt-2">
                 <Link
                   to="/projets"
                   className="group flex flex-1 items-center justify-center gap-1.5 md:gap-2 px-4 py-2.5 md:px-6 md:py-3 rounded-full bg-blue-600 text-white font-medium text-sm md:text-base whitespace-nowrap hover:bg-blue-700 transition-colors"
                 >
                   Voir mes projets
+                  <ArrowRight className="size-4 shrink-0 transition-transform group-hover:translate-x-0.5" />
+                </Link>
+                <Link
+                  to="/parcours"
+                  className="group hidden md:flex flex-1 items-center justify-center gap-2 px-6 py-3 rounded-full border border-border text-foreground font-medium text-base whitespace-nowrap hover:bg-muted transition-colors"
+                >
+                  Découvrir mon parcours complet
                   <ArrowRight className="size-4 shrink-0 transition-transform group-hover:translate-x-0.5" />
                 </Link>
                 <Link
@@ -119,7 +130,7 @@ export default function Home() {
               className="md:sticky md:top-24 relative"
             >
               <div className="absolute -inset-1 sm:-inset-3 rounded-3xl bg-gradient-to-br from-indigo-500/20 via-violet-500/15 to-emerald-500/15 blur-2xl" />
-              <div className="relative aspect-[4/3] sm:aspect-[4/5] rounded-3xl overflow-hidden border border-border bg-muted">
+              <div className="relative aspect-[4/3] sm:aspect-[4/5] md:aspect-square rounded-3xl overflow-hidden border border-border bg-muted">
                 <img
                   src={photographerInfo.portraitImage}
                   alt={photographerInfo.name}
@@ -145,7 +156,7 @@ export default function Home() {
         </section>
 
         {/* INTRO */}
-        <section className="py-14 md:py-32 px-6 lg:px-8 bg-background">
+        <section className="md:hidden py-14 md:py-32 px-6 lg:px-8 bg-background">
           <div className="max-w-7xl mx-auto">
             <ScrollReveal>
               <p className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight uppercase text-muted-foreground mb-6">
@@ -169,10 +180,10 @@ export default function Home() {
 
 
         {/* EXPERTISES */}
-        <section className="py-14 md:py-32 px-6 lg:px-8 border-t border-border bg-muted/30">
+        <section className="py-14 md:py-16 px-6 lg:px-8 border-t border-border bg-muted/30">
           <div className="max-w-7xl mx-auto">
             <ScrollReveal>
-              <div className="flex items-end justify-between flex-wrap gap-4 mb-8 md:mb-14">
+              <div className="flex items-end justify-between flex-wrap gap-4 mb-8 md:mb-8">
                 <div>
                   <p className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight uppercase text-muted-foreground mb-3">
                     Expertises
@@ -211,10 +222,10 @@ export default function Home() {
         </section>
 
         {/* FEATURED PROJECTS */}
-        <section className="py-14 md:py-32 px-6 lg:px-8 border-t border-border">
+        <section className="py-14 md:py-16 px-6 lg:px-8 border-t border-border">
           <div className="max-w-7xl mx-auto">
             <ScrollReveal>
-              <div className="mb-5 md:mb-14">
+              <div className="mb-5 md:mb-8">
                 <p className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight uppercase text-muted-foreground mb-3">
                   Projets
                 </p>
@@ -236,8 +247,8 @@ export default function Home() {
               />
             </div>
 
-            {/* Desktop: static grid, 4 projects */}
-            <div className="hidden md:grid md:grid-cols-2 md:gap-6">
+            {/* Desktop: static grid, 4 projects in one row */}
+            <div className="hidden md:grid md:grid-cols-4 md:gap-4">
               {featured.map((project) => (
                 <ProjectCard key={project.id} project={project} />
               ))}

@@ -1,5 +1,5 @@
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, Linkedin, Briefcase, ArrowRight, LayoutDashboard, Car, PieChart, Truck, Calculator } from 'lucide-react';
+import { Menu, Linkedin, Briefcase, ArrowRight, LayoutDashboard, Car, PieChart, Truck, Calculator, ChevronDown } from 'lucide-react';
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ThemeToggle } from './ThemeToggle';
@@ -66,6 +66,47 @@ export function Header() {
           <nav className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => {
               const isActive = location.pathname === link.path;
+
+              if (link.path === '/projets') {
+                return (
+                  <div key={link.path} className="relative group py-2 -my-2">
+                    <Link
+                      to={link.path}
+                      className={cn(
+                        'relative flex items-center gap-1 text-base font-medium tracking-wide transition-colors',
+                        isTransparent ? 'text-white/90 hover:text-white' : 'text-foreground/80 hover:text-foreground'
+                      )}
+                    >
+                      {link.name}
+                      <ChevronDown className="size-3.5 transition-transform group-hover:rotate-180" />
+                      {isActive && (
+                        <motion.span
+                          layoutId="activeNav"
+                          className={cn(
+                            'absolute -bottom-1.5 left-0 right-0 h-px',
+                            isTransparent ? 'bg-white' : 'bg-foreground'
+                          )}
+                        />
+                      )}
+                    </Link>
+
+                    <div className="absolute left-1/2 -translate-x-1/2 top-full pt-3 opacity-0 invisible translate-y-1 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-200">
+                      <div className="w-60 rounded-2xl border border-border bg-background shadow-lg p-2">
+                        {projects.map((project) => (
+                          <Link
+                            key={project.slug}
+                            to={`/projet/${project.slug}`}
+                            className="block px-3 py-2 rounded-lg text-sm font-medium text-foreground/80 hover:text-foreground hover:bg-muted transition-colors"
+                          >
+                            {projectShortTitles[project.slug] ?? project.title}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                );
+              }
+
               return (
                 <Link
                   key={link.path}

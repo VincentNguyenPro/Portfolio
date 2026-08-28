@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
-import { ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { useMemo, useState } from 'react';
+import { useMemo, useRef, useState } from 'react';
 import { blogPosts, type BlogCategory } from '@/data/blog';
 import { SEOHead } from '@/components/seo/SEOHead';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
@@ -15,6 +15,8 @@ const categoryColor: Record<BlogCategory, string> = {
   Communauté: 'from-slate-700 via-slate-900 to-zinc-900',
 };
 
+const POSTS_PER_PAGE = 6;
+
 export default function Blog() {
   const allPosts = useMemo(() => [...blogPosts].sort((a, b) => a.order - b.order), []);
   const allCategories = useMemo(() => {
@@ -23,7 +25,24 @@ export default function Blog() {
     return Array.from(set);
   }, [allPosts]);
   const [selected, setSelected] = useState<BlogCategory | 'all'>('all');
+  const [page, setPage] = useState(1);
   const posts = selected === 'all' ? allPosts : allPosts.filter((p) => p.categories.includes(selected));
+
+  const totalPages = Math.max(1, Math.ceil(posts.length / POSTS_PER_PAGE));
+  const currentPage = Math.min(page, totalPages);
+  const paginatedPosts = posts.slice((currentPage - 1) * POSTS_PER_PAGE, currentPage * POSTS_PER_PAGE);
+
+  const gridRef = useRef<HTMLDivElement>(null);
+
+  const selectCategory = (c: BlogCategory | 'all') => {
+    setSelected(c);
+    setPage(1);
+  };
+
+  const goToPage = (p: number) => {
+    setPage(p);
+    gridRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
 
   return (
     <>
@@ -58,7 +77,7 @@ export default function Blog() {
             <div className="flex flex-wrap gap-2 mb-10">
               <button
                 type="button"
-                onClick={() => setSelected('all')}
+                onClick={() => selectCategory('all')}
                 className={cn(
                   'text-xs font-semibold tracking-wider uppercase px-3 py-1.5 rounded-full border transition-colors',
                   selected === 'all'
@@ -75,7 +94,7 @@ export default function Blog() {
                   <button
                     key={c}
                     type="button"
-                    onClick={() => setSelected(c)}
+                    onClick={() => selectCategory(c)}
                     className={cn(
                       'text-xs font-semibold tracking-wider uppercase px-3 py-1.5 rounded-full border transition-all',
                       active
@@ -88,8 +107,8 @@ export default function Blog() {
                 );
               })}
             </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {posts.map((post, i) => (
+            <div ref={gridRef} className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 scroll-mt-24">
+            {paginatedPosts.map((post, i) => (
               <ScrollReveal key={post.slug} delay={i * 0.05}>
                 <Link
                   to={`/blog/${post.slug}`}
@@ -138,6 +157,45 @@ export default function Blog() {
               </ScrollReveal>
             ))}
             </div>
+
+            {totalPages > 1 && (
+              <div className="flex items-center justify-center gap-2 mt-10">
+                <button
+                  type="button"
+                  onClick={() => goToPage(Math.max(1, currentPage - 1))}
+                  disabled={currentPage === 1}
+                  aria-label="Page précédente"
+                  className="inline-flex items-center justify-center size-9 rounded-full border border-border text-foreground hover:bg-muted transition-colors disabled:opacity-30 disabled:pointer-events-none"
+                >
+                  <ChevronLeft className="size-4" />
+                </button>
+                {Array.from({ length: totalPages }, (_, i) => i + 1).map((p) => (
+                  <button
+                    key={p}
+                    type="button"
+                    onClick={() => goToPage(p)}
+                    aria-current={p === currentPage ? 'page' : undefined}
+                    className={cn(
+                      'inline-flex items-center justify-center size-9 rounded-full text-sm font-medium transition-colors',
+                      p === currentPage
+                        ? 'bg-blue-600 text-white'
+                        : 'text-muted-foreground hover:bg-muted hover:text-foreground'
+                    )}
+                  >
+                    {p}
+                  </button>
+                ))}
+                <button
+                  type="button"
+                  onClick={() => goToPage(Math.min(totalPages, currentPage + 1))}
+                  disabled={currentPage === totalPages}
+                  aria-label="Page suivante"
+                  className="inline-flex items-center justify-center size-9 rounded-full border border-border text-foreground hover:bg-muted transition-colors disabled:opacity-30 disabled:pointer-events-none"
+                >
+                  <ChevronRight className="size-4" />
+                </button>
+              </div>
+            )}
           </div>
         </section>
       </div>

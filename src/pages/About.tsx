@@ -156,40 +156,109 @@ export default function About() {
       />
       <div className="min-h-screen">
         {/* Header */}
-        <section className="px-6 lg:px-8 pt-6 pb-6 md:pt-24 md:pb-16 border-b border-border">
-          <div className="max-w-7xl mx-auto grid md:grid-cols-[1.4fr_1fr] gap-6 md:gap-10 lg:gap-16 items-start">
+        <section className="px-6 lg:px-8 pt-6 pb-6 md:pt-14 md:pb-8 border-b border-border">
+          <div className="max-w-7xl mx-auto grid md:grid-cols-[1.4fr_1fr] gap-6 md:gap-10 lg:gap-16 items-start md:items-stretch">
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="space-y-3 md:space-y-6"
+              className="space-y-3 md:space-y-3"
             >
-              <h1 className="text-2xl sm:text-4xl md:text-6xl font-semibold tracking-tight uppercase text-muted-foreground">
+              <h1 className="text-2xl sm:text-4xl md:text-5xl font-semibold tracking-tight uppercase text-muted-foreground">
                 Parcours
               </h1>
-              <div className="space-y-2 md:space-y-4 text-base md:text-lg text-muted-foreground font-light leading-relaxed text-left md:text-justify">
+              <div className="space-y-2 md:space-y-2 text-base md:text-base text-muted-foreground font-light leading-relaxed text-left md:text-justify">
                 {photographerInfo.biography.split('\n\n').map((p, i) => (
                   <p key={i}>{p}</p>
                 ))}
+              </div>
+
+              {/* Desktop: vertical year timeline + detail card, filling the space below the bio */}
+              <div className="hidden md:block pt-2">
+                <h2 className="text-xl md:text-2xl font-semibold tracking-tight mb-4">
+                  De l'ingénierie au Product Management : un parcours forgé dans la complexité
+                </h2>
+                <div className="grid grid-cols-[180px_1fr] gap-8 lg:gap-10 items-start">
+                  <div className="relative">
+                    <div className="absolute left-[6.5px] top-2 bottom-2 w-px bg-border" />
+                    <div className="flex flex-col">
+                      {storyMilestones.map((m, i) => {
+                        const active = i === activeMilestone;
+                        return (
+                          <button
+                            key={m.year}
+                            type="button"
+                            onClick={() => setActiveMilestone(i)}
+                            className="group relative z-10 flex items-center gap-3 py-1.5 text-left"
+                          >
+                            <span
+                              className={`size-3.5 rounded-full ring-4 ring-background transition-colors shrink-0 ${
+                                active ? 'bg-blue-600' : 'bg-border group-hover:bg-muted-foreground'
+                              }`}
+                            />
+                            <span
+                              className={`text-base font-semibold tracking-tight transition-colors ${
+                                active ? 'text-blue-600' : 'text-muted-foreground group-hover:text-foreground'
+                              }`}
+                            >
+                              {m.year}
+                            </span>
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </div>
+
+                  <motion.div
+                    key={activeMilestone}
+                    initial={{ opacity: 0, y: 8 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.4 }}
+                    className="rounded-2xl border border-border bg-card p-5 min-h-[220px]"
+                  >
+                    <div className="flex items-center gap-3 mb-3">
+                      {storyMilestones[activeMilestone].logos.length > 0 && (
+                        <div className="flex items-center">
+                          {storyMilestones[activeMilestone].logos.map((logo, li) => (
+                            <span
+                              key={li}
+                              className={`size-12 rounded-full border border-border bg-white overflow-hidden flex items-center justify-center shrink-0 shadow-sm ${
+                                li > 0 ? '-ml-4' : ''
+                              }`}
+                              style={{ zIndex: storyMilestones[activeMilestone].logos.length - li }}
+                            >
+                              <img
+                                src={logo}
+                                alt=""
+                                className={`w-full h-full ${logo === sunsetRoad ? 'object-cover' : 'object-contain p-1.5'}`}
+                              />
+                            </span>
+                          ))}
+                        </div>
+                      )}
+                      <p className="text-2xl font-bold tracking-tight text-blue-600">
+                        {storyMilestones[activeMilestone].year}
+                      </p>
+                    </div>
+                    <p className="text-base font-light leading-relaxed text-foreground/85">
+                      {storyMilestones[activeMilestone].content}
+                    </p>
+                  </motion.div>
+                </div>
               </div>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, scale: 0.96 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.7, delay: 0.1 }}
-              className="md:sticky md:top-24 relative"
+              className="md:sticky md:top-24 relative md:h-full"
             >
               <div className="absolute -inset-1 sm:-inset-3 rounded-3xl bg-gradient-to-br from-indigo-500/20 via-violet-500/15 to-emerald-500/15 blur-2xl" />
-              <div className="relative aspect-[4/3] sm:aspect-[4/5] rounded-3xl overflow-hidden border border-border bg-muted">
+              <div className="relative aspect-[4/3] sm:aspect-[4/5] md:aspect-auto md:h-full rounded-3xl overflow-hidden border border-border bg-muted">
                 <img
                   src={saintelyonPhoto}
                   alt="Vincent Nguyen à l'arrivée de la SaintéLyon"
-                  className="md:hidden w-full h-full object-cover"
-                />
-                <img
-                  src={photographerInfo.portraitImage}
-                  alt={photographerInfo.name}
-                  className="hidden md:block w-full h-full object-cover object-top grayscale"
+                  className="w-full h-full object-cover"
                 />
               </div>
             </motion.div>
@@ -197,19 +266,19 @@ export default function About() {
         </section>
 
 
-        {/* Mon histoire */}
-        <section className="px-6 lg:px-8 py-8 md:py-28 border-t border-border">
+        {/* Mon histoire (mobile only — desktop shows this inline in the header above) */}
+        <section className="md:hidden px-6 lg:px-8 py-8 border-t border-border">
             <div className="max-w-7xl mx-auto w-full">
             <ScrollReveal>
-              <p className="text-2xl md:text-4xl font-semibold tracking-tight uppercase text-muted-foreground mb-3 md:mb-6">
+              <p className="text-2xl font-semibold tracking-tight uppercase text-muted-foreground mb-3">
                 Mon histoire
               </p>
-              <h2 className="text-2xl md:text-4xl font-semibold tracking-tight mb-5 md:mb-10">
+              <h2 className="text-2xl font-semibold tracking-tight mb-5">
                 De l'ingénierie au Product Management : un parcours forgé dans la complexité
               </h2>
             </ScrollReveal>
             {/* Mobile: horizontal stepper + fixed detail card */}
-            <div className="md:hidden">
+            <div>
               <div className="relative flex items-start pr-6">
                 <div className="absolute left-3 right-2 top-[7px] h-px bg-border" />
                 <ArrowRight className="absolute right-0 top-0 size-3.5 text-border" />
@@ -268,93 +337,20 @@ export default function About() {
                 </p>
               </div>
             </div>
-
-            {/* Desktop: vertical year timeline + detail card */}
-            <div className="hidden md:grid md:grid-cols-[220px_1fr] gap-10 lg:gap-16 items-start">
-              <ScrollReveal>
-                <div className="relative">
-                  <div className="absolute left-[6.5px] top-3 bottom-3 w-px bg-border" />
-                  <div className="flex flex-col">
-                    {storyMilestones.map((m, i) => {
-                      const active = i === activeMilestone;
-                      return (
-                        <button
-                          key={m.year}
-                          type="button"
-                          onClick={() => setActiveMilestone(i)}
-                          className="group relative z-10 flex items-center gap-4 py-3 text-left"
-                        >
-                          <span
-                            className={`size-3.5 rounded-full ring-4 ring-background transition-colors shrink-0 ${
-                              active ? 'bg-blue-600' : 'bg-border group-hover:bg-muted-foreground'
-                            }`}
-                          />
-                          <span
-                            className={`text-lg font-semibold tracking-tight transition-colors ${
-                              active ? 'text-blue-600' : 'text-muted-foreground group-hover:text-foreground'
-                            }`}
-                          >
-                            {m.year}
-                          </span>
-                        </button>
-                      );
-                    })}
-                  </div>
-                </div>
-              </ScrollReveal>
-
-              <ScrollReveal delay={0.1}>
-                <motion.div
-                  key={activeMilestone}
-                  initial={{ opacity: 0, y: 8 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4 }}
-                  className="md:sticky md:top-24 rounded-2xl border border-border bg-card p-8 lg:p-10 min-h-[320px]"
-                >
-                  <div className="flex items-center gap-4 mb-6">
-                    {storyMilestones[activeMilestone].logos.length > 0 && (
-                      <div className="flex items-center">
-                        {storyMilestones[activeMilestone].logos.map((logo, li) => (
-                          <span
-                            key={li}
-                            className={`size-16 rounded-full border border-border bg-white overflow-hidden flex items-center justify-center shrink-0 shadow-sm ${
-                              li > 0 ? '-ml-4' : ''
-                            }`}
-                            style={{ zIndex: storyMilestones[activeMilestone].logos.length - li }}
-                          >
-                            <img
-                              src={logo}
-                              alt=""
-                              className={`w-full h-full ${logo === sunsetRoad ? 'object-cover' : 'object-contain p-2'}`}
-                            />
-                          </span>
-                        ))}
-                      </div>
-                    )}
-                    <p className="text-3xl font-bold tracking-tight text-blue-600">
-                      {storyMilestones[activeMilestone].year}
-                    </p>
-                  </div>
-                  <p className="text-lg font-light leading-relaxed text-foreground/85">
-                    {storyMilestones[activeMilestone].content}
-                  </p>
-                </motion.div>
-              </ScrollReveal>
-            </div>
           </div>
         </section>
 
         {/* Mon parcours professionnel */}
-        <section className="hidden md:block px-6 lg:px-8 py-8 md:py-28 border-t border-border">
+        <section className="hidden md:block px-6 lg:px-8 py-8 md:py-14 border-t border-border">
           <div className="max-w-7xl mx-auto">
             <ScrollReveal>
-              <p className="text-2xl md:text-4xl font-semibold tracking-tight uppercase text-muted-foreground mb-3 md:mb-6">
+              <p className="text-2xl md:text-3xl font-semibold tracking-tight uppercase text-muted-foreground mb-3 md:mb-3">
                 Mon parcours professionnel
               </p>
-              <h2 className="text-2xl md:text-4xl font-semibold tracking-tight mb-3 md:mb-6">
+              <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-3 md:mb-3">
                 Un fil rouge cohérent
               </h2>
-              <p className="text-base md:text-lg font-light leading-relaxed text-foreground/85 mb-5 md:mb-10">
+              <p className="text-base md:text-lg font-light leading-relaxed text-foreground/85 mb-5 md:mb-6">
                 De l'ingénierie au Product Management, un fil rouge cohérent : <strong className="font-semibold text-foreground">créer de la valeur à travers des produits digitaux utiles</strong>.
               </p>
             </ScrollReveal>
@@ -383,11 +379,11 @@ export default function About() {
               />
             </div>
 
-            <div className="hidden md:grid md:grid-cols-[1.4fr_1fr] gap-10 lg:gap-16 items-center">
+            <div className="hidden md:grid md:grid-cols-[1.4fr_1fr] gap-10 lg:gap-16 items-stretch">
               <ScrollReveal>
                 <ul className="divide-y divide-border">
                   {experiences.map((exp, i) => (
-                    <li key={`${exp.company}-${i}`} className="py-5 flex items-center gap-4">
+                    <li key={`${exp.company}-${i}`} className="py-2.5 flex items-center gap-4">
                       <LogoBadge text={exp.company} fallback={<Building2 className="size-5" />} size={10} />
                       <div className="flex-1 min-w-0">
                         <h3 className="text-base md:text-lg font-semibold tracking-tight leading-snug">
@@ -402,10 +398,10 @@ export default function About() {
                   ))}
                 </ul>
               </ScrollReveal>
-              <ScrollReveal delay={0.1}>
-                <div className="md:sticky md:top-24 relative">
+              <ScrollReveal delay={0.1} className="h-full">
+                <div className="md:sticky md:top-24 relative h-full">
                   <div className="absolute -inset-3 rounded-3xl bg-gradient-to-br from-amber-500/25 via-orange-500/15 to-rose-500/15 blur-2xl" />
-                  <div className="relative aspect-[4/5] rounded-3xl overflow-hidden border border-border bg-muted">
+                  <div className="relative h-full rounded-3xl overflow-hidden border border-border bg-muted">
                     <img
                       src={sunsetRoad}
                       alt="Route au coucher de soleil - symbole du parcours professionnel"
@@ -509,7 +505,9 @@ export default function About() {
                   <div className="space-y-4 md:space-y-6">
                     {educationItems.map((e) => (
                       <div key={e.title} className="flex gap-4">
-                        <LogoBadge text={e.school} fallback={<School className="size-5" />} size={10} />
+                        <div className="mt-4">
+                          <LogoBadge text={e.school} fallback={<School className="size-5" />} size={10} />
+                        </div>
 
                         <div>
                           <p className="text-xs text-muted-foreground font-medium tracking-wide">

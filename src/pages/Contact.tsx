@@ -42,28 +42,28 @@ export default function Contact() {
       />
 
       <div className="min-h-screen">
-        <section className="px-6 lg:px-8 pt-6 pb-6 md:pt-24 md:pb-16 border-b border-border">
+        <section className="px-6 lg:px-8 pt-6 pb-6 md:pt-10 md:pb-4 border-b border-border">
           <div className="max-w-7xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="space-y-3 md:space-y-6"
+              className="space-y-3 md:space-y-2"
             >
-              <p className="text-3xl sm:text-4xl md:text-6xl font-semibold tracking-tight uppercase text-muted-foreground">
+              <p className="text-3xl sm:text-4xl md:text-4xl font-semibold tracking-tight uppercase text-muted-foreground">
                 Contact
               </p>
-              <h1 className="text-3xl sm:text-4xl md:text-6xl font-semibold tracking-tight">
+              <h1 className="text-3xl sm:text-4xl md:text-4xl font-semibold tracking-tight">
                 Discutons de votre projet.
               </h1>
-              <p className="text-base md:text-lg text-muted-foreground font-light leading-relaxed">
+              <p className="text-base md:text-base text-muted-foreground font-light leading-relaxed">
                 {photographerInfo.availability}. Pour échanger sur une opportunité Product Manager ou un projet à fort enjeu finance ou SI, contactez-moi directement.
               </p>
             </motion.div>
           </div>
         </section>
 
-        <section className="px-6 lg:px-8 py-6 md:py-24">
+        <section className="px-6 lg:px-8 py-6 md:py-6">
           <div className="max-w-7xl mx-auto">
             {/* Mobile: icon-only CTAs */}
             <div className="md:hidden grid grid-cols-3 gap-3">
@@ -116,31 +116,31 @@ export default function Contact() {
               <span className="text-sm font-medium text-foreground">Disponible immédiatement</span>
             </motion.div>
 
-            {/* Desktop: full cards with address/label */}
-            <div className="hidden md:grid sm:grid-cols-2 gap-4">
+            {/* Desktop: full cards with address/label, CV as a third tile */}
+            <div className="hidden md:grid sm:grid-cols-3 gap-4">
               {contactItems.map((item, i) => {
                 const Icon = item.icon;
                 const content = (
                   <>
                     <div className="flex items-center justify-between">
-                      <div className="size-10 rounded-full bg-muted flex items-center justify-center">
-                        <Icon className="size-5 text-foreground" />
+                      <div className="size-9 rounded-full bg-muted flex items-center justify-center">
+                        <Icon className="size-4 text-foreground" />
                       </div>
                       {item.href && (
                         <ArrowUpRight className="size-4 text-muted-foreground group-hover:text-foreground group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
                       )}
                     </div>
-                    <div className="mt-6">
-                      <p className="text-xs font-semibold tracking-[0.2em] uppercase text-muted-foreground mb-2">
+                    <div className="mt-3">
+                      <p className="text-xs font-semibold tracking-[0.2em] uppercase text-muted-foreground mb-1">
                         {item.label}
                       </p>
-                      <p className="text-lg md:text-xl font-medium tracking-tight break-words">{item.value}</p>
+                      <p className="text-base font-medium tracking-tight break-words">{item.value}</p>
                     </div>
                   </>
                 );
 
                 const className =
-                  'group block min-w-0 rounded-2xl border border-border bg-card p-6 md:p-8 hover:shadow-md hover:border-foreground/20 transition-all';
+                  'group block min-w-0 rounded-2xl border border-border bg-card p-4 hover:shadow-md hover:border-foreground/20 transition-all';
 
                 return (
                   <motion.div
@@ -166,19 +166,29 @@ export default function Contact() {
                   </motion.div>
                 );
               })}
-            </div>
-          </div>
 
-          <div className="hidden md:flex max-w-7xl mx-auto mt-12 flex-col items-start gap-3">
-            <p className="text-sm text-muted-foreground">
-              Préférez-vous consulter mon CV ?
-            </p>
-            <Button asChild variant="outline" size="lg" className="gap-2">
-              <a href="/Vincent-Nguyen-CV.pdf" download="Vincent-Nguyen-CV.pdf">
-                <Download className="size-4" />
-                Télécharger mon CV
-              </a>
-            </Button>
+              <motion.a
+                href="/Vincent-Nguyen-CV.pdf"
+                download="Vincent-Nguyen-CV.pdf"
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: contactItems.length * 0.05 }}
+                className="group block min-w-0 rounded-2xl border border-border bg-card p-4 hover:shadow-md hover:border-foreground/20 transition-all"
+              >
+                <div className="flex items-center justify-between">
+                  <div className="size-9 rounded-full bg-muted flex items-center justify-center">
+                    <Download className="size-4 text-foreground" />
+                  </div>
+                  <ArrowUpRight className="size-4 text-muted-foreground group-hover:text-foreground group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
+                </div>
+                <div className="mt-3">
+                  <p className="text-xs font-semibold tracking-[0.2em] uppercase text-muted-foreground mb-1">
+                    CV
+                  </p>
+                  <p className="text-base font-medium tracking-tight">Télécharger mon CV</p>
+                </div>
+              </motion.a>
+            </div>
           </div>
 
           <motion.form
@@ -187,19 +197,19 @@ export default function Contact() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="hidden md:block max-w-7xl mx-auto mt-12 rounded-2xl border border-border bg-card p-8 md:p-10 space-y-6"
+            className="hidden md:block max-w-7xl mx-auto mt-4 rounded-2xl border border-border bg-card p-5 space-y-3"
           >
             <div>
-              <p className="text-xs font-semibold tracking-[0.2em] uppercase text-muted-foreground mb-2">
+              <p className="text-xs font-semibold tracking-[0.2em] uppercase text-muted-foreground mb-1">
                 Formulaire
               </p>
-              <h2 className="text-2xl md:text-3xl font-semibold tracking-tight">
+              <h2 className="text-xl font-semibold tracking-tight">
                 Écrivez-moi
               </h2>
             </div>
 
-            <div className="grid sm:grid-cols-2 gap-4">
-              <div className="space-y-2">
+            <div className="grid sm:grid-cols-2 gap-3">
+              <div className="space-y-1">
                 <Label htmlFor="nom">Nom</Label>
                 <Input
                   id="nom"
@@ -209,7 +219,7 @@ export default function Contact() {
                   onChange={(e) => setForm({ ...form, nom: e.target.value })}
                 />
               </div>
-              <div className="space-y-2">
+              <div className="space-y-1">
                 <Label htmlFor="prenom">Prénom</Label>
                 <Input
                   id="prenom"
@@ -219,58 +229,56 @@ export default function Contact() {
                   onChange={(e) => setForm({ ...form, prenom: e.target.value })}
                 />
               </div>
-            </div>
-
-            <div className="space-y-2">
-              <Label htmlFor="email">Email</Label>
-              <Input
-                id="email"
-                type="email"
-                required
-                placeholder="marie.dupont@exemple.com"
-                value={form.email}
-                onChange={(e) => setForm({ ...form, email: e.target.value })}
-              />
-            </div>
-
-            <div className="space-y-2">
-              <Label htmlFor="type">Type d'opportunité</Label>
-              <Select
-                value={form.type}
-                onValueChange={(v) => {
-                  setForm({ ...form, type: v });
-                  setTypeError(false);
-                }}
-              >
-                <SelectTrigger
-                  id="type"
-                  aria-invalid={typeError}
-                  aria-describedby={typeError ? 'type-error' : undefined}
-                  className={typeError ? 'border-destructive' : undefined}
+              <div className="space-y-1">
+                <Label htmlFor="email">Email</Label>
+                <Input
+                  id="email"
+                  type="email"
+                  required
+                  placeholder="marie.dupont@exemple.com"
+                  value={form.email}
+                  onChange={(e) => setForm({ ...form, email: e.target.value })}
+                />
+              </div>
+              <div className="space-y-1">
+                <Label htmlFor="type">Type d'opportunité</Label>
+                <Select
+                  value={form.type}
+                  onValueChange={(v) => {
+                    setForm({ ...form, type: v });
+                    setTypeError(false);
+                  }}
                 >
-                  <SelectValue placeholder="Sélectionnez une option" />
-                </SelectTrigger>
-                <SelectContent>
-                  {OPPORTUNITY_TYPES.map((t) => (
-                    <SelectItem key={t} value={t}>
-                      {t}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
-              {typeError && (
-                <p id="type-error" className="text-sm text-destructive">
-                  Merci de sélectionner un type d'opportunité.
-                </p>
-              )}
+                  <SelectTrigger
+                    id="type"
+                    aria-invalid={typeError}
+                    aria-describedby={typeError ? 'type-error' : undefined}
+                    className={typeError ? 'border-destructive' : undefined}
+                  >
+                    <SelectValue placeholder="Sélectionnez une option" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {OPPORTUNITY_TYPES.map((t) => (
+                      <SelectItem key={t} value={t}>
+                        {t}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+                {typeError && (
+                  <p id="type-error" className="text-sm text-destructive">
+                    Merci de sélectionner un type d'opportunité.
+                  </p>
+                )}
+              </div>
             </div>
 
-            <div className="space-y-2">
+            <div className="space-y-1">
               <Label htmlFor="message">Comment puis-je vous aider ?</Label>
               <Textarea
                 id="message"
                 required
-                rows={6}
+                rows={3}
                 placeholder="Décrivez votre projet, contexte, calendrier…"
                 value={form.message}
                 onChange={(e) => setForm({ ...form, message: e.target.value })}
