@@ -76,14 +76,6 @@ export default function ProjectDetail() {
             <div className={`absolute inset-0 bg-gradient-to-br ${project.coverGradient}`} />
           )}
           <div className="relative max-w-7xl mx-auto">
-            <Link
-              to="/projets"
-              className="inline-flex items-center gap-2 text-base font-medium text-white hover:text-white mb-4 transition-colors drop-shadow-sm px-4 py-2 rounded-full border border-white/30 bg-white/10 backdrop-blur hover:bg-white/20"
-            >
-              <ArrowLeft className="size-5" />
-              Tous les projets
-            </Link>
-
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -161,8 +153,8 @@ export default function ProjectDetail() {
 
         {/* Body */}
         <div className="px-6 lg:px-8 py-5 md:py-14">
-          <div className="max-w-7xl mx-auto space-y-6 md:space-y-8">
-            <div className="md:hidden flex flex-wrap items-center gap-3 text-sm font-medium tracking-wider uppercase text-foreground/80 border-b border-border pb-5">
+          <div className="max-w-7xl mx-auto space-y-4 md:space-y-8">
+            <div className="md:hidden flex flex-wrap items-center gap-3 text-sm font-medium tracking-wider uppercase text-foreground/80 border-b border-border pb-3">
               <span>{project.company}</span>
               <span className="text-muted-foreground/60">·</span>
               <span className="text-muted-foreground">{project.period}</span>
@@ -172,32 +164,32 @@ export default function ProjectDetail() {
 
             {project.scope && (
               <ScrollReveal>
-                <div className="rounded-2xl border border-border bg-muted/30 p-5 md:p-6">
-                  <p className="text-base font-semibold tracking-[0.2em] uppercase text-muted-foreground mb-2">
+                <div className="rounded-2xl border border-border bg-muted/30 p-4 md:p-6">
+                  <p className="text-sm md:text-base font-semibold tracking-[0.2em] uppercase text-muted-foreground mb-1">
                     Périmètre
                   </p>
-                  <p className="text-base font-light">{project.scope}</p>
+                  <p className="text-sm md:text-base font-light">{project.scope}</p>
                 </div>
               </ScrollReveal>
             )}
 
             <ScrollReveal>
-              <section className="space-y-4">
-                <h2 className="text-xl md:text-2xl font-semibold tracking-[0.2em] uppercase text-muted-foreground">
+              <section className="space-y-2 md:space-y-4">
+                <h2 className="text-lg md:text-2xl font-semibold tracking-[0.2em] uppercase text-muted-foreground">
                   Contexte
                 </h2>
-                <p className="text-lg leading-relaxed text-foreground/85 font-light">
+                <p className="text-base md:text-lg leading-relaxed text-foreground/85 font-light">
                   {project.context}
                 </p>
               </section>
             </ScrollReveal>
 
             <ScrollReveal>
-              <section className="space-y-4">
-                <h2 className="text-xl md:text-2xl font-semibold tracking-[0.2em] uppercase text-muted-foreground">
+              <section className="space-y-2 md:space-y-4">
+                <h2 className="text-lg md:text-2xl font-semibold tracking-[0.2em] uppercase text-muted-foreground">
                   Problématique
                 </h2>
-                <p className="text-lg leading-relaxed text-foreground/85 font-light">
+                <p className="text-base md:text-lg leading-relaxed text-foreground/85 font-light">
                   {project.problem}
                 </p>
               </section>
@@ -235,13 +227,13 @@ export default function ProjectDetail() {
 
             <ScrollReveal>
               <section className="space-y-3 md:space-y-4 rounded-2xl bg-foreground text-background p-5 md:p-10">
-                <h2 className="text-xl md:text-2xl font-semibold tracking-[0.2em] uppercase opacity-70">
+                <h2 className="text-lg md:text-2xl font-semibold tracking-[0.2em] uppercase opacity-70">
                   Résultats
                 </h2>
                 <ul className="space-y-3">
                   {project.results.map((r) => (
-                    <li key={r} className="flex items-start gap-3 text-lg font-light">
-                      <CheckCircle2 className="size-5 mt-1 shrink-0 opacity-80" />
+                    <li key={r} className="flex items-start gap-3 text-base md:text-lg font-light">
+                      <CheckCircle2 className="size-4 md:size-5 mt-1 shrink-0 opacity-80" />
                       <span>{r}</span>
                     </li>
                   ))}
