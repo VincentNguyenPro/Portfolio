@@ -64,6 +64,13 @@ export default function ProjectDetail() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7 }}
               >
+                <div className="flex flex-wrap items-center gap-2 text-xs font-medium tracking-wider uppercase text-muted-foreground mb-3">
+                  <span>{project.company}</span>
+                  <span className="text-muted-foreground/60">·</span>
+                  <span>{project.period}</span>
+                  <span className="text-muted-foreground/60">·</span>
+                  <span>{project.role}</span>
+                </div>
                 <h1 className="text-3xl font-semibold tracking-tight leading-[1.15] mb-3">
                   {project.title}
                 </h1>
@@ -107,7 +114,7 @@ export default function ProjectDetail() {
         {/* Body */}
         <div className="px-6 lg:px-8 py-5 md:py-14">
           <div className="max-w-7xl mx-auto space-y-6 md:space-y-16">
-            <div className="flex flex-wrap items-center gap-3 text-sm md:text-base font-medium tracking-wider uppercase text-foreground/80 border-b border-border pb-5 md:pb-8">
+            <div className="md:hidden flex flex-wrap items-center gap-3 text-sm font-medium tracking-wider uppercase text-foreground/80 border-b border-border pb-5">
               <span>{project.company}</span>
               <span className="text-muted-foreground/60">·</span>
               <span className="text-muted-foreground">{project.period}</span>
