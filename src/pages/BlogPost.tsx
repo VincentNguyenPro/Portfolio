@@ -146,22 +146,13 @@ export default function BlogPost() {
     <>
       <SEOHead title={post.title} description={post.description} />
       <article className="min-h-screen">
-        <div className="relative w-full h-[32vh] md:h-[42vh] overflow-hidden bg-muted">
-          <img
-            src={post.cover.url}
-            alt={post.cover.alt}
-            className="absolute inset-0 w-full h-full object-contain p-6 md:p-10"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent pointer-events-none" />
-        </div>
-
-        <div className="px-6 lg:px-8 -mt-16 md:-mt-24 relative z-10">
-          <div className="max-w-5xl mx-auto">
+        <div className="px-6 lg:px-8 pt-8 md:pt-12">
+          <div className="max-w-3xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="space-y-6"
+              className="space-y-4"
             >
               <Link
                 to="/blog"
@@ -171,11 +162,11 @@ export default function BlogPost() {
                 Tous les articles
               </Link>
 
-              <div className="flex items-center gap-2 text-sm flex-wrap">
+              <div className="flex items-center gap-2 text-xs flex-wrap">
                 {post.categories.map((c) => (
                   <span
                     key={c}
-                    className={`text-[10px] font-semibold tracking-wider uppercase px-2 py-1 rounded-full text-white bg-gradient-to-br ${categoryColor[c]}`}
+                    className={`font-semibold tracking-wider uppercase px-2 py-1 rounded-full text-white bg-gradient-to-br ${categoryColor[c]}`}
                   >
                     {c}
                   </span>
@@ -183,14 +174,26 @@ export default function BlogPost() {
                 <span className="text-muted-foreground">{post.date}</span>
               </div>
 
-              <h1 className="text-4xl md:text-5xl font-semibold tracking-tight leading-tight">
+              <h1 className="text-3xl md:text-4xl font-semibold tracking-tight leading-tight">
                 {post.title}
               </h1>
 
-              <p className="text-lg text-muted-foreground font-light leading-relaxed">
+              <p className="text-base md:text-lg text-muted-foreground font-light leading-relaxed">
                 {post.description}
               </p>
             </motion.div>
+          </div>
+        </div>
+
+        <div className="px-6 lg:px-8 pt-6 md:pt-8">
+          <div className="max-w-4xl mx-auto">
+            <div className="h-56 md:h-80 rounded-2xl border border-border bg-muted flex items-center justify-center overflow-hidden">
+              <img
+                src={post.cover.url}
+                alt={post.cover.alt}
+                className="max-w-full max-h-full object-contain"
+              />
+            </div>
           </div>
         </div>
 
