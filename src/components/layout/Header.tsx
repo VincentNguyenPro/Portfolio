@@ -148,9 +148,13 @@ export function Header() {
                   ))}
                 </nav>
 
-                <p className="text-base font-medium text-foreground border-t border-border pt-3 mb-2">
+                <Link
+                  to="/projets"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="block text-base font-medium text-foreground border-t border-border pt-3 mb-2 hover:text-blue-600 transition-colors"
+                >
                   Projets
-                </p>
+                </Link>
                 <nav className="flex flex-col">
                   {projects.map((project) => {
                     const Icon = projectIcons[project.slug] ?? Briefcase;
