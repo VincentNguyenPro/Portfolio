@@ -214,23 +214,12 @@ export default function Home() {
                       </div>
                     </div>
                     <div className="p-5 md:p-6">
-                      <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm font-medium tracking-wider uppercase text-foreground mb-2 md:mb-3 min-h-10">
+                      <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm font-medium tracking-wider uppercase text-foreground mb-3 min-h-10">
                         <span>{project.company}</span>
                         <span className="text-muted-foreground/60">·</span>
                         <span className="text-muted-foreground">{project.period}</span>
                       </div>
-                      <p className="text-base text-muted-foreground font-light leading-relaxed mb-3 md:mb-5 line-clamp-2 md:line-clamp-none">
-                        {project.summary}
-                      </p>
-                      <div className="grid grid-cols-3 gap-3">
-                        {project.metrics.slice(0, 3).map((m) => (
-                          <div key={m.label}>
-                            <div className="text-lg md:text-xl font-semibold tracking-tight min-h-14 md:min-h-0">{m.value}</div>
-                            <div className="text-xs md:text-sm text-muted-foreground min-h-8">{m.label}</div>
-                          </div>
-                        ))}
-                      </div>
-                      <div className="flex items-center gap-1.5 text-sm font-semibold text-foreground mt-3 md:mt-5 pt-3 md:pt-5 border-t border-border">
+                      <div className="flex items-center gap-1.5 text-sm font-semibold text-foreground">
                         Voir le projet
                         <ArrowUpRight className="size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                       </div>
@@ -238,6 +227,16 @@ export default function Home() {
                   </Link>
               )}
             />
+
+            <div className="mt-6 md:mt-10 flex justify-center md:justify-start">
+              <Link
+                to="/projets"
+                className="group inline-flex items-center gap-2 px-6 py-3 rounded-full border border-border text-foreground font-medium hover:bg-muted transition-colors"
+              >
+                Voir tous les projets
+                <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
+              </Link>
+            </div>
           </div>
         </section>
 

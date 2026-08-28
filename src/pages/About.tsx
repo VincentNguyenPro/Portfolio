@@ -199,7 +199,7 @@ export default function About() {
 
 
         {/* Mon histoire */}
-        <section className="px-6 lg:px-8 py-8 md:py-28 border-t border-border min-h-[100dvh] md:min-h-0 flex flex-col justify-start md:block">
+        <section className="px-6 lg:px-8 py-8 md:py-28 border-t border-border">
             <div className="max-w-7xl mx-auto w-full">
             <ScrollReveal>
               <p className="text-2xl md:text-4xl font-semibold tracking-tight uppercase text-muted-foreground mb-3 md:mb-6">

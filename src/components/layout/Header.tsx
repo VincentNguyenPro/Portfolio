@@ -94,7 +94,7 @@ export function Header() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"
-              className="inline-flex items-center justify-center size-9 rounded-md text-foreground/80 hover:text-foreground hover:bg-accent transition-colors"
+              className="inline-flex items-center justify-center size-11 rounded-md text-foreground/80 hover:text-foreground hover:bg-accent transition-colors"
             >
               <Linkedin className="size-5" />
             </a>
@@ -107,7 +107,7 @@ export function Header() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"
-              className="inline-flex items-center justify-center size-9 rounded-md text-foreground/80 hover:text-foreground hover:bg-accent transition-colors"
+              className="inline-flex items-center justify-center size-11 rounded-md text-foreground/80 hover:text-foreground hover:bg-accent transition-colors"
             >
               <Linkedin className="size-5" />
             </a>
@@ -116,7 +116,7 @@ export function Header() {
                 <Button
                   variant="ghost"
                   size="icon"
-                  className={cn('size-9', isTransparent && 'text-white hover:bg-white/10')}
+                  className={cn('size-11', isTransparent && 'text-white hover:bg-white/10')}
                   aria-label="Ouvrir le menu"
                 >
                   <Menu className="size-5" />

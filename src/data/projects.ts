@@ -229,7 +229,7 @@ export const projects: Project[] = [
 ];
 
 export function getFeaturedProjects(): Project[] {
-  return projects;
+  return projects.slice(0, 3);
 }
 
 export function getProjectBySlug(slug: string): Project | undefined {

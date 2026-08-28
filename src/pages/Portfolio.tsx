@@ -13,7 +13,7 @@ export default function Portfolio() {
         description="Découvrez les projets produit de Vincent Nguyen : BlaBlaCar, Bartle, Renault. Outils critiques, finance SI, supply chain."
       />
       <div className="min-h-screen">
-        <section className="px-6 lg:px-8 pt-16 pb-12 md:pt-24 md:pb-16 border-b border-border">
+        <section className="px-6 lg:px-8 pt-6 pb-6 md:pt-24 md:pb-16 border-b border-border">
           <div className="max-w-7xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 16 }}
@@ -35,18 +35,18 @@ export default function Portfolio() {
         </section>
 
         <section className="px-6 lg:px-8 py-10 md:py-24">
-          <div className="max-w-7xl mx-auto space-y-6">
+          <div className="max-w-7xl mx-auto space-y-4 md:space-y-6">
             {projects.map((project, i) => (
               <ScrollReveal key={project.id} delay={i * 0.05}>
                 <Link
                   to={`/projet/${project.slug}`}
-                  className="group block rounded-3xl overflow-hidden border border-border bg-card hover:shadow-xl transition-all"
+                  className="group block rounded-2xl md:rounded-3xl overflow-hidden border border-border bg-card hover:shadow-xl transition-all"
                 >
                   <div className="grid md:grid-cols-[1fr_1.2fr]">
                     <div
-                      className={`relative aspect-[4/3] md:aspect-auto overflow-hidden ${
+                      className={`relative aspect-video md:aspect-auto overflow-hidden ${
                         project.coverImage ? 'bg-muted' : `bg-gradient-to-br ${project.coverGradient}`
-                      } p-8 flex flex-col justify-between text-white`}
+                      } p-5 md:p-8 flex flex-col justify-between text-white`}
                     >
                       {project.coverImage && (
                         <>
@@ -68,25 +68,25 @@ export default function Portfolio() {
                         <ArrowUpRight className="size-5 opacity-90 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                       </div>
                       <div className="relative">
-                        <h2 className="text-3xl md:text-4xl font-semibold leading-tight">
+                        <h2 className="text-xl md:text-4xl font-semibold leading-tight line-clamp-2 md:line-clamp-none">
                           {project.title}
                         </h2>
                       </div>
                     </div>
 
-                    <div className="p-8 md:p-10 flex flex-col justify-between gap-8">
-                      <div className="space-y-4">
-                        <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-base font-semibold tracking-wider uppercase text-foreground">
+                    <div className="p-5 md:p-10 flex flex-col gap-3 md:gap-8 md:justify-between">
+                      <div className="space-y-1.5 md:space-y-4">
+                        <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm md:text-base font-semibold tracking-wider uppercase text-foreground">
                           <span>{project.company}</span>
                           <span className="text-muted-foreground/60">·</span>
                           <span className="text-muted-foreground">{project.period}</span>
                         </div>
-                        <p className="text-base md:text-lg text-foreground/80 font-light leading-relaxed">
+                        <p className="text-base md:text-lg text-foreground/80 font-light leading-relaxed line-clamp-1 md:line-clamp-none">
                           {project.summary}
                         </p>
                       </div>
 
-                      <div className="grid grid-cols-3 gap-4 pt-6 border-t border-border">
+                      <div className="hidden md:grid grid-cols-3 gap-4 pt-6 border-t border-border">
                         {project.metrics.map((m) => (
                           <div key={m.label}>
                             <div className="text-2xl font-semibold tracking-tight">{m.value}</div>
@@ -95,9 +95,9 @@ export default function Portfolio() {
                         ))}
                       </div>
 
-                      <div className="flex items-center gap-2 text-base font-semibold text-foreground">
+                      <div className="flex items-center gap-1.5 md:gap-2 text-sm md:text-base font-semibold text-foreground">
                         Voir le projet
-                        <ArrowUpRight className="size-5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                        <ArrowUpRight className="size-4 md:size-5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                       </div>
                     </div>
                   </div>
