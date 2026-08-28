@@ -185,13 +185,25 @@ export default function BlogPost() {
           </div>
         </div>
 
-        <div className="px-6 lg:px-8 pt-4 md:pt-6">
-          <div className="max-w-4xl mx-auto">
-            <div className="h-48 md:h-72 rounded-2xl border border-border bg-muted flex items-center justify-center overflow-hidden">
+        {/* Cover — mobile: framed thumbnail, image shown in full */}
+        <div className="md:hidden px-6 pt-4">
+          <div className="h-48 rounded-2xl border border-border bg-muted flex items-center justify-center overflow-hidden">
+            <img
+              src={post.cover.url}
+              alt={post.cover.alt}
+              className="max-w-full max-h-full object-contain"
+            />
+          </div>
+        </div>
+
+        {/* Cover — desktop: wide editorial banner, cropped for a consistent lede image */}
+        <div className="hidden md:block px-6 lg:px-8 pt-6">
+          <div className="max-w-5xl mx-auto">
+            <div className="aspect-[16/9] rounded-2xl border border-border bg-muted overflow-hidden">
               <img
                 src={post.cover.url}
                 alt={post.cover.alt}
-                className="max-w-full max-h-full object-contain"
+                className="w-full h-full object-cover object-top"
               />
             </div>
           </div>
