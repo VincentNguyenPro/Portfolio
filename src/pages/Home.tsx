@@ -50,7 +50,7 @@ function ProjectCard({ project }: { project: Project }) {
         </div>
       </div>
       <div className="p-5 md:p-5">
-        <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm font-medium tracking-wider uppercase text-foreground mb-3 md:mb-2 min-h-10 md:min-h-0">
+        <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm font-medium tracking-wider uppercase text-foreground mb-3 md:mb-2 min-h-10">
           <span>{project.company}</span>
           <span className="text-muted-foreground/60">·</span>
           <span className="text-muted-foreground">{project.period}</span>
@@ -75,7 +75,7 @@ export default function Home() {
       />
       <div className="min-h-screen">
         {/* HERO */}
-        <section className="px-6 lg:px-8 pt-20 pb-6 md:pt-24 md:pb-16 border-b border-border bg-background">
+        <section className="px-6 lg:px-8 pt-20 pb-6 md:pt-[104px] md:pb-16 border-b border-border bg-background">
           <div className="max-w-7xl mx-auto grid md:grid-cols-[1.7fr_1fr] gap-8 md:gap-10 lg:gap-16 items-start">
             <motion.div
               initial={{ opacity: 0, y: 16 }}

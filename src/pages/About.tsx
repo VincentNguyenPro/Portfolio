@@ -156,7 +156,7 @@ export default function About() {
       />
       <div className="min-h-screen">
         {/* Header */}
-        <section className="px-6 lg:px-8 pt-6 pb-6 md:pt-14 md:pb-8 border-b border-border">
+        <section className="px-6 lg:px-8 pt-6 pb-6 md:pt-10 md:pb-8 border-b border-border">
           <div className="max-w-7xl mx-auto grid md:grid-cols-[1.4fr_1fr] gap-6 md:gap-10 lg:gap-16 items-start md:items-stretch">
             <motion.div
               initial={{ opacity: 0, y: 16 }}

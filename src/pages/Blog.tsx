@@ -51,7 +51,7 @@ export default function Blog() {
         description="Carnets de bord Product Management, IA et Innovation. Conférences, hackathons, retours d'expérience terrain."
       />
       <div className="min-h-screen">
-        <section className="px-6 lg:px-8 pt-6 pb-6 md:pt-12 md:pb-6 border-b border-border">
+        <section className="px-6 lg:px-8 pt-6 pb-6 md:pt-10 md:pb-6 border-b border-border">
           <div className="max-w-7xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 16 }}

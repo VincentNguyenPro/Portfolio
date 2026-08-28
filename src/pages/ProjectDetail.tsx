@@ -1,9 +1,50 @@
 import { useParams, Link, Navigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowLeft, ArrowRight, CheckCircle2 } from 'lucide-react';
+import { useEffect, useMemo, useState } from 'react';
 import { getProjectBySlug, getProjectNavigation } from '@/data/projects';
 import { SEOHead } from '@/components/seo/SEOHead';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
+
+function CountUpNumber({ raw }: { raw: string }) {
+  const decimalSeparator = raw.includes(',') ? ',' : '.';
+  const target = parseFloat(raw.replace(',', '.'));
+  const decimals = /[.,]/.test(raw) ? raw.split(/[.,]/)[1]?.length ?? 0 : 0;
+  const [display, setDisplay] = useState(0);
+
+  useEffect(() => {
+    if (Number.isNaN(target)) return;
+    setDisplay(0);
+    const duration = 1200;
+    const start = performance.now();
+    let frame: number;
+    const step = (now: number) => {
+      const progress = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      setDisplay(target * eased);
+      if (progress < 1) frame = requestAnimationFrame(step);
+    };
+    frame = requestAnimationFrame(step);
+    return () => cancelAnimationFrame(frame);
+  }, [target]);
+
+  if (Number.isNaN(target)) return <>{raw}</>;
+
+  return (
+    <>{decimals > 0 ? display.toFixed(decimals).replace('.', decimalSeparator) : Math.round(display)}</>
+  );
+}
+
+function KpiValue({ value }: { value: string }) {
+  const parts = useMemo(() => value.split(/(-?\d[\d.,]*)/g).filter((p) => p !== ''), [value]);
+  return (
+    <>
+      {parts.map((part, i) =>
+        /^-?\d[\d.,]*$/.test(part) ? <CountUpNumber key={i} raw={part} /> : <span key={i}>{part}</span>
+      )}
+    </>
+  );
+}
 
 export default function ProjectDetail() {
   const { slug } = useParams<{ slug: string }>();
@@ -64,7 +105,7 @@ export default function ProjectDetail() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7 }}
               >
-                <div className="flex flex-wrap items-center gap-2 text-xs font-medium tracking-wider uppercase text-muted-foreground mb-3">
+                <div className="flex flex-wrap items-center gap-2 text-sm font-medium tracking-wider uppercase text-muted-foreground mb-3">
                   <span>{project.company}</span>
                   <span className="text-muted-foreground/60">·</span>
                   <span>{project.period}</span>
@@ -80,7 +121,9 @@ export default function ProjectDetail() {
                 <div className="grid grid-cols-3 gap-6 max-w-lg pt-4 border-t border-border">
                   {project.metrics.map((m) => (
                     <div key={m.label}>
-                      <div className="text-xl font-semibold tracking-tight">{m.value}</div>
+                      <div className="text-xl font-semibold tracking-tight">
+                        <KpiValue value={m.value} />
+                      </div>
                       <div className="text-xs text-muted-foreground">{m.label}</div>
                     </div>
                   ))}
@@ -94,7 +137,7 @@ export default function ProjectDetail() {
                   <span className="size-2 rounded-full bg-border" />
                 </div>
                 <div
-                  className={`relative aspect-[4/3] ${
+                  className={`relative aspect-[16/9] ${
                     project.coverImage ? 'bg-muted' : `bg-gradient-to-br ${project.coverGradient}`
                   }`}
                 >
@@ -113,7 +156,7 @@ export default function ProjectDetail() {
 
         {/* Body */}
         <div className="px-6 lg:px-8 py-5 md:py-14">
-          <div className="max-w-7xl mx-auto space-y-6 md:space-y-16">
+          <div className="max-w-7xl mx-auto space-y-6 md:space-y-8">
             <div className="md:hidden flex flex-wrap items-center gap-3 text-sm font-medium tracking-wider uppercase text-foreground/80 border-b border-border pb-5">
               <span>{project.company}</span>
               <span className="text-muted-foreground/60">·</span>
