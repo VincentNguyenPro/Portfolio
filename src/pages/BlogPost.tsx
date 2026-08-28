@@ -68,7 +68,7 @@ function buildGroups(sections: BlogSection[]): SectionGroup[] {
 
 function TextBlock({ section }: { section: BlogSection }) {
   return (
-    <div className="space-y-4">
+    <div className="space-y-3">
       {section.heading && (
         <h2 className="text-2xl md:text-3xl font-semibold tracking-tight">
           {section.heading}
@@ -146,13 +146,13 @@ export default function BlogPost() {
     <>
       <SEOHead title={post.title} description={post.description} />
       <article className="min-h-screen">
-        <div className="px-6 lg:px-8 pt-8 md:pt-12">
+        <div className="px-6 lg:px-8 pt-6 md:pt-10">
           <div className="max-w-3xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="space-y-4"
+              className="space-y-3"
             >
               <Link
                 to="/blog"
@@ -185,9 +185,9 @@ export default function BlogPost() {
           </div>
         </div>
 
-        <div className="px-6 lg:px-8 pt-6 md:pt-8">
+        <div className="px-6 lg:px-8 pt-4 md:pt-6">
           <div className="max-w-4xl mx-auto">
-            <div className="h-56 md:h-80 rounded-2xl border border-border bg-muted flex items-center justify-center overflow-hidden">
+            <div className="h-48 md:h-72 rounded-2xl border border-border bg-muted flex items-center justify-center overflow-hidden">
               <img
                 src={post.cover.url}
                 alt={post.cover.alt}
@@ -197,15 +197,15 @@ export default function BlogPost() {
           </div>
         </div>
 
-        <div className="px-6 lg:px-8 py-8 md:py-16">
-          <div className="max-w-5xl mx-auto space-y-12">
+        <div className="px-6 lg:px-8 py-6 md:py-10">
+          <div className="max-w-5xl mx-auto space-y-8 md:space-y-10">
             {groups.map((g, idx) => {
               if (g.text && g.image) {
                 const reverse = idx % 2 === 1;
                 return (
                   <div
                     key={idx}
-                    className="grid md:grid-cols-[1.4fr_1fr] gap-8 md:gap-12 items-start"
+                    className="grid md:grid-cols-[1.4fr_1fr] gap-6 md:gap-8 items-start"
                   >
                     <div className={reverse ? 'md:order-2' : ''}>
                       <TextBlock section={g.text} />
