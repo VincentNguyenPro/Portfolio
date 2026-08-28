@@ -20,9 +20,8 @@ export default function ProjectDetail() {
       <SEOHead title={project.title} description={project.summary} type="article" />
 
       <article className="min-h-screen">
-        {/* Hero */}
-        <section className="relative text-white px-6 lg:px-8 pt-6 md:pt-10 pb-6 md:pb-8 overflow-hidden">
-          {/* Cover image */}
+        {/* Hero — mobile: full-bleed photo */}
+        <section className="md:hidden relative text-white px-6 pt-6 pb-6 overflow-hidden">
           {project.coverImage ? (
             <>
               <img
@@ -38,9 +37,9 @@ export default function ProjectDetail() {
           <div className="relative max-w-7xl mx-auto">
             <Link
               to="/projets"
-              className="inline-flex items-center gap-2 text-base md:text-sm font-medium text-white hover:text-white mb-4 md:mb-4 transition-colors drop-shadow-sm px-4 py-2 md:px-3 md:py-1.5 rounded-full border border-white/30 bg-white/10 backdrop-blur hover:bg-white/20"
+              className="inline-flex items-center gap-2 text-base font-medium text-white hover:text-white mb-4 transition-colors drop-shadow-sm px-4 py-2 rounded-full border border-white/30 bg-white/10 backdrop-blur hover:bg-white/20"
             >
-              <ArrowLeft className="size-5 md:size-4" />
+              <ArrowLeft className="size-5" />
               Tous les projets
             </Link>
 
@@ -48,31 +47,65 @@ export default function ProjectDetail() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7 }}
-              className="space-y-3 md:flex md:items-end md:justify-between md:gap-8"
             >
-              <h1 className="text-3xl sm:text-4xl md:text-3xl font-semibold tracking-tight leading-[1.15] max-w-4xl drop-shadow-md">
+              <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight leading-[1.15] max-w-4xl drop-shadow-md">
                 {project.title}
               </h1>
-
-              <p className="hidden md:block text-base text-white font-light leading-relaxed max-w-md drop-shadow-md">
-                {project.summary}
-              </p>
             </motion.div>
+          </div>
+        </section>
 
-            {/* Metrics */}
-            <div className="hidden md:grid grid-cols-3 gap-6 mt-4 pt-4 border-t border-white/20 max-w-2xl">
-              {project.metrics.map((m) => (
-                <div key={m.label}>
-                  <div className="text-xl font-semibold tracking-tight drop-shadow-sm">{m.value}</div>
-                  <div className="text-xs text-white drop-shadow-sm">{m.label}</div>
+        {/* Hero — desktop: neutral banner + photo vignette */}
+        <section className="hidden md:block px-6 lg:px-8 pt-8 pb-6 border-b border-border">
+          <div className="max-w-7xl mx-auto">
+            <div className="grid grid-cols-[1.5fr_1fr] gap-10 items-center">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7 }}
+              >
+                <h1 className="text-3xl font-semibold tracking-tight leading-[1.15] mb-3">
+                  {project.title}
+                </h1>
+                <p className="text-base text-muted-foreground font-light leading-relaxed max-w-xl mb-5">
+                  {project.summary}
+                </p>
+                <div className="grid grid-cols-3 gap-6 max-w-lg pt-4 border-t border-border">
+                  {project.metrics.map((m) => (
+                    <div key={m.label}>
+                      <div className="text-xl font-semibold tracking-tight">{m.value}</div>
+                      <div className="text-xs text-muted-foreground">{m.label}</div>
+                    </div>
+                  ))}
                 </div>
-              ))}
+              </motion.div>
+
+              <div className="rounded-2xl border border-border overflow-hidden bg-card">
+                <div className="flex items-center gap-1.5 px-3 py-2 bg-muted/60 border-b border-border">
+                  <span className="size-2 rounded-full bg-border" />
+                  <span className="size-2 rounded-full bg-border" />
+                  <span className="size-2 rounded-full bg-border" />
+                </div>
+                <div
+                  className={`relative aspect-[4/3] ${
+                    project.coverImage ? 'bg-muted' : `bg-gradient-to-br ${project.coverGradient}`
+                  }`}
+                >
+                  {project.coverImage && (
+                    <img
+                      src={project.coverImage}
+                      alt={project.title}
+                      className="absolute inset-0 w-full h-full object-cover"
+                    />
+                  )}
+                </div>
+              </div>
             </div>
           </div>
         </section>
 
         {/* Body */}
-        <div className="px-6 lg:px-8 py-5 md:py-28">
+        <div className="px-6 lg:px-8 py-5 md:py-14">
           <div className="max-w-7xl mx-auto space-y-6 md:space-y-16">
             <div className="flex flex-wrap items-center gap-3 text-sm md:text-base font-medium tracking-wider uppercase text-foreground/80 border-b border-border pb-5 md:pb-8">
               <span>{project.company}</span>
