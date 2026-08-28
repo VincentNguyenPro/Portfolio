@@ -130,7 +130,11 @@ export default function ProjectDetail() {
                 </div>
               </motion.div>
 
-              <div className="rounded-2xl border border-border overflow-hidden bg-card">
+              <div className="relative">
+                <div
+                  className={`absolute -inset-3 rounded-3xl bg-gradient-to-br ${project.coverGradient} opacity-20 blur-2xl`}
+                />
+                <div className="relative rounded-2xl border border-border overflow-hidden bg-card">
                 <div className="flex items-center gap-1.5 px-3 py-2 bg-muted/60 border-b border-border">
                   <span className="size-2 rounded-full bg-border" />
                   <span className="size-2 rounded-full bg-border" />
@@ -148,6 +152,7 @@ export default function ProjectDetail() {
                       className="absolute inset-0 w-full h-full object-cover"
                     />
                   )}
+                </div>
                 </div>
               </div>
             </div>
