@@ -21,7 +21,7 @@ export default function ProjectDetail() {
 
       <article className="min-h-screen">
         {/* Hero */}
-        <section className="relative text-white px-6 lg:px-8 pt-24 md:pt-32 pb-20 md:pb-28 overflow-hidden">
+        <section className="relative text-white px-6 lg:px-8 pt-6 md:pt-32 pb-6 md:pb-28 overflow-hidden">
           {/* Cover image */}
           {project.coverImage ? (
             <>
@@ -38,7 +38,7 @@ export default function ProjectDetail() {
           <div className="relative max-w-7xl mx-auto">
             <Link
               to="/projets"
-              className="inline-flex items-center gap-2 text-base md:text-lg font-medium text-white hover:text-white mb-10 transition-colors drop-shadow-sm px-4 py-2 rounded-full border border-white/30 bg-white/10 backdrop-blur hover:bg-white/20"
+              className="inline-flex items-center gap-2 text-base md:text-lg font-medium text-white hover:text-white mb-6 md:mb-10 transition-colors drop-shadow-sm px-4 py-2 rounded-full border border-white/30 bg-white/10 backdrop-blur hover:bg-white/20"
             >
               <ArrowLeft className="size-5" />
               Tous les projets
@@ -50,17 +50,17 @@ export default function ProjectDetail() {
               transition={{ duration: 0.7 }}
               className="space-y-6"
             >
-              <h1 className="text-4xl md:text-6xl font-semibold tracking-tight leading-[1.1] max-w-4xl drop-shadow-md">
+              <h1 className="text-3xl sm:text-4xl md:text-6xl font-semibold tracking-tight leading-[1.15] max-w-4xl drop-shadow-md">
                 {project.title}
               </h1>
 
-              <p className="text-lg md:text-xl text-white font-light leading-relaxed max-w-3xl drop-shadow-md">
+              <p className="hidden md:block text-lg md:text-xl text-white font-light leading-relaxed max-w-3xl drop-shadow-md">
                 {project.summary}
               </p>
             </motion.div>
 
             {/* Metrics */}
-            <div className="grid grid-cols-3 gap-6 mt-12 pt-8 border-t border-white/20">
+            <div className="hidden md:grid grid-cols-3 gap-6 mt-12 pt-8 border-t border-white/20">
               {project.metrics.map((m) => (
                 <div key={m.label}>
                   <div className="text-2xl md:text-4xl font-semibold tracking-tight drop-shadow-sm">{m.value}</div>
@@ -72,9 +72,9 @@ export default function ProjectDetail() {
         </section>
 
         {/* Body */}
-        <div className="px-6 lg:px-8 py-12 md:py-28">
-          <div className="max-w-7xl mx-auto space-y-16">
-            <div className="flex flex-wrap items-center gap-3 text-sm md:text-base font-medium tracking-wider uppercase text-foreground/80 border-b border-border pb-8">
+        <div className="px-6 lg:px-8 py-5 md:py-28">
+          <div className="max-w-7xl mx-auto space-y-6 md:space-y-16">
+            <div className="flex flex-wrap items-center gap-3 text-sm md:text-base font-medium tracking-wider uppercase text-foreground/80 border-b border-border pb-5 md:pb-8">
               <span>{project.company}</span>
               <span className="text-muted-foreground/60">·</span>
               <span className="text-muted-foreground">{project.period}</span>
@@ -84,7 +84,7 @@ export default function ProjectDetail() {
 
             {project.scope && (
               <ScrollReveal>
-                <div className="rounded-2xl border border-border bg-muted/30 p-6">
+                <div className="rounded-2xl border border-border bg-muted/30 p-5 md:p-6">
                   <p className="text-base font-semibold tracking-[0.2em] uppercase text-muted-foreground mb-2">
                     Périmètre
                   </p>
@@ -116,11 +116,11 @@ export default function ProjectDetail() {
             </ScrollReveal>
 
             <ScrollReveal>
-              <section className="space-y-8">
+              <section className="space-y-4 md:space-y-8">
                 <h2 className="text-xl md:text-2xl font-semibold tracking-[0.2em] uppercase text-muted-foreground">
                   Démarche
                 </h2>
-                <ol className="space-y-6">
+                <ol className="space-y-4 md:space-y-6">
                   {project.approach.map((step, i) => (
                     <li key={step.heading} className="grid grid-cols-[auto_1fr] gap-5">
                       <div className="flex flex-col items-center">
@@ -146,7 +146,7 @@ export default function ProjectDetail() {
             </ScrollReveal>
 
             <ScrollReveal>
-              <section className="space-y-4 rounded-2xl bg-foreground text-background p-8 md:p-10">
+              <section className="space-y-3 md:space-y-4 rounded-2xl bg-foreground text-background p-5 md:p-10">
                 <h2 className="text-xl md:text-2xl font-semibold tracking-[0.2em] uppercase opacity-70">
                   Résultats
                 </h2>
@@ -182,18 +182,18 @@ export default function ProjectDetail() {
         </div>
 
         {/* Navigation */}
-        <nav className="border-t border-border px-6 lg:px-8 py-10">
-          <div className="max-w-7xl mx-auto grid sm:grid-cols-2 gap-4">
+        <nav className="border-t border-border px-6 lg:px-8 py-5 md:py-10">
+          <div className="max-w-7xl mx-auto grid grid-cols-2 gap-3 sm:gap-4">
             {previous ? (
               <Link
                 to={`/projet/${previous.slug}`}
-                className="group rounded-2xl border border-border p-5 hover:bg-muted/40 transition-colors"
+                className="group min-w-0 rounded-xl sm:rounded-2xl border border-border p-4 sm:p-5 hover:bg-muted/40 transition-colors"
               >
-                <div className="flex items-center gap-2 text-base font-medium text-muted-foreground mb-2">
-                  <ArrowLeft className="size-4" />
-                  Projet précédent
+                <div className="flex items-center gap-1.5 sm:gap-2 text-xs sm:text-base font-medium text-muted-foreground mb-1.5 sm:mb-2">
+                  <ArrowLeft className="size-3.5 sm:size-4 shrink-0" />
+                  Précédent
                 </div>
-                <div className="text-lg font-semibold tracking-tight">{previous.title}</div>
+                <div className="text-sm sm:text-lg font-semibold tracking-tight leading-snug line-clamp-2">{previous.title}</div>
               </Link>
             ) : (
               <div />
@@ -201,13 +201,13 @@ export default function ProjectDetail() {
             {next ? (
               <Link
                 to={`/projet/${next.slug}`}
-                className="group rounded-2xl border border-border p-5 hover:bg-muted/40 transition-colors sm:text-right"
+                className="group min-w-0 rounded-xl sm:rounded-2xl border border-border p-4 sm:p-5 hover:bg-muted/40 transition-colors sm:text-right"
               >
-                <div className="flex items-center gap-2 text-base font-medium text-muted-foreground mb-2 sm:justify-end">
-                  Projet suivant
-                  <ArrowRight className="size-4" />
+                <div className="flex items-center gap-1.5 sm:gap-2 text-xs sm:text-base font-medium text-muted-foreground mb-1.5 sm:mb-2 sm:justify-end">
+                  Suivant
+                  <ArrowRight className="size-3.5 sm:size-4 shrink-0" />
                 </div>
-                <div className="text-lg font-semibold tracking-tight">{next.title}</div>
+                <div className="text-sm sm:text-lg font-semibold tracking-tight leading-snug line-clamp-2">{next.title}</div>
               </Link>
             ) : (
               <div />

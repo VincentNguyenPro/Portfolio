@@ -42,7 +42,7 @@ export default function Contact() {
       />
 
       <div className="min-h-screen">
-        <section className="px-6 lg:px-8 pt-20 pb-6 md:pt-24 md:pb-16 border-b border-border">
+        <section className="px-6 lg:px-8 pt-6 pb-6 md:pt-24 md:pb-16 border-b border-border">
           <div className="max-w-7xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 16 }}
@@ -102,6 +102,19 @@ export default function Contact() {
                 <span className="text-sm font-medium">CV</span>
               </motion.a>
             </div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: (contactItems.length + 1) * 0.05 }}
+              className="md:hidden mt-3 flex items-center justify-center gap-2 rounded-2xl border border-border bg-card px-5 py-4"
+            >
+              <span className="relative flex size-2">
+                <span className="absolute inline-flex size-full rounded-full bg-emerald-400 opacity-75 animate-ping" />
+                <span className="relative inline-flex size-2 rounded-full bg-emerald-400" />
+              </span>
+              <span className="text-sm font-medium text-foreground">Disponible immédiatement</span>
+            </motion.div>
 
             {/* Desktop: full cards with address/label */}
             <div className="hidden md:grid sm:grid-cols-2 gap-4">
