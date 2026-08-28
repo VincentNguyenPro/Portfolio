@@ -178,7 +178,7 @@ export default function About() {
                 <h2 className="text-xl md:text-2xl font-semibold tracking-tight mb-4">
                   De l'ingénierie au Product Management : un parcours forgé dans la complexité
                 </h2>
-                <div className="grid grid-cols-[180px_1fr] gap-8 lg:gap-10 items-start">
+                <div className="grid grid-cols-[180px_1fr] gap-8 lg:gap-10 items-center">
                   <div className="relative">
                     <div className="absolute left-[6.5px] top-2 bottom-2 w-px bg-border" />
                     <div className="flex flex-col">
