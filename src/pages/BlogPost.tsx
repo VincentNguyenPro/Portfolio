@@ -35,13 +35,33 @@ function buildGroups(sections: BlogSection[]): SectionGroup[] {
     }
   };
 
-  for (const s of sections) {
+  for (let i = 0; i < sections.length; i++) {
+    const s = sections[i];
+    const next = sections[i + 1];
+
     if (s.gallery) {
       flush();
       if (hasText(s)) groups.push({ text: { ...s, image: undefined, gallery: undefined }, fullWidth: true });
       groups.push({ gallery: s.gallery, fullWidth: true });
       continue;
     }
+
+    // A section carrying both text and its own image: pair them side by side.
+    if (hasText(s) && s.image) {
+      flush();
+      groups.push({ text: { ...s, image: undefined }, image: s.image });
+      continue;
+    }
+
+    // A paragraph immediately followed by a standalone illustrating photo: pair them
+    // side by side on desktop instead of stacking, to save vertical space.
+    if (hasText(s) && next && isImageOnly(next) && !next.image?.width) {
+      flush();
+      groups.push({ text: s, image: next.image });
+      i++;
+      continue;
+    }
+
     if (s.fullWidth) {
       flush();
       if (hasText(s)) groups.push({ text: { ...s, image: undefined }, fullWidth: true });
@@ -198,7 +218,7 @@ export default function BlogPost() {
 
         {/* Cover — desktop: wide editorial banner, cropped for a consistent lede image */}
         <div className="hidden md:block px-6 lg:px-8 pt-6">
-          <div className="max-w-5xl mx-auto">
+          <div className="max-w-3xl mx-auto">
             <div className="aspect-[16/9] rounded-2xl border border-border bg-muted overflow-hidden">
               <img
                 src={post.cover.url}
@@ -210,7 +230,7 @@ export default function BlogPost() {
         </div>
 
         <div className="px-6 lg:px-8 py-6 md:py-10">
-          <div className="max-w-5xl mx-auto space-y-8 md:space-y-10">
+          <div className="max-w-3xl mx-auto space-y-8 md:space-y-10">
             {groups.map((g, idx) => {
               if (g.text && g.image) {
                 const reverse = idx % 2 === 1;
@@ -258,16 +278,16 @@ export default function BlogPost() {
               if (g.image) {
                 const w = g.image.width;
                 const widthClass = w === 'sm'
-                  ? 'max-w-sm mx-auto'
+                  ? 'max-w-xs mx-auto'
                   : w === 'md'
-                  ? 'max-w-2xl mx-auto'
+                  ? 'max-w-xl mx-auto'
                   : w === 'lg'
-                  ? 'max-w-3xl mx-auto'
+                  ? 'max-w-2xl mx-auto'
                   : w === 'full'
                   ? ''
                   : g.fullWidth
-                  ? 'max-w-3xl mx-auto'
-                  : 'max-w-2xl mx-auto';
+                  ? 'max-w-xl mx-auto'
+                  : 'max-w-md mx-auto';
                 return (
                   <div key={idx} className={widthClass}>
                     <ImageBlock image={g.image} />
