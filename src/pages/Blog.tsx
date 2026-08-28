@@ -114,7 +114,7 @@ export default function Blog() {
                   to={`/blog/${post.slug}`}
                   className="group h-full block rounded-2xl overflow-hidden border border-border bg-card hover:shadow-xl transition-all"
                 >
-                  <div className="relative aspect-[16/9] overflow-hidden bg-muted">
+                  <div className="relative aspect-[16/9] md:aspect-[16/11] overflow-hidden bg-muted">
                     <img
                       src={post.cover.url}
                       alt={post.cover.alt}
@@ -124,13 +124,13 @@ export default function Blog() {
                       loading="lazy"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent pointer-events-none" />
-                    <div className="relative h-full p-5 flex flex-col justify-between text-white">
+                    <div className="relative h-full p-5 md:p-4 flex flex-col justify-between text-white">
                       <div className="flex items-start justify-end">
                         <ArrowUpRight className="size-5 opacity-90 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform shrink-0" />
                       </div>
                     </div>
                   </div>
-                  <div className="p-6 space-y-3">
+                  <div className="p-6 md:p-4 space-y-3 md:space-y-2">
                     <div className="flex items-start justify-between gap-3">
                       <div className="flex flex-wrap gap-1.5">
                         {post.categories.map((c) => (
@@ -146,10 +146,10 @@ export default function Blog() {
                         {post.date}
                       </p>
                     </div>
-                    <h2 className="text-lg font-semibold tracking-tight leading-snug group-hover:text-foreground/80 transition-colors">
+                    <h2 className="text-lg md:text-base font-semibold tracking-tight leading-snug line-clamp-2 group-hover:text-foreground/80 transition-colors">
                       {post.title}
                     </h2>
-                    <p className="text-sm text-muted-foreground font-light leading-relaxed">
+                    <p className="text-sm text-muted-foreground font-light leading-relaxed line-clamp-2">
                       {post.description}
                     </p>
                   </div>
