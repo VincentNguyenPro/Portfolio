@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
-import { GraduationCap, Award, Languages as LanguagesIcon, Building2, School, BadgeCheck, Download, ArrowRight } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { GraduationCap, Award, Languages as LanguagesIcon, Building2, School, BadgeCheck, ArrowRight } from 'lucide-react';
 import { MobileCarousel } from '@/components/ui/MobileCarousel';
 import {
   photographerInfo,
@@ -270,29 +269,76 @@ export default function About() {
               </div>
             </div>
 
-            {/* Desktop: original layout */}
-            <div className="hidden md:grid md:grid-cols-[1.4fr_1fr] gap-10 lg:gap-16 items-start">
+            {/* Desktop: vertical year timeline + detail card */}
+            <div className="hidden md:grid md:grid-cols-[220px_1fr] gap-10 lg:gap-16 items-start">
               <ScrollReveal>
-                <div className="space-y-3 text-base font-light leading-snug text-justify text-foreground/85">
-                  {storyMilestones.map((m) => (
-                    <p key={m.year}>{m.content}</p>
-                  ))}
+                <div className="relative">
+                  <div className="absolute left-[6.5px] top-3 bottom-3 w-px bg-border" />
+                  <div className="flex flex-col">
+                    {storyMilestones.map((m, i) => {
+                      const active = i === activeMilestone;
+                      return (
+                        <button
+                          key={m.year}
+                          type="button"
+                          onClick={() => setActiveMilestone(i)}
+                          className="group relative z-10 flex items-center gap-4 py-3 text-left"
+                        >
+                          <span
+                            className={`size-3.5 rounded-full ring-4 ring-background transition-colors shrink-0 ${
+                              active ? 'bg-blue-600' : 'bg-border group-hover:bg-muted-foreground'
+                            }`}
+                          />
+                          <span
+                            className={`text-lg font-semibold tracking-tight transition-colors ${
+                              active ? 'text-blue-600' : 'text-muted-foreground group-hover:text-foreground'
+                            }`}
+                          >
+                            {m.year}
+                          </span>
+                        </button>
+                      );
+                    })}
+                  </div>
                 </div>
               </ScrollReveal>
-              <ScrollReveal delay={0.1} className="hidden md:block">
-                <div className="md:sticky md:top-24 relative">
-                  <div className="absolute -inset-3 rounded-3xl bg-gradient-to-br from-indigo-500/20 via-violet-500/15 to-emerald-500/15 blur-2xl" />
-                  <div className="relative aspect-[4/5] rounded-3xl overflow-hidden border border-border bg-muted">
-                    <img
-                      src={saintelyonPhoto}
-                      alt="Vincent Nguyen à l'arrivée de la SaintéLyon"
-                      className="w-full h-full object-cover"
-                    />
+
+              <ScrollReveal delay={0.1}>
+                <motion.div
+                  key={activeMilestone}
+                  initial={{ opacity: 0, y: 8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4 }}
+                  className="md:sticky md:top-24 rounded-2xl border border-border bg-card p-8 lg:p-10 min-h-[320px]"
+                >
+                  <div className="flex items-center gap-4 mb-6">
+                    {storyMilestones[activeMilestone].logos.length > 0 && (
+                      <div className="flex items-center">
+                        {storyMilestones[activeMilestone].logos.map((logo, li) => (
+                          <span
+                            key={li}
+                            className={`size-16 rounded-full border border-border bg-white overflow-hidden flex items-center justify-center shrink-0 shadow-sm ${
+                              li > 0 ? '-ml-4' : ''
+                            }`}
+                            style={{ zIndex: storyMilestones[activeMilestone].logos.length - li }}
+                          >
+                            <img
+                              src={logo}
+                              alt=""
+                              className={`w-full h-full ${logo === sunsetRoad ? 'object-cover' : 'object-contain p-2'}`}
+                            />
+                          </span>
+                        ))}
+                      </div>
+                    )}
+                    <p className="text-3xl font-bold tracking-tight text-blue-600">
+                      {storyMilestones[activeMilestone].year}
+                    </p>
                   </div>
-                  <p className="mt-4 text-xs text-muted-foreground font-light italic text-center">
-                    Arrivée de la SaintéLyon - 44 km de nuit entre Saint-Catherine et Lyon
+                  <p className="text-lg font-light leading-relaxed text-foreground/85">
+                    {storyMilestones[activeMilestone].content}
                   </p>
-                </div>
+                </motion.div>
               </ScrollReveal>
             </div>
           </div>
@@ -369,14 +415,6 @@ export default function About() {
                   </div>
                 </div>
               </ScrollReveal>
-            </div>
-            <div className="hidden md:flex mt-6 md:mt-8 justify-start">
-              <Button asChild variant="outline" size="lg" className="gap-2">
-                <a href="/Vincent-Nguyen-CV.pdf" download="Vincent-Nguyen-CV.pdf">
-                  <Download className="size-4" />
-                  Télécharger mon CV
-                </a>
-              </Button>
             </div>
           </div>
         </section>

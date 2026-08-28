@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, ArrowUpRight, Sparkles } from 'lucide-react';
 import { photographerInfo, skillGroups } from '@/data/photographer';
 import { getFeaturedProjects } from '@/data/projects';
+import type { Project } from '@/types';
 import { SEOHead } from '@/components/seo/SEOHead';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { MobileCarousel } from '@/components/ui/MobileCarousel';
@@ -15,8 +16,56 @@ const stats = [
   { target: 250, prefix: '+', label: 'utilisateurs accompagnés' },
 ];
 
+function ProjectCard({ project }: { project: Project }) {
+  return (
+    <Link
+      to={`/projet/${project.slug}`}
+      className="group block h-full rounded-2xl overflow-hidden border border-border bg-card hover:shadow-xl transition-all"
+    >
+      <div
+        className={`relative aspect-[16/9] md:aspect-[16/10] overflow-hidden ${
+          project.coverImage ? 'bg-muted' : `bg-gradient-to-br ${project.coverGradient}`
+        } p-5 md:p-8 flex flex-col justify-end text-white`}
+      >
+        {project.coverImage && (
+          <>
+            <img
+              src={project.coverImage}
+              alt={`${project.company} - ${project.title}`}
+              loading="lazy"
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-black/10" />
+          </>
+        )}
+        {project.badge && (
+          <span className="absolute top-3 right-3 md:top-4 md:right-4 text-[9px] md:text-[10px] font-semibold tracking-wide px-2 py-1 rounded-full bg-white/15 backdrop-blur border border-white/20">
+            {project.badge}
+          </span>
+        )}
+        <div className="relative">
+          <h3 className="text-xl md:text-3xl font-semibold leading-tight line-clamp-2 md:line-clamp-none">
+            {project.title}
+          </h3>
+        </div>
+      </div>
+      <div className="p-5 md:p-6">
+        <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm font-medium tracking-wider uppercase text-foreground mb-3 min-h-10">
+          <span>{project.company}</span>
+          <span className="text-muted-foreground/60">·</span>
+          <span className="text-muted-foreground">{project.period}</span>
+        </div>
+        <div className="flex items-center gap-1.5 text-sm font-semibold text-foreground">
+          Voir le projet
+          <ArrowUpRight className="size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+        </div>
+      </div>
+    </Link>
+  );
+}
+
 export default function Home() {
-  const featured = getFeaturedProjects();
+  const featured = getFeaturedProjects(4);
 
   return (
     <>
@@ -175,58 +224,24 @@ export default function Home() {
               </div>
             </ScrollReveal>
 
-            <MobileCarousel
-              items={featured}
-              keyExtractor={(project) => project.id}
-              trackClassName="flex gap-4 overflow-x-auto overflow-y-hidden hide-scrollbar snap-x snap-mandatory -mx-6 px-6 pb-2 md:grid md:grid-cols-2 md:gap-6 md:overflow-visible md:mx-0 md:px-0 md:pb-0"
-              itemClassName="shrink-0 w-full snap-center md:w-auto md:shrink"
-              navClassName="md:hidden"
-              renderItem={(project) => (
-                  <Link
-                    to={`/projet/${project.slug}`}
-                    className="group block h-full rounded-2xl overflow-hidden border border-border bg-card hover:shadow-xl transition-all"
-                  >
-                    <div
-                      className={`relative aspect-[16/9] md:aspect-[16/10] overflow-hidden ${
-                        project.coverImage ? 'bg-muted' : `bg-gradient-to-br ${project.coverGradient}`
-                      } p-5 md:p-8 flex flex-col justify-end text-white`}
-                    >
-                      {project.coverImage && (
-                        <>
-                          <img
-                            src={project.coverImage}
-                            alt={`${project.company} - ${project.title}`}
-                            loading="lazy"
-                            className="absolute inset-0 w-full h-full object-cover"
-                          />
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-black/10" />
-                        </>
-                      )}
-                      {project.badge && (
-                        <span className="absolute top-3 right-3 md:top-4 md:right-4 text-[9px] md:text-[10px] font-semibold tracking-wide px-2 py-1 rounded-full bg-white/15 backdrop-blur border border-white/20">
-                          {project.badge}
-                        </span>
-                      )}
-                      <div className="relative">
-                        <h3 className="text-xl md:text-3xl font-semibold leading-tight line-clamp-2 md:line-clamp-none">
-                          {project.title}
-                        </h3>
-                      </div>
-                    </div>
-                    <div className="p-5 md:p-6">
-                      <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm font-medium tracking-wider uppercase text-foreground mb-3 min-h-10">
-                        <span>{project.company}</span>
-                        <span className="text-muted-foreground/60">·</span>
-                        <span className="text-muted-foreground">{project.period}</span>
-                      </div>
-                      <div className="flex items-center gap-1.5 text-sm font-semibold text-foreground">
-                        Voir le projet
-                        <ArrowUpRight className="size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                      </div>
-                    </div>
-                  </Link>
-              )}
-            />
+            {/* Mobile: carousel teaser, 3 projects */}
+            <div className="md:hidden">
+              <MobileCarousel
+                items={featured.slice(0, 3)}
+                keyExtractor={(project) => project.id}
+                trackClassName="flex gap-4 overflow-x-auto overflow-y-hidden hide-scrollbar snap-x snap-mandatory -mx-6 px-6 pb-2"
+                itemClassName="shrink-0 w-full snap-center"
+                navClassName=""
+                renderItem={(project) => <ProjectCard project={project} />}
+              />
+            </div>
+
+            {/* Desktop: static grid, 4 projects */}
+            <div className="hidden md:grid md:grid-cols-2 md:gap-6">
+              {featured.map((project) => (
+                <ProjectCard key={project.id} project={project} />
+              ))}
+            </div>
 
             <div className="mt-6 md:mt-10 flex justify-center md:justify-start">
               <Link

@@ -228,8 +228,8 @@ export const projects: Project[] = [
   },
 ];
 
-export function getFeaturedProjects(): Project[] {
-  return projects.slice(0, 3);
+export function getFeaturedProjects(count = 3): Project[] {
+  return projects.slice(0, count);
 }
 
 export function getProjectBySlug(slug: string): Project | undefined {
