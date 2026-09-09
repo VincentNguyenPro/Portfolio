@@ -162,13 +162,31 @@ export default function ProjectDetail() {
               <span className="text-muted-foreground">{project.role}</span>
             </div>
 
-            {project.scope && (
+            {(project.scope || project.team) && (
               <ScrollReveal>
-                <div className="rounded-2xl border border-border bg-muted/30 p-4 md:p-6">
-                  <p className="text-sm md:text-base font-semibold tracking-[0.2em] uppercase text-muted-foreground mb-1">
-                    Périmètre
-                  </p>
-                  <p className="text-sm md:text-base font-light">{project.scope}</p>
+                <div className={`grid gap-4 ${project.scope && project.team ? 'md:grid-cols-2' : ''}`}>
+                  {project.scope && (
+                    <div className="rounded-2xl border border-border bg-muted/30 p-4 md:p-6">
+                      <p className="text-sm md:text-base font-semibold tracking-[0.2em] uppercase text-muted-foreground mb-1">
+                        Périmètre
+                      </p>
+                      <p className="text-sm md:text-base font-light">{project.scope}</p>
+                    </div>
+                  )}
+                  {project.team && (
+                    <div className="rounded-2xl border border-border bg-muted/30 p-4 md:p-6">
+                      <p className="text-sm md:text-base font-semibold tracking-[0.2em] uppercase text-muted-foreground mb-1">
+                        Équipe
+                      </p>
+                      <ul className="space-y-0.5">
+                        {project.team.map((t) => (
+                          <li key={t} className="text-sm md:text-base font-light">
+                            {t}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
                 </div>
               </ScrollReveal>
             )}
@@ -218,6 +236,12 @@ export default function ProjectDetail() {
                         <p className="text-base text-foreground/75 font-light leading-relaxed">
                           {step.body}
                         </p>
+                        {step.result && (
+                          <p className="mt-2 inline-flex items-start gap-1.5 text-sm font-medium text-blue-600">
+                            <CheckCircle2 className="size-3.5 mt-0.5 shrink-0" />
+                            {step.result}
+                          </p>
+                        )}
                       </div>
                     </li>
                   ))}
@@ -258,6 +282,19 @@ export default function ProjectDetail() {
                 </ul>
               </section>
             </ScrollReveal>
+
+            {project.retro && (
+              <ScrollReveal>
+                <section className="space-y-2 md:space-y-4">
+                  <h2 className="text-lg md:text-2xl font-semibold tracking-[0.2em] uppercase text-muted-foreground">
+                    Bilan &amp; prochaines étapes
+                  </h2>
+                  <p className="text-base md:text-lg leading-relaxed text-foreground/85 font-light">
+                    {project.retro}
+                  </p>
+                </section>
+              </ScrollReveal>
+            )}
           </div>
         </div>
 

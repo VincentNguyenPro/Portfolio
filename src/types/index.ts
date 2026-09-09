@@ -12,6 +12,7 @@ export interface ProjectMetric {
 export interface CaseStudySection {
   heading: string;
   body: string;
+  result?: string;
 }
 
 export interface Project {
@@ -30,6 +31,8 @@ export interface Project {
   metrics: ProjectMetric[];
   stack: string[];
   scope?: string;
+  team?: string[];
+  retro?: string;
   coverGradient: string; // tailwind gradient classes for cover (fallback)
   coverImage?: string; // optional cover image URL - overrides gradient on cards
   badge?: string; // optional badge (e.g. "🚧 En cours")

@@ -24,14 +24,17 @@ export const projects: Project[] = [
       {
         heading: 'Pain point validé sur le terrain',
         body: "Plusieurs années passées à observer le même besoin chez des directions DSI / Finance de grands groupes.",
+        result: 'Pain point validé auprès de directions DSI',
       },
       {
         heading: 'Discovery & prototypage IA',
         body: "Itérations rapides sur les maquettes et le MVP en s'appuyant sur les outils IA modernes (Lovable, Claude Code, Cursor).",
+        result: 'Architecture conçue native IA',
       },
       {
         heading: 'Build 0 → 1',
         body: "Construction d'une version alpha couvrant la consolidation budgétaire, le suivi CAPEX / OPEX / MS et la projection annuelle.",
+        result: 'Version alpha en construction',
       },
     ],
     results: [
@@ -45,6 +48,9 @@ export const projects: Project[] = [
       { value: '0 → 1', label: 'en construction' },
     ],
     stack: ['Lovable', 'Claude Code', 'React', 'Supabase', 'TypeScript'],
+    team: ['Solo — Founder & Product Manager (moi)'],
+    retro:
+      "Le pain point est validé et l'architecture IA-native tient la route. Prochaine étape : finaliser la version alpha, recruter 3 à 5 DSI pilotes pour un test terrain, puis itérer sur le pricing avant une v1 commerciale.",
     coverGradient: 'from-blue-600 via-indigo-600 to-violet-700',
     coverImage: dsiFinopsCover,
     badge: '🚧 En cours',
@@ -79,6 +85,7 @@ export const projects: Project[] = [
       {
         heading: 'Prototypage & user testing',
         body: "User testing modéré, itérations UX / UI et UX writing sur les 3 solutions retenues jusqu'au prototype haute-fidélité.",
+        result: 'Prototype haute-fidélité validé en user-testing, restitué au Lead PM de BlaBlaCar',
       },
     ],
     results: [
@@ -91,6 +98,9 @@ export const projects: Project[] = [
       { value: '3', label: 'solutions prototypées' },
     ],
     stack: ['Figma', 'Notion', 'User testing', 'SQL'],
+    team: ['1 Product Manager (moi) — mission solo', 'Restitution au Lead PM BlaBlaCar'],
+    retro:
+      "Le prototype a été validé en test utilisateur et restitué au Lead PM de BlaBlaCar. Prochaine étape (hors périmètre de la formation) : cadrer un A/B test en production sur les 3 pistes retenues pour confirmer le gain de +10 pts visé chez les nouveaux conducteurs.",
     coverGradient: 'from-sky-500 via-indigo-500 to-violet-600',
     coverImage: blablacarCover,
   },
@@ -112,6 +122,7 @@ export const projects: Project[] = [
       {
         heading: 'Discovery',
         body: "Ateliers avec +8 directeurs métiers pour identifier les dépenses IT et formaliser les besoins en reporting.",
+        result: '+8 directions métiers impliquées dans le cadrage',
       },
       {
         heading: 'Conception itérative',
@@ -120,10 +131,12 @@ export const projects: Project[] = [
       {
         heading: 'Delivery & déploiement',
         body: "Développement du MVP livré en 2 mois et formation des directeurs de pôle à l'outil.",
+        result: 'MVP livré en 2 mois',
       },
       {
         heading: 'Recommandation stratégique',
         body: "Étude d'opportunité sur Abraxio (SaaS dédié au pilotage financier DSI).",
+        result: '-5 % de coûts DSI vs N-1 (CAPEX / OPEX / MS)',
       },
     ],
     results: [
@@ -137,6 +150,9 @@ export const projects: Project[] = [
       { value: '230 M€', label: 'portefeuille piloté' },
     ],
     stack: ['Power BI', 'Excel', 'SharePoint', 'Notion', 'Miro'],
+    team: ['1 Product Manager (moi)', 'Sponsors : direction DSI & direction Finance', '+8 directeurs métiers impliqués'],
+    retro:
+      "Le MVP a été adopté par les 8 directions concernées et a permis -5 % de coûts DSI dès la première année. Prochaine étape : arbitrage sur l'opportunité Abraxio pour industrialiser l'outil au-delà du MVP interne.",
     coverGradient: 'from-emerald-500 via-teal-500 to-cyan-600',
     coverImage: bartleCover,
   },
@@ -158,14 +174,17 @@ export const projects: Project[] = [
       {
         heading: 'Pilotage de la roadmap',
         body: "Priorisation, gestion du backlog, formation et support aux équipes controlling monde (+25 ETP).",
+        result: '+25 ETP formés et accompagnés',
       },
       {
         heading: 'Delivery Scrum',
         body: "Écriture des spécifications, animation des cérémonies agiles, QA et communication des releases.",
+        result: '-50 % de délais de clôture (J+10 → J+5)',
       },
       {
         heading: 'Consolidation des coûts',
         body: "Consolidation des coûts logistiques amont et aval (1,1 Md€) avec recherche systématique d'optimisations.",
+        result: '-5 % de coûts Supply Chain monde vs N-1',
       },
     ],
     results: [
@@ -180,6 +199,9 @@ export const projects: Project[] = [
     ],
     stack: ['SAP', 'Lumira', 'Power BI', 'Jira', 'Scrum'],
     scope: 'Budget 8 M€ · 1 Tech Lead + 3 développeurs · +25 ETP utilisateurs monde',
+    team: ['1 Product Owner Finance (moi)', '1 Tech Lead', '3 développeurs', '+25 ETP contrôleurs utilisateurs dans le monde'],
+    retro:
+      "La clôture est passée de J+10 à J+5 et +25 contrôleurs ont été formés à l'outil. Prochaine étape : industrialiser la consolidation sur de nouveaux périmètres logistiques et automatiser davantage les contrôles de cohérence.",
     coverGradient: 'from-rose-500 via-orange-500 to-amber-500',
     coverImage: renaultSupplyCover,
   },
@@ -201,6 +223,7 @@ export const projects: Project[] = [
       {
         heading: 'Spécifications & qualité',
         body: "Écriture des spécifications techniques et fonctionnelles, réalisation des tests de recette.",
+        result: "+15 % de fiabilité et rapidité d'exécution des calculs",
       },
       {
         heading: 'Analyses statistiques',
@@ -209,6 +232,7 @@ export const projects: Project[] = [
       {
         heading: 'Conduite du changement',
         body: "Conception et déploiement du plan de conduite du changement à 250 collaborateurs, dans 12 pays.",
+        result: "95 % de taux d'adoption, déploiement réussi dans 12 pays",
       },
     ],
     results: [
@@ -223,6 +247,9 @@ export const projects: Project[] = [
     ],
     stack: ['SAP', 'Excel', 'SQL', 'Cycle en V'],
     scope: 'Budget 10 M€ · 1 Tech Lead + 3 développeurs · +250 ETP dans 12 pays',
+    team: ['1 Product Owner Costing (moi)', '1 Tech Lead', '3 développeurs', '+250 utilisateurs formés dans 12 pays'],
+    retro:
+      "95 % d'adoption et un déploiement réussi dans 12 pays, avec des calculs 15 % plus fiables et rapides. Prochaine étape : capitaliser sur ce référentiel costing pour l'étendre à de nouveaux périmètres produits.",
     coverGradient: 'from-slate-700 via-slate-900 to-zinc-900',
     coverImage: renaultCostingCover,
   },
