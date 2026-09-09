@@ -296,6 +296,16 @@ export default function ProjectDetail() {
                             {step.result}
                           </p>
                         )}
+                        {step.image && (
+                          <div className="mt-4 rounded-xl overflow-hidden border border-border">
+                            <img
+                              src={step.image}
+                              alt={step.heading}
+                              loading="lazy"
+                              className="w-full h-auto"
+                            />
+                          </div>
+                        )}
                       </div>
                     </li>
                   ))}

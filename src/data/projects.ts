@@ -12,6 +12,12 @@ import renaultSupplyCover from '@/assets/renault-supply-cover.webp';
 import renaultCostingCover from '@/assets/renault-costing-cover.webp';
 import dsiFinopsCover from '@/assets/dsi-finops-saas.webp';
 import cardomintCover from '@/assets/cardomint-cover.webp';
+import kostbaseShowback from '@/assets/kostbase-showback.webp';
+import kostbaseFournisseurs from '@/assets/kostbase-fournisseurs.webp';
+import cardomintMesCartes from '@/assets/cardomint-mes-cartes.webp';
+import cardomintCatalogue from '@/assets/cardomint-catalogue.webp';
+import cardomintDashboard from '@/assets/cardomint-dashboard.webp';
+import cardomintPartage from '@/assets/cardomint-partage.webp';
 
 export const projects: Project[] = [
   {
@@ -38,11 +44,13 @@ export const projects: Project[] = [
         heading: "Conception d'une plateforme multi-métiers",
         body: "Modélisation d'un référentiel commun reliant Finance (budget / réel), IT (cloud / assets), PMO (projets / ressources), Achats (contrats / fournisseurs) et RSE (carbone / CSRD).",
         result: '9 modules construits et en ligne sur 10 prévus',
+        image: kostbaseShowback,
       },
       {
         heading: 'Moteur de détection des coûts cachés',
         body: "Construction d'un système d'alertes qui rattache chaque dérive à son impact financier, son urgence et son responsable - contrats à renouveler, sur-staffing, licences sous-utilisées, prestations sans projet actif.",
         result: 'Moteur d\'alerte opérationnel, illustré sur données de démonstration',
+        image: kostbaseFournisseurs,
       },
     ],
     results: [
@@ -284,21 +292,25 @@ export const projects: Project[] = [
       {
         heading: "Conception de l'interface",
         body: "Travail sur l'expérience utilisateur avant la donnée : parcours de collection, ajout d'achats, vue de valorisation.",
+        image: cardomintMesCartes,
       },
       {
         heading: 'Base de données prix, cotes & scellés',
         body: "Agrégation de sources hétérogènes - APIs publiques et payantes, marketplaces (Cardmarket, eBay, Vinted, Le Bon Coin) pour les prix, bases de référence (Poképédia, Bulbapedia) pour les données cartes.",
         result: '69 220 produits catalogués sur 3 marchés (international, japonais, chinois)',
+        image: cardomintCatalogue,
       },
       {
         heading: 'Fonctionnalités avancées',
         body: 'Valorisation quotidienne datée, comparateur à 17 critères, partage communautaire par code et QR sans création de compte.',
         result: '7 815 cartes tarifées avec un relevé de valeur quotidien',
+        image: cardomintDashboard,
       },
       {
         heading: 'Accès par invitation',
         body: 'Lancement en accès gratuit sur invitation : liens à usage unique, cinq à la fois, valables sept jours.',
         result: "Premiers retours beta collectés : demande d'amélioration UI et de nouvelles fonctionnalités",
+        image: cardomintPartage,
       },
     ],
     results: [

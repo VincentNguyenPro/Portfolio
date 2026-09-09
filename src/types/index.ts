@@ -13,6 +13,7 @@ export interface CaseStudySection {
   heading: string;
   body: string;
   result?: string;
+  image?: string;
 }
 
 export interface Project {
