@@ -17,17 +17,17 @@ export const projects: Project[] = [
   {
     id: '0',
     slug: 'saas-pilotage-dsi',
-    title: 'SaaS de pilotage financier pour les DSI',
+    title: 'Plateforme de gouvernance financière IT',
     company: 'Kostbase',
     role: 'Founder · Product Manager',
     period: '2026 - En cours',
     category: 'finance',
     summary:
-      "Application SaaS de pilotage du P&L DSI conçue pour piloter sérieusement un budget DSI au-delà d'Excel.",
+      "Plateforme qui relie budgets, projets, contrats fournisseurs, ressources et empreinte carbone dans une seule source de vérité, pour arbitrer chaque euro dépensé en SI.",
     context:
-      "Après plusieurs missions au cœur des directions Finance et IT, j'ai constaté qu'Excel ne suffisait plus pour piloter sérieusement un P&L DSI. Je construis une application SaaS dédiée, conçue avec les outils IA modernes.",
+      "Après plusieurs missions au cœur des directions Finance et IT, j'ai constaté que Finance, IT, Achats et PMO ne pilotent jamais la dépense IT avec les mêmes chiffres, faute de référentiel commun. Je construis Kostbase pour réconcilier ces données en une source unique de vérité, avec les outils IA modernes.",
     problem:
-      "Comment offrir aux DSI un outil de pilotage P&L moderne, simple et collaboratif, sans la lourdeur des ERP ni les limites d'Excel ?",
+      "Comment donner à la DSI, la Finance, les Achats et le PMO une vision unique et fiable de la dépense IT - budgets, contrats, ressources, carbone - pour arbitrer et détecter les coûts cachés avant qu'ils ne deviennent des pertes ?",
     approach: [
       {
         heading: 'Pain point validé sur le terrain',
@@ -35,31 +35,31 @@ export const projects: Project[] = [
         result: 'Pain point validé auprès de directions DSI',
       },
       {
-        heading: 'Discovery & prototypage IA',
-        body: "Itérations rapides sur les maquettes et le MVP en s'appuyant sur les outils IA modernes (Lovable, Claude Code, Cursor).",
-        result: 'Architecture conçue native IA',
+        heading: "Conception d'une plateforme multi-métiers",
+        body: "Modélisation d'un référentiel commun reliant Finance (budget / réel), IT (cloud / assets), PMO (projets / ressources), Achats (contrats / fournisseurs) et RSE (carbone / CSRD).",
+        result: '9 modules construits et en ligne sur 10 prévus',
       },
       {
-        heading: 'Build 0 → 1',
-        body: "Construction d'une version alpha couvrant la consolidation budgétaire, le suivi CAPEX / OPEX / MS et la projection annuelle.",
-        result: 'Version alpha en construction',
+        heading: 'Moteur de détection des coûts cachés',
+        body: "Construction d'un système d'alertes qui rattache chaque dérive à son impact financier, son urgence et son responsable - contrats à renouveler, sur-staffing, licences sous-utilisées, prestations sans projet actif.",
+        result: 'Moteur d\'alerte opérationnel, illustré sur données de démonstration',
       },
     ],
     results: [
-      "Pain point validé auprès de directions DSI",
-      "Version alpha en construction",
-      "Architecture conçue native IA",
+      '9 modules construits et en ligne sur 10 prévus (cockpit, budget & showback, arbitrage PMO, Gantt, validations, fournisseurs, temps, base de données, export COMEX)',
+      'Moteur de détection des coûts cachés opérationnel (contrats, sur-staffing, licences, carbone)',
+      'Architecture conçue native IA',
     ],
     metrics: [
-      { value: 'Pain point', label: 'validé terrain' },
-      { value: 'IA', label: 'outils modernes' },
-      { value: '0 → 1', label: 'en construction' },
+      { value: '9', label: 'modules en ligne' },
+      { value: '6', label: 'métiers réconciliés' },
+      { value: '0 → 1', label: 'plateforme en construction' },
     ],
     stack: ['Lovable', 'Claude Code', 'React', 'Supabase', 'TypeScript'],
     team: ['Solo — Founder & Product Manager (moi)'],
-    missionTypes: ['Discovery', 'Prototypage IA', '0 → 1'],
+    missionTypes: ['Discovery', 'ITFM & FinOps', '0 → 1'],
     retro:
-      "Le pain point est validé et l'architecture IA-native tient la route. Prochaine étape : finaliser la version alpha, recruter 3 à 5 DSI pilotes pour un test terrain, puis itérer sur le pricing avant une v1 commerciale.",
+      "9 des 10 modules prévus sont déjà en ligne, avec un moteur de détection des coûts cachés fonctionnel sur données de démonstration. Prochaine étape : embarquer les premières organisations pilotes pour valider le rattachement Finance / IT / PMO / Achats sur de vraies données, puis finaliser le module Export COMEX.",
     coverGradient: 'from-blue-600 via-indigo-600 to-violet-700',
     coverImage: dsiFinopsCover,
     badge: '🚧 En cours',
