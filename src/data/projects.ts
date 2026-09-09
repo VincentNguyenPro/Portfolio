@@ -18,7 +18,7 @@ export const projects: Project[] = [
     id: '0',
     slug: 'saas-pilotage-dsi',
     title: 'SaaS de pilotage financier pour les DSI',
-    company: 'Projet personnel',
+    company: 'Kostbase',
     role: 'Founder · Product Manager',
     period: '2026 - En cours',
     category: 'finance',
