@@ -120,27 +120,51 @@ export default function Contact() {
             <div className="hidden md:grid sm:grid-cols-3 gap-3">
               {contactItems.map((item, i) => {
                 const Icon = item.icon;
+                const isEmail = item.label === 'Email';
                 const content = (
                   <>
                     <div className="flex items-center justify-between">
-                      <div className="size-9 rounded-full bg-muted flex items-center justify-center">
-                        <Icon className="size-4 text-foreground" />
+                      <div
+                        className={`size-9 rounded-full flex items-center justify-center ${
+                          isEmail ? 'bg-blue-100 dark:bg-blue-950/50' : 'bg-muted'
+                        }`}
+                      >
+                        <Icon className={`size-4 ${isEmail ? 'text-blue-600' : 'text-foreground'}`} />
                       </div>
                       {item.href && (
-                        <ArrowUpRight className="size-4 text-muted-foreground group-hover:text-foreground group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
+                        <ArrowUpRight
+                          className={`size-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all ${
+                            isEmail
+                              ? 'text-blue-600/70 group-hover:text-blue-600'
+                              : 'text-muted-foreground group-hover:text-foreground'
+                          }`}
+                        />
                       )}
                     </div>
                     <div className="mt-2">
-                      <p className="text-xs font-semibold tracking-[0.2em] uppercase text-muted-foreground mb-1">
+                      <p
+                        className={`text-xs font-semibold tracking-[0.2em] uppercase mb-1 ${
+                          isEmail ? 'text-blue-600' : 'text-muted-foreground'
+                        }`}
+                      >
                         {item.label}
                       </p>
-                      <p className="text-base font-medium tracking-tight break-words">{item.value}</p>
+                      <p
+                        className={`tracking-tight break-words ${
+                          isEmail ? 'text-lg font-semibold' : 'text-base font-medium'
+                        }`}
+                      >
+                        {item.value}
+                      </p>
                     </div>
                   </>
                 );
 
-                const className =
-                  'group block min-w-0 rounded-2xl border border-border bg-card p-3 hover:shadow-md hover:border-foreground/20 transition-all';
+                const className = `group block min-w-0 rounded-2xl border p-3 hover:shadow-md transition-all ${
+                  isEmail
+                    ? 'border-blue-600/30 bg-blue-50/60 dark:bg-blue-950/20 hover:border-blue-600/50'
+                    : 'border-border bg-card hover:border-foreground/20'
+                }`;
 
                 return (
                   <motion.div
