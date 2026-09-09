@@ -225,6 +225,29 @@ export default function ProjectDetail() {
                 <h2 className="text-xl md:text-2xl font-semibold tracking-[0.2em] uppercase text-muted-foreground">
                   Démarche
                 </h2>
+
+                {/* Desktop: horizontal stepper illustrating the reasoning path at a glance */}
+                <div className="hidden md:flex items-start gap-1">
+                  {project.approach.map((step, i) => (
+                    <div key={step.heading} className="flex-1 flex flex-col items-center text-center">
+                      <div className="flex items-center w-full">
+                        <div className={`h-px flex-1 ${i === 0 ? 'invisible' : 'bg-border'}`} />
+                        <div className="size-10 shrink-0 rounded-full bg-foreground text-background flex items-center justify-center text-sm font-semibold">
+                          {String(i + 1).padStart(2, '0')}
+                        </div>
+                        <div
+                          className={`h-px flex-1 ${
+                            i === project.approach.length - 1 ? 'invisible' : 'bg-border'
+                          }`}
+                        />
+                      </div>
+                      <p className="mt-2 text-xs font-medium text-muted-foreground px-1">
+                        {step.heading}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+
                 <ol className="space-y-4 md:space-y-6">
                   {project.approach.map((step, i) => (
                     <li key={step.heading} className="grid grid-cols-[auto_1fr] gap-5">
