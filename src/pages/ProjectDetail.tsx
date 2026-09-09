@@ -221,7 +221,7 @@ export default function ProjectDetail() {
             </ScrollReveal>
 
             <ScrollReveal>
-              <section className="space-y-4 md:space-y-8">
+              <section className="space-y-4 md:space-y-8 scroll-mt-24">
                 <h2 className="text-xl md:text-2xl font-semibold tracking-[0.2em] uppercase text-muted-foreground">
                   Démarche
                 </h2>
