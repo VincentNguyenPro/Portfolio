@@ -20,7 +20,7 @@ const navLinks = [
 const menuNavLinks = navLinks.filter((link) => link.path !== '/projets');
 
 const projectShortTitles: Record<string, string> = {
-  'saas-pilotage-dsi': 'SaaS pilotage DSI',
+  'saas-pilotage-dsi': 'Kostbase',
   'blablacar-first-ride': 'Premier trajet BlaBlaCar',
   'bartle-pilotage-dsi': 'Pilotage coûts DSI',
   'renault-supply-chain': 'Supply Chain Renault',
