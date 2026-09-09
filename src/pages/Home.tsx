@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRight, ArrowUpRight, Sparkles } from 'lucide-react';
 import { photographerInfo, skillGroups } from '@/data/photographer';
-import { getFeaturedProjects } from '@/data/projects';
+import { getFeaturedProjects, categoryLabels } from '@/data/projects';
 import type { Project } from '@/types';
 import { SEOHead } from '@/components/seo/SEOHead';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
@@ -50,6 +50,9 @@ function ProjectCard({ project }: { project: Project }) {
         </div>
       </div>
       <div className="p-5 md:p-5">
+        <span className="inline-block text-[10px] font-semibold tracking-wider uppercase px-2 py-0.5 rounded-full border border-border text-muted-foreground mb-2">
+          {categoryLabels[project.category]}
+        </span>
         {project.metrics?.[0] && (
           <p className="text-sm mb-2">
             <span className="font-bold text-foreground underline decoration-blue-600 decoration-2 underline-offset-2">

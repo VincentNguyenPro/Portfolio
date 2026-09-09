@@ -1,4 +1,11 @@
-import type { Project } from '@/types';
+import type { Project, ProjectCategory } from '@/types';
+
+export const categoryLabels: Record<ProjectCategory, string> = {
+  finance: 'Finance',
+  mobile: 'Mobile',
+  transformation: 'Transformation',
+  product: 'Product',
+};
 import blablacarCover from '@/assets/blablacar-app.webp';
 import bartleCover from '@/assets/bartle-cover.jpg';
 import renaultSupplyCover from '@/assets/renault-supply-cover.webp';

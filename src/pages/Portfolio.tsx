@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowUpRight } from 'lucide-react';
-import { projects } from '@/data/projects';
+import { projects, categoryLabels } from '@/data/projects';
 import { SEOHead } from '@/components/seo/SEOHead';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 
@@ -78,6 +78,9 @@ export default function Portfolio() {
 
                       <div className="p-5 flex flex-col gap-3">
                         <div className="space-y-1.5">
+                          <span className="inline-block text-[10px] font-semibold tracking-wider uppercase px-2 py-0.5 rounded-full border border-border text-muted-foreground">
+                            {categoryLabels[project.category]}
+                          </span>
                           <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm font-semibold tracking-wider uppercase text-foreground">
                             <span>{project.company}</span>
                             <span className="text-muted-foreground/60">·</span>
@@ -136,6 +139,9 @@ export default function Portfolio() {
                     </div>
 
                     <div className="p-4">
+                      <span className="inline-block text-[9px] font-semibold tracking-wider uppercase px-1.5 py-0.5 rounded-full border border-border text-muted-foreground mb-1.5">
+                        {categoryLabels[project.category]}
+                      </span>
                       {project.metrics?.[0] && (
                         <p className="text-xs mb-1.5 truncate">
                           <span className="font-bold text-foreground underline decoration-blue-600 decoration-2 underline-offset-2">
