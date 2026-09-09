@@ -80,7 +80,7 @@ export default function ProjectDetail() {
               ) : (
                 <div className={`absolute inset-0 bg-gradient-to-br ${project.coverGradient}`} />
               )}
-              <div className="relative aspect-[4/3] p-6 flex items-end">
+              <div className="relative min-h-[300px] p-6 flex items-end">
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -89,6 +89,18 @@ export default function ProjectDetail() {
                   <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight leading-[1.15] drop-shadow-md">
                     {project.title}
                   </h1>
+                  {project.missionTypes && (
+                    <div className="flex flex-wrap gap-2 mt-3">
+                      {project.missionTypes.map((t) => (
+                        <span
+                          key={t}
+                          className="text-[11px] font-semibold tracking-wider uppercase px-2 py-1 rounded-full border border-white/30 bg-white/10 backdrop-blur"
+                        >
+                          {t}
+                        </span>
+                      ))}
+                    </div>
+                  )}
                 </motion.div>
               </div>
             </div>
@@ -114,6 +126,18 @@ export default function ProjectDetail() {
                 <h1 className="text-4xl font-semibold tracking-tight leading-[1.15] mb-3">
                   {project.title}
                 </h1>
+                {project.missionTypes && (
+                  <div className="flex flex-wrap gap-2 mb-3">
+                    {project.missionTypes.map((t) => (
+                      <span
+                        key={t}
+                        className="text-xs font-semibold tracking-wider uppercase px-2.5 py-1 rounded-full border border-border text-muted-foreground"
+                      >
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+                )}
                 <p className="text-lg text-muted-foreground font-light leading-relaxed max-w-xl mb-5">
                   {project.summary}
                 </p>

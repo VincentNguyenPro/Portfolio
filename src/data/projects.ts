@@ -56,6 +56,7 @@ export const projects: Project[] = [
     ],
     stack: ['Lovable', 'Claude Code', 'React', 'Supabase', 'TypeScript'],
     team: ['Solo — Founder & Product Manager (moi)'],
+    missionTypes: ['Discovery', 'Prototypage IA', '0 → 1'],
     retro:
       "Le pain point est validé et l'architecture IA-native tient la route. Prochaine étape : finaliser la version alpha, recruter 3 à 5 DSI pilotes pour un test terrain, puis itérer sur le pricing avant une v1 commerciale.",
     coverGradient: 'from-blue-600 via-indigo-600 to-violet-700',
@@ -106,6 +107,7 @@ export const projects: Project[] = [
     ],
     stack: ['Figma', 'Notion', 'User testing', 'SQL'],
     team: ['1 Product Manager (moi) — mission solo', 'Restitution au Lead PM BlaBlaCar'],
+    missionTypes: ['Discovery', 'Recherche utilisateur', 'Prototypage'],
     retro:
       "Le prototype a été validé en test utilisateur et restitué au Lead PM de BlaBlaCar. Prochaine étape (hors périmètre de la formation) : cadrer un A/B test en production sur les 3 pistes retenues pour confirmer le gain de +10 pts visé chez les nouveaux conducteurs.",
     coverGradient: 'from-sky-500 via-indigo-500 to-violet-600',
@@ -158,6 +160,7 @@ export const projects: Project[] = [
     ],
     stack: ['Power BI', 'Excel', 'SharePoint', 'Notion', 'Miro'],
     team: ['1 Product Manager (moi)', 'Sponsors : direction DSI & direction Finance', '+8 directeurs métiers impliqués'],
+    missionTypes: ['Discovery', 'MVP', 'Recommandation stratégique'],
     retro:
       "Le MVP a été adopté par les 8 directions concernées et a permis -5 % de coûts DSI dès la première année. Prochaine étape : arbitrage sur l'opportunité Abraxio pour industrialiser l'outil au-delà du MVP interne.",
     coverGradient: 'from-emerald-500 via-teal-500 to-cyan-600',
@@ -207,6 +210,7 @@ export const projects: Project[] = [
     stack: ['SAP', 'Lumira', 'Power BI', 'Jira', 'Scrum'],
     scope: 'Budget 8 M€ · 1 Tech Lead + 3 développeurs · +25 ETP utilisateurs monde',
     team: ['1 Product Owner Finance (moi)', '1 Tech Lead', '3 développeurs', '+25 ETP contrôleurs utilisateurs dans le monde'],
+    missionTypes: ['Product roadmap', 'Delivery Scrum', 'Optimisation'],
     retro:
       "La clôture est passée de J+10 à J+5 et +25 contrôleurs ont été formés à l'outil. Prochaine étape : industrialiser la consolidation sur de nouveaux périmètres logistiques et automatiser davantage les contrôles de cohérence.",
     coverGradient: 'from-rose-500 via-orange-500 to-amber-500',
@@ -255,6 +259,7 @@ export const projects: Project[] = [
     stack: ['SAP', 'Excel', 'SQL', 'Cycle en V'],
     scope: 'Budget 10 M€ · 1 Tech Lead + 3 développeurs · +250 ETP dans 12 pays',
     team: ['1 Product Owner Costing (moi)', '1 Tech Lead', '3 développeurs', '+250 utilisateurs formés dans 12 pays'],
+    missionTypes: ['Refonte', 'Déploiement international', 'Conduite du changement'],
     retro:
       "95 % d'adoption et un déploiement réussi dans 12 pays, avec des calculs 15 % plus fiables et rapides. Prochaine étape : capitaliser sur ce référentiel costing pour l'étendre à de nouveaux périmètres produits.",
     coverGradient: 'from-slate-700 via-slate-900 to-zinc-900',
