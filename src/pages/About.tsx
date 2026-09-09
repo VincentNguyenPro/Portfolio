@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
-import { GraduationCap, Award, Languages as LanguagesIcon, Building2, School, BadgeCheck, ArrowRight } from 'lucide-react';
+import { GraduationCap, Award, Languages as LanguagesIcon, Building2, School, BadgeCheck, ArrowRight, Download } from 'lucide-react';
 import { MobileCarousel } from '@/components/ui/MobileCarousel';
 import {
   photographerInfo,
@@ -172,6 +172,15 @@ export default function About() {
                   <p key={i}>{p}</p>
                 ))}
               </div>
+
+              <a
+                href="/Vincent-Nguyen-CV.pdf"
+                download="Vincent-Nguyen-CV.pdf"
+                className="hidden md:inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-border text-sm font-medium hover:bg-muted transition-colors"
+              >
+                <Download className="size-4" />
+                Télécharger mon CV
+              </a>
 
               {/* Desktop: vertical year timeline + detail card, filling the space below the bio */}
               <div className="hidden md:block pt-2">
