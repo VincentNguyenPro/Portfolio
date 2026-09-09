@@ -61,30 +61,37 @@ export default function ProjectDetail() {
       <SEOHead title={project.title} description={project.summary} type="article" />
 
       <article className="min-h-screen">
-        {/* Hero — mobile: full-bleed photo */}
-        <section className="md:hidden relative text-white px-6 pt-6 pb-6 overflow-hidden">
-          {project.coverImage ? (
-            <>
-              <img
-                src={project.coverImage}
-                alt={project.title}
-                className="absolute inset-0 w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/50 to-black/75" />
-            </>
-          ) : (
-            <div className={`absolute inset-0 bg-gradient-to-br ${project.coverGradient}`} />
-          )}
-          <div className="relative max-w-7xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7 }}
-            >
-              <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight leading-[1.15] max-w-4xl drop-shadow-md">
-                {project.title}
-              </h1>
-            </motion.div>
+        {/* Hero — mobile: framed photo card with the same glow treatment as desktop */}
+        <section className="md:hidden px-6 pt-6 pb-6">
+          <div className="relative">
+            <div
+              className={`absolute -inset-3 rounded-3xl bg-gradient-to-br ${project.coverGradient} opacity-20 blur-2xl`}
+            />
+            <div className="relative rounded-2xl overflow-hidden border border-border text-white">
+              {project.coverImage ? (
+                <>
+                  <img
+                    src={project.coverImage}
+                    alt={project.title}
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/50 to-black/75" />
+                </>
+              ) : (
+                <div className={`absolute inset-0 bg-gradient-to-br ${project.coverGradient}`} />
+              )}
+              <div className="relative aspect-[4/3] p-6 flex items-end">
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.7 }}
+                >
+                  <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight leading-[1.15] drop-shadow-md">
+                    {project.title}
+                  </h1>
+                </motion.div>
+              </div>
+            </div>
           </div>
         </section>
 
