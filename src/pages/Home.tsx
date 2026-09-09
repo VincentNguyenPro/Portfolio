@@ -50,6 +50,14 @@ function ProjectCard({ project }: { project: Project }) {
         </div>
       </div>
       <div className="p-5 md:p-5">
+        {project.metrics?.[0] && (
+          <p className="text-sm mb-2">
+            <span className="font-bold text-foreground underline decoration-blue-600 decoration-2 underline-offset-2">
+              {project.metrics[0].value}
+            </span>
+            <span className="text-muted-foreground"> · {project.metrics[0].label}</span>
+          </p>
+        )}
         <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm font-medium tracking-wider uppercase text-foreground mb-3 md:mb-2 min-h-10">
           <span>{project.company}</span>
           <span className="text-muted-foreground/60">·</span>

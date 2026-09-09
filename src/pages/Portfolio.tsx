@@ -136,6 +136,14 @@ export default function Portfolio() {
                     </div>
 
                     <div className="p-4">
+                      {project.metrics?.[0] && (
+                        <p className="text-xs mb-1.5 truncate">
+                          <span className="font-bold text-foreground underline decoration-blue-600 decoration-2 underline-offset-2">
+                            {project.metrics[0].value}
+                          </span>
+                          <span className="text-muted-foreground"> · {project.metrics[0].label}</span>
+                        </p>
+                      )}
                       <div className="text-xs font-semibold tracking-wide uppercase text-foreground truncate mb-2">
                         {project.company}
                       </div>
