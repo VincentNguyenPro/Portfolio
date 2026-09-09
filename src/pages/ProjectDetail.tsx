@@ -199,7 +199,7 @@ export default function ProjectDetail() {
             )}
 
             <ScrollReveal>
-              <section className="space-y-2 md:space-y-4">
+              <section className="space-y-2 md:space-y-4 scroll-mt-24">
                 <h2 className="text-lg md:text-2xl font-semibold tracking-[0.2em] uppercase text-muted-foreground">
                   Contexte
                 </h2>
@@ -210,7 +210,7 @@ export default function ProjectDetail() {
             </ScrollReveal>
 
             <ScrollReveal>
-              <section className="space-y-2 md:space-y-4">
+              <section className="space-y-2 md:space-y-4 scroll-mt-24">
                 <h2 className="text-lg md:text-2xl font-semibold tracking-[0.2em] uppercase text-muted-foreground">
                   Problématique
                 </h2>
@@ -280,7 +280,7 @@ export default function ProjectDetail() {
             </ScrollReveal>
 
             <ScrollReveal>
-              <section className="space-y-3 md:space-y-4 rounded-2xl bg-foreground text-background p-5 md:p-10">
+              <section className="space-y-3 md:space-y-4 rounded-2xl bg-foreground text-background p-5 md:p-10 scroll-mt-24">
                 <h2 className="text-lg md:text-2xl font-semibold tracking-[0.2em] uppercase opacity-70">
                   Résultats
                 </h2>
