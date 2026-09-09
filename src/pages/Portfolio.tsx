@@ -103,7 +103,7 @@ export default function Portfolio() {
             </div>
 
             {/* Desktop: 5 compact cards side by side */}
-            <div className="hidden md:grid md:grid-cols-5 md:gap-5">
+            <div className="hidden md:grid md:grid-cols-6 md:gap-4">
               {projects.map((project, i) => (
                 <ScrollReveal key={project.id} delay={i * 0.05}>
                   <Link

@@ -1,5 +1,5 @@
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, Linkedin, Briefcase, ArrowRight, LayoutDashboard, Car, PieChart, Truck, Calculator, ChevronDown } from 'lucide-react';
+import { Menu, Linkedin, Briefcase, ArrowRight, LayoutDashboard, Car, PieChart, Truck, Calculator, ChevronDown, Layers } from 'lucide-react';
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ThemeToggle } from './ThemeToggle';
@@ -25,6 +25,7 @@ const projectShortTitles: Record<string, string> = {
   'bartle-pilotage-dsi': 'Pilotage coûts DSI',
   'renault-supply-chain': 'Supply Chain Renault',
   'renault-costing': 'Costing Renault',
+  cardomint: 'CardoMint',
 };
 
 const projectIcons: Record<string, typeof Briefcase> = {
@@ -33,6 +34,7 @@ const projectIcons: Record<string, typeof Briefcase> = {
   'bartle-pilotage-dsi': PieChart,
   'renault-supply-chain': Truck,
   'renault-costing': Calculator,
+  cardomint: Layers,
 };
 
 export function Header() {

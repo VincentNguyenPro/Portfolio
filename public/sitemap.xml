@@ -51,6 +51,11 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://vincentnguyen.pro/projet/cardomint</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://vincentnguyen.pro/blog/agentic-gtm-hackathon-locus</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>

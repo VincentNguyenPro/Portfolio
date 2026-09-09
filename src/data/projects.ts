@@ -11,6 +11,7 @@ import bartleCover from '@/assets/bartle-cover.jpg';
 import renaultSupplyCover from '@/assets/renault-supply-cover.webp';
 import renaultCostingCover from '@/assets/renault-costing-cover.webp';
 import dsiFinopsCover from '@/assets/dsi-finops-saas.webp';
+import cardomintCover from '@/assets/cardomint-cover.webp';
 
 export const projects: Project[] = [
   {
@@ -264,6 +265,60 @@ export const projects: Project[] = [
       "95 % d'adoption et un déploiement réussi dans 12 pays, avec des calculs 15 % plus fiables et rapides. Prochaine étape : capitaliser sur ce référentiel costing pour l'étendre à de nouveaux périmètres produits.",
     coverGradient: 'from-slate-700 via-slate-900 to-zinc-900',
     coverImage: renaultCostingCover,
+  },
+  {
+    id: '5',
+    slug: 'cardomint',
+    title: 'Suivi de valeur pour collections de cartes TCG',
+    company: 'CardoMint',
+    role: 'Founder · Product Manager',
+    period: '2026 - En cours',
+    category: 'product',
+    summary:
+      "Application web (bientôt mobile) qui donne aux collectionneurs Pokémon TCG la valeur de leur collection au jour le jour, sur un catalogue de plus de 69 000 cartes et scellés.",
+    context:
+      "En tant que collectionneur, j'utilisais des applications existantes mais il leur manquait des fonctionnalités clés à mes yeux. Des amis collectionneurs m'ont remonté des besoins similaires. J'ai construit CardoMint pour y répondre, en commençant par le TCG Pokémon avant d'étendre à d'autres jeux (One Piece et 6 autres licences prévues).",
+    problem:
+      "Comment retrouver rapidement la valeur réelle de sa collection (cartes et scellés) sur plusieurs TCG, à partir de sources de prix fiables et à jour ?",
+    approach: [
+      {
+        heading: "Conception de l'interface",
+        body: "Travail sur l'expérience utilisateur avant la donnée : parcours de collection, ajout d'achats, vue de valorisation.",
+      },
+      {
+        heading: 'Base de données prix, cotes & scellés',
+        body: "Agrégation de sources hétérogènes - APIs publiques et payantes, marketplaces (Cardmarket, eBay, Vinted, Le Bon Coin) pour les prix, bases de référence (Poképédia, Bulbapedia) pour les données cartes.",
+        result: '69 220 produits catalogués sur 3 marchés (international, japonais, chinois)',
+      },
+      {
+        heading: 'Fonctionnalités avancées',
+        body: 'Valorisation quotidienne datée, comparateur à 17 critères, partage communautaire par code et QR sans création de compte.',
+        result: '7 815 cartes tarifées avec un relevé de valeur quotidien',
+      },
+      {
+        heading: 'Accès par invitation',
+        body: 'Lancement en accès gratuit sur invitation : liens à usage unique, cinq à la fois, valables sept jours.',
+        result: "Premiers retours beta collectés : demande d'amélioration UI et de nouvelles fonctionnalités",
+      },
+    ],
+    results: [
+      '69 220 produits catalogués (67 248 cartes + 1 972 scellés)',
+      'Valorisation quotidienne sur 7 815 cartes tarifées',
+      "Retours beta : demande d'amélioration UI et de nouvelles fonctionnalités",
+    ],
+    metrics: [
+      { value: '69k', label: 'produits catalogués' },
+      { value: '3', label: 'marchés couverts' },
+      { value: '7', label: 'licences TCG prévues' },
+    ],
+    stack: ['Next.js', 'Turso', 'Claude Code'],
+    team: ['Solo — Founder & Product Builder (moi)'],
+    missionTypes: ['0 → 1', 'Discovery', 'Beta'],
+    retro:
+      "Les premiers retours beta pointent vers deux priorités : améliorer l'interface et enrichir les fonctionnalités. Prochaine étape : lancer le scan de reconnaissance de carte, puis étendre la couverture aux 6 autres licences TCG prévues (One Piece en premier).",
+    coverGradient: 'from-red-500 via-rose-500 to-pink-600',
+    coverImage: cardomintCover,
+    badge: '🚧 Beta',
   },
 ];
 
