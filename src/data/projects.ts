@@ -138,7 +138,7 @@ export const projects: Project[] = [
     team: [
       'Caroline - ex Project Manager (Octopus Energy)',
       'Clémence - ex Product Designer (AVIV group)',
-      'Vincent - ex Contrôleur de gestion (Renault), moi',
+      'Vincent - Responsable transformation finance & Product Owner (Renault), moi',
     ],
     missionTypes: ['Discovery', 'Recherche utilisateur', 'Prototypage'],
     retro:
