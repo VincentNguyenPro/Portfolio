@@ -18,6 +18,9 @@ import cardomintMesCartes from '@/assets/cardomint-mes-cartes.webp';
 import cardomintCatalogue from '@/assets/cardomint-catalogue.webp';
 import cardomintDashboard from '@/assets/cardomint-dashboard.webp';
 import cardomintPartage from '@/assets/cardomint-partage.webp';
+import blablacarSponsorship from '@/assets/blablacar-sponsorship.webp';
+import blablacarProfileReward from '@/assets/blablacar-profile-reward.webp';
+import blablacarDepartureTime from '@/assets/blablacar-departure-time.webp';
 
 export const projects: Project[] = [
   {
@@ -83,31 +86,48 @@ export const projects: Project[] = [
     summary:
       "Réduire l'écart entre nouveaux conducteurs (30 %) et conducteurs récurrents (50 %) sur le taux de réussite du premier trajet.",
     context:
-      "Application mobile iOS BlaBlaCar. Sujet de discovery confié dans le cadre de la formation Product Management Noé, restitué au Lead PM de BlaBlaCar.",
+      "Application mobile iOS BlaBlaCar. Sujet de discovery confié en équipe de 3, dans le cadre de la formation Product Management Noé, restitué au Lead PM de BlaBlaCar.",
     problem:
       "Comment améliorer le taux de réussite du premier trajet des nouveaux conducteurs (30 %) versus les conducteurs récurrents (50 %) ? Objectif visé : +10 pts chez les nouveaux conducteurs.",
     approach: [
       {
         heading: 'Analyse de données',
-        body: "Étude de 100 000 trajets pour identifier les points de friction et les segments à fort potentiel d'amélioration.",
+        body: "Étude de 100 000 lignes de trajets pour isoler les facteurs corrélés au taux de mise en relation des nouveaux conducteurs (vérification d'identité, photo de profil, nombre d'avis, prix, créneau...).",
+        result: "Facteur le plus impactant identifié : la vérification d'identité (+12 % d'uplift, +3,8 pts d'impact final sur 31 % des newbies)",
       },
       {
         heading: 'Recherche utilisateur',
-        body: "9 entretiens qualitatifs avec des nouveaux conducteurs pour comprendre la perception du premier trajet et les frictions vécues.",
+        body: "9 entretiens qualitatifs (6 conducteurs, 3 passagers) pour comprendre les critères de confiance et les frictions du premier trajet - limite assumée : aucun conducteur réellement newbie dans l'échantillon disponible.",
+        result: "Insight clé : la note et les avis sont le premier critère de choix d'un conducteur pour les passagers",
       },
       {
-        heading: 'Priorisation',
-        body: "Solutions classées sur une matrice impact / effort pour sélectionner 3 pistes à fort impact.",
+        heading: 'Solution 1 - Parrainage communautaire',
+        body: "Badge « Parrainé » affiché sur le profil dès que le nouveau conducteur a reçu 3 avis de membres vérifiés ayant déjà réalisé un trajet, puis retiré après son premier trajet complété.",
+        result: "Test utilisateur : le libellé initial « Recommandé » prêtait à confusion - corrigé en « Parrainé »",
+        image: blablacarSponsorship,
       },
       {
-        heading: 'Prototypage & user testing',
-        body: "User testing modéré, itérations UX / UI et UX writing sur les 3 solutions retenues jusqu'au prototype haute-fidélité.",
+        heading: 'Solution 2 - Récompense de complétion de profil',
+        body: "Bon de 10 € de carburant offert sur le premier trajet aux nouveaux conducteurs qui vérifient pièce d'identité, email, téléphone et ajoutent une photo de profil.",
+        result: "Test utilisateur : le bon d'achat a un impact positif observé sur la complétion de profil",
+        image: blablacarProfileReward,
+      },
+      {
+        heading: 'Solution 3 - Créneau de départ recommandé',
+        body: "Créneaux horaires suggérés au conducteur, calculés sur 60 jours glissants (volume > 15 réservations / trajet, part > 40 %, semaine et week-end distingués).",
+        result: "Test utilisateur : le premier visuel laissait croire à une recommandation basée sur le trafic routier - wording et graphique retravaillés",
+        image: blablacarDepartureTime,
+      },
+      {
+        heading: 'Priorisation & prototypage final',
+        body: "Solutions arbitrées sur une matrice impact / effort, puis itérées en prototype haute-fidélité jusqu'à validation en test utilisateur.",
         result: 'Prototype haute-fidélité validé en user-testing, restitué au Lead PM de BlaBlaCar',
       },
     ],
     results: [
-      "Prototype haute-fidélité validé en user-testing",
-      "Restitution au Lead PM de BlaBlaCar",
+      "Facteur d'impact n°1 identifié sur 100 000 trajets analysés : la vérification d'identité (+3,8 pts)",
+      "3 solutions prototypées et testées : parrainage communautaire, récompense de profil, créneau de départ recommandé",
+      "Prototype haute-fidélité validé en test utilisateur, restitué au Lead PM de BlaBlaCar",
     ],
     metrics: [
       { value: '100k', label: 'trajets analysés' },
@@ -115,10 +135,14 @@ export const projects: Project[] = [
       { value: '3', label: 'solutions prototypées' },
     ],
     stack: ['Figma', 'Notion', 'User testing', 'SQL'],
-    team: ['1 Product Manager (moi) — mission solo', 'Restitution au Lead PM BlaBlaCar'],
+    team: [
+      'Caroline - ex Project Manager (Octopus Energy)',
+      'Clémence - ex Product Designer (AVIV group)',
+      'Vincent - ex Contrôleur de gestion (Renault), moi',
+    ],
     missionTypes: ['Discovery', 'Recherche utilisateur', 'Prototypage'],
     retro:
-      "Le prototype a été validé en test utilisateur et restitué au Lead PM de BlaBlaCar. Prochaine étape (hors périmètre de la formation) : cadrer un A/B test en production sur les 3 pistes retenues pour confirmer le gain de +10 pts visé chez les nouveaux conducteurs.",
+      "Le prototype a été validé en test utilisateur et restitué au Lead PM de BlaBlaCar. Limite assumée de l'exercice : l'échantillon d'entretiens n'a pas inclus de conducteur réellement newbie. Prochaine étape (hors périmètre de la formation) : cadrer un A/B test en production sur les 3 pistes retenues, en recrutant spécifiquement des nouveaux conducteurs, pour confirmer le gain de +10 pts visé.",
     coverGradient: 'from-sky-500 via-indigo-500 to-violet-600',
     coverImage: blablacarCover,
   },
