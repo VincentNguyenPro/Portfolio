@@ -10,6 +10,12 @@ import jungleIaDustCover from '@/assets/blog/jungle-ia-dust-cover.webp';
 import jungleIaDustRoom from '@/assets/blog/jungle-ia-dust-room.webp';
 import jungleIaDustAgent from '@/assets/blog/jungle-ia-dust-agent.webp';
 import jungleIaDustCommunity from '@/assets/blog/jungle-ia-dust-community.webp';
+import mistralVibeCover from '@/assets/blog/mistral-vibe-cover.webp';
+import mistralVibeCeremony from '@/assets/blog/mistral-vibe-ceremony.webp';
+import mistralVibeTeam from '@/assets/blog/mistral-vibe-team.webp';
+import mistralVibeAppQuestion from '@/assets/blog/mistral-vibe-app-question.webp';
+import mistralVibeAppSimulator from '@/assets/blog/mistral-vibe-app-simulator.webp';
+import mistralVibeAppMap from '@/assets/blog/mistral-vibe-app-map.webp';
 import agenticGtmCover from '@/assets/blog/agentic-gtm-cover.png';
 import agenticGtmRoom from '@/assets/blog/agentic-gtm-room.jpeg';
 import agenticGtmTeam from '@/assets/blog/agentic-gtm-team.jpeg';
@@ -461,8 +467,103 @@ export const blogPosts: BlogPost[] = [
     ],
   },
   {
-    slug: 'agentic-gtm-hackathon-locus',
+    slug: 'mistral-vibe-hackathon-matou',
     order: 4,
+    title: 'Mistral Vibe Hackathon : construire Matou, le « Duolingo de la finance », en une journée',
+    description:
+      "Hackathon d'une journée organisé par Mistral AI à Paris : nous y avons construit Matou, une app qui apprend à gérer son argent avec des leçons générées en direct par Mistral.",
+    date: '18 juillet 2026',
+    eventDate: '18/07/2026',
+    categories: ['IA', 'Product', 'Communauté'],
+    url: 'https://luma.com/w692ilf0',
+    cover: { url: mistralVibeCover, alt: 'Mistral Vibe Hackathon - Paris, 18 juillet 2026' },
+    sections: [
+      {
+        fullWidth: true,
+        paragraphs: [
+          "Un samedi, une salle au cœur du 9e arrondissement et une seule consigne : construire quelque chose avec Vibe, de l'ouverture des portes à 8h30 jusqu'à la remise des projets en fin d'après-midi. Le Mistral Vibe Hackathon, organisé par Mistral AI à Paris le 18 juillet 2026, réunissait des équipes de un à quatre participants, sur candidature, avec petit-déjeuner, déjeuner et dîner fournis toute la journée. À la clé pour le podium : 3 000, 2 000 et 1 000 dollars de crédits Mistral.",
+          "Le programme était simple et tenu : accueil et petit-déjeuner de 8h30 à 9h30, cérémonie d'ouverture et lancement à 9h30, déjeuner à 12h30, snacks à 16h, remise des projets à 18h, puis annonce des gagnants vers 20h30.",
+        ],
+      },
+      {
+        fullWidth: true,
+        image: {
+          url: mistralVibeCeremony,
+          alt: "Cérémonie d'ouverture du Mistral Vibe Hackathon à Paris",
+          aspectRatio: '4 / 3',
+          caption: "La cérémonie d'ouverture : Mistral présente le parcours de Le Chat à Mistral Vibe devant une salle pleine.",
+        },
+      },
+      {
+        fullWidth: true,
+        heading: 'Notre projet : Matou, apprendre l’argent un geste par jour',
+        paragraphs: [
+          "Nous sommes partis d'un constat qui figurait en ouverture de notre pitch : 67 % des jeunes Français ne savent pas lire leur propre fiche de paie. Notre réponse s'appelle Matou, un « Duolingo de la finance » : une app qui promet d'apprendre l'argent un geste par jour. Pas un quiz figé, mais une app qui s'adapte à la personne, avec des leçons générées en direct par Mistral.",
+          "Le parcours commence par quatre questions : la situation de la personne (étudiante, premier salaire, en poste, freelance ou entre deux), ses revenus mensuels, son objectif numéro un (mettre de côté, payer moins d'impôts, investir, gérer ses dépenses ou comprendre sa paie) et son aisance avec l'argent sur une échelle de 1 à 5. À partir de ces réponses, Mistral génère une leçon personnalisée.",
+        ],
+      },
+      {
+        fullWidth: true,
+        gallery: {
+          columns: 3,
+          aspectRatio: '1000 / 1700',
+          images: [
+            {
+              url: mistralVibeAppQuestion,
+              alt: 'Matou : question sur les revenus mensuels, par bandes',
+              caption: "Onboarding : les revenus se déclarent par bandes, jamais au montant exact.",
+            },
+            {
+              url: mistralVibeAppSimulator,
+              alt: 'Matou : simulateur brut vers net avec un curseur de salaire',
+              caption: "L'outil final d'un module : un simulateur brut vers net appliqué à sa propre situation.",
+            },
+            {
+              url: mistralVibeAppMap,
+              alt: 'Matou : carte de progression en montagnes - Revenus, Budget, Impôts, Investir',
+              caption: "La progression en montagnes : Revenus, Budget, Impôts, Investir.",
+            },
+          ],
+        },
+      },
+      {
+        fullWidth: true,
+        heading: 'Du savoir à l’action, avec la confiance au centre',
+        paragraphs: [
+          "Chaque module de Matou se termine par un outil concret appliqué à la situation réelle de l'utilisateur. Le premier, « Simu brut vers net », fait glisser un salaire brut et affiche aussitôt ce qui arrive sur le compte, cotisations déduites. L'apprentissage suit un parcours de quatre montagnes à gravir, Revenus, Budget, Impôts puis Investir, avec trophées, XP, pièces, série de jours et une mascotte, le chat Matou.",
+          "Les choix produit traitent l'argent comme un sujet sensible. Les revenus se saisissent par bandes plutôt que par montants exacts, les réponses restent sur l'appareil, et le message est assumé dans l'interface : Matou éduque, ne conseille pas, et c'est à l'utilisateur de vérifier avant toute décision qui engage son argent.",
+        ],
+      },
+      {
+        fullWidth: true,
+        heading: 'Sous le capot : un LLM qui génère, un rendu qui reste déterministe',
+        paragraphs: [
+          "Techniquement, le choix a été de la sobriété : du HTML, du CSS et du JavaScript pur, déployés en statique, avec toute la logique côté client. L'API Mistral génère à l'exécution des questions et des scénarios adaptés, dont les réponses sont renvoyées en JSON structuré pour que l'affichage reste déterministe. Le modèle produit le contenu, l'interface garde la main sur la forme, ce qui évite les mauvaises surprises à l'écran.",
+          "Côté roadmap, la première étape, le MVP du hackathon, était livrée à la fin de la journée : un prototype cliquable, un moteur adaptatif, l'intégration de Mistral et l'interface pastel complète.",
+        ],
+      },
+      {
+        fullWidth: true,
+        image: {
+          url: mistralVibeTeam,
+          alt: 'Photo avec les stickers Mistral pendant le hackathon',
+          aspectRatio: '3 / 4',
+          width: 'md',
+          caption: 'Pause photo avec les stickers Mistral.',
+        },
+      },
+      {
+        fullWidth: true,
+        paragraphs: [
+          "Ce que je retiens de cette journée : en huit heures de build, il faut renoncer à tout couvrir et livrer une boucle complète, de la question posée à l'outil appliqué en passant par la leçon générée. C'est aussi un bon exercice de PM : choisir ce que le modèle doit produire, ce que l'interface doit garantir, et ce qu'on refuse de promettre à l'utilisateur. Merci à toute l'équipe de Mistral AI pour l'organisation et l'accueil.",
+          "📅 Date de l'événement : 18/07/2026",
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'agentic-gtm-hackathon-locus',
+    order: 5,
     title: 'Agentic GTM Hackathon chez Station F : construire Locus avec Claude, Full Enrich & Sillage',
     description:
       "Hackathon chez Station F avec Anthropic, Full Enrich et Sillage : avec Duhan, j'ai construit Locus, un outil qui identifie le vrai décisionnaire d'un deal.",
@@ -565,7 +666,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'hackathon-alan-lovable',
-    order: 5,
+    order: 6,
     title: 'Hackathon Alan x Lovable : builder une app wellness en 60 minutes',
     description:
       "Hackathon éclair chez Alan : 60 minutes pour construire un produit bien-être avec Lovable et le pitcher en 90 secondes. J'ai créé RunReady, coach running.",
@@ -656,7 +757,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'travel-ai-build-night',
-    order: 6,
+    order: 7,
     title: 'Travel x AI Build Night : construire Nomad-K avec Lovable & Jinko',
     description:
       "Build night chez swanbase avec Lovable et Jinko sur le voyage : j'ai construit Nomad-K, une app qui explore des destinations selon un budget donné.",
@@ -721,7 +822,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'product-partners-retrospective',
-    order: 7,
+    order: 8,
     title: 'Rétrospective Product Partners : documenter pour performer',
     description:
       "Bilan à mi-année chez Lucca avec Product Partners : comment transformer la documentation en levier de performance et en carburant pour les agents IA.",
@@ -779,7 +880,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'better-call-claude-arynor',
-    order: 8,
+    order: 9,
     title: "Better Call Claude : l'IA au service de l'efficacité métier",
     description:
       "Premier meetup Better Call Claude par Arynor : deux démos live sur la consolidation de données et la préparation prospect, applicables dès le lendemain.",
@@ -844,7 +945,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'vivatech-2026',
-    order: 9,
+    order: 10,
     title: 'VivaTech 2026 - 10ᵉ édition',
     description:
       "Immersion dans les ruptures technologiques de VivaTech 2026 : IBM Quantum System Two, Lifepods, TETMET, et un focus SaaS pour nourrir Kostbase.com.",
@@ -935,7 +1036,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'webshop-mollie-codex',
-    order: 10,
+    order: 11,
     title: 'Construire son webshop avec Mollie & Codex',
     description:
       "Atelier Le Wagon : passer d'une idée e-commerce à une boutique en ligne fonctionnelle, encaissant de vrais paiements, en quelques heures et sans équipe tech.",
@@ -978,7 +1079,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'hackathon-lovable-join-lion',
-    order: 11,
+    order: 12,
     title: 'Hackathon Lovable chez Join Lion',
     description:
       "Une soirée à la Jungle IA pour transformer une idée en application en 3h avec Lovable, entourée de 70 personnes qui se lancent en même temps.",
@@ -1041,7 +1142,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'construire-ia-demain',
-    order: 12,
+    order: 13,
     title: "Construire l'IA de demain : défis et opportunités",
     description:
       "Table ronde Le Wagon x Women in Tech France sur l'IA comme révolution de société : comment construire une IA inclusive, représentative et équitable.",
@@ -1082,7 +1183,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'claude-code-pms',
-    order: 13,
+    order: 14,
     title: 'Formation Claude Code chez Noé',
     description:
       "Deux jours pour intégrer Claude Code à ma pratique de PM : ajout de fonctionnalité, correction de bugs et mise en production via GitHub.",
@@ -1154,7 +1255,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'noe-formation-pm',
-    order: 16,
+    order: 17,
     title: 'Formation Product Management - Noé promo 33',
     description:
       "Retour sur 4 semaines intensives de Product Management chez Noé, comme PM pour BlaBlaCar : stratégie, discovery, priorisation, prototypage et delivery.",
@@ -1200,7 +1301,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'big-data-beautiful-data',
-    order: 15,
+    order: 16,
     title: 'Des 5V du Big Data aux 5E du Beautiful Data - IAE Paris',
     description:
       "Conférence IAE Paris - Sorbonne Business School : et si l'immatériel du « Beautiful Data » complétait le Big Data, pour une performance plus durable ?",
@@ -1250,7 +1351,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'ia-transforme-pm',
-    order: 14,
+    order: 15,
     title: "Comment l'IA transforme le Product Management",
     description:
       "Tech Talk Le Wagon x Welcome to the Jungle : comment le métier de PM a changé en 18 mois, ce qui s'automatise, et les compétences qui comptent vraiment en 2026.",
@@ -1296,7 +1397,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'dust-ai-agent',
-    order: 17,
+    order: 18,
     title: 'Atelier Dust - Construire son premier agent IA',
     description:
       "Soirée Eria x Le Wagon x Dust : théorie et pratique pour repartir avec son agent IA opérationnel, connecté à Google Drive et aux emails, sans coder.",
