@@ -174,7 +174,7 @@ export default function About() {
               </div>
 
               <a
-                href="/Vincent-Nguyen-CV.pdf"
+                href="/Vincent-Nguyen-CV-EN.pdf"
                 download="Vincent-Nguyen-CV.pdf"
                 className="hidden md:inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-border text-sm font-medium hover:bg-muted transition-colors"
               >

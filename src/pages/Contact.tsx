@@ -89,7 +89,7 @@ export default function Contact() {
                 );
               })}
               <motion.a
-                href="/Vincent-Nguyen-CV.pdf"
+                href="/Vincent-Nguyen-CV-EN.pdf"
                 download="Vincent-Nguyen-CV.pdf"
                 initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -192,7 +192,7 @@ export default function Contact() {
               })}
 
               <motion.a
-                href="/Vincent-Nguyen-CV.pdf"
+                href="/Vincent-Nguyen-CV-EN.pdf"
                 download="Vincent-Nguyen-CV.pdf"
                 initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
