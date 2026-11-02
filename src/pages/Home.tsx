@@ -12,7 +12,7 @@ import { CountUpStat } from '@/components/ui/CountUpStat';
 const stats = [
   { target: 10, suffix: ' ans', label: "d'expérience produit & SI" },
   { target: 5, prefix: '+', label: 'produits digitaux pilotés' },
-  { target: 8, suffix: ' M€', label: 'budget produit piloté' },
+  { target: 7, suffix: ' chiffres', label: 'budget produit piloté (en €)' },
   { target: 250, prefix: '+', label: 'utilisateurs accompagnés' },
 ];
 
