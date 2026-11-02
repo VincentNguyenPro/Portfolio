@@ -1,5 +1,15 @@
 import pennylaneIaCover from '@/assets/blog/pennylane-ia-cover.webp';
 import pennylaneIaRoom from '@/assets/blog/pennylane-ia-room.webp';
+import noeIaProduitCover from '@/assets/blog/noe-ia-produit-cover.webp';
+import noeIaProduitNiveaux from '@/assets/blog/noe-ia-produit-niveaux.webp';
+import noeIaProduitFaisabilite from '@/assets/blog/noe-ia-produit-faisabilite.webp';
+import noeIaProduitConfiance from '@/assets/blog/noe-ia-produit-confiance.webp';
+import noeIaProduitCycle from '@/assets/blog/noe-ia-produit-cycle.webp';
+import noeIaProduitLean from '@/assets/blog/noe-ia-produit-lean.webp';
+import jungleIaDustCover from '@/assets/blog/jungle-ia-dust-cover.webp';
+import jungleIaDustRoom from '@/assets/blog/jungle-ia-dust-room.webp';
+import jungleIaDustAgent from '@/assets/blog/jungle-ia-dust-agent.webp';
+import jungleIaDustCommunity from '@/assets/blog/jungle-ia-dust-community.webp';
 import agenticGtmCover from '@/assets/blog/agentic-gtm-cover.png';
 import agenticGtmRoom from '@/assets/blog/agentic-gtm-room.jpeg';
 import agenticGtmTeam from '@/assets/blog/agentic-gtm-team.jpeg';
@@ -211,8 +221,248 @@ export const blogPosts: BlogPost[] = [
     ],
   },
   {
-    slug: 'agentic-gtm-hackathon-locus',
+    slug: 'noe-integrer-ia-produit',
     order: 2,
+    title: "Comment intégrer l'IA dans son produit ? Le retour d'expérience de Roxane Albert (Noé)",
+    description:
+      "Webinaire Noé : trois idées fausses sur l'intégration de l'IA en product management, les quatre risques de Marty Cagan appliqués à l'IA et les trois piliers de la confiance, à partir d'un produit IA construit chez Bpifrance.",
+    date: '6 octobre 2026',
+    eventDate: '06/10/2026',
+    categories: ['Product', 'IA', 'Formation'],
+    url: 'https://www.youtube.com/watch?v=C8s9KSecbFo',
+    cover: { url: noeIaProduitCover, alt: "Webinaire Noé - Comment intégrer l'IA dans son produit : les 3 idées fausses" },
+    sections: [
+      {
+        fullWidth: true,
+        paragraphs: [
+          "Un POC d'IA qui reste dans un tiroir, tout PM en a croisé. Le webinaire de Noé, l'école où j'ai suivi ma formation Product Management, partait de ce constat : la vraie difficulté n'est pas de faire une IA qui marche, c'est de faire un produit IA que les gens adoptent. Roxane Albert, Group Product Manager chez Theodo, y a partagé son retour d'expérience sur les produits IA qu'elle a construits pour une banque publique, Bpifrance, dans un contexte réglementé où les contraintes de conformité et d'accès aux données sont fortes.",
+          "J'ai suivi la session en direct, 45 minutes très denses, ouverte par Jules Delpech, fondateur de Noé. Voici ce que j'en retiens, avec les slides qui m'ont le plus servi.",
+        ],
+      },
+      {
+        fullWidth: true,
+        heading: 'Pourquoi le métier de PM change',
+        paragraphs: [
+          "En introduction, trois changements du métier de Product Manager ont été posés, chacun avec son enjeu :",
+        ],
+        bullets: [
+          "Gagner en efficacité : déléguer et industrialiser des tâches avec l'IA à l'échelle de l'équipe, avec l'enjeu de centraliser les bonnes pratiques.",
+          "Se rapprocher de la tech : lire, comprendre et contribuer à la codebase, sans casser le code ni surcharger les développeurs.",
+          "Développer des fonctionnalités IA : concevoir et shipper des features qui reposent sur l'IA, avec deux défis, le non-déterminisme et l'observabilité.",
+        ],
+      },
+      {
+        fullWidth: true,
+        heading: "Les trois niveaux de maturité d'un produit IA",
+        paragraphs: [
+          "Pour situer son projet, Roxane propose une grille simple en trois niveaux. Le premier, naviguer : une barre conversationnelle qui remplace les filtres, comme l'option « Décrivez votre voiture idéale » de La Centrale. Le deuxième, synthétiser : l'IA lit, résume et restitue l'information, comme l'assistant de Bpifrance qui prépare des notes de synthèse ou la recherche IA des Echos. Le troisième, déclencher : l'IA passe à l'action, notifie, envoie, met à jour, comme le coworker IA développé par Theodo, branché sur les outils de l'entreprise (CRM, messagerie, Slack, Notion, Drive).",
+        ],
+      },
+      {
+        fullWidth: true,
+        image: {
+          url: noeIaProduitNiveaux,
+          alt: "Slide : intégrer l'IA, trois niveaux de maturité - naviguer, synthétiser, déclencher",
+          aspectRatio: '1868 / 1218',
+          width: 'md',
+          caption: "Les trois niveaux de maturité d'un produit IA : naviguer, synthétiser, déclencher.",
+        },
+      },
+      {
+        fullWidth: true,
+        heading: 'Idée fausse n°1 : « il faut d’abord dérisquer la faisabilité »',
+        paragraphs: [
+          "Le réflexe technique est légitime : il faut dérisquer le contexte d'un produit IA, c'est-à-dire se demander quel type d'action on demande à l'IA, avec quelles données en entrée et quel risque d'hallucination. Garbage in, garbage out. Mais ce qu'on oublie, c'est que l'IA reste un moyen de répondre à un problème qui, parfois, se résout mieux sans IA. Sans désirabilité, on tombe dans les features à gogo.",
+          "Le reframe : commencer par la désirabilité, puis passer les quatre risques de Marty Cagan sur un problème réel. Roxane les a déroulés sur le cas Bpifrance :",
+        ],
+        bullets: [
+          "Viabilité : le modèle économique est-il rentable (coût du LLM, infra, support) et le business case sert-il une priorité stratégique ? Côté Bpifrance : le temps nécessaire à une analyse est divisé par deux, pour un coût inférieur à 2 € par analyse financière.",
+          "Désirabilité : résout-on un problème réel et fréquent ? Côté Bpifrance : beaucoup de temps perdu à récupérer des documents dispersés dans plusieurs bases et des mails, et une partie de l'analyse purement descriptive, sans valeur ajoutée pour le chargé d'affaires.",
+          "Faisabilité : les données sont-elles fiables, quel est le risque d'hallucination, la solution est-elle maintenable et peut-on changer de technologie ? Côté Bpifrance : uniquement des données de qualité en entrée, et un humain dans la boucle, puisque l'analyse est toujours relue par un chargé d'affaires et que la décision de financement ne se base jamais automatiquement sur l'analyse.",
+          "Usabilité : faut-il créer une nouvelle interface plutôt qu'utiliser Copilot, Claude ou GPT, et l'utilisateur comprend-il ce que l'agent peut faire pour lui ? Côté Bpifrance : capitaliser sur un outil interne déjà utilisé pour le montage de dossier et, les données étant extrêmement confidentielles, rester dans un système Bpifrance.",
+        ],
+      },
+      {
+        fullWidth: true,
+        image: {
+          url: noeIaProduitFaisabilite,
+          alt: "Slide : quatre risques de Marty Cagan, faisabilité - front, back office et API, couche d'accès aux modèles, observation",
+          aspectRatio: '2000 / 1040',
+          width: 'lg',
+          caption: "Côté faisabilité, l'architecture retenue : un front dans un outil déjà utilisé, un back office branché par API, une couche d'accès aux modèles interchangeables et de l'observation.",
+        },
+      },
+      {
+        fullWidth: true,
+        paragraphs: [
+          "Sur le choix de construire plutôt que d'utiliser un agent existant, trois arguments ont été avancés : les droits d'accès aux données (brancher des outils IA du marché sur les bases métier n'était pas permis, alors que c'était possible sur leur plateforme), la standardisation (une proposition de prompt par métier et par section de l'analyse) et l'amélioration continue. L'alternative, partager des projets à maintenir dans un outil générique, n'a pas fait décoller l'adoption.",
+        ],
+      },
+      {
+        fullWidth: true,
+        heading: 'Idée fausse n°2 : « il faut tester son MVP le plus vite possible »',
+        paragraphs: [
+          "Tester vite, oui, parce qu'on a toujours besoin de retours utilisateurs. Mais avec l'IA, un produit pas assez mature fait fuir immédiatement ses utilisateurs, et il devient très compliqué de recréer la confiance ensuite. Mieux vaut commencer par des bêta-testeurs internes. Le reframe : il faut d'abord penser la confiance, car sans confiance, il n'y a pas d'adoption.",
+          "Elle repose sur trois piliers : la compétence (les résultats sont-ils de qualité, et qu'attend l'utilisateur ?), la transparence (d'où vient la réponse et que fait-on quand elle est fausse ?) et l'empathie (dans quel contexte est l'utilisateur et quelle posture attend-il ?).",
+        ],
+      },
+      {
+        fullWidth: true,
+        image: {
+          url: noeIaProduitConfiance,
+          alt: 'Slide : les trois piliers de la confiance - compétence, transparence, empathie',
+          aspectRatio: '2000 / 1070',
+          width: 'lg',
+          caption: 'Les trois piliers de la confiance : compétence, transparence, empathie.',
+        },
+      },
+      {
+        fullWidth: true,
+        paragraphs: [
+          "Pour la compétence, trois causes de mauvais outputs ont été identifiées : un périmètre trop large (on veut couvrir trop de cas d'usage et on n'atteint la qualité d'aucun), l'absence d'accord sur l'output (chez Bpifrance, pour un même métier, l'analyse n'était pas conduite de la même façon selon les régions, et il a fallu trancher avant de prompter) et des prompts non spécialisés (un dossier simple et un dossier complexe ne s'analysent pas avec les mêmes ratios).",
+          "Pour la transparence, quatre réflexes de design : expliciter les sources (avec le numéro de page), savoir dire qu'on ne sait pas et rediriger vers un humain plutôt qu'inventer, laisser de la place à la correction puisque l'IA peut halluciner, et montrer les progrès quand la réponse prend du temps.",
+        ],
+        quote: "On oublie l'effort d'empathie parce qu'on voit des algorithmes. Or l'interface tend à devenir invisible : la conversation devient le produit.",
+      },
+      {
+        fullWidth: true,
+        heading: 'Idée fausse n°3 : « il faut se limiter à un faible nombre de testeurs »',
+        paragraphs: [
+          "Le reframe est subtil : plutôt que de limiter le nombre de testeurs, il faut cadrer le périmètre, puis apprendre de chaque input. Avant la mise en production : des cas de test, des jeux d'évaluation, des questions malicieuses, un périmètre et un niveau de risque définis. Après l'ouverture : l'analyse des traces réelles, pièce par pièce, pour comprendre ce que cherchent vraiment les utilisateurs, avec un outil d'observabilité comme Langfuse.",
+          "Pour un PM, c'est un changement concret du cycle produit : un champ ouvert transforme chaque input en donnée produit, sans dispositif de recherche dédié ; des briques d'évaluation mesurent les réponses en continu ; et on peut optimiser directement, en enrichissant le contexte, en ajustant une compétence ou le prompt système sans passer par un ticket. Une limite honnête a aussi été posée : l'outillage de traces n'est pas encore fait pour les PM, et chez eux ce sont les profils techniques qui les exploitent pour améliorer les prompts. Des acteurs se positionnent justement pour rendre les traces lisibles par les équipes produit.",
+        ],
+      },
+      {
+        fullWidth: true,
+        image: {
+          url: noeIaProduitCycle,
+          alt: 'Slide : ce que ça change dans le cycle produit - un champ ouvert, des briques d’évaluation, une optimisation directe',
+          aspectRatio: '2000 / 1007',
+          width: 'lg',
+          caption: "Ce que l'IA change dans le cycle produit : un champ ouvert, des briques d'évaluation et une optimisation directe.",
+        },
+      },
+      {
+        fullWidth: true,
+        heading: 'Pour aller plus loin : le lean',
+        paragraphs: [
+          "La présentation s'est conclue sur quatre principes lean qui guident les équipes de Theodo : la valeur pour le client (partir du terrain et de vrais problèmes utilisateurs), faire juste du premier coup (être vigilant sur la qualité, parce que c'est elle qui crée la confiance), un réseau d'équipes autonomes renforcées par des compétences IA, et une organisation apprenante qui observe et analyse chaque utilisation pour faire mieux.",
+        ],
+      },
+      {
+        fullWidth: true,
+        image: {
+          url: noeIaProduitLean,
+          alt: 'Slide : comment le lean peut nous aider - value for customer, right first time, tech-enabled network of teams, learning organisation',
+          aspectRatio: '2000 / 915',
+          width: 'lg',
+          caption: "Quatre principes lean pour aller plus loin : value for customer, right first time, tech-enabled network of teams, learning organisation.",
+        },
+      },
+      {
+        fullWidth: true,
+        heading: 'Questions-réponses',
+        paragraphs: [
+          "La session s'est terminée par un temps d'échange sur la mesure du gain d'un produit IA, la construction de produits IA pour des utilisateurs externes, l'importance de partir du problème plutôt que de la techno (et de choisir entre IA et logique déterministe), la montée en compétence technique d'un PM et la façon de recréer la confiance après un lancement raté. Ces échanges sont à retrouver dans l'enregistrement du webinaire, que je vous recommande.",
+        ],
+      },
+      {
+        fullWidth: true,
+        paragraphs: [
+          "Ce que je retiens pour mes propres produits : repasser chaque idée IA au crible des quatre risques avant de la construire, traiter la confiance comme une exigence de départ plutôt que comme un détail de finition, et considérer chaque conversation comme une donnée de discovery. Merci à Roxane Albert pour la clarté du retour d'expérience, et à l'équipe Noé pour l'organisation.",
+          "📅 Date de l'événement : 06/10/2026",
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'jungle-ia-dust-premier-agent',
+    order: 3,
+    title: 'Jungle IA : construire son premier agent IA avec Dust',
+    description:
+      "Meetup Lion x Paatch avec l'équipe Dust : keynote, démo live et mini-hackathon de deux heures pour repartir avec un agent qui tourne vraiment. J'y ai construit un agent de veille et de candidature.",
+    date: '29 septembre 2026',
+    eventDate: '29/09/2026',
+    categories: ['IA', 'Communauté'],
+    cover: { url: jungleIaDustCover, alt: 'Jungle IA - Viens construire ton 1er agent IA en une soirée avec Dust - Lion x Paatch, 29 septembre 2026' },
+    sections: [
+      {
+        fullWidth: true,
+        paragraphs: [
+          "Le 29 septembre, la règle de la Jungle IA était simple : on ne rentre pas chez soi sans l'agent IA qu'on a construit de ses mains. Le meetup, organisé par Lion (l'école de l'IA de Maria Schools) avec Paatch, mettait cette fois Dust à l'honneur, la plateforme française pour créer des agents connectés à ses vrais outils. Soixante-dix places, une salle au cœur du 2e arrondissement, et un format assumé : pas de slides à rallonge, on met les mains dans le cambouis.",
+          "Au programme de la soirée : une keynote pour comprendre concrètement ce que Dust permet aujourd'hui, une démo live avec des pros de l'outil, puis un mini-hackathon guidé de deux heures, avec des crédits offerts (un mois de plan Pro) et les experts et ambassadeurs Dust présents dans la salle pour débloquer chacun.",
+        ],
+      },
+      {
+        fullWidth: true,
+        image: {
+          url: jungleIaDustRoom,
+          alt: 'Salle de la Jungle IA chez Lion pendant la présentation de la soirée',
+          aspectRatio: '4 / 3',
+          caption: "Chez Lion, avant le sprint de build : l'équipe présente le programme devant une salle d'ordinateurs ouverts.",
+        },
+      },
+      {
+        fullWidth: true,
+        heading: 'Mon idée : un agent qui chasse les offres à ma place',
+        paragraphs: [
+          "Après l'atelier Dust d'avril au Wagon, je voulais passer un cran au-dessus : plutôt qu'un agent de tri d'emails, un agent vraiment utile dans mon quotidien du moment, la recherche d'un poste de Product Manager. J'ai appelé le mien JOB_HUNTER.",
+          "Son rôle : repérer les offres, les scorer selon mon profil et les présenter dans un tableau de bord interactif, un « Frame » dans Dust. Chaque offre reçoit un score de matching sur 100 fondé sur les compétences, le produit, le niveau, la localisation, le mode de travail, le contrat, la rémunération et la fraîcheur. Seules celles au-dessus de 60/100 sont affichées, triées par score puis par fraîcheur, et les rémunérations non publiées sont signalées comme inconnues plutôt qu'estimées.",
+        ],
+      },
+      {
+        fullWidth: true,
+        image: {
+          url: jungleIaDustAgent,
+          alt: "Agent JOB_HUNTER dans Dust : conversation à gauche, tableau de bord des offres scorées à droite",
+          aspectRatio: '2400 / 1163',
+          width: 'full',
+          caption: "L'agent JOB_HUNTER dans Dust : la conversation à gauche, et à droite le tableau de bord avec filtres (poste, séniorité, localisation, mode de travail, contrat, rémunération, fraîcheur) et offres scorées.",
+        },
+      },
+      {
+        fullWidth: true,
+        heading: 'Ce que j’ai appris en le construisant',
+        paragraphs: [
+          "Le tableau de bord réunit les filtres, le score, le tri et, sur chaque carte, les boutons « Voir l'offre », « Générer le CV » et « Générer la lettre de motivation ». Mais le vrai apprentissage est venu d'une limite. Sans webhook, sans serveur ni plateforme d'automatisation, l'agent ne peut pas déclencher la génération d'un CV d'un simple clic. Il me l'a dit franchement, et m'a proposé un contournement en quatre étapes :",
+        ],
+        bullets: [
+          "cliquer sur « Générer le CV » dans l'offre ;",
+          "cliquer sur « Copier la demande » ;",
+          "coller cette demande dans la conversation ;",
+          "l'agent consulte le lien de l'annonce, adapte mon CV et génère un PDF téléchargeable.",
+        ],
+      },
+      {
+        fullWidth: true,
+        paragraphs: [
+          "Deux leçons pour un PM. D'abord, un agent honnête sur ses limites vaut mieux qu'un agent qui promet une automatisation qu'il ne peut pas tenir : le contournement en quatre étapes marche dès ce soir, et la vraie automatisation viendra ensuite. Ensuite, la valeur n'est pas dans l'agent seul mais dans l'interface qui l'entoure : c'est le tableau de bord filtrable qui rend le scoring lisible et actionnable.",
+        ],
+      },
+      {
+        fullWidth: true,
+        heading: 'Et maintenant ?',
+        paragraphs: [
+          "La soirée s'est terminée sur deux invitations : rejoindre la communauté Slack de Dust et le programme ambassadeurs. L'équipe organisatrice a aussi encouragé chacun à publier son agent sur la communauté Dust, pour inspirer ceux qui passeront après.",
+          "Je repars avec une conviction que ce format confirme : on comprend un outil d'agents en le construisant sur un vrai problème, pas en regardant une démo. Merci à Lion, à Paatch et à toute l'équipe Dust pour l'accompagnement.",
+          "📅 Date de l'événement : 29/09/2026",
+        ],
+      },
+      {
+        fullWidth: true,
+        image: {
+          url: jungleIaDustCommunity,
+          alt: 'Dernière slide de la soirée : communauté Slack Dust et programme ambassadeurs',
+          aspectRatio: '4 / 3',
+          width: 'md',
+          caption: "La dernière slide : rejoindre la communauté Slack de Dust ou le programme ambassadeurs.",
+        },
+      },
+    ],
+  },
+  {
+    slug: 'agentic-gtm-hackathon-locus',
+    order: 4,
     title: 'Agentic GTM Hackathon chez Station F : construire Locus avec Claude, Full Enrich & Sillage',
     description:
       "Hackathon chez Station F avec Anthropic, Full Enrich et Sillage : avec Duhan, j'ai construit Locus, un outil qui identifie le vrai décisionnaire d'un deal.",
@@ -315,7 +565,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'hackathon-alan-lovable',
-    order: 3,
+    order: 5,
     title: 'Hackathon Alan x Lovable : builder une app wellness en 60 minutes',
     description:
       "Hackathon éclair chez Alan : 60 minutes pour construire un produit bien-être avec Lovable et le pitcher en 90 secondes. J'ai créé RunReady, coach running.",
@@ -406,7 +656,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'travel-ai-build-night',
-    order: 4,
+    order: 6,
     title: 'Travel x AI Build Night : construire Nomad-K avec Lovable & Jinko',
     description:
       "Build night chez swanbase avec Lovable et Jinko sur le voyage : j'ai construit Nomad-K, une app qui explore des destinations selon un budget donné.",
@@ -471,7 +721,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'product-partners-retrospective',
-    order: 5,
+    order: 7,
     title: 'Rétrospective Product Partners : documenter pour performer',
     description:
       "Bilan à mi-année chez Lucca avec Product Partners : comment transformer la documentation en levier de performance et en carburant pour les agents IA.",
@@ -529,7 +779,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'better-call-claude-arynor',
-    order: 6,
+    order: 8,
     title: "Better Call Claude : l'IA au service de l'efficacité métier",
     description:
       "Premier meetup Better Call Claude par Arynor : deux démos live sur la consolidation de données et la préparation prospect, applicables dès le lendemain.",
@@ -594,7 +844,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'vivatech-2026',
-    order: 7,
+    order: 9,
     title: 'VivaTech 2026 - 10ᵉ édition',
     description:
       "Immersion dans les ruptures technologiques de VivaTech 2026 : IBM Quantum System Two, Lifepods, TETMET, et un focus SaaS pour nourrir Kostbase.com.",
@@ -685,7 +935,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'webshop-mollie-codex',
-    order: 8,
+    order: 10,
     title: 'Construire son webshop avec Mollie & Codex',
     description:
       "Atelier Le Wagon : passer d'une idée e-commerce à une boutique en ligne fonctionnelle, encaissant de vrais paiements, en quelques heures et sans équipe tech.",
@@ -728,7 +978,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'hackathon-lovable-join-lion',
-    order: 9,
+    order: 11,
     title: 'Hackathon Lovable chez Join Lion',
     description:
       "Une soirée à la Jungle IA pour transformer une idée en application en 3h avec Lovable, entourée de 70 personnes qui se lancent en même temps.",
@@ -791,7 +1041,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'construire-ia-demain',
-    order: 10,
+    order: 12,
     title: "Construire l'IA de demain : défis et opportunités",
     description:
       "Table ronde Le Wagon x Women in Tech France sur l'IA comme révolution de société : comment construire une IA inclusive, représentative et équitable.",
@@ -832,7 +1082,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'claude-code-pms',
-    order: 11,
+    order: 13,
     title: 'Formation Claude Code chez Noé',
     description:
       "Deux jours pour intégrer Claude Code à ma pratique de PM : ajout de fonctionnalité, correction de bugs et mise en production via GitHub.",
@@ -904,7 +1154,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'noe-formation-pm',
-    order: 14,
+    order: 16,
     title: 'Formation Product Management - Noé promo 33',
     description:
       "Retour sur 4 semaines intensives de Product Management chez Noé, comme PM pour BlaBlaCar : stratégie, discovery, priorisation, prototypage et delivery.",
@@ -950,7 +1200,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'big-data-beautiful-data',
-    order: 13,
+    order: 15,
     title: 'Des 5V du Big Data aux 5E du Beautiful Data - IAE Paris',
     description:
       "Conférence IAE Paris - Sorbonne Business School : et si l'immatériel du « Beautiful Data » complétait le Big Data, pour une performance plus durable ?",
@@ -1000,7 +1250,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'ia-transforme-pm',
-    order: 12,
+    order: 14,
     title: "Comment l'IA transforme le Product Management",
     description:
       "Tech Talk Le Wagon x Welcome to the Jungle : comment le métier de PM a changé en 18 mois, ce qui s'automatise, et les compétences qui comptent vraiment en 2026.",
@@ -1046,7 +1296,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'dust-ai-agent',
-    order: 15,
+    order: 17,
     title: 'Atelier Dust - Construire son premier agent IA',
     description:
       "Soirée Eria x Le Wagon x Dust : théorie et pratique pour repartir avec son agent IA opérationnel, connecté à Google Drive et aux emails, sans coder.",
