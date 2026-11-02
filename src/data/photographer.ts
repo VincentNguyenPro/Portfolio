@@ -6,7 +6,7 @@ export const photographerInfo: PhotographerInfo = {
   tagline: 'Product Manager - Expertise Finance & SI',
   heroIntroduction:
     "Je transforme des besoins métier complexes en produits à impact mesurable, dans des contextes à fort enjeu technique et financier.",
-  biography: `Product Manager & Product Owner, 10 ans d'expérience en SI finance et transformation digitale (outils pilotés : 8 M€, +25 ETP). Ingénieur de formation (ISAE-SUPMECA, HEC Paris, Noé), à l'intersection du métier, de la donnée et de la tech - j'utilise l'IA au quotidien pour accélérer discovery et delivery.
+  biography: `Product Manager & Product Owner, 10 ans d'expérience en SI finance et transformation digitale (outils pilotés : budgets à 7 chiffres en €, +25 ETP). Ingénieur de formation (ISAE-SUPMECA, HEC Paris, Noé), à l'intersection du métier, de la donnée et de la tech - j'utilise l'IA au quotidien pour accélérer discovery et delivery.
 
 Ma méthode : partir de la donnée et de la voix utilisateur, prototyper vite, déployer avec une vraie conduite du changement. J'aime les sujets exigeants où rigueur financière et créativité produit se rencontrent.`,
   approach: `Ma méthode repose sur trois convictions : commencer par la donnée et la voix utilisateur, prototyper vite pour apprendre, et déployer avec une conduite du changement qui transforme l'adoption en impact mesurable.
@@ -48,7 +48,7 @@ export const experiences: ExperienceItem[] = [
     period: '2023 - 2025',
     location: 'Paris',
     highlights: [
-      "Discovery avec +8 directeurs métiers pour cartographier les dépenses IT et besoins de reporting (portefeuille 50 M€ - 230 M€)",
+      "Discovery avec +8 directeurs métiers pour cartographier les dépenses IT et besoins de reporting (portefeuilles à 8 ou 9 chiffres en €)",
       "MVP d'un outil de consolidation et de pilotage des coûts DSI livré en 2 mois",
       "Étude d'opportunité d'une solution SaaS de pilotage financier DSI et recommandation stratégique",
       "Résultat : -5 % de coûts DSI vs N-1 (CAPEX / OPEX / MS)",
@@ -61,8 +61,8 @@ export const experiences: ExperienceItem[] = [
     location: 'Vélizy',
     highlights: [
       "Pilotage produit : roadmap, backlog, formation et support à +25 ETP contrôleurs monde",
-      "Budget 8 M€ - équipe d'1 Tech Lead et 3 développeurs en Scrum",
-      "Consolidation 1,1 Md€ de coûts logistiques amont et aval (-5 % vs N-1)",
+      "Budget à 7 chiffres (en €) - équipe d'1 Tech Lead et 3 développeurs en Scrum",
+      "Consolidation de coûts logistiques amont et aval, 10 chiffres en € (-5 % vs N-1)",
       "Résultat : -50 % de délais de clôture (J+10 → J+5)",
     ],
   },
@@ -72,7 +72,7 @@ export const experiences: ExperienceItem[] = [
     period: '2016 - 2020',
     location: 'Guyancourt',
     highlights: [
-      "Remplacement, déploiement et adoption d'outils de costing pour +250 ETP dans 12 pays (budget 10 M€)",
+      "Remplacement, déploiement et adoption d'outils de costing pour +250 ETP dans 12 pays (budget à 8 chiffres en €)",
       "Spécifications, tests fonctionnels et analyses statistiques d'usage pour prioriser les besoins",
       "Plan de conduite du changement à l'échelle de 250 collaborateurs",
       "Résultat : 95 % de taux d'adoption · +15 % de fiabilité et rapidité d'exécution des calculs",
@@ -85,7 +85,7 @@ export const experiences: ExperienceItem[] = [
     location: 'Puteaux',
     highlights: [
       "Audit et conseil R&D / innovation pour l'obtention de Crédit Impôt Recherche (CIR)",
-      "Gestion d'un portefeuille clients industrie et NTIC (1 M€)",
+      "Gestion d'un portefeuille clients industrie et NTIC (7 chiffres en €)",
     ],
   },
 ];
@@ -148,4 +148,9 @@ export const educationItems = [
   { title: 'Product Management', school: 'NOÉ, Paris', period: '2026' },
   { title: 'Corporate Finance - ICCF Executive Education', school: 'HEC Paris, Jouy-en-Josas', period: '2016 - 2017' },
   { title: 'Ingénieur Génie Industriel', school: 'ISAE-SUPMECA, Paris Saint-Ouen', period: '2011 - 2014' },
+];
+
+export const cvFiles = [
+  { lang: 'FR', label: 'Français', cta: 'Mon CV en français', href: '/Vincent-Nguyen-CV-FR.pdf', filename: 'Vincent-Nguyen-CV-FR.pdf' },
+  { lang: 'EN', label: 'English', cta: 'My CV in English', href: '/Vincent-Nguyen-CV-EN.pdf', filename: 'Vincent-Nguyen-CV-EN.pdf' },
 ];

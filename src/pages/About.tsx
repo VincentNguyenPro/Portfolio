@@ -8,6 +8,7 @@ import {
   certifications,
   languages,
   educationItems,
+  cvFiles,
 } from '@/data/photographer';
 import { SEOHead } from '@/components/seo/SEOHead';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
@@ -73,7 +74,7 @@ const storyMilestones: { year: string; logos: string[]; content: React.ReactNode
     logos: [renaultLogo],
     content: (
       <>
-        Je reviens chez <strong className="font-semibold text-foreground">Renault</strong> comme <strong className="font-semibold text-foreground">Product Owner</strong> sur un <strong className="font-semibold text-foreground">outil de costing critique</strong> - 10 M€, 250 utilisateurs, 12 pays. Je découvre ce que signifie vraiment <strong className="font-semibold text-foreground">livrer à grande échelle</strong> : spécifications, tests, conduite du changement.
+        Je reviens chez <strong className="font-semibold text-foreground">Renault</strong> comme <strong className="font-semibold text-foreground">Product Owner</strong> sur un <strong className="font-semibold text-foreground">outil de costing critique</strong> - budget à 8 chiffres (en €), 250 utilisateurs, 12 pays. Je découvre ce que signifie vraiment <strong className="font-semibold text-foreground">livrer à grande échelle</strong> : spécifications, tests, conduite du changement.
         <br />
         Résultat : <strong className="font-semibold text-foreground">95 % de taux d'adoption</strong> et <strong className="font-semibold text-foreground">+15 % de fiabilité et rapidité d'exécution</strong> des calculs.
         <br />
@@ -86,7 +87,7 @@ const storyMilestones: { year: string; logos: string[]; content: React.ReactNode
     logos: [renaultLogo],
     content: (
       <>
-        Je deviens <strong className="font-semibold text-foreground">responsable transformation</strong> et <strong className="font-semibold text-foreground">Product Owner</strong>. Je prends la responsabilité de l'<strong className="font-semibold text-foreground">outil de consolidation financière Supply Chain monde</strong> - 8 M€, +25 contrôleurs, 10 pays. Je vis pleinement le <strong className="font-semibold text-foreground">cycle produit</strong> : backlog, delivery Scrum, amélioration continue.
+        Je deviens <strong className="font-semibold text-foreground">responsable transformation</strong> et <strong className="font-semibold text-foreground">Product Owner</strong>. Je prends la responsabilité de l'<strong className="font-semibold text-foreground">outil de consolidation financière Supply Chain monde</strong> - budget à 7 chiffres (en €), +25 contrôleurs, 10 pays. Je vis pleinement le <strong className="font-semibold text-foreground">cycle produit</strong> : backlog, delivery Scrum, amélioration continue.
         <br />
         Impact direct : <strong className="font-semibold text-foreground">-50 % sur les délais de clôture</strong>, de J+10 à J+5.
         <br />
@@ -173,14 +174,19 @@ export default function About() {
                 ))}
               </div>
 
-              <a
-                href="/Vincent-Nguyen-CV-EN.pdf"
-                download="Vincent-Nguyen-CV.pdf"
-                className="hidden md:inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-border text-sm font-medium hover:bg-muted transition-colors"
-              >
-                <Download className="size-4" />
-                Télécharger mon CV
-              </a>
+              <div className="hidden md:flex flex-wrap items-center gap-3">
+                {cvFiles.map((cv) => (
+                  <a
+                    key={cv.lang}
+                    href={cv.href}
+                    download={cv.filename}
+                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-border text-sm font-medium hover:bg-muted transition-colors"
+                  >
+                    <Download className="size-4" />
+                    {cv.cta}
+                  </a>
+                ))}
+              </div>
 
               {/* Desktop: vertical year timeline + detail card, filling the space below the bio */}
               <div className="hidden md:block pt-2">

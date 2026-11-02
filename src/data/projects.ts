@@ -157,7 +157,7 @@ export const projects: Project[] = [
     summary:
       "Construire, piloter et optimiser le budget DSI dans un contexte de restructuration - MVP livré en 2 mois.",
     context:
-      "Mission de Product Management chez Bartle pour un grand groupe en restructuration. Portefeuille de projets DSI de 50 M€ à 230 M€.",
+      "Mission de Product Management chez Bartle pour un grand groupe en restructuration. Portefeuilles de projets DSI à 8 ou 9 chiffres (en €).",
     problem:
       "Comment construire, piloter et optimiser le budget DSI dans un contexte de restructuration ?",
     approach: [
@@ -189,7 +189,7 @@ export const projects: Project[] = [
     metrics: [
       { value: '2 mois', label: 'pour livrer le MVP' },
       { value: '-5 %', label: 'coûts DSI vs N-1' },
-      { value: '230 M€', label: 'portefeuille piloté' },
+      { value: '9 chiffres', label: 'portefeuille piloté (en €)' },
     ],
     stack: ['Power BI', 'Excel', 'SharePoint', 'Notion', 'Miro'],
     team: ['1 Product Manager (moi)', 'Sponsors : direction DSI & direction Finance', '+8 directeurs métiers impliqués'],
@@ -210,7 +210,7 @@ export const projects: Project[] = [
     summary:
       "Réduire les délais de livraison des tableaux de bord de coûts Supply Chain monde - clôture de J+10 à J+5.",
     context:
-      "Outil de consolidation financière dédié à la Supply Chain Renault, équipe de 4 personnes (1 Tech Lead + 3 développeurs), budget 8 M€, +25 ETP contrôleurs utilisateurs dans le monde.",
+      "Outil de consolidation financière dédié à la Supply Chain Renault, équipe de 4 personnes (1 Tech Lead + 3 développeurs), budget à 7 chiffres (en €), +25 ETP contrôleurs utilisateurs dans le monde.",
     problem:
       "Comment réduire les délais de livraison des tableaux de bord de coûts Supply Chain monde tout en améliorant leur fiabilité ?",
     approach: [
@@ -226,7 +226,7 @@ export const projects: Project[] = [
       },
       {
         heading: 'Consolidation des coûts',
-        body: "Consolidation des coûts logistiques amont et aval (1,1 Md€) avec recherche systématique d'optimisations.",
+        body: "Consolidation des coûts logistiques amont et aval (10 chiffres en €) avec recherche systématique d'optimisations.",
         result: '-5 % de coûts Supply Chain monde vs N-1',
       },
     ],
@@ -237,11 +237,11 @@ export const projects: Project[] = [
     ],
     metrics: [
       { value: '-50 %', label: 'délais de clôture' },
-      { value: '1,1 Md€', label: 'coûts consolidés' },
-      { value: '8 M€', label: 'budget produit' },
+      { value: '10 chiffres', label: 'coûts consolidés (en €)' },
+      { value: '7 chiffres', label: 'budget produit (en €)' },
     ],
     stack: ['SAP', 'Lumira', 'Power BI', 'Jira', 'Scrum'],
-    scope: 'Budget 8 M€ · 1 Tech Lead + 3 développeurs · +25 ETP utilisateurs monde',
+    scope: 'Budget à 7 chiffres (en €) · 1 Tech Lead + 3 développeurs · +25 ETP utilisateurs monde',
     team: ['1 Product Owner Finance (moi)', '1 Tech Lead', '3 développeurs', '+25 ETP contrôleurs utilisateurs dans le monde'],
     missionTypes: ['Product roadmap', 'Delivery Scrum', 'Optimisation'],
     retro:
@@ -260,7 +260,7 @@ export const projects: Project[] = [
     summary:
       "Remplacer, déployer et faire adopter de nouveaux outils de costing auprès de +250 utilisateurs dans 12 pays.",
     context:
-      "Refonte des outils de costing Renault. Équipe de 4 personnes (1 Tech Lead + 3 développeurs), budget 10 M€, +250 ETP utilisateurs dans 12 pays.",
+      "Refonte des outils de costing Renault. Équipe de 4 personnes (1 Tech Lead + 3 développeurs), budget à 8 chiffres (en €), +250 ETP utilisateurs dans 12 pays.",
     problem:
       "Comment assurer le remplacement, le déploiement et l'adoption d'outils de costing critiques à l'échelle internationale ?",
     approach: [
@@ -290,7 +290,7 @@ export const projects: Project[] = [
       { value: '12', label: 'pays déployés' },
     ],
     stack: ['SAP', 'Excel', 'SQL', 'Cycle en V'],
-    scope: 'Budget 10 M€ · 1 Tech Lead + 3 développeurs · +250 ETP dans 12 pays',
+    scope: 'Budget à 8 chiffres (en €) · 1 Tech Lead + 3 développeurs · +250 ETP dans 12 pays',
     team: ['1 Product Owner Costing (moi)', '1 Tech Lead', '3 développeurs', '+250 utilisateurs formés dans 12 pays'],
     missionTypes: ['Refonte', 'Déploiement international', 'Conduite du changement'],
     retro:
