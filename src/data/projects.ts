@@ -177,7 +177,7 @@ export const projects: Project[] = [
       },
       {
         heading: 'Recommandation stratégique',
-        body: "Étude d'opportunité sur Abraxio (SaaS dédié au pilotage financier DSI).",
+        body: "Étude d'opportunité sur une solution SaaS du marché dédiée au pilotage financier DSI.",
         result: '-5 % de coûts DSI vs N-1 (CAPEX / OPEX / MS)',
       },
     ],
@@ -195,7 +195,7 @@ export const projects: Project[] = [
     team: ['1 Product Manager (moi)', 'Sponsors : direction DSI & direction Finance', '+8 directeurs métiers impliqués'],
     missionTypes: ['Discovery', 'MVP', 'Recommandation stratégique'],
     retro:
-      "Le MVP a été adopté par les 8 directions concernées et a permis -5 % de coûts DSI dès la première année. Prochaine étape : arbitrage sur l'opportunité Abraxio pour industrialiser l'outil au-delà du MVP interne.",
+      "Le MVP a été adopté par les 8 directions concernées et a permis -5 % de coûts DSI dès la première année. Prochaine étape : arbitrage sur l'opportunité d'une solution SaaS du marché pour industrialiser l'outil au-delà du MVP interne.",
     coverGradient: 'from-emerald-500 via-teal-500 to-cyan-600',
     coverImage: bartleCover,
   },

@@ -50,7 +50,7 @@ export const experiences: ExperienceItem[] = [
     highlights: [
       "Discovery avec +8 directeurs métiers pour cartographier les dépenses IT et besoins de reporting (portefeuille 50 M€ - 230 M€)",
       "MVP d'un outil de consolidation et de pilotage des coûts DSI livré en 2 mois",
-      "Étude d'opportunité Abraxio et recommandation stratégique",
+      "Étude d'opportunité d'une solution SaaS de pilotage financier DSI et recommandation stratégique",
       "Résultat : -5 % de coûts DSI vs N-1 (CAPEX / OPEX / MS)",
     ],
   },
