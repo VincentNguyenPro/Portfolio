@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Mail, Linkedin, ArrowUpRight, Send, Download } from 'lucide-react';
-import { photographerInfo } from '@/data/photographer';
+import { photographerInfo, cvFiles } from '@/data/photographer';
 import { SEOHead } from '@/components/seo/SEOHead';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -88,19 +88,29 @@ export default function Contact() {
                   </motion.a>
                 );
               })}
-              <motion.a
-                href="/Vincent-Nguyen-CV-EN.pdf"
-                download="Vincent-Nguyen-CV.pdf"
+              <motion.div
                 initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: contactItems.length * 0.05 }}
-                className="flex flex-col items-center justify-center gap-2.5 rounded-2xl border border-border bg-card py-6 hover:border-foreground/20 transition-colors"
+                className="flex flex-col items-center justify-center gap-2.5 rounded-2xl border border-border bg-card py-4"
               >
                 <div className="size-11 rounded-full bg-muted flex items-center justify-center">
                   <Download className="size-5 text-foreground" />
                 </div>
-                <span className="text-sm font-medium">CV</span>
-              </motion.a>
+                <div className="flex items-center gap-1.5">
+                  {cvFiles.map((cv) => (
+                    <a
+                      key={cv.lang}
+                      href={cv.href}
+                      download={cv.filename}
+                      aria-label={`Télécharger mon CV en ${cv.label}`}
+                      className="px-3 py-1.5 rounded-full border border-border text-xs font-semibold hover:bg-muted transition-colors"
+                    >
+                      {cv.lang}
+                    </a>
+                  ))}
+                </div>
+              </motion.div>
             </div>
 
             <motion.div
@@ -191,27 +201,34 @@ export default function Contact() {
                 );
               })}
 
-              <motion.a
-                href="/Vincent-Nguyen-CV-EN.pdf"
-                download="Vincent-Nguyen-CV.pdf"
+              <motion.div
                 initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: contactItems.length * 0.05 }}
-                className="group block min-w-0 rounded-2xl border border-border bg-card p-3 hover:shadow-md hover:border-foreground/20 transition-all"
+                className="block min-w-0 rounded-2xl border border-border bg-card p-3"
               >
-                <div className="flex items-center justify-between">
-                  <div className="size-9 rounded-full bg-muted flex items-center justify-center">
-                    <Download className="size-4 text-foreground" />
-                  </div>
-                  <ArrowUpRight className="size-4 text-muted-foreground group-hover:text-foreground group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
+                <div className="size-9 rounded-full bg-muted flex items-center justify-center">
+                  <Download className="size-4 text-foreground" />
                 </div>
                 <div className="mt-2">
                   <p className="text-xs font-semibold tracking-[0.2em] uppercase text-muted-foreground mb-1">
                     CV
                   </p>
-                  <p className="text-base font-medium tracking-tight">Télécharger mon CV</p>
+                  <div className="flex flex-wrap items-center gap-2">
+                    {cvFiles.map((cv) => (
+                      <a
+                        key={cv.lang}
+                        href={cv.href}
+                        download={cv.filename}
+                        className="group inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-border text-sm font-medium hover:bg-muted hover:border-foreground/20 transition-colors"
+                      >
+                        {cv.label}
+                        <ArrowUpRight className="size-3.5 text-muted-foreground group-hover:text-foreground transition-colors" />
+                      </a>
+                    ))}
+                  </div>
                 </div>
-              </motion.a>
+              </motion.div>
             </div>
           </div>
 

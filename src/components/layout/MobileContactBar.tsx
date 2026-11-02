@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import { ArrowRight, Download } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { MobileContactSheet } from './MobileContactSheet';
+import { cvFiles } from '@/data/photographer';
 
 export function MobileContactBar() {
   const location = useLocation();
@@ -47,18 +48,21 @@ export function MobileContactBar() {
         hiddenByScroll ? 'translate-y-full' : 'translate-y-0'
       }`}
     >
-      <a
-        href="/Vincent-Nguyen-CV-EN.pdf"
-        download="Vincent-Nguyen-CV.pdf"
-        className="group flex-1 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full border border-border text-foreground font-medium hover:bg-muted transition-colors"
-      >
-        <Download className="size-4" />
-        CV
-      </a>
+      {cvFiles.map((cv) => (
+        <a
+          key={cv.lang}
+          href={cv.href}
+          download={cv.filename}
+          aria-label={`Télécharger mon CV en ${cv.label}`}
+          className="group shrink-0 inline-flex items-center justify-center gap-1.5 px-4 py-3 rounded-full border border-border text-foreground text-sm font-medium whitespace-nowrap hover:bg-muted transition-colors"
+        >
+          CV {cv.lang}
+        </a>
+      ))}
       <MobileContactSheet>
         <button
           type="button"
-          className="group flex-1 inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-blue-600 text-white font-medium hover:bg-blue-700 transition-colors"
+          className="group flex-1 inline-flex items-center justify-center gap-2 px-4 py-3 rounded-full bg-blue-600 whitespace-nowrap text-white font-medium hover:bg-blue-700 transition-colors"
         >
           Me contacter
           <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
