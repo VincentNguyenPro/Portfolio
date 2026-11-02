@@ -38,6 +38,7 @@ export interface Project {
   coverGradient: string; // tailwind gradient classes for cover (fallback)
   coverImage?: string; // optional cover image URL - overrides gradient on cards
   badge?: string; // optional badge (e.g. "🚧 En cours")
+  link?: { label: string; url: string }; // optional external presentation site
 }
 
 export interface ExperienceItem {

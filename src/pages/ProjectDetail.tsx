@@ -1,6 +1,6 @@
 import { useParams, Link, Navigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowLeft, ArrowRight, CheckCircle2 } from 'lucide-react';
+import { ArrowLeft, ArrowRight, ArrowUpRight, CheckCircle2 } from 'lucide-react';
 import { useEffect, useMemo, useState } from 'react';
 import { getProjectBySlug, getProjectNavigation } from '@/data/projects';
 import { SEOHead } from '@/components/seo/SEOHead';
@@ -141,6 +141,17 @@ export default function ProjectDetail() {
                 <p className="text-lg text-muted-foreground font-light leading-relaxed max-w-xl mb-5">
                   {project.summary}
                 </p>
+                {project.link && (
+                  <a
+                    href={project.link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-5 py-2.5 mb-5 rounded-full bg-foreground text-background text-sm font-medium hover:opacity-90 transition-opacity"
+                  >
+                    {project.link.label}
+                    <ArrowUpRight className="size-4" />
+                  </a>
+                )}
                 <div className="grid grid-cols-3 gap-6 max-w-lg pt-4 border-t border-border">
                   {project.metrics.map((m) => (
                     <div key={m.label}>
@@ -192,6 +203,18 @@ export default function ProjectDetail() {
               <span className="text-muted-foreground/60">·</span>
               <span className="text-muted-foreground">{project.role}</span>
             </div>
+
+            {project.link && (
+              <a
+                href={project.link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="md:hidden flex items-center justify-center gap-2 px-5 py-3 rounded-full bg-foreground text-background text-sm font-medium"
+              >
+                {project.link.label}
+                <ArrowUpRight className="size-4" />
+              </a>
+            )}
 
             {(project.scope || project.team) && (
               <ScrollReveal>
