@@ -236,7 +236,7 @@ export const blogPosts: BlogPost[] = [
     eventDate: '06/10/2026',
     categories: ['Product', 'IA', 'Formation'],
     url: 'https://www.youtube.com/watch?v=C8s9KSecbFo',
-    cover: { url: noeIaProduitCover, alt: "Webinaire Noé - Comment intégrer l'IA dans son produit : les 3 idées fausses" },
+    cover: { url: noeIaProduitCover, alt: "Webinaire Noé - Créer des produits IA réellement adoptés, avec Roxane Albert, Group Product Manager chez Theodo" },
     sections: [
       {
         fullWidth: true,
