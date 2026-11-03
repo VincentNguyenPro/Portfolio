@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { Mail, Linkedin, ArrowUpRight, Send, Download } from 'lucide-react';
 import { photographerInfo, cvFiles } from '@/data/photographer';
 import { SEOHead } from '@/components/seo/SEOHead';
+import { staticPageMeta } from '@/data/seo';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
@@ -36,10 +37,7 @@ export default function Contact() {
 
   return (
     <>
-      <SEOHead
-        exactTitle="Contact — Vincent Nguyen Product Manager"
-        description={`Contactez Vincent Nguyen, Product Manager - ${photographerInfo.availability}.`}
-      />
+      <SEOHead {...staticPageMeta['/contact']} />
 
       <div className="min-h-screen">
         <section className="px-6 lg:px-8 pt-6 pb-6 md:pt-10 md:pb-3 border-b border-border">

@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { useMemo, useRef, useState } from 'react';
 import { blogPosts, type BlogCategory } from '@/data/blog';
 import { SEOHead } from '@/components/seo/SEOHead';
+import { staticPageMeta } from '@/data/seo';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { cn } from '@/lib/utils';
 
@@ -46,10 +47,7 @@ export default function Blog() {
 
   return (
     <>
-      <SEOHead
-        exactTitle="Blog — Vincent Nguyen | Product, IA & Innovation"
-        description="Carnets de bord Product Management, IA et Innovation. Conférences, hackathons, retours d'expérience terrain."
-      />
+      <SEOHead {...staticPageMeta['/blog']} />
       <div className="min-h-screen">
         <section className="px-6 lg:px-8 pt-6 pb-6 md:pt-10 md:pb-6 border-b border-border">
           <div className="max-w-7xl mx-auto">

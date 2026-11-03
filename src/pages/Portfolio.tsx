@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { ArrowUpRight } from 'lucide-react';
 import { getProjectsNewestFirst, categoryLabels } from '@/data/projects';
 import { SEOHead } from '@/components/seo/SEOHead';
+import { staticPageMeta } from '@/data/seo';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 
 const sortedProjects = getProjectsNewestFirst();
@@ -10,10 +11,7 @@ const sortedProjects = getProjectsNewestFirst();
 export default function Portfolio() {
   return (
     <>
-      <SEOHead
-        exactTitle="Projets — Vincent Nguyen Product Manager"
-        description="Découvrez les projets produit de Vincent Nguyen : BlaBlaCar, Bartle, Renault. Outils critiques, finance SI, supply chain."
-      />
+      <SEOHead {...staticPageMeta['/projets']} />
       <div className="min-h-screen">
         <section className="px-6 lg:px-8 pt-6 pb-6 md:pt-10 md:pb-6 border-b border-border">
           <div className="max-w-7xl mx-auto">

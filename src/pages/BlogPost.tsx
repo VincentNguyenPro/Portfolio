@@ -3,6 +3,7 @@ import { ArrowLeft, ArrowUpRight } from 'lucide-react';
 import { Link, useParams, Navigate } from 'react-router-dom';
 import { blogPosts, type BlogCategory, type BlogSection } from '@/data/blog';
 import { SEOHead } from '@/components/seo/SEOHead';
+import { blogOgImage } from '@/data/seo';
 
 const categoryColor: Record<BlogCategory, string> = {
   Product: 'from-sky-500 via-indigo-500 to-violet-600',
@@ -164,7 +165,7 @@ export default function BlogPost() {
 
   return (
     <>
-      <SEOHead title={post.title} description={post.description} />
+      <SEOHead title={post.title} description={post.description} image={blogOgImage(post.slug)} type="article" />
       <article className="min-h-screen">
         <div className="px-6 lg:px-8 pt-6 md:pt-10">
           <div className="max-w-3xl mx-auto">

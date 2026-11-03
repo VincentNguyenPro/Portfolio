@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { photographerInfo } from '@/data/photographer';
+import { DEFAULT_OG_IMAGE, SITE_URL } from '@/data/seo';
 
 interface SEOHeadProps {
   title?: string;
@@ -9,8 +10,6 @@ interface SEOHeadProps {
   image?: string;
   type?: 'website' | 'article';
 }
-
-const SITE_URL = 'https://vincentnguyen.pro';
 
 export function SEOHead({ title, exactTitle, description, image, type = 'website' }: SEOHeadProps) {
   const location = useLocation();
@@ -24,7 +23,7 @@ export function SEOHead({ title, exactTitle, description, image, type = 'website
   const fullDescription = description || photographerInfo.heroIntroduction;
   const canonicalPath = location.pathname === '/' ? '/' : location.pathname.replace(/\/$/, '');
   const canonicalUrl = `${SITE_URL}${canonicalPath}`;
-  const rawImage = image || photographerInfo.portraitImage;
+  const rawImage = image || DEFAULT_OG_IMAGE;
   const ogImage = rawImage.startsWith('http') ? rawImage : `${SITE_URL}${rawImage}`;
 
   useEffect(() => {

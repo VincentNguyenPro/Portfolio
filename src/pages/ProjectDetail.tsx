@@ -4,6 +4,7 @@ import { ArrowLeft, ArrowRight, ArrowUpRight, CheckCircle2 } from 'lucide-react'
 import { useEffect, useMemo, useState } from 'react';
 import { getProjectBySlug, getProjectNavigation } from '@/data/projects';
 import { SEOHead } from '@/components/seo/SEOHead';
+import { projectOgImage } from '@/data/seo';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 
 function CountUpNumber({ raw }: { raw: string }) {
@@ -58,7 +59,12 @@ export default function ProjectDetail() {
 
   return (
     <>
-      <SEOHead title={project.title} description={project.summary} type="article" />
+      <SEOHead
+        title={project.title}
+        description={project.summary}
+        image={projectOgImage(project.slug)}
+        type="article"
+      />
 
       <article className="min-h-screen">
         {/* Hero — mobile: framed photo card with the same glow treatment as desktop */}

@@ -11,6 +11,7 @@ import {
   cvFiles,
 } from '@/data/photographer';
 import { SEOHead } from '@/components/seo/SEOHead';
+import { staticPageMeta } from '@/data/seo';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import saintelyonPhoto from '@/assets/vincent-saintelyon.webp';
 import sunsetRoad from '@/assets/sunset-road.webp';
@@ -151,10 +152,7 @@ export default function About() {
 
   return (
     <>
-      <SEOHead
-        exactTitle="Parcours — Vincent Nguyen Product Manager"
-        description="10 ans d'expérience en Product Management : Renault, Bartle, BlaBlaCar. Expertise Finance & SI, transformation digitale."
-      />
+      <SEOHead {...staticPageMeta['/parcours']} />
       <div className="min-h-screen">
         {/* Header */}
         <section className="px-6 lg:px-8 pt-6 pb-6 md:pt-10 md:pb-8 border-b border-border">

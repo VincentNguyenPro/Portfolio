@@ -5,6 +5,7 @@ import { photographerInfo, skillGroups } from '@/data/photographer';
 import { getProjectsNewestFirst, categoryLabels } from '@/data/projects';
 import type { Project } from '@/types';
 import { SEOHead } from '@/components/seo/SEOHead';
+import { staticPageMeta } from '@/data/seo';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { MobileCarousel } from '@/components/ui/MobileCarousel';
 import { AutoCarousel } from '@/components/ui/AutoCarousel';
@@ -81,10 +82,7 @@ export default function Home() {
 
   return (
     <>
-      <SEOHead
-        exactTitle="Vincent Nguyen — Product Manager & Product Owner | Finance & SI | Paris"
-        description="Portfolio de Vincent Nguyen, Product Manager & Product Owner avec 10 ans d'expérience en SI Finance et transformation digitale. Basé à Paris, disponible immédiatement."
-      />
+      <SEOHead {...staticPageMeta['/']} />
       <div className="min-h-screen">
         {/* HERO */}
         <section className="px-6 lg:px-8 pt-20 pb-6 md:pt-[104px] md:pb-16 border-b border-border bg-background">
