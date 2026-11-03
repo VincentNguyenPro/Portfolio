@@ -1,11 +1,11 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowUpRight } from 'lucide-react';
-import { projects, categoryLabels } from '@/data/projects';
+import { getProjectsNewestFirst, categoryLabels } from '@/data/projects';
 import { SEOHead } from '@/components/seo/SEOHead';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 
-const sortedProjects = [...projects].sort((a, b) => a.order - b.order);
+const sortedProjects = getProjectsNewestFirst();
 
 export default function Portfolio() {
   return (

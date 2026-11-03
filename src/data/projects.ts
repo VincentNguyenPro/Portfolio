@@ -448,6 +448,10 @@ export const projects: Project[] = [
   },
 ];
 
+export function getProjectsNewestFirst(): Project[] {
+  return [...projects].sort((a, b) => a.order - b.order);
+}
+
 export function getFeaturedProjects(count = 3): Project[] {
   return projects.slice(0, count);
 }

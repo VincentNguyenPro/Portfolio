@@ -2,11 +2,12 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRight, ArrowUpRight, Sparkles } from 'lucide-react';
 import { photographerInfo, skillGroups } from '@/data/photographer';
-import { getFeaturedProjects, categoryLabels } from '@/data/projects';
+import { getProjectsNewestFirst, categoryLabels } from '@/data/projects';
 import type { Project } from '@/types';
 import { SEOHead } from '@/components/seo/SEOHead';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { MobileCarousel } from '@/components/ui/MobileCarousel';
+import { AutoCarousel } from '@/components/ui/AutoCarousel';
 import { CountUpStat } from '@/components/ui/CountUpStat';
 
 const stats = [
@@ -20,10 +21,10 @@ function ProjectCard({ project }: { project: Project }) {
   return (
     <Link
       to={`/projet/${project.slug}`}
-      className="group block h-full rounded-2xl overflow-hidden border border-border bg-card hover:shadow-xl transition-all"
+      className="group block h-full rounded-2xl overflow-hidden border border-border bg-card transition-all duration-300 hover:-translate-y-1 hover:border-foreground/20 hover:shadow-xl motion-reduce:transition-none motion-reduce:hover:translate-y-0"
     >
       <div
-        className={`relative aspect-[16/9] md:aspect-[16/10] overflow-hidden ${
+        className={`relative aspect-video overflow-hidden ${
           project.coverImage ? 'bg-muted' : `bg-gradient-to-br ${project.coverGradient}`
         } p-5 md:p-5 flex flex-col justify-end text-white`}
       >
@@ -33,18 +34,18 @@ function ProjectCard({ project }: { project: Project }) {
               src={project.coverImage}
               alt={`${project.company} - ${project.title}`}
               loading="lazy"
-              className="absolute inset-0 w-full h-full object-cover"
+              className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105 motion-reduce:transition-none motion-reduce:group-hover:scale-100"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-black/10" />
+            <div className="absolute inset-x-0 bottom-0 h-2/3 md:h-1/2 bg-gradient-to-t from-black/75 to-transparent" />
           </>
         )}
         {project.badge && (
-          <span className="absolute top-3 right-3 md:top-4 md:right-4 text-[9px] md:text-[10px] font-semibold tracking-wide px-2 py-1 rounded-full bg-white/15 backdrop-blur border border-white/20">
+          <span className="absolute top-3 right-3 md:top-4 md:right-4 text-[9px] md:text-[10px] font-semibold tracking-wide px-2 py-1 rounded-full bg-black/50 backdrop-blur border border-white/25">
             {project.badge}
           </span>
         )}
         <div className="relative">
-          <h3 className="text-xl md:text-xl font-semibold leading-tight line-clamp-2">
+          <h3 className="text-xl md:text-xl font-semibold leading-tight line-clamp-2 drop-shadow-md">
             {project.title}
           </h3>
         </div>
@@ -76,7 +77,7 @@ function ProjectCard({ project }: { project: Project }) {
 }
 
 export default function Home() {
-  const featured = getFeaturedProjects(4);
+  const allProjects = getProjectsNewestFirst();
 
   return (
     <>
@@ -246,24 +247,14 @@ export default function Home() {
               </div>
             </ScrollReveal>
 
-            {/* Mobile: carousel teaser, 3 projects */}
-            <div className="md:hidden">
-              <MobileCarousel
-                items={featured.slice(0, 3)}
-                keyExtractor={(project) => project.id}
-                trackClassName="flex gap-4 overflow-x-auto overflow-y-hidden hide-scrollbar snap-x snap-mandatory -mx-6 px-6 pb-2"
-                itemClassName="shrink-0 w-full snap-center"
-                navClassName=""
-                renderItem={(project) => <ProjectCard project={project} />}
-              />
-            </div>
-
-            {/* Desktop: static grid, 4 projects in one row */}
-            <div className="hidden md:grid md:grid-cols-4 md:gap-4">
-              {featured.map((project) => (
-                <ProjectCard key={project.id} project={project} />
-              ))}
-            </div>
+            {/* All projects, newest first. Rotates on its own while the section is on screen. */}
+            <AutoCarousel
+              items={allProjects}
+              ariaLabel="Projets"
+              keyExtractor={(project) => project.id}
+              itemClassName="shrink-0 w-full md:w-[calc((100%-3rem)/4)] snap-start"
+              renderItem={(project) => <ProjectCard project={project} />}
+            />
 
             <div className="mt-6 md:mt-10 flex justify-center md:justify-start">
               <Link
