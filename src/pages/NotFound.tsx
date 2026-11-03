@@ -14,6 +14,7 @@ const NotFound = () => {
       <SEOHead
         title="Page introuvable"
         description="La page que vous recherchez n'existe pas. Retournez à l'accueil pour continuer votre navigation."
+        noindex
       />
       
       <div className="min-h-[calc(100vh-8rem)] flex items-center justify-center px-6">

@@ -9,9 +9,11 @@ interface SEOHeadProps {
   description?: string;
   image?: string;
   type?: 'website' | 'article';
+  /** For pages that must stay out of search results (the 404 page). */
+  noindex?: boolean;
 }
 
-export function SEOHead({ title, exactTitle, description, image, type = 'website' }: SEOHeadProps) {
+export function SEOHead({ title, exactTitle, description, image, type = 'website', noindex = false }: SEOHeadProps) {
   const location = useLocation();
 
   const fullTitle =
@@ -51,7 +53,7 @@ export function SEOHead({ title, exactTitle, description, image, type = 'website
     };
 
     updateMetaTag('description', fullDescription);
-    updateMetaTag('robots', 'index, follow');
+    updateMetaTag('robots', noindex ? 'noindex, nofollow' : 'index, follow');
     updateLinkTag('canonical', canonicalUrl);
     updateMetaTag('og:title', fullTitle, true);
     updateMetaTag('og:description', fullDescription, true);
@@ -68,7 +70,7 @@ export function SEOHead({ title, exactTitle, description, image, type = 'website
       'keywords',
       'Product Manager, Product Owner, SI Finance, Transformation digitale, Agile, Scrum, Vincent Nguyen, Paris'
     );
-  }, [fullTitle, fullDescription, canonicalUrl, ogImage, type]);
+  }, [fullTitle, fullDescription, canonicalUrl, ogImage, type, noindex]);
 
   return null;
 }

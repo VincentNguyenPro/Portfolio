@@ -6,7 +6,7 @@ import { ThemeToggle } from './ThemeToggle';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetDescription, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 import { photographerInfo } from '@/data/photographer';
-import { projects } from '@/data/projects';
+import { getProjectsNewestFirst } from '@/data/projects';
 import { cn } from '@/lib/utils';
 
 const navLinks = [
@@ -18,6 +18,8 @@ const navLinks = [
 ];
 
 const menuNavLinks = navLinks.filter((link) => link.path !== '/projets');
+
+const projectsNewestFirst = getProjectsNewestFirst();
 
 const projectShortTitles: Record<string, string> = {
   'saas-pilotage-dsi': 'Kostbase',
@@ -96,7 +98,7 @@ export function Header() {
 
                     <div className="absolute left-0 top-full pt-3 opacity-0 invisible translate-y-1 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-200">
                       <div className="w-60 rounded-2xl border border-border bg-background shadow-lg p-2">
-                        {projects.map((project) => (
+                        {projectsNewestFirst.map((project) => (
                           <Link
                             key={project.slug}
                             to={`/projet/${project.slug}`}
@@ -209,7 +211,7 @@ export function Header() {
                   Projets
                 </Link>
                 <nav className="flex flex-col">
-                  {projects.map((project) => {
+                  {projectsNewestFirst.map((project) => {
                     const Icon = projectIcons[project.slug] ?? Briefcase;
                     return (
                       <Link

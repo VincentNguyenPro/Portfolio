@@ -673,7 +673,7 @@ export const blogPosts: BlogPost[] = [
     date: '8 juillet 2026',
     eventDate: '08/07/2026',
     categories: ['IA', 'Communauté'],
-    url: 'https://luma.com/ey6j9say?tk=6Y7Idh',
+    url: 'https://luma.com/ey6j9say',
     cover: { url: alanLovableCover, alt: 'Alan x Lovable Hackathon - Build. Launch. Pitch. From idea to MVP in one hour.' },
     coverFit: 'contain',
     sections: [
@@ -764,7 +764,7 @@ export const blogPosts: BlogPost[] = [
     date: '7 juillet 2026',
     eventDate: '07/07/2026',
     categories: ['IA', 'Communauté'],
-    url: 'https://luma.com/tru412zk?tk=A20cbH',
+    url: 'https://luma.com/tru412zk',
     cover: { url: travelAiCover, alt: 'Travel x AI Build Night - Lovable x Jinko, Venue Partner swanbase' },
     coverFit: 'contain',
     sections: [
@@ -1043,7 +1043,7 @@ export const blogPosts: BlogPost[] = [
     date: '11 juin 2026',
     eventDate: '11/06/2026',
     categories: ['IA', 'Communauté'],
-    url: 'https://luma.com/0ivqgaik?tk=hNsezQ',
+    url: 'https://luma.com/0ivqgaik',
     cover: { url: webshopCover, alt: 'Atelier Webshop avec Mollie & Codex' },
     coverFit: 'contain',
     sections: [
@@ -1086,7 +1086,7 @@ export const blogPosts: BlogPost[] = [
     date: '9 juin 2026',
     eventDate: '09/06/2026',
     categories: ['IA', 'Communauté'],
-    url: 'https://luma.com/jybxjxu4?locale=fr&tk=Aimmjv',
+    url: 'https://luma.com/jybxjxu4?locale=fr',
     cover: { url: lovableCover, alt: 'Meetup Lovable x Paatch - Jungle IA' },
     coverFit: 'contain',
     sections: [
