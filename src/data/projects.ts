@@ -30,6 +30,7 @@ export const projects: Project[] = [
   {
     id: '0',
     slug: 'saas-pilotage-dsi',
+    order: 3,
     title: 'Plateforme de gouvernance financière IT',
     company: 'Kostbase',
     role: 'Founder · Product Manager',
@@ -83,6 +84,7 @@ export const projects: Project[] = [
   {
     id: '1',
     slug: 'blablacar-first-ride',
+    order: 4,
     title: 'Améliorer le taux de réussite du premier trajet',
     company: 'BlaBlaCar',
     role: 'Product Manager',
@@ -154,6 +156,7 @@ export const projects: Project[] = [
   {
     id: '2',
     slug: 'bartle-pilotage-dsi',
+    order: 5,
     title: 'Outil de consolidation et pilotage des coûts DSI',
     company: 'Bartle',
     role: 'Product Manager - SI Finance & Pilotage budgétaire',
@@ -207,6 +210,7 @@ export const projects: Project[] = [
   {
     id: '3',
     slug: 'renault-supply-chain',
+    order: 6,
     title: 'Consolidation financière Supply Chain monde',
     company: 'Renault',
     role: 'Product Owner Finance & Responsable Transformation',
@@ -257,6 +261,7 @@ export const projects: Project[] = [
   {
     id: '4',
     slug: 'renault-costing',
+    order: 7,
     title: "Remplacement et déploiement mondial d'outils de Costing",
     company: 'Renault',
     role: 'Product Owner Outils Costing',
@@ -306,6 +311,7 @@ export const projects: Project[] = [
   {
     id: '5',
     slug: 'cardomint',
+    order: 2,
     title: 'Suivi de valeur pour collections de cartes TCG',
     company: 'CardoMint',
     role: 'Founder · Product Manager',
@@ -378,6 +384,7 @@ export const projects: Project[] = [
   {
     id: '6',
     slug: 'synapses',
+    order: 1,
     title: 'Visualisation de réseau LinkedIn en graphe neuronal',
     company: 'Synapses',
     role: 'Founder · Product Manager',

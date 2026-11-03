@@ -5,6 +5,8 @@ import { projects, categoryLabels } from '@/data/projects';
 import { SEOHead } from '@/components/seo/SEOHead';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 
+const sortedProjects = [...projects].sort((a, b) => a.order - b.order);
+
 export default function Portfolio() {
   return (
     <>
@@ -38,7 +40,7 @@ export default function Portfolio() {
           <div className="max-w-7xl mx-auto">
             {/* Mobile: full stacked cards */}
             <div className="md:hidden space-y-4">
-              {projects.map((project, i) => (
+              {sortedProjects.map((project, i) => (
                 <ScrollReveal key={project.id} delay={i * 0.05}>
                   <Link
                     to={`/projet/${project.slug}`}
@@ -102,9 +104,9 @@ export default function Portfolio() {
               ))}
             </div>
 
-            {/* Desktop: 5 compact cards side by side */}
-            <div className="hidden md:grid md:grid-cols-6 md:gap-4">
-              {projects.map((project, i) => (
+            {/* Desktop: 3 cards per row, newest first */}
+            <div className="hidden md:grid md:grid-cols-3 md:gap-5">
+              {sortedProjects.map((project, i) => (
                 <ScrollReveal key={project.id} delay={i * 0.05}>
                   <Link
                     to={`/projet/${project.slug}`}

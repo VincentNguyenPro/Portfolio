@@ -19,6 +19,7 @@ export interface CaseStudySection {
 export interface Project {
   id: string;
   slug: string;
+  order: number; // display order on /projets (lower = newer, shown first)
   title: string;
   company: string;
   role: string;
