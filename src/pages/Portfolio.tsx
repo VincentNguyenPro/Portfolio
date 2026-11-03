@@ -44,7 +44,7 @@ export default function Portfolio() {
                 <ScrollReveal key={project.id} delay={i * 0.05}>
                   <Link
                     to={`/projet/${project.slug}`}
-                    className="group block rounded-2xl overflow-hidden border border-border bg-card hover:shadow-xl transition-all"
+                    className="group block rounded-2xl overflow-hidden border border-border bg-card transition-all duration-300 hover:border-foreground/20 hover:shadow-xl"
                   >
                     <div className="grid">
                       <div
@@ -58,9 +58,9 @@ export default function Portfolio() {
                               src={project.coverImage}
                               alt={`${project.company} - ${project.title}`}
                               loading="lazy"
-                              className="absolute inset-0 w-full h-full object-cover"
+                              className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105 motion-reduce:transition-none motion-reduce:group-hover:scale-100"
                             />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/55 to-black/40" />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/15 to-transparent" />
                           </>
                         )}
                         <div className="relative flex items-start justify-end gap-2">
@@ -110,7 +110,7 @@ export default function Portfolio() {
                 <ScrollReveal key={project.id} delay={i * 0.05}>
                   <Link
                     to={`/projet/${project.slug}`}
-                    className="group block h-full rounded-2xl overflow-hidden border border-border bg-card hover:shadow-md transition-all"
+                    className="group block h-full rounded-2xl overflow-hidden border border-border bg-card transition-all duration-300 hover:-translate-y-1 hover:border-foreground/20 hover:shadow-xl motion-reduce:transition-none motion-reduce:hover:translate-y-0"
                   >
                     <div
                       className={`relative aspect-[16/11] overflow-hidden ${
@@ -123,9 +123,9 @@ export default function Portfolio() {
                             src={project.coverImage}
                             alt={`${project.company} - ${project.title}`}
                             loading="lazy"
-                            className="absolute inset-0 w-full h-full object-cover"
+                            className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105 motion-reduce:transition-none motion-reduce:group-hover:scale-100"
                           />
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/55 to-black/40" />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/15 to-transparent" />
                         </>
                       )}
                       <div className="relative flex items-start justify-end">
