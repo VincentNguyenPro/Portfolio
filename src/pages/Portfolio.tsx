@@ -60,19 +60,19 @@ export default function Portfolio() {
                               loading="lazy"
                               className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105 motion-reduce:transition-none motion-reduce:group-hover:scale-100"
                             />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/15 to-transparent" />
+                            <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-black/75 to-transparent" />
                           </>
                         )}
                         <div className="relative flex items-start justify-end gap-2">
                           {project.badge && (
-                            <span className="text-xs font-semibold tracking-wide px-3 py-1.5 rounded-full bg-white/15 backdrop-blur border border-white/20">
+                            <span className="text-xs font-semibold tracking-wide px-3 py-1.5 rounded-full bg-black/50 backdrop-blur border border-white/25">
                               {project.badge}
                             </span>
                           )}
                           <ArrowUpRight className="size-5 opacity-90 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                         </div>
                         <div className="relative">
-                          <h2 className="text-xl font-semibold leading-tight line-clamp-2">
+                          <h2 className="text-xl font-semibold leading-tight line-clamp-2 drop-shadow-md">
                             {project.title}
                           </h2>
                         </div>
@@ -125,17 +125,17 @@ export default function Portfolio() {
                             loading="lazy"
                             className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105 motion-reduce:transition-none motion-reduce:group-hover:scale-100"
                           />
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/15 to-transparent" />
+                          <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/75 to-transparent" />
                         </>
                       )}
                       <div className="relative flex items-start justify-end">
                         {project.badge && (
-                          <span className="text-[9px] font-semibold tracking-wide px-2 py-1 rounded-full bg-white/15 backdrop-blur border border-white/20">
+                          <span className="text-[9px] font-semibold tracking-wide px-2 py-1 rounded-full bg-black/50 backdrop-blur border border-white/25">
                             {project.badge}
                           </span>
                         )}
                       </div>
-                      <h2 className="relative text-base font-semibold leading-tight line-clamp-2">
+                      <h2 className="relative text-base font-semibold leading-tight line-clamp-2 drop-shadow-md">
                         {project.title}
                       </h2>
                     </div>
