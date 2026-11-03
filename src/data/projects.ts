@@ -21,6 +21,10 @@ import cardomintPartage from '@/assets/cardomint-partage.webp';
 import blablacarSponsorship from '@/assets/blablacar-sponsorship.webp';
 import blablacarProfileReward from '@/assets/blablacar-profile-reward.webp';
 import blablacarDepartureTime from '@/assets/blablacar-departure-time.webp';
+import synapsesCover from '@/assets/synapses-cover.webp';
+import synapsesImport from '@/assets/synapses-import.webp';
+import synapsesEntreprises from '@/assets/synapses-entreprises.webp';
+import synapsesCollegues from '@/assets/synapses-collegues.webp';
 
 export const projects: Project[] = [
   {
@@ -370,6 +374,70 @@ export const projects: Project[] = [
     coverImage: cardomintCover,
     badge: '🚧 Beta',
     link: { label: 'Voir le site cardomint.com', url: 'https://cardomint.com' },
+  },
+  {
+    id: '6',
+    slug: 'synapses',
+    title: 'Visualisation de réseau LinkedIn en graphe neuronal',
+    company: 'Synapses',
+    role: 'Founder · Product Manager',
+    period: '2026 - En cours',
+    category: 'product',
+    summary:
+      "Outil gratuit, sans inscription, qui transforme l'export LinkedIn en graphe neuronal : secteurs, entreprises et séniorité d'un réseau se lisent d'un coup d'œil, sans que le fichier quitte le navigateur.",
+    context:
+      "Un réseau LinkedIn compte des centaines de contacts, mais LinkedIn n'en rend qu'une liste. Je voulais voir en un coup d'œil dans quels secteurs et quelles entreprises je connais du monde, à quel niveau, et par qui entrer avant un rendez-vous ou une candidature. J'ai construit Synapses avec Claude Code, puis je l'ai ouvert à tous.",
+    problem:
+      "Comment faire lire à un utilisateur la structure de son réseau (secteurs, entreprises, séniorité) à partir d'un simple export, sans compte à créer et sans que les noms de ses contacts ne quittent son appareil ?",
+    approach: [
+      {
+        heading: 'La confidentialité avant la première ligne de code',
+        body: "Un réseau professionnel est une donnée sensible. Principe posé dès le départ : le fichier est lu dans le navigateur, aucun nom, profil ou email de contact n'est envoyé où que ce soit, sans analytics ni ressource tierce traçante. Les exceptions (logos des entreprises, classement par IA, dictionnaire partagé, compteur anonyme) sont annoncées à l'écran et dans « Tes données », et ne portent jamais sur le nom d'un contact. Un panneau d'aide explique pas à pas comment obtenir l'export LinkedIn.",
+        result: "Aucun nom de contact n'est envoyé",
+        image: synapsesImport,
+      },
+      {
+        heading: "Un graphe lisible d'un coup d'œil",
+        body: "« Moi » au centre, une branche par groupe (secteur ou entreprise au choix), des contacts en grappes colorées par séniorité. Le poids d'un groupe se lit par la teinte, la jauge, l'épaisseur de la branche et le pourcentage. Regroupé par entreprise, chaque groupe devient un nœud avec son logo. Règle de design acquise : aucun chevauchement entre nœuds, grappes, jauges et noms de groupes, vérifiée après chaque changement de disposition.",
+        image: synapsesEntreprises,
+      },
+      {
+        heading: "Repérer ses portes d'entrée",
+        body: "Un clic sur un contact rassemble ses collègues de la même entreprise autour de lui, classés du junior au dirigeant : de quoi savoir qui solliciter avant un rendez-vous ou une candidature. Les filtres (secteur, fonction, séniorité, année de connexion) se combinent, et le graphe se recompose et se recentre aussitôt.",
+        image: synapsesCollegues,
+      },
+      {
+        heading: 'Classer sans envoyer de noms',
+        body: "Secteur, fonction et séniorité sont estimés dans le navigateur à partir de dictionnaires maintenus dans le projet, puis corrigeables contact par contact. Pour ce que le dictionnaire ne reconnaît pas, l'utilisateur peut faire classer entreprises et intitulés de poste par Claude, ChatGPT ou Gemini avec sa propre clé API : seuls ces intitulés partent chez le fournisseur choisi. Un dictionnaire partagé, alimenté par les corrections que les utilisateurs choisissent de partager, n'intègre une proposition qu'après ma validation.",
+        result: 'Classification locale, IA et dictionnaire partagé en option',
+      },
+      {
+        heading: 'Lancer sans gonfler les chiffres',
+        body: "Mise en ligne gratuite sur GitHub Pages, avec une page de présentation et des captures sur un réseau fictif de 150 contacts, jamais de vraies données. Un compteur anonyme du nombre de réseaux visualisés affiche le total réel : aucun chiffre gonflé. L'outil est indépendant et non affilié à LinkedIn.",
+      },
+    ],
+    results: [
+      'Outil en ligne, gratuit et sans inscription, avec page de présentation et démonstration sur un réseau fictif de 150 contacts',
+      "Fichier lu dans le navigateur : aucun nom de contact envoyé, pas d'analytics",
+      'Secteur, fonction et séniorité estimés automatiquement et corrigeables, avec classement par IA en option (Claude, ChatGPT, Gemini)',
+      'Un seul fichier HTML sans étape de compilation, trois bibliothèques (D3, PapaParse, JSZip)',
+      'Mis en ligne le 2 novembre 2026, puis enrichi (dictionnaire partagé, logos, page de présentation, compteur)',
+    ],
+    metrics: [
+      { value: '0', label: 'nom de contact envoyé' },
+      { value: '3', label: 'IA au choix' },
+      { value: '1', label: 'fichier, sans compilation' },
+    ],
+    stack: ['Claude Code', 'JavaScript', 'D3', 'Supabase', 'GitHub Pages'],
+    scope: 'Web (ordinateur et mobile) · gratuit, sans inscription · données lues dans le navigateur',
+    team: ['Solo — Founder & Product Builder (moi)'],
+    missionTypes: ['0 → 1', 'Data viz', 'Privacy by design'],
+    retro:
+      "L'outil est en ligne et utilisable. Le compteur anonyme mesurera son adoption réelle. À suivre : les retours des premiers utilisateurs, l'enrichissement des dictionnaires par les corrections validées, et la mise à jour des modèles d'IA proposés quand les fournisseurs en retirent.",
+    coverGradient: 'from-indigo-600 via-blue-600 to-sky-500',
+    coverImage: synapsesCover,
+    badge: '🚧 En cours',
+    link: { label: 'Essayer Synapses', url: 'https://vincentnguyenpro.github.io/synapses/' },
   },
 ];
 

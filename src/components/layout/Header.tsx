@@ -1,5 +1,5 @@
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, Linkedin, Briefcase, ArrowRight, LayoutDashboard, Car, PieChart, Truck, Calculator, ChevronDown, Layers } from 'lucide-react';
+import { Menu, Linkedin, Briefcase, ArrowRight, LayoutDashboard, Car, PieChart, Truck, Calculator, ChevronDown, Layers, Network } from 'lucide-react';
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ThemeToggle } from './ThemeToggle';
@@ -26,6 +26,7 @@ const projectShortTitles: Record<string, string> = {
   'renault-supply-chain': 'Supply Chain Renault',
   'renault-costing': 'Costing Renault',
   cardomint: 'CardoMint',
+  synapses: 'Synapses',
 };
 
 const projectIcons: Record<string, typeof Briefcase> = {
@@ -35,6 +36,7 @@ const projectIcons: Record<string, typeof Briefcase> = {
   'renault-supply-chain': Truck,
   'renault-costing': Calculator,
   cardomint: Layers,
+  synapses: Network,
 };
 
 export function Header() {
