@@ -114,7 +114,7 @@ export default function Blog() {
                   to={`/blog/${post.slug}`}
                   className="group h-full block rounded-2xl overflow-hidden border border-border bg-card hover:shadow-xl transition-all"
                 >
-                  <div className="relative aspect-[16/9] md:aspect-[16/11] overflow-hidden bg-muted">
+                  <div className="relative aspect-video overflow-hidden bg-muted">
                     <img
                       src={post.cover.url}
                       alt={post.cover.alt}
