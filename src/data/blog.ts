@@ -317,7 +317,7 @@ export const blogPosts: BlogPost[] = [
         image: {
           url: noeIaProduitConfiance,
           alt: 'Slide : les trois piliers de la confiance - compétence, transparence, empathie',
-          aspectRatio: '2000 / 1070',
+          aspectRatio: '2000 / 856',
           width: 'lg',
           caption: 'Les trois piliers de la confiance : compétence, transparence, empathie.',
         },
@@ -343,7 +343,7 @@ export const blogPosts: BlogPost[] = [
         image: {
           url: noeIaProduitCycle,
           alt: 'Slide : ce que ça change dans le cycle produit - un champ ouvert, des briques d’évaluation, une optimisation directe',
-          aspectRatio: '2000 / 1007',
+          aspectRatio: '2000 / 1050',
           width: 'lg',
           caption: "Ce que l'IA change dans le cycle produit : un champ ouvert, des briques d'évaluation et une optimisation directe.",
         },
@@ -360,7 +360,7 @@ export const blogPosts: BlogPost[] = [
         image: {
           url: noeIaProduitLean,
           alt: 'Slide : comment le lean peut nous aider - value for customer, right first time, tech-enabled network of teams, learning organisation',
-          aspectRatio: '2000 / 915',
+          aspectRatio: '2000 / 960',
           width: 'lg',
           caption: "Quatre principes lean pour aller plus loin : value for customer, right first time, tech-enabled network of teams, learning organisation.",
         },
