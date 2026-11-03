@@ -113,7 +113,7 @@ export default function Portfolio() {
                     className="group block h-full rounded-2xl overflow-hidden border border-border bg-card transition-all duration-300 hover:-translate-y-1 hover:border-foreground/20 hover:shadow-xl motion-reduce:transition-none motion-reduce:hover:translate-y-0"
                   >
                     <div
-                      className={`relative aspect-[16/11] overflow-hidden ${
+                      className={`relative aspect-video overflow-hidden ${
                         project.coverImage ? 'bg-muted' : `bg-gradient-to-br ${project.coverGradient}`
                       } p-4 flex flex-col justify-between text-white`}
                     >
