@@ -318,9 +318,9 @@ export const projects: Project[] = [
     period: '2026 - En cours',
     category: 'product',
     summary:
-      "Application web (bientôt mobile) qui donne aux collectionneurs Pokémon et Lorcana la valeur de leur collection au jour le jour, sur un catalogue Pokémon de plus de 70 000 cartes et produits scellés.",
+      "Application web (bientôt mobile) qui donne aux collectionneurs de cartes TCG la valeur de leur collection au jour le jour, sur un catalogue de plus de 270 000 cartes et produits scellés répartis sur sept licences.",
     context:
-      "En tant que collectionneur, j'utilisais des applications existantes mais il leur manquait des fonctionnalités clés à mes yeux. Des amis collectionneurs m'ont remonté des besoins similaires. J'ai construit CardoMint pour y répondre, en commençant par le TCG Pokémon : Pokémon et Lorcana sont disponibles aujourd'hui, cinq autres licences suivront.",
+      "En tant que collectionneur, j'utilisais des applications existantes mais il leur manquait des fonctionnalités clés à mes yeux. Des amis collectionneurs m'ont remonté des besoins similaires. J'ai construit CardoMint pour y répondre, en commençant par le TCG Pokémon : le catalogue couvre aujourd'hui sept licences (Magic, Pokémon, Yu-Gi-Oh!, Dragon Ball, Lorcana, One Piece et Naruto).",
     problem:
       "Comment retrouver rapidement la valeur réelle de sa collection (cartes et scellés) sur plusieurs TCG, à partir de sources de prix fiables et à jour ?",
     approach: [
@@ -330,25 +330,25 @@ export const projects: Project[] = [
         image: cardomintMesCartes,
       },
       {
-        heading: 'Un catalogue sur trois marchés',
-        body: "Le catalogue international, le japonais (27 080 cartes) et le chinois (14 614 cartes) ne sont pas des traductions du même jeu mais d'autres extensions, avec d'autres cartes : une zone par marché plutôt qu'un filtre de langue, qui les aurait mélangés. Les données viennent d'une base ouverte sous licence MIT (noms, raretés, illustrateurs, photos) et d'un relevé de prix Cardmarket par jour, daté par la source.",
-        result: '70 578 produits catalogués (67 432 cartes, 3 146 scellés) sur 1 014 séries',
+        heading: 'Un catalogue de sept licences, sur trois marchés',
+        body: "Sept licences dans un seul catalogue, et pour Pokémon trois marchés : l'international (25 743 cartes), le japonais (27 276 cartes) et le chinois (14 614 cartes) ne sont pas des traductions du même jeu mais d'autres extensions, avec d'autres cartes. Une zone par marché plutôt qu'un filtre de langue, qui les aurait mélangés. Pour Pokémon, les données viennent d'une base ouverte sous licence MIT (noms, raretés, illustrateurs, photos) et d'un relevé de prix Cardmarket par jour, daté par la source.",
+        result: '272 521 produits catalogués (262 198 cartes, 10 323 scellés) sur 7 licences et 3 927 séries',
         image: cardomintCatalogue,
       },
       {
         heading: 'Le contenu des scellés',
-        body: "Un différenciateur introuvable ailleurs : une boîte déclare, booster par booster, ce qu'elle contient. Ces déclarations croisent trois sources (fiches d'un revendeur, encyclopédie communautaire et, quand elles se contredisent, le verso de la boîte lu par reconnaissance de texte), avec un contrôle de somme à l'écriture : trente-huit pages annoncent un total que leur propre énumération ne fait pas, et aucune n'a été recopiée.",
-        result: '1 713 scellés au contenu déclaré, dont 2 115 cartes garanties',
+        body: "Un différenciateur introuvable ailleurs : une boîte déclare, booster par booster, ce qu'elle contient. Ces déclarations croisent trois sources (fiches d'un revendeur, encyclopédie communautaire et, quand elles se contredisent, le verso de la boîte lu par reconnaissance de texte), avec un contrôle de somme à l'écriture : trente-huit pages annoncent un total que leur propre énumération ne fait pas, et aucune n'a été recopiée ; vingt-sept totaux se contredisent entre sources et ne sont pas arbitrés, faute d'une troisième source pour les départager.",
+        result: '3 023 scellés Pokémon au contenu déclaré (sur 3 288), dont 2 154 cartes garanties',
       },
       {
         heading: 'Fonctionnalités avancées',
-        body: 'Valorisation quotidienne datée (un relevé par jour, jamais un chiffre sans sa date), comparateur à 17 critères sur deux à quatre produits, et partage communautaire par code de dix symboles ou QR, sans création de compte et sans aucun montant partagé.',
-        result: '11 640 cartes tarifées avec un relevé de valeur quotidien',
+        body: "Valorisation quotidienne datée (un relevé par jour, jamais un chiffre sans sa date), lots d'achat, ventes et performance, grading sur 113 notes et six sociétés, classeurs, alertes de prix, export Excel, comparateur à 17 critères sur deux à quatre produits, et partage communautaire par code de dix symboles ou QR, sans création de compte et sans aucun montant partagé.",
+        result: '164 945 cartes au prix du jour sur six licences (Naruto sans cote : aucune source publique)',
         image: cardomintDashboard,
       },
       {
         heading: "Dire ce que l'on ne sait pas",
-        body: "Principe produit : une lacune nommée est un périmètre, une lacune tue se lit comme un défaut. Les cartes sans prix (55 792) n'affichent rien plutôt qu'un zéro qui se lirait comme une valeur nulle, les 90 cartes sans photo n'empruntent pas l'image d'une autre carte, le scan annonce « Bientôt » dans un message visible et les offres Cardmarket sont marquées indisponibles, et non « bientôt », car la source ne les publie jamais.",
+        body: "Principe produit : une lacune nommée est un périmètre, une lacune tue se lit comme un défaut. Les 37 012 cartes Pokémon sans prix n'affichent rien plutôt qu'un zéro qui se lirait comme une valeur nulle (de même pour Naruto, dont aucune source publique ne publie les cotes), les 90 cartes sans photo n'empruntent pas l'image d'une autre carte, le scan annonce « Bientôt » dans un message visible et les offres Cardmarket sont marquées indisponibles, et non « bientôt », car la source ne les publie jamais.",
         result: 'Chaque chiffre du site vient d\'une requête sur la base, avec sa date de relevé',
       },
       {
@@ -359,23 +359,23 @@ export const projects: Project[] = [
       },
     ],
     results: [
-      '70 578 produits catalogués (67 432 cartes + 3 146 scellés) sur 3 marchés, au 22 septembre 2026',
-      'Valorisation quotidienne sur 11 640 cartes tarifées, chaque relevé daté',
-      '1 713 scellés au contenu déclaré, dont 2 115 cartes garanties',
-      'Pokémon et Lorcana disponibles, cinq autres licences à venir',
+      '272 521 produits catalogués (262 198 cartes + 10 323 scellés) sur 7 licences et 3 927 séries, au 3 novembre 2026',
+      'Prix du jour sur 164 945 cartes et 4 190 scellés cotés, chaque relevé daté',
+      '3 023 scellés Pokémon au contenu déclaré, dont 2 154 cartes garanties',
+      'Sept licences au catalogue (Magic, Pokémon, Yu-Gi-Oh!, Dragon Ball, Lorcana, One Piece, Naruto)',
       "Retours beta : demande d'amélioration UI et de nouvelles fonctionnalités",
     ],
     metrics: [
-      { value: '70k', label: 'produits catalogués' },
-      { value: '3', label: 'marchés couverts' },
-      { value: '7', label: 'licences TCG prévues' },
+      { value: '272k', label: 'produits catalogués' },
+      { value: '165k', label: 'cartes au prix du jour' },
+      { value: '7', label: 'licences TCG' },
     ],
     stack: ['Next.js', 'Turso', 'Claude Code'],
-    scope: 'Web (apps iOS et Android à venir) · accès gratuit sur invitation · Pokémon et Lorcana',
+    scope: 'Web (apps iOS et Android à venir) · accès gratuit sur invitation · 7 licences TCG',
     team: ['Solo — Founder & Product Builder (moi)'],
     missionTypes: ['0 → 1', 'Discovery', 'Beta'],
     retro:
-      "Les premiers retours beta pointent vers deux priorités : améliorer l'interface et enrichir les fonctionnalités. Prochaine étape : le scan de carte, avec un choix à trancher entre un service externe de reconnaissance d'image et un modèle entraîné sur les 67 432 photos du catalogue, puis la complétion du catalogue scellé et l'extension aux cinq autres licences prévues. Les dates seront annoncées quand elles seront tenables.",
+      "Les premiers retours beta pointent vers deux priorités : améliorer l'interface et enrichir les fonctionnalités. Prochaine étape : le scan de carte, avec un choix à trancher entre un service externe de reconnaissance d'image et un modèle entraîné sur les 260 564 photos du catalogue, puis la complétion du catalogue scellé (1 154 produits déjà repérés chez un revendeur), les prix de vente réels, les notifications d'alerte, la lecture des factures et un quatrième marché, le coréen. Les dates seront annoncées quand elles seront tenables.",
     coverGradient: 'from-red-500 via-rose-500 to-pink-600',
     coverImage: cardomintCover,
     badge: '🚧 Beta',
