@@ -1,5 +1,5 @@
 import { ReactNode, useCallback, useEffect, useRef, useState } from 'react';
-import { ArrowLeft, ArrowRight } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Pause, Play } from 'lucide-react';
 
 interface AutoCarouselProps<T> {
   items: T[];
@@ -13,8 +13,9 @@ interface AutoCarouselProps<T> {
 
 /**
  * Scroll-snap carousel that advances on its own while it is on screen.
- * It pauses on hover, focus and touch, when the tab is hidden, and never autoplays
- * for visitors who ask for reduced motion (manual controls still work).
+ * It pauses while the pointer is actively moving over it, on keyboard focus and after a touch,
+ * and when the tab is hidden. A parked cursor does not stop it. Visitors who ask for reduced
+ * motion start paused; the play/pause button lets anyone change that.
  */
 export function AutoCarousel<T>({
   items,
@@ -28,19 +29,18 @@ export function AutoCarousel<T>({
   const trackRef = useRef<HTMLDivElement>(null);
   const itemRefs = useRef<(HTMLDivElement | null)[]>([]);
   const hoveredRef = useRef(false);
+  const focusedRef = useRef(false);
+  const lastMoveRef = useRef(0);
   const pausedUntilRef = useRef(0);
   const scrollingUntilRef = useRef(0);
   const [active, setActive] = useState(0);
   const [pageCount, setPageCount] = useState(items.length);
   const [inView, setInView] = useState(false);
-  const [reduceMotion, setReduceMotion] = useState(false);
+  const [playing, setPlaying] = useState(true);
 
   useEffect(() => {
     const query = window.matchMedia('(prefers-reduced-motion: reduce)');
-    setReduceMotion(query.matches);
-    const onChange = (e: MediaQueryListEvent) => setReduceMotion(e.matches);
-    query.addEventListener('change', onChange);
-    return () => query.removeEventListener('change', onChange);
+    if (query.matches) setPlaying(false);
   }, []);
 
   useEffect(() => {
@@ -126,10 +126,12 @@ export function AutoCarousel<T>({
   nextRef.current = next;
 
   useEffect(() => {
-    if (!inView || reduceMotion) return;
+    if (!inView || !playing) return;
     const id = window.setInterval(() => {
+      const pointerBusy = hoveredRef.current && Date.now() - lastMoveRef.current < 2500;
       if (
-        hoveredRef.current ||
+        pointerBusy ||
+        focusedRef.current ||
         document.hidden ||
         Date.now() < pausedUntilRef.current ||
         Date.now() < scrollingUntilRef.current
@@ -138,7 +140,7 @@ export function AutoCarousel<T>({
       nextRef.current();
     }, intervalMs);
     return () => window.clearInterval(id);
-  }, [inView, reduceMotion, intervalMs]);
+  }, [inView, playing, intervalMs]);
 
   const pauseAfterTouch = () => {
     pausedUntilRef.current = Date.now() + 8000;
@@ -150,10 +152,14 @@ export function AutoCarousel<T>({
       role="region"
       aria-roledescription="carrousel"
       aria-label={ariaLabel}
-      onMouseEnter={() => (hoveredRef.current = true)}
+      onMouseEnter={() => {
+        hoveredRef.current = true;
+        lastMoveRef.current = Date.now();
+      }}
+      onMouseMove={() => (lastMoveRef.current = Date.now())}
       onMouseLeave={() => (hoveredRef.current = false)}
-      onFocusCapture={() => (hoveredRef.current = true)}
-      onBlurCapture={() => (hoveredRef.current = false)}
+      onFocusCapture={() => (focusedRef.current = true)}
+      onBlurCapture={() => (focusedRef.current = false)}
       onTouchStart={pauseAfterTouch}
     >
       <div
@@ -191,6 +197,15 @@ export function AutoCarousel<T>({
           ))}
         </div>
         <div className="flex items-center gap-2">
+          <button
+            type="button"
+            aria-label={playing ? 'Mettre le défilement automatique en pause' : 'Lancer le défilement automatique'}
+            aria-pressed={!playing}
+            onClick={() => setPlaying((p) => !p)}
+            className="size-9 inline-flex items-center justify-center rounded-full border border-border text-foreground hover:bg-muted transition-colors"
+          >
+            {playing ? <Pause className="size-4" /> : <Play className="size-4" />}
+          </button>
           <button
             type="button"
             aria-label="Projet précédent"
