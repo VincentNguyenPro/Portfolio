@@ -60,7 +60,7 @@ export default function Portfolio() {
                               loading="lazy"
                               className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105 motion-reduce:transition-none motion-reduce:group-hover:scale-100"
                             />
-                            <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-black/75 to-transparent" />
+                            <div className="absolute inset-x-0 bottom-0 h-3/5 bg-gradient-to-t from-black/90 via-black/60 via-45% to-transparent" />
                           </>
                         )}
                         <div className="relative flex items-start justify-end gap-2">
@@ -72,7 +72,7 @@ export default function Portfolio() {
                           <ArrowUpRight className="size-5 opacity-90 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                         </div>
                         <div className="relative">
-                          <h2 className="text-xl font-semibold leading-tight line-clamp-2 drop-shadow-md">
+                          <h2 className="text-xl font-semibold leading-tight line-clamp-2 drop-shadow-[0_2px_8px_rgba(0,0,0,0.7)]">
                             {project.title}
                           </h2>
                         </div>
@@ -125,7 +125,7 @@ export default function Portfolio() {
                             loading="lazy"
                             className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105 motion-reduce:transition-none motion-reduce:group-hover:scale-100"
                           />
-                          <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/75 to-transparent" />
+                          <div className="absolute inset-x-0 bottom-0 h-3/5 bg-gradient-to-t from-black/90 via-black/60 via-45% to-transparent" />
                         </>
                       )}
                       <div className="relative flex items-start justify-end">
@@ -135,7 +135,7 @@ export default function Portfolio() {
                           </span>
                         )}
                       </div>
-                      <h2 className="relative text-base font-semibold leading-tight line-clamp-2 drop-shadow-md">
+                      <h2 className="relative text-base font-semibold leading-tight line-clamp-2 drop-shadow-[0_2px_8px_rgba(0,0,0,0.7)]">
                         {project.title}
                       </h2>
                     </div>

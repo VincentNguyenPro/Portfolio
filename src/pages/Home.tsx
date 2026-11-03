@@ -36,7 +36,7 @@ function ProjectCard({ project }: { project: Project }) {
               loading="lazy"
               className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105 motion-reduce:transition-none motion-reduce:group-hover:scale-100"
             />
-            <div className="absolute inset-x-0 bottom-0 h-2/3 md:h-1/2 bg-gradient-to-t from-black/75 to-transparent" />
+            <div className="absolute inset-x-0 bottom-0 h-3/5 bg-gradient-to-t from-black/90 via-black/60 via-45% to-transparent" />
           </>
         )}
         {project.badge && (
@@ -45,7 +45,7 @@ function ProjectCard({ project }: { project: Project }) {
           </span>
         )}
         <div className="relative">
-          <h3 className="text-xl md:text-xl font-semibold leading-tight line-clamp-2 drop-shadow-md">
+          <h3 className="text-xl md:text-xl font-semibold leading-tight line-clamp-2 drop-shadow-[0_2px_8px_rgba(0,0,0,0.7)]">
             {project.title}
           </h3>
         </div>
