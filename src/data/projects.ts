@@ -51,7 +51,7 @@ export const projects: Project[] = [
       {
         heading: "Conception d'une plateforme multi-métiers",
         body: "Modélisation d'un référentiel commun reliant Finance (budget / réel), IT (cloud / assets), PMO (projets / ressources), Achats (contrats / fournisseurs) et RSE (carbone / CSRD).",
-        result: '9 modules construits et en ligne sur 10 prévus',
+        result: '9 modules construits et en ligne sur 10 prévus (captures sur données de démonstration)',
         image: kostbaseShowback,
       },
       {
@@ -72,6 +72,7 @@ export const projects: Project[] = [
       { value: '0 → 1', label: 'plateforme en construction' },
     ],
     stack: ['Lovable', 'Claude Code', 'React', 'Supabase', 'TypeScript'],
+    scope: 'Plateforme web multi-métiers · captures et chiffres affichés sur données de démonstration',
     team: ['Solo — Founder & Product Manager (moi)'],
     missionTypes: ['Discovery', 'ITFM & FinOps', '0 → 1'],
     retro:
