@@ -39,6 +39,7 @@ export interface Project {
   coverGradient: string; // tailwind gradient classes for cover (fallback)
   coverImage?: string; // optional cover image URL - overrides gradient on cards
   coverVideo?: { url: string; poster: string }; // optional muted loop shown on tiles instead of coverImage
+  heroLogo?: { src: string; name: string }; // optional brand mark shown on the mobile hero card
   badge?: string; // optional badge (e.g. "🚧 En cours")
   link?: { label: string; url: string }; // optional external presentation site
   video?: { url: string; poster: string; title: string; caption: string }; // optional demo video, files served from public/media

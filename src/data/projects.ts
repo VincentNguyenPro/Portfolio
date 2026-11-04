@@ -22,6 +22,7 @@ import blablacarSponsorship from '@/assets/blablacar-sponsorship.webp';
 import blablacarProfileReward from '@/assets/blablacar-profile-reward.webp';
 import blablacarDepartureTime from '@/assets/blablacar-departure-time.webp';
 import synapsesCover from '@/assets/synapses-cover.webp';
+import synapsesLogo from '@/assets/synapses-logo.svg';
 import synapsesImport from '@/assets/synapses-import.webp';
 import synapsesEntreprises from '@/assets/synapses-entreprises.webp';
 import synapsesCollegues from '@/assets/synapses-collegues.webp';
@@ -444,6 +445,7 @@ export const projects: Project[] = [
       "L'outil est en ligne et utilisable. Le compteur anonyme mesurera son adoption réelle. À suivre : les retours des premiers utilisateurs, l'enrichissement des dictionnaires par les corrections validées, et la mise à jour des modèles d'IA proposés quand les fournisseurs en retirent.",
     coverGradient: 'from-indigo-600 via-blue-600 to-sky-500',
     coverImage: synapsesCover,
+    heroLogo: { src: synapsesLogo, name: 'Synapses' },
     coverVideo: { url: '/media/synapses-apercu.mp4', poster: '/media/synapses-apercu-affiche.webp' },
     badge: '🚧 En cours',
     link: { label: 'Essayer Synapses', url: 'https://vincentnguyenpro.github.io/synapses/' },

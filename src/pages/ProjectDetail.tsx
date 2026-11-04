@@ -86,7 +86,21 @@ export default function ProjectDetail() {
               ) : (
                 <div className={`absolute inset-0 bg-gradient-to-br ${project.coverGradient}`} />
               )}
-              <div className="relative min-h-[300px] p-6 flex items-end">
+              {project.heroLogo && (
+                <div className="absolute inset-x-0 top-0 h-[48%] flex items-center justify-center gap-3 text-white">
+                  <img
+                    src={project.heroLogo.src}
+                    alt=""
+                    className="size-14 rounded-2xl shadow-lg ring-1 ring-white/40"
+                  />
+                  <span className="text-4xl font-semibold tracking-tight drop-shadow-md">
+                    {project.heroLogo.name}
+                  </span>
+                </div>
+              )}
+              <div
+                className={`relative p-6 flex items-end ${project.heroLogo ? 'min-h-[400px]' : 'min-h-[300px]'}`}
+              >
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
