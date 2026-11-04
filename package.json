@@ -11,6 +11,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "sitemap": "node scripts/generate-sitemap.mjs",
+    "share-links": "node scripts/share-links.mjs",
     "compress-images": "node scripts/compress-images.mjs"
   },
   "dependencies": {
