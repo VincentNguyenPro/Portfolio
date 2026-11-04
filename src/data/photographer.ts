@@ -150,7 +150,8 @@ export const educationItems = [
   { title: 'Ingénieur Génie Industriel', school: 'ISAE-SUPMECA, Paris Saint-Ouen', period: '2011 - 2014' },
 ];
 
+// The host's CDN keeps a replaced PDF under its old URL: bump ?v= when a CV file is replaced.
 export const cvFiles = [
-  { lang: 'FR', label: 'Français', cta: 'Mon CV en français', href: '/Vincent-Nguyen-CV-FR.pdf', filename: 'Vincent-Nguyen-CV-FR.pdf' },
+  { lang: 'FR', label: 'Français', cta: 'Mon CV en français', href: '/Vincent-Nguyen-CV-FR.pdf?v=2', filename: 'Vincent-Nguyen-CV-FR.pdf' },
   { lang: 'EN', label: 'English', cta: 'My CV in English', href: '/Vincent-Nguyen-CV-EN.pdf', filename: 'Vincent-Nguyen-CV-EN.pdf' },
 ];
