@@ -273,6 +273,27 @@ export default function ProjectDetail() {
               </section>
             </ScrollReveal>
 
+            {project.video && (
+              <ScrollReveal>
+                <section className="space-y-2 md:space-y-4 scroll-mt-24">
+                  <h2 className="text-lg md:text-2xl font-semibold tracking-[0.2em] uppercase text-muted-foreground">
+                    Démonstration
+                  </h2>
+                  <video
+                    controls
+                    playsInline
+                    preload="none"
+                    poster={project.video.poster}
+                    aria-label={project.video.title}
+                    className="w-full aspect-video rounded-2xl border border-border bg-muted"
+                  >
+                    <source src={project.video.url} type="video/mp4" />
+                  </video>
+                  <p className="text-sm text-muted-foreground">{project.video.caption}</p>
+                </section>
+              </ScrollReveal>
+            )}
+
             <ScrollReveal>
               <section className="space-y-4 md:space-y-8 scroll-mt-24">
                 <h2 className="text-xl md:text-2xl font-semibold tracking-[0.2em] uppercase text-muted-foreground">

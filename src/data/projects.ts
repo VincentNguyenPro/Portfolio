@@ -445,6 +445,12 @@ export const projects: Project[] = [
     coverImage: synapsesCover,
     badge: '🚧 En cours',
     link: { label: 'Essayer Synapses', url: 'https://vincentnguyenpro.github.io/synapses/' },
+    video: {
+      url: '/media/synapses-demo.mp4',
+      poster: '/media/synapses-demo-affiche.webp',
+      title: 'Vidéo de démonstration de Synapses',
+      caption: 'Démonstration sur un réseau fictif, 1 min 48',
+    },
   },
 ];
 

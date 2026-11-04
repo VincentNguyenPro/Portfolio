@@ -40,6 +40,7 @@ export interface Project {
   coverImage?: string; // optional cover image URL - overrides gradient on cards
   badge?: string; // optional badge (e.g. "🚧 En cours")
   link?: { label: string; url: string }; // optional external presentation site
+  video?: { url: string; poster: string; title: string; caption: string }; // optional demo video, files served from public/media
 }
 
 export interface ExperienceItem {
