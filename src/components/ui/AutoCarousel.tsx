@@ -189,6 +189,7 @@ export function AutoCarousel<T>({
       role="region"
       aria-roledescription="carrousel"
       aria-label={ariaLabel}
+      data-autoplay={playing ? 'on' : 'off'}
       onMouseEnter={() => {
         hoveredRef.current = true;
         lastMoveRef.current = Date.now();

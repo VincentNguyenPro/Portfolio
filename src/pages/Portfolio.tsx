@@ -5,6 +5,7 @@ import { getProjectsNewestFirst, categoryLabels } from '@/data/projects';
 import { SEOHead } from '@/components/seo/SEOHead';
 import { staticPageMeta } from '@/data/seo';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
+import { CoverVideo } from '@/components/ui/CoverVideo';
 
 const sortedProjects = getProjectsNewestFirst();
 
@@ -58,6 +59,13 @@ export default function Portfolio() {
                               loading="lazy"
                               className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105 motion-reduce:transition-none motion-reduce:group-hover:scale-100"
                             />
+                            {project.coverVideo && (
+                              <CoverVideo
+                                src={project.coverVideo.url}
+                                poster={project.coverVideo.poster}
+                                className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+                              />
+                            )}
                             <div className="absolute inset-x-0 bottom-0 h-3/5 bg-gradient-to-t from-black/90 via-black/60 via-45% to-transparent" />
                           </>
                         )}
@@ -123,6 +131,13 @@ export default function Portfolio() {
                             loading="lazy"
                             className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105 motion-reduce:transition-none motion-reduce:group-hover:scale-100"
                           />
+                          {project.coverVideo && (
+                            <CoverVideo
+                              src={project.coverVideo.url}
+                              poster={project.coverVideo.poster}
+                              className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+                            />
+                          )}
                           <div className="absolute inset-x-0 bottom-0 h-3/5 bg-gradient-to-t from-black/90 via-black/60 via-45% to-transparent" />
                         </>
                       )}
