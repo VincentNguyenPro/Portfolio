@@ -74,7 +74,7 @@ export default function ProjectDetail() {
               className={`absolute -inset-3 rounded-3xl bg-gradient-to-br ${project.coverGradient} opacity-20 blur-2xl`}
             />
             <div className="relative rounded-2xl overflow-hidden border border-border text-white">
-              {project.coverImage ? (
+              {project.coverImage && !project.video ? (
                 <>
                   <img
                     src={project.coverImage}
@@ -112,6 +112,23 @@ export default function ProjectDetail() {
             </div>
           </div>
         </section>
+
+        {/* Demo video — mobile: right under the title card (desktop shows it in the hero frame) */}
+        {project.video && (
+          <section className="md:hidden px-6 pb-2">
+            <video
+              controls
+              playsInline
+              preload="none"
+              poster={project.video.poster}
+              aria-label={project.video.title}
+              className="block w-full aspect-video rounded-2xl border border-border bg-muted"
+            >
+              <source src={project.video.url} type="video/mp4" />
+            </video>
+            <p className="mt-2 text-sm text-muted-foreground">{project.video.caption}</p>
+          </section>
+        )}
 
         {/* Hero — desktop: neutral banner + photo vignette */}
         <section className="hidden md:block px-6 lg:px-8 pt-8 pb-6 border-b border-border">
@@ -180,20 +197,36 @@ export default function ProjectDetail() {
                   <span className="size-2 rounded-full bg-border" />
                   <span className="size-2 rounded-full bg-border" />
                 </div>
-                <div
-                  className={`relative aspect-[16/9] ${
-                    project.coverImage ? 'bg-muted' : `bg-gradient-to-br ${project.coverGradient}`
-                  }`}
-                >
-                  {project.coverImage && (
-                    <img
-                      src={project.coverImage}
-                      alt={project.title}
-                      className="absolute inset-0 w-full h-full object-cover"
-                    />
-                  )}
+                {project.video ? (
+                  <video
+                    controls
+                    playsInline
+                    preload="none"
+                    poster={project.video.poster}
+                    aria-label={project.video.title}
+                    className="block w-full aspect-[16/9] bg-muted"
+                  >
+                    <source src={project.video.url} type="video/mp4" />
+                  </video>
+                ) : (
+                  <div
+                    className={`relative aspect-[16/9] ${
+                      project.coverImage ? 'bg-muted' : `bg-gradient-to-br ${project.coverGradient}`
+                    }`}
+                  >
+                    {project.coverImage && (
+                      <img
+                        src={project.coverImage}
+                        alt={project.title}
+                        className="absolute inset-0 w-full h-full object-cover"
+                      />
+                    )}
+                  </div>
+                )}
                 </div>
-                </div>
+                {project.video && (
+                  <p className="relative mt-2 text-sm text-muted-foreground">{project.video.caption}</p>
+                )}
               </div>
             </div>
           </div>
@@ -272,27 +305,6 @@ export default function ProjectDetail() {
                 </p>
               </section>
             </ScrollReveal>
-
-            {project.video && (
-              <ScrollReveal>
-                <section className="space-y-2 md:space-y-4 scroll-mt-24">
-                  <h2 className="text-lg md:text-2xl font-semibold tracking-[0.2em] uppercase text-muted-foreground">
-                    Démonstration
-                  </h2>
-                  <video
-                    controls
-                    playsInline
-                    preload="none"
-                    poster={project.video.poster}
-                    aria-label={project.video.title}
-                    className="w-full aspect-video rounded-2xl border border-border bg-muted"
-                  >
-                    <source src={project.video.url} type="video/mp4" />
-                  </video>
-                  <p className="text-sm text-muted-foreground">{project.video.caption}</p>
-                </section>
-              </ScrollReveal>
-            )}
 
             <ScrollReveal>
               <section className="space-y-4 md:space-y-8 scroll-mt-24">
