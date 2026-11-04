@@ -133,7 +133,11 @@ export default function ProjectDetail() {
         {/* Hero — desktop: neutral banner + photo vignette */}
         <section className="hidden md:block px-6 lg:px-8 pt-8 pb-6 border-b border-border">
           <div className="max-w-7xl mx-auto">
-            <div className="grid grid-cols-[1.5fr_1fr] gap-10 items-center">
+            <div
+              className={`grid gap-10 items-center ${
+                project.video ? 'grid-cols-[5fr_6fr]' : 'grid-cols-[1.5fr_1fr]'
+              }`}
+            >
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
