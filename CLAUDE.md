@@ -59,7 +59,7 @@ The mobile header menu (`Header.tsx`) is a bottom-sheet (`Sheet` with `side="bot
 
 ### Deployment
 
-`.github/workflows/deploy.yml` builds the app and FTP-deploys `dist/` to Hostinger on every push to `main` (no staging environment/preview deploys).
+The site is hosted on Vercel (the project is linked to the GitHub repo and rebuilds on every push to `main`; the custom domain's DNS is managed in Hostinger hPanel and points to Vercel). The Hostinger hosting pack expired in November 2026 and is no longer used; there is no GitHub Actions workflow. Environment variable to set in the Vercel project settings: `VITE_WEB3FORMS_KEY` (public Web3Forms access key for the contact form; without it the form falls back to a `mailto:` link).
 
 ## graphify
 

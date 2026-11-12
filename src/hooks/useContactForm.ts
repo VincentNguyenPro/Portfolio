@@ -4,7 +4,7 @@ import { useState } from 'react';
 export const CONTACT_EMAIL = 'vincent.nguyen75020@gmail.com';
 
 // Public access key of the Web3Forms service (made for front-end code, not a secret), injected at
-// build time from the VITE_WEB3FORMS_KEY repository variable. Without it, the form falls back to
+// build time from the VITE_WEB3FORMS_KEY environment variable (Vercel project settings). Without it, the form falls back to
 // opening the visitor's mail app with a prefilled message.
 const ACCESS_KEY = (import.meta.env.VITE_WEB3FORMS_KEY as string | undefined) ?? '';
 const ENDPOINT = 'https://api.web3forms.com/submit';
