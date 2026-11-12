@@ -62,8 +62,8 @@ export default function Contact() {
           </div>
         </section>
 
-        <section className="px-6 lg:px-8 py-6 md:py-4">
-          <div className="max-w-7xl mx-auto">
+        <section className="px-6 lg:px-8 py-6 md:py-8">
+          <div className="max-w-7xl mx-auto md:grid md:gap-8 lg:grid-cols-[5fr_7fr] lg:items-stretch">
             {/* Mobile: icon-only CTAs */}
             <div className="md:hidden grid grid-cols-3 gap-3">
               {contactItems.map((item, i) => {
@@ -125,78 +125,52 @@ export default function Contact() {
               <span className="text-sm font-medium text-foreground">Disponible immédiatement</span>
             </motion.div>
 
-            {/* Desktop: full cards with address/label, CV as a third tile */}
-            <div className="hidden md:grid sm:grid-cols-3 gap-3">
+            {/* Desktop: contact cards stacked on the left, form on the right */}
+            <div className="hidden md:grid lg:grid-rows-4 gap-4">
               {contactItems.map((item, i) => {
                 const Icon = item.icon;
                 const isEmail = item.label === 'Email';
-                const content = (
-                  <>
-                    <div className="flex items-center justify-between">
-                      <div
-                        className={`size-9 rounded-full flex items-center justify-center ${
-                          isEmail ? 'bg-blue-100 dark:bg-blue-950/50' : 'bg-muted'
-                        }`}
-                      >
-                        <Icon className={`size-4 ${isEmail ? 'text-blue-600' : 'text-foreground'}`} />
-                      </div>
-                      {item.href && (
-                        <ArrowUpRight
-                          className={`size-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all ${
-                            isEmail
-                              ? 'text-blue-600/70 group-hover:text-blue-600'
-                              : 'text-muted-foreground group-hover:text-foreground'
-                          }`}
-                        />
-                      )}
+                return (
+                  <motion.a
+                    key={item.label}
+                    href={item.href}
+                    {...(item.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                    initial={{ opacity: 0, y: 12 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: i * 0.05 }}
+                    className={`group flex min-h-[96px] min-w-0 items-center gap-4 rounded-2xl border p-5 hover:shadow-md transition-all ${
+                      isEmail
+                        ? 'border-blue-600/30 bg-blue-50/60 dark:bg-blue-950/20 hover:border-blue-600/50'
+                        : 'border-border bg-card hover:border-foreground/20'
+                    }`}
+                  >
+                    <div
+                      className={`size-12 shrink-0 rounded-full flex items-center justify-center ${
+                        isEmail ? 'bg-blue-100 dark:bg-blue-950/50' : 'bg-muted'
+                      }`}
+                    >
+                      <Icon className={`size-5 ${isEmail ? 'text-blue-600' : 'text-foreground'}`} />
                     </div>
-                    <div className="mt-2">
+                    <div className="min-w-0 flex-1">
                       <p
-                        className={`text-xs font-semibold tracking-[0.2em] uppercase mb-1 ${
+                        className={`mb-1 text-xs font-semibold tracking-[0.2em] uppercase ${
                           isEmail ? 'text-blue-600' : 'text-muted-foreground'
                         }`}
                       >
                         {item.label}
                       </p>
-                      <p
-                        className={`tracking-tight break-words ${
-                          isEmail ? 'text-lg font-semibold' : 'text-base font-medium'
-                        }`}
-                      >
+                      <p className={`break-words tracking-tight ${isEmail ? 'text-base font-semibold' : 'text-base font-medium'}`}>
                         {item.value}
                       </p>
                     </div>
-                  </>
-                );
-
-                const className = `group block min-w-0 rounded-2xl border p-3 hover:shadow-md transition-all ${
-                  isEmail
-                    ? 'border-blue-600/30 bg-blue-50/60 dark:bg-blue-950/20 hover:border-blue-600/50'
-                    : 'border-border bg-card hover:border-foreground/20'
-                }`;
-
-                return (
-                  <motion.div
-                    key={item.label}
-                    className="min-w-0"
-                    initial={{ opacity: 0, y: 12 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: i * 0.05 }}
-                  >
-                    {item.href ? (
-                      <a
-                        href={item.href}
-                        {...(item.external
-                          ? { target: '_blank', rel: 'noopener noreferrer' }
-                          : {})}
-                        className={className}
-                      >
-                        {content}
-                      </a>
-                    ) : (
-                      <div className={className}>{content}</div>
-                    )}
-                  </motion.div>
+                    <ArrowUpRight
+                      className={`size-4 shrink-0 transition-all group-hover:translate-x-0.5 group-hover:-translate-y-0.5 ${
+                        isEmail
+                          ? 'text-blue-600/70 group-hover:text-blue-600'
+                          : 'text-muted-foreground group-hover:text-foreground'
+                      }`}
+                    />
+                  </motion.a>
                 );
               })}
 
@@ -204,136 +178,151 @@ export default function Contact() {
                 initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: contactItems.length * 0.05 }}
-                className="block min-w-0 rounded-2xl border border-border bg-card p-3"
+                className="flex min-h-[96px] min-w-0 items-center gap-4 rounded-2xl border border-border bg-card p-5"
               >
-                <div className="size-9 rounded-full bg-muted flex items-center justify-center">
-                  <Download className="size-4 text-foreground" />
+                <div className="size-12 shrink-0 rounded-full bg-muted flex items-center justify-center">
+                  <Download className="size-5 text-foreground" />
                 </div>
-                <div className="mt-2">
-                  <p className="text-xs font-semibold tracking-[0.2em] uppercase text-muted-foreground mb-1">
-                    CV
-                  </p>
+                <div className="min-w-0 flex-1">
+                  <p className="mb-2 text-xs font-semibold tracking-[0.2em] uppercase text-muted-foreground">CV</p>
                   <div className="flex flex-wrap items-center gap-2">
                     {cvFiles.map((cv) => (
                       <a
                         key={cv.lang}
                         href={cv.href}
                         download={cv.filename}
-                        className="group inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-border text-sm font-medium hover:bg-muted hover:border-foreground/20 transition-colors"
+                        className="group inline-flex items-center gap-1.5 rounded-full border border-border px-3.5 py-1.5 text-sm font-medium transition-colors hover:bg-muted hover:border-foreground/20"
                       >
                         {cv.label}
-                        <ArrowUpRight className="size-3.5 text-muted-foreground group-hover:text-foreground transition-colors" />
+                        <ArrowUpRight className="size-3.5 text-muted-foreground transition-colors group-hover:text-foreground" />
                       </a>
                     ))}
                   </div>
                 </div>
               </motion.div>
-            </div>
-          </div>
-
-          <motion.form
-            onSubmit={handleSubmit}
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="relative hidden md:block max-w-2xl mx-auto mt-3 rounded-2xl border border-border bg-card p-4 space-y-2"
-          >
-            <HoneypotField value={form.website} onChange={(website) => setForm({ ...form, website })} />
-            <div>
-              <p className="text-xs font-semibold tracking-[0.2em] uppercase text-muted-foreground mb-1">
-                Formulaire
-              </p>
-              <h2 className="text-xl font-semibold tracking-tight">
-                Écrivez-moi
-              </h2>
+              <motion.div
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: (contactItems.length + 1) * 0.05 }}
+                className="flex min-h-[96px] min-w-0 items-center gap-4 rounded-2xl border border-border bg-card p-5"
+              >
+                <div className="size-12 shrink-0 rounded-full bg-emerald-100 dark:bg-emerald-950/50 flex items-center justify-center">
+                  <span className="relative flex size-3">
+                    <span className="absolute inline-flex size-full rounded-full bg-emerald-400 opacity-75 animate-ping" />
+                    <span className="relative inline-flex size-3 rounded-full bg-emerald-500" />
+                  </span>
+                </div>
+                <div className="min-w-0 flex-1">
+                  <p className="mb-1 text-xs font-semibold tracking-[0.2em] uppercase text-muted-foreground">Disponibilité</p>
+                  <p className="text-base font-medium tracking-tight">Disponible immédiatement</p>
+                </div>
+              </motion.div>
             </div>
 
-            <div className="grid sm:grid-cols-2 gap-2">
-              <div className="space-y-1">
-                <Label htmlFor="nom">Nom</Label>
-                <Input
-                  id="nom"
-                  required
-                  placeholder="Ex. Dupont"
-                  value={form.nom}
-                  onChange={(e) => setForm({ ...form, nom: e.target.value })}
-                />
+            <motion.form
+              onSubmit={handleSubmit}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="relative hidden md:block min-w-0 rounded-2xl border border-border bg-card p-6 lg:p-8 space-y-5"
+            >
+              <HoneypotField value={form.website} onChange={(website) => setForm({ ...form, website })} />
+              <div>
+                <p className="text-xs font-semibold tracking-[0.2em] uppercase text-muted-foreground mb-1">
+                  Formulaire
+                </p>
+                <h2 className="text-2xl font-semibold tracking-tight">
+                  Écrivez-moi
+                </h2>
               </div>
-              <div className="space-y-1">
-                <Label htmlFor="prenom">Prénom</Label>
-                <Input
-                  id="prenom"
-                  required
-                  placeholder="Ex. Marie"
-                  value={form.prenom}
-                  onChange={(e) => setForm({ ...form, prenom: e.target.value })}
-                />
-              </div>
-              <div className="space-y-1">
-                <Label htmlFor="email">Email</Label>
-                <Input
-                  id="email"
-                  type="email"
-                  required
-                  placeholder="marie.dupont@exemple.com"
-                  value={form.email}
-                  onChange={(e) => setForm({ ...form, email: e.target.value })}
-                />
-              </div>
-              <div className="space-y-1">
-                <Label htmlFor="type">Type d'opportunité</Label>
-                <Select
-                  value={form.type}
-                  onValueChange={(v) => {
-                    setForm({ ...form, type: v });
-                    setTypeError(false);
-                  }}
-                >
-                  <SelectTrigger
-                    id="type"
-                    aria-invalid={typeError}
-                    aria-describedby={typeError ? 'type-error' : undefined}
-                    className={typeError ? 'border-destructive' : undefined}
+
+              <div className="grid sm:grid-cols-2 gap-4">
+                <div className="space-y-2">
+                  <Label htmlFor="nom">Nom</Label>
+                  <Input
+                    id="nom"
+                    required
+                    placeholder="Ex. Dupont"
+                    value={form.nom}
+                    onChange={(e) => setForm({ ...form, nom: e.target.value })}
+                  />
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="prenom">Prénom</Label>
+                  <Input
+                    id="prenom"
+                    required
+                    placeholder="Ex. Marie"
+                    value={form.prenom}
+                    onChange={(e) => setForm({ ...form, prenom: e.target.value })}
+                  />
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="email">Email</Label>
+                  <Input
+                    id="email"
+                    type="email"
+                    required
+                    placeholder="marie.dupont@exemple.com"
+                    value={form.email}
+                    onChange={(e) => setForm({ ...form, email: e.target.value })}
+                  />
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="type">Type d'opportunité</Label>
+                  <Select
+                    value={form.type}
+                    onValueChange={(v) => {
+                      setForm({ ...form, type: v });
+                      setTypeError(false);
+                    }}
                   >
-                    <SelectValue placeholder="Sélectionnez une option" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    {OPPORTUNITY_TYPES.map((t) => (
-                      <SelectItem key={t} value={t}>
-                        {t}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-                {typeError && (
-                  <p id="type-error" className="text-sm text-destructive">
-                    Merci de sélectionner un type d'opportunité.
-                  </p>
-                )}
+                    <SelectTrigger
+                      id="type"
+                      aria-invalid={typeError}
+                      aria-describedby={typeError ? 'type-error' : undefined}
+                      className={typeError ? 'border-destructive' : undefined}
+                    >
+                      <SelectValue placeholder="Sélectionnez une option" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      {OPPORTUNITY_TYPES.map((t) => (
+                        <SelectItem key={t} value={t}>
+                          {t}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                  {typeError && (
+                    <p id="type-error" className="text-sm text-destructive">
+                      Merci de sélectionner un type d'opportunité.
+                    </p>
+                  )}
+                </div>
               </div>
-            </div>
 
-            <div className="space-y-1">
-              <Label htmlFor="message">Comment puis-je vous aider ?</Label>
-              <Textarea
-                id="message"
-                required
-                rows={2}
-                placeholder="Décrivez votre projet, contexte, calendrier…"
-                value={form.message}
-                onChange={(e) => setForm({ ...form, message: e.target.value })}
-              />
-            </div>
+              <div className="space-y-2">
+                <Label htmlFor="message">Comment puis-je vous aider ?</Label>
+                <Textarea
+                  id="message"
+                  required
+                  rows={6}
+                  placeholder="Décrivez votre projet, contexte, calendrier…"
+                  value={form.message}
+                  onChange={(e) => setForm({ ...form, message: e.target.value })}
+                />
+              </div>
 
-            <div className="flex items-center justify-end gap-4">
-              <ContactFormStatus status={status} />
-              <Button type="submit" size="lg" disabled={status === 'sending'} className="shrink-0 gap-2 rounded-full">
-                <Send className="size-4" />
-                {status === 'sending' ? 'Envoi en cours…' : 'Envoyer'}
-              </Button>
-            </div>
-          </motion.form>
+              <div className="flex items-center justify-end gap-4">
+                <ContactFormStatus status={status} />
+                <Button type="submit" size="lg" disabled={status === 'sending'} className="shrink-0 gap-2 rounded-full">
+                  <Send className="size-4" />
+                  {status === 'sending' ? 'Envoi en cours…' : 'Envoyer'}
+                </Button>
+              </div>
+            </motion.form>
+          </div>
         </section>
       </div>
     </>
