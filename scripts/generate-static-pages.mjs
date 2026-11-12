@@ -8,7 +8,9 @@
 // article and project made from its cover (dist/og/*.jpg).
 //
 // The app itself is unchanged: each file is a copy of dist/index.html, so the router takes over
-// as usual. public/.htaccess serves a directory's index.html before the SPA fallback.
+// as usual. The host (GitHub Pages) serves a directory's index.html natively, and dist/404.html
+// (a copy of the generic app shell) is its fallback for any other URL, so the router can show
+// its own "not found" page.
 // Titles and descriptions come from src/data/seo.ts, src/data/blog.ts and src/data/projects.ts.
 import { createServer } from 'vite';
 import sharp from 'sharp';
@@ -115,6 +117,8 @@ const { SITE_URL, DEFAULT_OG_IMAGE, staticPageMeta, blogOgImage, projectOgImage 
 const abs = (p) => `${SITE_URL}${p}`;
 
 await mkdir(path.join(DIST, 'og'), { recursive: true });
+// Fallback for URLs without a static page: the untouched app shell (GitHub Pages serves 404.html).
+await writeFile(path.join(DIST, '404.html'), template, 'utf-8');
 let count = 0;
 
 for (const [route, page] of Object.entries(staticPageMeta)) {

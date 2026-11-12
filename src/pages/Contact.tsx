@@ -15,9 +15,10 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 import { OPPORTUNITY_TYPES, useContactForm } from '@/hooks/useContactForm';
+import { ContactFormStatus, HoneypotField } from '@/components/layout/ContactFormStatus';
 
 export default function Contact() {
-  const { form, setForm, typeError, setTypeError, handleSubmit } = useContactForm();
+  const { form, setForm, typeError, setTypeError, status, handleSubmit } = useContactForm();
 
   const contactItems = [
     {
@@ -236,8 +237,9 @@ export default function Contact() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="hidden md:block max-w-2xl mx-auto mt-3 rounded-2xl border border-border bg-card p-4 space-y-2"
+            className="relative hidden md:block max-w-2xl mx-auto mt-3 rounded-2xl border border-border bg-card p-4 space-y-2"
           >
+            <HoneypotField value={form.website} onChange={(website) => setForm({ ...form, website })} />
             <div>
               <p className="text-xs font-semibold tracking-[0.2em] uppercase text-muted-foreground mb-1">
                 Formulaire
@@ -324,10 +326,11 @@ export default function Contact() {
               />
             </div>
 
-            <div className="flex justify-end">
-              <Button type="submit" size="lg" className="gap-2 rounded-full">
+            <div className="flex items-center justify-end gap-4">
+              <ContactFormStatus status={status} />
+              <Button type="submit" size="lg" disabled={status === 'sending'} className="shrink-0 gap-2 rounded-full">
                 <Send className="size-4" />
-                Envoyer
+                {status === 'sending' ? 'Envoi en cours…' : 'Envoyer'}
               </Button>
             </div>
           </motion.form>

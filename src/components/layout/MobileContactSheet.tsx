@@ -7,13 +7,14 @@ import { Label } from '@/components/ui/label';
 import { Button } from '@/components/ui/button';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { OPPORTUNITY_TYPES, useContactForm } from '@/hooks/useContactForm';
+import { ContactFormStatus, HoneypotField } from '@/components/layout/ContactFormStatus';
 
 interface MobileContactSheetProps {
   children: ReactNode;
 }
 
 export function MobileContactSheet({ children }: MobileContactSheetProps) {
-  const { form, setForm, typeError, setTypeError, handleSubmit } = useContactForm();
+  const { form, setForm, typeError, setTypeError, status, handleSubmit } = useContactForm();
 
   return (
     <Sheet>
@@ -22,10 +23,11 @@ export function MobileContactSheet({ children }: MobileContactSheetProps) {
         <div className="mx-auto mb-2 h-1.5 w-10 rounded-full bg-border" />
         <SheetTitle className="text-2xl font-semibold tracking-tight">Écrivez-moi</SheetTitle>
         <SheetDescription>
-          Remplissez le formulaire, votre application mail s'ouvrira avec le message prérempli.
+          Remplissez le formulaire, votre message m'arrive directement par e-mail.
         </SheetDescription>
 
-        <form onSubmit={handleSubmit} className="space-y-5 mt-4">
+        <form onSubmit={handleSubmit} className="relative space-y-5 mt-4">
+          <HoneypotField value={form.website} onChange={(website) => setForm({ ...form, website })} />
           <div className="grid grid-cols-2 gap-3">
             <div className="space-y-2">
               <Label htmlFor="sheet-nom">Nom</Label>
@@ -105,10 +107,16 @@ export function MobileContactSheet({ children }: MobileContactSheetProps) {
             />
           </div>
 
-          <Button type="submit" size="lg" className="w-full gap-2 rounded-full bg-blue-600 hover:bg-blue-700">
+          <Button
+            type="submit"
+            size="lg"
+            disabled={status === 'sending'}
+            className="w-full gap-2 rounded-full bg-blue-600 hover:bg-blue-700"
+          >
             <Send className="size-4" />
-            Envoyer
+            {status === 'sending' ? 'Envoi en cours…' : 'Envoyer'}
           </Button>
+          <ContactFormStatus status={status} />
         </form>
       </SheetContent>
     </Sheet>
