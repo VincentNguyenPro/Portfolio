@@ -16,6 +16,7 @@ import {
 } from '@/components/ui/select';
 import { OPPORTUNITY_TYPES, useContactForm } from '@/hooks/useContactForm';
 import { ContactFormStatus, HoneypotField } from '@/components/layout/ContactFormStatus';
+import { MobileContactSheet } from '@/components/layout/MobileContactSheet';
 
 export default function Contact() {
   const { form, setForm, typeError, setTypeError, status, handleSubmit } = useContactForm();
@@ -123,6 +124,25 @@ export default function Contact() {
                 <span className="relative inline-flex size-2 rounded-full bg-emerald-400" />
               </span>
               <span className="text-sm font-medium text-foreground">Disponible immédiatement</span>
+            </motion.div>
+
+            {/* Mobile: opens the same form sheet as the floating bar (which is hidden on this page) */}
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: (contactItems.length + 2) * 0.05 }}
+              className="md:hidden mt-3"
+            >
+              <MobileContactSheet>
+                <button
+                  type="button"
+                  className="group flex w-full items-center justify-center gap-2 rounded-full bg-blue-600 px-5 py-3.5 font-medium text-white hover:bg-blue-700 transition-colors"
+                >
+                  <Send className="size-4" />
+                  Écrire un message
+                  <ArrowUpRight className="size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                </button>
+              </MobileContactSheet>
             </motion.div>
 
             {/* Desktop: contact cards stacked on the left, form on the right */}
